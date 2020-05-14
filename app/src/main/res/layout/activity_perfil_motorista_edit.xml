@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorLightgray"
+    tools:context=".perfil_motorista_edit">
+
+    <ImageView
+        android:id="@+id/bg_White_Big_perfil_motorista_edit"
+        android:layout_width="0dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="244dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bg_black_perfil_motorista_edit"
+        app:srcCompat="@drawable/white_square" />
+
+    <ImageView
+        android:id="@+id/bg_black_perfil_motorista_edit"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/bg_black_radius_edges"
+        tools:ignore="MissingConstraints" />
+
+    <!--Top yellow bar with the muv logo-->
+    <ImageView
+        android:id="@+id/imageViewMenuAmarelo_perfil_motorista_edit"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/btbg2" />
+
+    <ImageView
+        android:id="@+id/MUV_icon_perfil_motorista_edit"
+        android:layout_width="170dp"
+        android:layout_height="60dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewMenuAmarelo_perfil_motorista_edit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageViewMenuAmarelo_perfil_motorista_edit"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/logo_muv_black"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button_back_arrow_black_perfil_motorista_edit"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="360dp"
+        android:layout_marginBottom="13dp"
+
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewMenuAmarelo_perfil_motorista_edit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageViewMenuAmarelo_perfil_motorista_edit"
+        app:layout_constraintVertical_bias="1.0"
+        android:background="@drawable/back_menu_black_arrow"/>
+
+    <Button
+        android:id="@+id/button_hamburguer_slide_menu_perfil_motorista_edit"
+        android:layout_width="35dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintTop_toTopOf="@id/imageViewMenuAmarelo_perfil_motorista_edit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/MUV_icon_perfil_motorista_edit"
+        app:layout_constraintBottom_toBottomOf="@id/imageViewMenuAmarelo_perfil_motorista_edit"
+        android:background="@drawable/hamburguer_slide_menu"
+        />
+    <!--End-->
+    <!--Black zone with the user foto-->
+
+
+    <ImageView
+        android:id="@+id/bd_white_Money_perfil_motorista_edit"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="23dp"
+        app:layout_constraintTop_toBottomOf="@id/bg_White_Big_perfil_motorista_edit"
+        app:srcCompat="@drawable/white_square" />
+
+    <ImageView
+        android:id="@+id/gray_circle_foto_perfil_motorista_edit"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/bg_black_perfil_motorista_edit"
+        app:layout_constraintTop_toTopOf="@id/bg_black_perfil_motorista_edit"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="30dp"
+        app:srcCompat="@drawable/gray_circle"
+        />
+
+    <ImageView
+        android:id="@+id/perfil_circle_image_perfil_motorista_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/gray_circle_foto_perfil_motorista_edit"
+        app:layout_constraintStart_toStartOf="@id/gray_circle_foto_perfil_motorista_edit"
+        app:layout_constraintBottom_toBottomOf="@+id/gray_circle_foto_perfil_motorista_edit"
+        app:layout_constraintTop_toTopOf="@id/gray_circle_foto_perfil_motorista_edit"
+        app:srcCompat="@drawable/foto_de_perfil_usuario"
+        />
+
+    <Button
+        android:id="@+id/edit_white_foto_perfil_motorista_edit"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintStart_toStartOf="@id/perfil_circle_image_perfil_motorista_edit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/bg_black_perfil_motorista_edit"
+        app:layout_constraintTop_toTopOf="@id/bg_black_perfil_motorista_edit"
+        android:layout_marginTop="115dp"
+        android:layout_marginLeft="30dp"
+        android:background="@drawable/edit_solid_white_perfil_motorista_edit"
+        />
+
+
+    <!--/////////////////Informações Pessoais .. secção\\\\\\\\\\\\\\\\\\\\\-->
+    <TextView
+        android:id="@+id/textView_Informacoes_Pessoais_perfil_motorista_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="230dp"
+        android:text="Informação Pessoal:"
+        android:textColor="@color/Black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/bg_White_Big_perfil_motorista_edit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bg_black_perfil_motorista_edit" />
+
+    <!--Marker secção-->
+    <ImageView
+        android:id="@+id/imageView_origem_bg_perfil_motorista_edit"
+        android:layout_width="370dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_Informacoes_Pessoais_perfil_motorista_edit"
+        app:srcCompat="@drawable/white_square_shadow" />
+
+    <ImageView
+        android:id="@+id/marker_origem_icon_perfil_motorista_edit"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="15dp"
+        app:layout_constraintTop_toTopOf="@id/imageView_origem_bg_perfil_motorista_edit"
+        app:layout_constraintBottom_toBottomOf="@id/imageView_origem_bg_perfil_motorista_edit"
+        app:layout_constraintStart_toStartOf="@id/imageView_origem_bg_perfil_motorista_edit"
+        app:srcCompat="@drawable/marker_icon"
+        android:layout_marginLeft="5dp"
+        />
+
+    <TextView
+        android:id="@+id/marker_origem_textView_perfil_motorista_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Origem"
+        android:textColor="@color/Black"
+        android:textSize="12dp"
+        app:layout_constraintTop_toTopOf="@id/imageView_origem_bg_perfil_motorista_edit"
+        app:layout_constraintBottom_toBottomOf="@id/imageView_origem_bg_perfil_motorista_edit"
+        app:layout_constraintStart_toEndOf="@id/marker_origem_icon_perfil_motorista_edit"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="15dp"
+        />
+
+    <TextView
+        android:id="@+id/textView_user_location_information_perfil_motorista_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Póvoa de Calve"
+        android:textColor="@color/colorDarkGray"
+        android:textSize="12dp"
+        app:layout_constraintTop_toBottomOf="@id/marker_origem_textView_perfil_motorista_edit"
+        app:layout_constraintBottom_toBottomOf="@id/imageView_origem_bg_perfil_motorista_edit"
+        app:layout_constraintStart_toEndOf="@id/marker_origem_icon_perfil_motorista_edit"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="1dp"
+        />
+
+    <Button
+        android:id="@+id/edit_black_marker_location_perfil_motorista_edit"
+        android:layout_width="25dp"
+        android:layout_height="22dp"
+        app:layout_constraintStart_toEndOf="@id/marker_origem_icon_perfil_motorista_edit"
+        app:layout_constraintEnd_toEndOf="@id/imageView_origem_bg_perfil_motorista_edit"
+        app:layout_constraintBottom_toBottomOf="@id/imageView_origem_bg_perfil_motorista_edit"
+        app:layout_constraintTop_toTopOf="@id/imageView_origem_bg_perfil_motorista_edit"
+        android:layout_marginLeft="265dp"
+        android:background="@drawable/edit_solid_black_perfil_motorista_edit"
+        />
+
+    <!--Idade secção-->
+    <ImageView
+        android:id="@+id/imageView_Idade_bg_perfil_motorista_edit"
+        android:layout_width="370dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_origem_bg_perfil_motorista_edit"
+        app:srcCompat="@drawable/white_square_shadow" />
+
+    <ImageView
+        android:id="@+id/idade_birthday_cake_icon_perfil_motorista_edit"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="15dp"
+        app:layout_constraintTop_toTopOf="@id/imageView_Idade_bg_perfil_motorista_edit"
+        app:layout_constraintBottom_toBottomOf="@id/imageView_Idade_bg_perfil_motorista_edit"
+        app:layout_constraintStart_toStartOf="@id/imageView_Idade_bg_perfil_motorista_edit"
+        app:srcCompat="@drawable/birthday_cake_icon_solid"
+        android:layout_marginLeft="5dp"
+        />
+
+    <TextView
+        android:id="@+id/idade_birthday_cake_textView_perfil_motorista_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Idade"
+        android:textColor="@color/Black"
+        android:textSize="12dp"
+        app:layout_constraintTop_toTopOf="@id/imageView_Idade_bg_perfil_motorista_edit"
+        app:layout_constraintBottom_toBottomOf="@id/imageView_Idade_bg_perfil_motorista_edit"
+        app:layout_constraintStart_toEndOf="@id/idade_birthday_cake_icon_perfil_motorista_edit"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="15dp"
+        />
+
+    <TextView
+        android:id="@+id/textView_user_idade_information_perfil_motorista_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="23 anos"
+        android:textColor="@color/colorDarkGray"
+        android:textSize="12dp"
+        app:layout_constraintTop_toBottomOf="@id/idade_birthday_cake_textView_perfil_motorista_edit"
+        app:layout_constraintBottom_toBottomOf="@id/imageView_Idade_bg_perfil_motorista_edit"
+        app:layout_constraintStart_toEndOf="@id/idade_birthday_cake_icon_perfil_motorista_edit"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="1dp"
+        />
+
+    <Button
+        android:id="@+id/edit_black_idade_perfil_motorista_edit"
+        android:layout_width="25dp"
+        android:layout_height="22dp"
+        app:layout_constraintStart_toEndOf="@id/idade_birthday_cake_icon_perfil_motorista_edit"
+        app:layout_constraintEnd_toEndOf="@id/imageView_Idade_bg_perfil_motorista_edit"
+        app:layout_constraintBottom_toBottomOf="@id/imageView_Idade_bg_perfil_motorista_edit"
+        app:layout_constraintTop_toTopOf="@id/imageView_Idade_bg_perfil_motorista_edit"
+        android:layout_marginLeft="265dp"
+        android:background="@drawable/edit_solid_black_perfil_motorista_edit"
+        />
+
+    <!--Telefone secção-->
+    <ImageView
+        android:id="@+id/imageView_telefone_bg_perfil_motorista_edit"
+        android:layout_width="370dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_Idade_bg_perfil_motorista_edit"
+        app:srcCompat="@drawable/white_square_shadow" />
+
+    <ImageView
+        android:id="@+id/telefone_icon_perfil_motorista_edit"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="15dp"
+        app:layout_constraintTop_toTopOf="@id/imageView_telefone_bg_perfil_motorista_edit"
+        app:layout_constraintBottom_toBottomOf="@id/imageView_telefone_bg_perfil_motorista_edit"
+        app:layout_constraintStart_toStartOf="@id/imageView_telefone_bg_perfil_motorista_edit"
+        app:srcCompat="@drawable/phone_icon_solid"
+        android:layout_marginLeft="5dp"
+        />
+
+    <TextView
+        android:id="@+id/telefone_textView_perfil_motorista_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Telefone"
+        android:textColor="@color/Black"
+        android:textSize="12dp"
+        app:layout_constraintTop_toTopOf="@id/imageView_telefone_bg_perfil_motorista_edit"
+        app:layout_constraintBottom_toBottomOf="@id/imageView_telefone_bg_perfil_motorista_edit"
+        app:layout_constraintStart_toEndOf="@id/telefone_icon_perfil_motorista_edit"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="15dp"
+        />
+
+    <TextView
+        android:id="@+id/textView_user_telefone_information_perfil_motorista_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="911222333"
+        android:textColor="@color/colorDarkGray"
+        android:textSize="12dp"
+        app:layout_constraintTop_toBottomOf="@id/telefone_textView_perfil_motorista_edit"
+        app:layout_constraintBottom_toBottomOf="@id/imageView_telefone_bg_perfil_motorista_edit"
+        app:layout_constraintStart_toEndOf="@id/telefone_icon_perfil_motorista_edit"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="1dp"
+        />
+
+    <Button
+        android:id="@+id/edit_black_telefone_perfil_motorista_edit"
+        android:layout_width="25dp"
+        android:layout_height="22dp"
+        app:layout_constraintStart_toEndOf="@id/telefone_icon_perfil_motorista_edit"
+        app:layout_constraintEnd_toEndOf="@id/imageView_telefone_bg_perfil_motorista_edit"
+        app:layout_constraintBottom_toBottomOf="@id/imageView_telefone_bg_perfil_motorista_edit"
+        app:layout_constraintTop_toTopOf="@id/imageView_telefone_bg_perfil_motorista_edit"
+        android:layout_marginLeft="265dp"
+        android:background="@drawable/edit_solid_black_perfil_motorista_edit"
+        />
+
+    <!--Email secção-->
+    <ImageView
+        android:id="@+id/imageView_Email_bg_perfil_motorista_edit"
+        android:layout_width="370dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_telefone_bg_perfil_motorista_edit"
+        app:srcCompat="@drawable/white_square_shadow" />
+
+    <ImageView
+        android:id="@+id/email_envelope_icon_perfil_motorista_edit"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="15dp"
+        app:layout_constraintTop_toTopOf="@id/imageView_Email_bg_perfil_motorista_edit"
+        app:layout_constraintBottom_toBottomOf="@id/imageView_Email_bg_perfil_motorista_edit"
+        app:layout_constraintStart_toStartOf="@id/imageView_Email_bg_perfil_motorista_edit"
+        app:srcCompat="@drawable/envelope_icon"
+        android:layout_marginLeft="5dp"
+        />
+
+    <TextView
+        android:id="@+id/email_envelope_textView_perfil_motorista_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="E-mail"
+        android:textColor="@color/Black"
+        android:textSize="12dp"
+        app:layout_constraintTop_toTopOf="@id/imageView_Email_bg_perfil_motorista_edit"
+        app:layout_constraintBottom_toBottomOf="@id/imageView_Email_bg_perfil_motorista_edit"
+        app:layout_constraintStart_toEndOf="@id/email_envelope_icon_perfil_motorista_edit"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="15dp"
+        />
+
+    <TextView
+        android:id="@+id/textView_user_email_information_perfil_motorista_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="sergio@gmail.com"
+        android:textColor="@color/colorDarkGray"
+        android:textSize="12dp"
+        app:layout_constraintTop_toBottomOf="@id/email_envelope_textView_perfil_motorista_edit"
+        app:layout_constraintBottom_toBottomOf="@id/imageView_Email_bg_perfil_motorista_edit"
+        app:layout_constraintStart_toEndOf="@id/email_envelope_icon_perfil_motorista_edit"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="1dp"
+        />
+
+    <Button
+        android:id="@+id/edit_black_email_perfil_motorista_edit"
+        android:layout_width="25dp"
+        android:layout_height="22dp"
+        app:layout_constraintStart_toEndOf="@id/email_envelope_icon_perfil_motorista_edit"
+        app:layout_constraintEnd_toEndOf="@id/imageView_Email_bg_perfil_motorista_edit"
+        app:layout_constraintBottom_toBottomOf="@id/imageView_Email_bg_perfil_motorista_edit"
+        app:layout_constraintTop_toTopOf="@id/imageView_Email_bg_perfil_motorista_edit"
+        android:layout_marginLeft="265dp"
+        android:background="@drawable/edit_solid_black_perfil_motorista_edit"
+        />
+
+    <!--Money secção-->
+    <ImageView
+        android:id="@+id/imageView_Money_bg_perfil_motorista_edit"
+        android:layout_width="370dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/bd_white_Money_perfil_motorista_edit"
+        app:srcCompat="@drawable/white_square_shadow"
+        />
+
+    <ImageView
+        android:id="@+id/money_icon_perfil_motorista_edit"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="15dp"
+        app:layout_constraintTop_toTopOf="@id/imageView_Money_bg_perfil_motorista_edit"
+        app:layout_constraintBottom_toBottomOf="@id/imageView_Money_bg_perfil_motorista_edit"
+        app:layout_constraintStart_toStartOf="@id/imageView_Money_bg_perfil_motorista_edit"
+        app:srcCompat="@drawable/euro_money_icon"
+        android:layout_marginLeft="5dp"
+        />
+
+    <TextView
+        android:id="@+id/money_textView_perfil_motorista_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Saldo em Dívida"
+        android:textColor="@color/Black"
+        android:textSize="12dp"
+        app:layout_constraintTop_toTopOf="@id/imageView_Money_bg_perfil_motorista_edit"
+        app:layout_constraintBottom_toBottomOf="@id/imageView_Money_bg_perfil_motorista_edit"
+        app:layout_constraintStart_toEndOf="@id/money_icon_perfil_motorista_edit"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="15dp"
+        />
+
+    <TextView
+        android:id="@+id/textView_user_money_information_perfil_motorista_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="30.50€"
+        android:textColor="@color/colorDarkGray"
+        android:textSize="12dp"
+        app:layout_constraintTop_toBottomOf="@id/money_textView_perfil_motorista_edit"
+        app:layout_constraintBottom_toBottomOf="@id/imageView_Money_bg_perfil_motorista_edit"
+        app:layout_constraintStart_toEndOf="@id/money_icon_perfil_motorista_edit"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="1dp"
+        />
+
+    <Button
+        android:id="@+id/edit_black_money_divida_perfil_motorista_edit"
+        android:layout_width="25dp"
+        android:layout_height="22dp"
+        app:layout_constraintStart_toEndOf="@id/money_icon_perfil_motorista_edit"
+        app:layout_constraintEnd_toEndOf="@id/imageView_Money_bg_perfil_motorista_edit"
+        app:layout_constraintBottom_toBottomOf="@id/imageView_Money_bg_perfil_motorista_edit"
+        app:layout_constraintTop_toTopOf="@id/imageView_Money_bg_perfil_motorista_edit"
+        android:layout_marginLeft="265dp"
+        android:background="@drawable/edit_solid_black_perfil_motorista_edit"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

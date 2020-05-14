@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name">PINT_Android_v3</string>
+    <string name="title_activity_barra_lateral">BarraLateral</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+
+    <string name="home_second">Home Second</string>
+
+    <string name="username">Username</string>
+    <string name="palavra_passe">Palavra-Passe</string>
+    <string name="login">LOGIN</string>
+    <string name="entrar">Entrar</string>
+    <string name="email_utilizador">Email</string>
+    <string name="entrada_motorista">Entrada Motorista</string>
+
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="create_new">Click here for register</string>
+    <string name="not_register">Not Register?</string>
+    <string name="name">Name</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="register">Register</string>
+    <string name="name_error">Por favor insira o nome</string>
+    <string name="phone_error">Por favor insira o número de telefone</string>
+    <string name="email_error">Por favor insira o endereço e-mail</string>
+    <string name="error_invalid_email">o e-mail inserido é inválido</string>
+    <string name="password_error">Por favor insira a palavra-passe</string>
+    <string name="error_invalid_password">A palavra-passe deve ter um minimo de 6 caracteres</string>
+    <string name="servi_os_a_decorrer">Serviços a Decorrer</string>
+    <string name="ver_viagens_efetuadas">Ver Viagens Efetuadas</string>
+    <string name="o_que_pretende_fazer">O que pretende fazer?</string>
+    <string name="page_title">Menu</string>
+    <string name="search">search</string>
+    <string name="more">more</string>
+    <string name="favorite">favorite</string>
+    <string name="content_description_favorite">cdf</string>
+    <string name="content_description_search">cds</string>
+    <string name="content_description_more">cddm</string>
+</resources>
