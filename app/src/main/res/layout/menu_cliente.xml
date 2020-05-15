@@ -31,37 +31,22 @@
         app:layout_constraintTop_toBottomOf="@+id/imageViewMenuAmarelo3"
         app:layout_constraintVertical_bias="0.494" />
 
-    <Button
-        android:id="@+id/button_back_arrow_black3"
-        android:layout_width="34dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginEnd="360dp"
-        android:layout_marginRight="360dp"
-        android:background="@drawable/back_menu_black_arrow"
-        app:layout_constraintBottom_toTopOf="@+id/imageViewMenuAmarelo3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/imageViewMenuAmarelo3"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewMenuAmarelo3"
-        app:layout_constraintVertical_bias="0.542" />
-
     <ImageView
         android:id="@+id/btn_Marcar_Viagem"
         android:layout_width="330dp"
         android:layout_height="80dp"
-        android:layout_marginBottom="296dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="9dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/O_que_pretende"
         app:srcCompat="@drawable/marcar_viagem" />
 
     <ImageView
         android:id="@+id/bt_Viagens_Marcadas"
         android:layout_width="330dp"
         android:layout_height="80dp"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -69,22 +54,18 @@
         app:srcCompat="@drawable/viagens_marcadas" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/O_que_pretende"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="43dp"
-        android:layout_marginLeft="43dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="197dp"
-        android:layout_marginRight="197dp"
         android:text="O que pretende fazer?"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_Marcar_Viagem"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/user_outer"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/user_outer" />
 
     <ImageView
         android:id="@+id/btn_Viagens_Efetuadas"
@@ -117,7 +98,7 @@
         app:layout_constraintEnd_toStartOf="@+id/btn_Marcar_Viagem"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toEndOf="@+id/btn_Marcar_Viagem"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+        app:layout_constraintTop_toBottomOf="@+id/O_que_pretende" />
 
     <TextView
         android:id="@+id/txt_Viagens_Marcadas"
@@ -160,20 +141,24 @@
 
     <ImageView
         android:id="@+id/user_outer"
-        android:layout_width="273dp"
-        android:layout_height="216dp"
+        android:layout_width="253dp"
+        android:layout_height="189dp"
+        android:layout_marginTop="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/caixa_blck"
-        tools:layout_editor_absoluteY="85dp" />
+        app:layout_constraintTop_toBottomOf="@+id/imageViewMenuAmarelo3"
+        app:srcCompat="@drawable/caixa_blck" />
 
     <ImageView
         android:id="@+id/user_Inner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/ic_launcher_foreground"
-        tools:layout_editor_absoluteX="153dp"
-        tools:layout_editor_absoluteY="107dp" />
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="107dp"
+        app:layout_constraintEnd_toStartOf="@+id/user_outer"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/user_outer"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_launcher_foreground" />
 
     <TextView
         android:id="@+id/user_Name"
@@ -184,18 +169,19 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/user_outer"
         app:layout_constraintStart_toEndOf="@+id/user_outer"
-        tools:layout_editor_absoluteY="215dp" />
+        app:layout_constraintTop_toBottomOf="@+id/user_Inner" />
 
     <TextView
         android:id="@+id/user_localidade"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
         android:text="User_Localidade"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toStartOf="@+id/user_outer"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toEndOf="@+id/user_outer"
-        tools:layout_editor_absoluteY="253dp" />
+        app:layout_constraintTop_toBottomOf="@+id/user_Name" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
