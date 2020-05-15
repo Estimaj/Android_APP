@@ -45,8 +45,7 @@
             android:layout_height="wrap_content"
             android:hint="@string/palavra_passe"
             android:inputType="textPassword"
-            android:textColorHint="#9C27B0"
-            />
+            android:textColorHint="#FFD400" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <ImageView
@@ -96,14 +95,13 @@
         app:startIconDrawable="@drawable/ic_user_solid">
 
 
-
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/user_login_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
             android:hint="@string/email_utilizador"
-            />
+            android:inputType="textEmailAddress"
+            android:textColorHint="#FFD400" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button

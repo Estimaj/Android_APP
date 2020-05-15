@@ -44,4 +44,7 @@
     <string name="content_description_favorite">cdf</string>
     <string name="content_description_search">cds</string>
     <string name="content_description_more">cddm</string>
+    <string name="entrada_cliente">Entrada Cliente</string>
+    <string name="todo">TODO</string>
+
 </resources>
