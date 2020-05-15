@@ -18,6 +18,8 @@ public class menu_municipe extends AppCompatActivity {
     TextView Nome;
     TextView Localidade;
     ImageView btn_Perfil;
+    ImageView btn_Marcadas;
+    ImageView btn_Efetuadas;
 
 
     @Override
@@ -28,10 +30,24 @@ public class menu_municipe extends AppCompatActivity {
         Nome = (TextView) findViewById(R.id.user_Name);
         Localidade = (TextView) findViewById(R.id.user_localidade);
         btn_Perfil = (ImageView) findViewById(R.id.user_Inner);
+        btn_Marcadas = (ImageView) findViewById(R.id.bt_Viagens_Marcadas);
+        btn_Efetuadas = (ImageView) findViewById(R.id.btn_Viagens_Efetuadas);
         btn_Perfil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Clicar_Perfil();
+            }
+        });
+        btn_Efetuadas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Clicar_Viagens_Efetuadas();
+            }
+        });
+        btn_Marcadas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Clicar_Viagens_Marcadas();
             }
         });
 
@@ -54,6 +70,18 @@ public class menu_municipe extends AppCompatActivity {
         startActivity(Perfil);
 
     }
+    public void Clicar_Viagens_Marcadas()
+    {
+        Intent Viagens = new Intent(menu_municipe.this, viagens_marcadas.class);
+        startActivity(Viagens);
 
+    }
+
+    public void Clicar_Viagens_Efetuadas()
+    {
+        Intent Viagens = new Intent(menu_municipe.this, viagens_efetuadas.class);
+        startActivity(Viagens);
+
+    }
 
 }

@@ -22,7 +22,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".menu_municipe"></activity>
+        <activity android:name=".menu_municipe" />
     </application>
 
 </manifest>
