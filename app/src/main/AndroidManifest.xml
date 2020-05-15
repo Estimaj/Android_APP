@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".viagens_marcadas"></activity>
+        <activity android:name=".quem_vai_consigo"/>
+        <activity android:name=".viagens_marcadas" />
         <activity android:name=".viagens_efetuadas" />
         <activity android:name=".perfil_motorista_edit" />
         <activity android:name=".perfil_motorista" />
