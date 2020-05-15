@@ -34,11 +34,11 @@ public class MainActivity extends AppCompatActivity {
         bd.apagar_Tabelas(bd.dbw);
         bd.criar_tabelas(bd.dbw);
         bd.InserirUtilizadoresParaTeste(bd.dbw);
-        Mail = (EditText) findViewById(R.id.user_login_text);
-        Password = (EditText) findViewById(R.id.user_password_text);
-        emailError = (TextInputLayout)findViewById(R.id.User_BOX);
-        passError = (TextInputLayout)findViewById(R.id.Pass_BOX);
-        login = (Button) findViewById(R.id.Entrar_Motorista);
+        Mail = (EditText) findViewById(R.id.user_login_text_MainActivity);
+        Password = (EditText) findViewById(R.id.user_password_text_MainActivity);
+        emailError = (TextInputLayout)findViewById(R.id.User_BOX_MainActivity);
+        passError = (TextInputLayout)findViewById(R.id.Pass_BOX_MainActivity);
+        login = (Button) findViewById(R.id.Entrar_Motorista_MainActivity);
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override

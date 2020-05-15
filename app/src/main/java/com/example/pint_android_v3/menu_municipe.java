@@ -25,9 +25,9 @@ public class menu_municipe extends AppCompatActivity {
         Log.i("oncreate:", "on create Menu");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu_cliente);
-        Nome = (TextView) findViewById(R.id.user_Name);
-        Localidade = (TextView) findViewById(R.id.user_localidade);
-        btn_Perfil = (ImageView) findViewById(R.id.user_Inner);
+        Nome = (TextView) findViewById(R.id.user_Name_menu_cliente);
+        Localidade = (TextView) findViewById(R.id.user_localidade_menu_cliente);
+    btn_Perfil = (ImageView) findViewById(R.id.user_Inner_menu_cliente);
         btn_Perfil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -18,9 +18,9 @@ public class desambiguacao extends AppCompatActivity {
         Log.i("oncreate:", "on create");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_desambiguacao);
-        TextView Mail = (EditText) findViewById(R.id.user_login_text);
-        TextView Password = (EditText) findViewById(R.id.user_password_text);
-        login = (Button) findViewById(R.id.entrar3);
+        TextView Mail = (EditText) findViewById(R.id.user_login_text_desambiguacao);
+        TextView Password = (EditText) findViewById(R.id.user_password_text_desambiguacao);
+        login = (Button) findViewById(R.id.entrar_desambiguacao);
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

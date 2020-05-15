@@ -9,21 +9,21 @@
     android:background="@color/Black">
 
     <ImageView
-        android:id="@+id/MUV_Logo"
+        android:id="@+id/MUV_Logo_MainActivity"
         android:layout_width="317dp"
         android:layout_height="61dp"
         android:layout_marginStart="47dp"
         android:layout_marginTop="75dp"
         android:layout_marginEnd="47dp"
         android:layout_marginBottom="56dp"
-        app:layout_constraintBottom_toTopOf="@+id/Login_Texto"
+        app:layout_constraintBottom_toTopOf="@id/Login_Texto_MainActivity"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_logo_muv_yellow" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/Pass_BOX"
+        android:id="@+id/Pass_BOX_MainActivity"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
@@ -32,7 +32,7 @@
         android:background="#FFFFFF"
         app:hintTextColor= "#373433"
         app:endIconMode="password_toggle"
-        app:layout_constraintBottom_toTopOf="@+id/imageView2"
+        app:layout_constraintBottom_toTopOf="@id/imageView_MainActivity"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:startIconContentDescription="User_Icon"
@@ -40,7 +40,7 @@
 
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/user_password_text"
+            android:id="@+id/user_password_text_MainActivity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/palavra_passe"
@@ -49,20 +49,20 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/imageView_MainActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="193dp"
         android:layout_marginEnd="194dp"
         android:layout_marginBottom="26dp"
         android:layout_weight="1"
-        app:layout_constraintBottom_toTopOf="@+id/Entrar_Motorista"
+        app:layout_constraintBottom_toTopOf="@id/Entrar_Motorista_MainActivity"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/ic_divider" />
 
     <TextView
-        android:id="@+id/Login_Texto"
+        android:id="@+id/Login_Texto_MainActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="161dp"
@@ -72,13 +72,13 @@
         android:textColor="#FFFFFF"
         android:textSize="30sp"
         android:maxLines= "1"
-        app:layout_constraintBottom_toTopOf="@+id/User_BOX"
+        app:layout_constraintBottom_toTopOf="@id/User_BOX_MainActivity"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/User_BOX"
+        android:id="@+id/User_BOX_MainActivity"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
@@ -88,7 +88,7 @@
         android:maxLines= "1"
         app:hintTextColor= "#373433"
         app:endIconMode="clear_text"
-        app:layout_constraintBottom_toTopOf="@+id/Pass_BOX"
+        app:layout_constraintBottom_toTopOf="@id/Pass_BOX_MainActivity"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:startIconContentDescription="User_Icon"
@@ -96,7 +96,7 @@
 
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/user_login_text"
+            android:id="@+id/user_login_text_MainActivity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/email_utilizador"
@@ -105,7 +105,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/Entrar_Motorista"
+        android:id="@+id/Entrar_Motorista_MainActivity"
         android:layout_width="200dp"
         android:layout_height="64dp"
         android:layout_marginStart="105dp"
