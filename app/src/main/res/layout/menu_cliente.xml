@@ -8,7 +8,7 @@
 
 
     <ImageView
-        android:id="@+id/imageViewMenuAmarelo3"
+        android:id="@+id/menu_cliente_imageViewMenuAmarelo3"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -16,172 +16,170 @@
         app:srcCompat="@drawable/btbg2" />
 
     <Button
-        android:id="@+id/button_hamburguer_slide_menu2"
+        android:id="@+id/menu_cliente_button_hamburguer_slide_menu2"
         android:layout_width="35dp"
         android:layout_height="25dp"
         android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
         android:layout_marginEnd="70dp"
-        android:layout_marginRight="70dp"
         android:background="@drawable/hamburguer_slide_menu"
-        app:layout_constraintBottom_toTopOf="@+id/imageViewMenuAmarelo3"
+        app:layout_constraintBottom_toTopOf="@id/menu_cliente_imageViewMenuAmarelo3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.628"
-        app:layout_constraintStart_toEndOf="@+id/imageViewMenuAmarelo3"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewMenuAmarelo3"
+        app:layout_constraintStart_toEndOf="@id/menu_cliente_imageViewMenuAmarelo3"
+        app:layout_constraintTop_toBottomOf="@id/menu_cliente_imageViewMenuAmarelo3"
         app:layout_constraintVertical_bias="0.494" />
 
     <ImageView
-        android:id="@+id/btn_Marcar_Viagem"
+        android:id="@+id/menu_cliente_btn_Marcar_Viagem"
         android:layout_width="330dp"
         android:layout_height="80dp"
         android:layout_marginTop="9dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/O_que_pretende"
+        app:layout_constraintTop_toBottomOf="@id/menu_cliente_O_que_pretende"
         app:srcCompat="@drawable/marcar_viagem" />
 
     <ImageView
-        android:id="@+id/bt_Viagens_Marcadas"
+        android:id="@+id/menu_cliente_bt_Viagens_Marcadas"
         android:layout_width="330dp"
         android:layout_height="80dp"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_Marcar_Viagem"
+        app:layout_constraintTop_toBottomOf="@id/menu_cliente_btn_Marcar_Viagem"
         app:srcCompat="@drawable/viagens_marcadas" />
 
     <TextView
-        android:id="@+id/O_que_pretende"
+        android:id="@+id/menu_cliente_O_que_pretende"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="43dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="197dp"
-        android:text="O que pretende fazer?"
+        android:text="@string/o_que_pretende_fazer"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/user_outer" />
+        app:layout_constraintTop_toBottomOf="@id/menu_cliente_user_outer" />
 
     <ImageView
-        android:id="@+id/btn_Viagens_Efetuadas"
+        android:id="@+id/menu_cliente_btn_Viagens_Efetuadas"
         android:layout_width="330dp"
         android:layout_height="80dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bt_Viagens_Marcadas"
+        app:layout_constraintTop_toBottomOf="@id/menu_cliente_bt_Viagens_Marcadas"
         app:srcCompat="@drawable/clock" />
 
     <ImageView
-        android:id="@+id/imageView23"
+        android:id="@+id/menu_cliente_imageView23"
         android:layout_width="330dp"
         android:layout_height="80dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_Viagens_Efetuadas"
+        app:layout_constraintTop_toBottomOf="@id/menu_cliente_btn_Viagens_Efetuadas"
         app:srcCompat="@drawable/pesquisar_user" />
 
     <TextView
-        android:id="@+id/txt_Marcar_Viagem"
+        android:id="@+id/menu_cliente_txt_Marcar_Viagem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="Marcar Viagem"
         android:textColor="#FFFFFF"
         android:textSize="22sp"
-        app:layout_constraintEnd_toStartOf="@+id/btn_Marcar_Viagem"
+        app:layout_constraintEnd_toStartOf="@id/menu_cliente_btn_Marcar_Viagem"
         app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toEndOf="@+id/btn_Marcar_Viagem"
-        app:layout_constraintTop_toBottomOf="@+id/O_que_pretende" />
+        app:layout_constraintStart_toEndOf="@id/menu_cliente_btn_Marcar_Viagem"
+        app:layout_constraintTop_toBottomOf="@id/menu_cliente_O_que_pretende" />
 
     <TextView
-        android:id="@+id/txt_Viagens_Marcadas"
+        android:id="@+id/menu_cliente_txt_Viagens_Marcadas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="Viagens Marcadas"
+        android:text="@string/viagens_marcadas"
         android:textColor="#FFFFFF"
         android:textSize="22sp"
-        app:layout_constraintEnd_toStartOf="@+id/bt_Viagens_Marcadas"
+        app:layout_constraintEnd_toStartOf="@id/menu_cliente_bt_Viagens_Marcadas"
         app:layout_constraintHorizontal_bias="0.473"
-        app:layout_constraintStart_toEndOf="@+id/bt_Viagens_Marcadas"
-        app:layout_constraintTop_toBottomOf="@+id/btn_Marcar_Viagem" />
+        app:layout_constraintStart_toEndOf="@id/menu_cliente_bt_Viagens_Marcadas"
+        app:layout_constraintTop_toBottomOf="@id/menu_cliente_btn_Marcar_Viagem" />
 
     <TextView
-        android:id="@+id/txt_Viagens_Efetuadas"
+        android:id="@+id/menu_cliente_txt_Viagens_Efetuadas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:text="@string/ver_viagens_efetuadas"
         android:textColor="#FFFFFF"
         android:textSize="22sp"
-        app:layout_constraintEnd_toStartOf="@+id/btn_Viagens_Efetuadas"
+        app:layout_constraintEnd_toStartOf="@id/menu_cliente_btn_Viagens_Efetuadas"
         app:layout_constraintHorizontal_bias="0.439"
-        app:layout_constraintStart_toEndOf="@+id/btn_Viagens_Efetuadas"
-        app:layout_constraintTop_toBottomOf="@+id/txt_Viagens_Marcadas" />
+        app:layout_constraintStart_toEndOf="@id/menu_cliente_btn_Viagens_Efetuadas"
+        app:layout_constraintTop_toBottomOf="@id/menu_cliente_txt_Viagens_Marcadas" />
 
     <TextView
-        android:id="@+id/txt_Pesquisar_utilizador"
+        android:id="@+id/menu_cliente_txt_Pesquisar_utilizador"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="Pesquisar Utilizador"
+        android:text="@string/pesquisar_utilizador"
         android:textColor="#FFFFFF"
         android:textSize="22sp"
-        app:layout_constraintEnd_toStartOf="@+id/imageView23"
+        app:layout_constraintEnd_toStartOf="@id/menu_cliente_imageView23"
         app:layout_constraintHorizontal_bias="0.461"
-        app:layout_constraintStart_toEndOf="@+id/imageView23"
-        app:layout_constraintTop_toBottomOf="@+id/btn_Viagens_Efetuadas" />
+        app:layout_constraintStart_toEndOf="@id/menu_cliente_imageView23"
+        app:layout_constraintTop_toBottomOf="@id/menu_cliente_btn_Viagens_Efetuadas" />
 
     <ImageView
-        android:id="@+id/user_outer"
+        android:id="@+id/menu_cliente_user_outer"
         android:layout_width="253dp"
         android:layout_height="189dp"
         android:layout_marginTop="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewMenuAmarelo3"
+        app:layout_constraintTop_toBottomOf="@id/menu_cliente_imageViewMenuAmarelo3"
         app:srcCompat="@drawable/caixa_blck" />
 
     <ImageView
-        android:id="@+id/user_Inner"
+        android:id="@+id/menu_cliente_user_Inner"
         android:layout_width="90dp"
         android:layout_height="90dp"
         android:layout_marginTop="107dp"
-        app:layout_constraintEnd_toStartOf="@+id/user_outer"
+        app:layout_constraintEnd_toStartOf="@id/menu_cliente_user_outer"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/user_outer"
+        app:layout_constraintStart_toEndOf="@id/menu_cliente_user_outer"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_launcher_foreground" />
 
     <TextView
-        android:id="@+id/user_Name"
+        android:id="@+id/menu_cliente_user_Name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="User_Nome"
+        android:text="@string/user_nome"
         android:textColor="#FCD100"
         android:textSize="18sp"
-        app:layout_constraintEnd_toStartOf="@+id/user_outer"
-        app:layout_constraintStart_toEndOf="@+id/user_outer"
-        app:layout_constraintTop_toBottomOf="@+id/user_Inner" />
+        app:layout_constraintEnd_toStartOf="@id/menu_cliente_user_outer"
+        app:layout_constraintStart_toEndOf="@id/menu_cliente_user_outer"
+        app:layout_constraintTop_toBottomOf="@id/menu_cliente_user_Inner" />
 
     <TextView
-        android:id="@+id/user_localidade"
+        android:id="@+id/menu_cliente_user_localidade"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:text="User_Localidade"
+        android:text="@string/user_localidade"
         android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toStartOf="@+id/user_outer"
+        app:layout_constraintEnd_toStartOf="@id/menu_cliente_user_outer"
         app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toEndOf="@+id/user_outer"
-        app:layout_constraintTop_toBottomOf="@+id/user_Name" />
+        app:layout_constraintStart_toEndOf="@id/menu_cliente_user_outer"
+        app:layout_constraintTop_toBottomOf="@id/menu_cliente_user_Name" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
