@@ -46,5 +46,12 @@
     <string name="content_description_more">cddm</string>
     <string name="entrada_cliente">Entrada Cliente</string>
     <string name="todo">TODO</string>
+    <string name="user_nome">User_Nome</string>
+    <string name="user_localidade">User_Localidade</string>
+    <string name="pesquisar_utilizador">Pesquisar Utilizador</string>
+    <string name="viagens_marcadas">Viagens Marcadas</string>
+    <string name="marcar_viagem">Marcar Viagem</string>
+
+
 
 </resources>

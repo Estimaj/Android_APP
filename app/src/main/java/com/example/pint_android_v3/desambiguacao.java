@@ -12,19 +12,27 @@ import android.widget.TextView;
 
 public class desambiguacao extends AppCompatActivity {
 
-    Button login;
+    Button login_mun;
+    Button login_mot;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Log.i("oncreate:", "on create");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_desambiguacao);
-        TextView Mail = (EditText) findViewById(R.id.user_login_text_desambiguacao);
-        TextView Password = (EditText) findViewById(R.id.user_password_text_desambiguacao);
-        login = (Button) findViewById(R.id.entrar_desambiguacao);
-        login.setOnClickListener(new View.OnClickListener() {
+        TextView Mail = (EditText) findViewById(R.id.user_login_text);
+        TextView Password = (EditText) findViewById(R.id.user_password_text);
+        login_mun = (Button) findViewById(R.id.entrar3);
+        login_mun.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Menu_Go();
+                Menu_Go_Cliente();
+            }
+        });
+        login_mot = (Button) findViewById(R.id.Entrar_Motorista);
+        login_mot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Menu_Go_Motorista();
             }
         });
 
@@ -40,7 +48,17 @@ public class desambiguacao extends AppCompatActivity {
         }
     }
 
-    public void Menu_Go()
+    public void Menu_Go_Motorista()
+    {
+        Intent Menu_Intent = new Intent(desambiguacao.this, menu_motorista.class);
+        Menu_Intent.putExtra("Localidade", "Viseu");
+        Menu_Intent.putExtra("Nome", "Luis");
+        startActivity(Menu_Intent);
+
+
+    }
+
+    public void Menu_Go_Cliente()
     {
         Intent Menu_Intent_Municipe = new Intent(desambiguacao.this, menu_municipe.class);
         Menu_Intent_Municipe.putExtra("Localidade", "Viseu");
