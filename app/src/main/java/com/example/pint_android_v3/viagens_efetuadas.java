@@ -6,8 +6,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ListAdapter;
+import android.widget.ListView;
 
 public class viagens_efetuadas extends AppCompatActivity {
+    ListView lView;
+    ListAdapter lAdapter;
+    viagens_efetuadas_array_test lItems;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +26,16 @@ public class viagens_efetuadas extends AppCompatActivity {
                 Go_Back();
             }
         });
+
+        lItems = new viagens_efetuadas_array_test();
+        lView = (ListView)findViewById(R.id.viagens_efetuadas_listview);
+        lAdapter = new CustomListAdapter_efetuadas_teste(viagens_efetuadas.this,
+                lItems.data, lItems.tempo, lItems.distancia,
+                lItems.Local_Chegada, lItems.Local_Partida,lItems.hora);
+
+        lView.setAdapter(lAdapter);
+
+
     }
 
     public void Go_Back()

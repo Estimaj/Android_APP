@@ -439,6 +439,8 @@ public class basedados extends SQLiteOpenHelper {
         db.execSQL(tabsc);
         tabsc = "insert into UTILIZADOR values('3','Reun','reun@gmail.com','bola','null', '1','1','1')" ;
         db.execSQL(tabsc);
+        tabsc = "insert into UTILIZADOR values('4','Reun','test','test','null', '1','1','1')" ;
+        db.execSQL(tabsc);
         Log.i("Done", "Valores inseridos");
     }
 

@@ -8,30 +8,24 @@
     tools:context=".viagens_efetuadas">
 
     <!--black bg with a single text-->
+    <ListView
+        android:id="@+id/viagens_efetuadas_listview"
+        android:layout_width="415dp"
+        android:layout_height="518dp"
+        android:layout_marginTop="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bg_big_black_viagens_efetuadas" />
+
     <ImageView
         android:id="@+id/bg_big_black_viagens_efetuadas"
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        app:layout_constraintTop_toTopOf="@id/imageViewMenuAmarelo_viagens_efetuadas"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/bg_black_radius_edges"
-        />
-
-    <TextView
-        android:id="@+id/textView_viagens_efetuadas_content"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Viagens Efetuadas"
-        android:textColor="@color/White"
-        android:textSize="23sp"
-        app:layout_constraintBottom_toBottomOf="@id/bg_big_black_viagens_efetuadas"
-        app:layout_constraintTop_toTopOf="@id/bg_big_black_viagens_efetuadas"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginRight="150dp"
-        android:layout_marginTop="50dp"
-        />
+        app:layout_constraintTop_toTopOf="@+id/imageViewMenuAmarelo_viagens_efetuadas"
+        app:srcCompat="@drawable/bg_black_radius_edges" />
 
 
     <!--Top yellow bar with the muv logo-->
@@ -48,10 +42,10 @@
         android:id="@+id/MUV_icon_viagens_efetuadas"
         android:layout_width="170dp"
         android:layout_height="60dp"
-        app:layout_constraintBottom_toBottomOf="@id/imageViewMenuAmarelo_viagens_efetuadas"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewMenuAmarelo_viagens_efetuadas"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/imageViewMenuAmarelo_viagens_efetuadas"
+        app:layout_constraintTop_toTopOf="@+id/imageViewMenuAmarelo_viagens_efetuadas"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/logo_muv_black"
         tools:ignore="MissingConstraints" />
@@ -63,13 +57,14 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="360dp"
         android:layout_marginBottom="13dp"
-        app:layout_constraintBottom_toBottomOf="@id/imageViewMenuAmarelo_viagens_efetuadas"
+
+        android:background="@drawable/back_menu_black_arrow"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewMenuAmarelo_viagens_efetuadas"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/imageViewMenuAmarelo_viagens_efetuadas"
-        app:layout_constraintVertical_bias="1.0"
-        android:background="@drawable/back_menu_black_arrow"/>
+        app:layout_constraintTop_toTopOf="@+id/imageViewMenuAmarelo_viagens_efetuadas"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/button_hamburguer_slide_menu_viagens_efetuadas"
@@ -77,12 +72,26 @@
         android:layout_height="25dp"
         android:layout_marginLeft="70dp"
         android:layout_marginRight="16dp"
-        app:layout_constraintTop_toTopOf="@id/imageViewMenuAmarelo_viagens_efetuadas"
+        android:background="@drawable/hamburguer_slide_menu"
+        app:layout_constraintBottom_toBottomOf="@id/imageViewMenuAmarelo_viagens_efetuadas"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/MUV_icon_viagens_efetuadas"
-        app:layout_constraintBottom_toBottomOf="@id/imageViewMenuAmarelo_viagens_efetuadas"
-        android:background="@drawable/hamburguer_slide_menu"
-        />
+        app:layout_constraintTop_toTopOf="@id/imageViewMenuAmarelo_viagens_efetuadas" />
+
+    <TextView
+        android:id="@+id/textView_viagens_efetuadas_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="28dp"
+        android:text="Viagens Efetuadas"
+        android:textColor="@color/White"
+        android:textSize="23sp"
+        app:layout_constraintEnd_toStartOf="@+id/bg_big_black_viagens_efetuadas"
+        app:layout_constraintHorizontal_bias="0.683"
+        app:layout_constraintStart_toEndOf="@+id/bg_big_black_viagens_efetuadas"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewMenuAmarelo_viagens_efetuadas" />
+
     <!--End-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
