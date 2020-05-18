@@ -90,7 +90,7 @@
         app:srcCompat="@drawable/clock" />
 
     <ImageView
-        android:id="@+id/imageView_menu_cliente"
+        android:id="@+id/btn_Pesquisar_Utilizador_menu_cliente"
         android:layout_width="330dp"
         android:layout_height="80dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -146,9 +146,9 @@
         android:text="Pesquisar Utilizador"
         android:textColor="#FFFFFF"
         android:textSize="22sp"
-        app:layout_constraintEnd_toStartOf="@id/imageView_menu_cliente"
+        app:layout_constraintEnd_toStartOf="@id/btn_Pesquisar_Utilizador_menu_cliente"
         app:layout_constraintHorizontal_bias="0.461"
-        app:layout_constraintStart_toEndOf="@id/imageView_menu_cliente"
+        app:layout_constraintStart_toEndOf="@id/btn_Pesquisar_Utilizador_menu_cliente"
         app:layout_constraintTop_toBottomOf="@id/btn_Viagens_Efetuadas_menu_cliente" />
 
     <ImageView

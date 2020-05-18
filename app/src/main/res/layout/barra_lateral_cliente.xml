@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/background_barra_lateral_cliente"
+        android:layout_width="245dp"
+        android:layout_height="758dp"
+        android:layout_marginStart="179dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/barra_lat_back" />
+
+    <ImageView
+        android:id="@+id/MUV_Logo_Barra_Lateral_cliente"
+        android:layout_width="186dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="29dp"
+        app:layout_constraintEnd_toStartOf="@+id/background_barra_lateral_cliente"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/background_barra_lateral_cliente"
+        app:layout_constraintTop_toTopOf="@+id/background_barra_lateral_cliente"
+        app:srcCompat="@drawable/ic_logo_muv_yellow" />
+
+    <ImageView
+        android:id="@+id/btn_perfil_barra_lateral_cliente"
+        android:layout_width="230dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="140dp"
+        app:layout_constraintStart_toStartOf="@+id/background_barra_lateral_cliente"
+        app:layout_constraintTop_toTopOf="@+id/background_barra_lateral_cliente"
+        app:srcCompat="@drawable/btn_barra_perfil" />
+
+    <ImageView
+        android:id="@+id/imagem_perfil_barra_lateral_cliente"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toStartOf="@+id/btn_perfil_barra_lateral_cliente"
+        app:layout_constraintHorizontal_bias="0.793"
+        app:layout_constraintStart_toEndOf="@+id/btn_perfil_barra_lateral_cliente"
+        app:layout_constraintTop_toTopOf="@+id/btn_perfil_barra_lateral_cliente"
+        app:srcCompat="@drawable/ic_launcher_foreground" />
+
+    <TextView
+        android:id="@+id/txt_perfil_barra_lateral_cliente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="O Seu Perfil"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/btn_perfil_barra_lateral_cliente"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_perfil_barra_lateral_cliente"
+        app:layout_constraintTop_toTopOf="@+id/btn_perfil_barra_lateral_cliente" />
+
+    <ImageView
+        android:id="@+id/btn_Home_barra_lateral_cliente"
+        android:layout_width="230dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="187dp"
+        app:layout_constraintStart_toStartOf="@+id/background_barra_lateral_cliente"
+        app:layout_constraintTop_toTopOf="@+id/background_barra_lateral_cliente"
+        app:srcCompat="@drawable/btn_barra_perfil" />
+
+    <ImageView
+        android:id="@+id/home_barra_lateral_cliente"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toStartOf="@+id/btn_Home_barra_lateral_cliente"
+        app:layout_constraintHorizontal_bias="0.792"
+        app:layout_constraintStart_toEndOf="@+id/btn_Home_barra_lateral_cliente"
+        app:layout_constraintTop_toTopOf="@+id/btn_Home_barra_lateral_cliente"
+        app:srcCompat="@drawable/home_solid" />
+
+    <TextView
+        android:id="@+id/txt_home_barra_lateral_cliente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Menu Principal"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/btn_Home_barra_lateral_cliente"
+        app:layout_constraintHorizontal_bias="0.465"
+        app:layout_constraintStart_toEndOf="@+id/btn_Home_barra_lateral_cliente"
+        app:layout_constraintTop_toTopOf="@+id/btn_Home_barra_lateral_cliente" />
+
+    <ImageView
+        android:id="@+id/btn_not_barra_lateral_cliente"
+        android:layout_width="230dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="235dp"
+        app:layout_constraintStart_toStartOf="@+id/background_barra_lateral_cliente"
+        app:layout_constraintTop_toTopOf="@+id/background_barra_lateral_cliente"
+        app:srcCompat="@drawable/btn_barra_perfil" />
+
+    <ImageView
+        android:id="@+id/img_not_barra_lateral_cliente"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/btn_not_barra_lateral_cliente"
+        app:layout_constraintHorizontal_bias="0.804"
+        app:layout_constraintStart_toEndOf="@+id/btn_not_barra_lateral_cliente"
+        app:layout_constraintTop_toTopOf="@+id/btn_not_barra_lateral_cliente"
+        app:srcCompat="@drawable/notificacao" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Notificações"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/btn_not_barra_lateral_cliente"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toEndOf="@+id/btn_not_barra_lateral_cliente"
+        app:layout_constraintTop_toTopOf="@+id/btn_not_barra_lateral_cliente" />
+
+    <ImageView
+        android:id="@+id/btn_log_out_barra_lateral_cliente"
+        android:layout_width="230dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/background_barra_lateral_cliente"
+        app:srcCompat="@drawable/btn_barra_perfil" />
+
+    <ImageView
+        android:id="@+id/imageView18"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/btn_log_out_barra_lateral_cliente"
+        app:layout_constraintHorizontal_bias="0.792"
+        app:layout_constraintStart_toEndOf="@+id/btn_log_out_barra_lateral_cliente"
+        app:layout_constraintTop_toTopOf="@+id/btn_log_out_barra_lateral_cliente"
+        app:srcCompat="@drawable/log_out_icon" />
+
+    <TextView
+        android:id="@+id/txt_sair_barra_lateral_cliente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Sair "
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/btn_log_out_barra_lateral_cliente"
+        app:layout_constraintHorizontal_bias="0.611"
+        app:layout_constraintStart_toEndOf="@+id/btn_log_out_barra_lateral_cliente"
+        app:layout_constraintTop_toTopOf="@+id/btn_log_out_barra_lateral_cliente" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

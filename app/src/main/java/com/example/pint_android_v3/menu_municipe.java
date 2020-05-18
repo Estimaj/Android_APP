@@ -4,14 +4,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import java.util.Locale;
 
 public class menu_municipe extends AppCompatActivity {
 
@@ -20,6 +16,7 @@ public class menu_municipe extends AppCompatActivity {
     ImageView btn_Perfil;
     ImageView btn_Marcadas;
     ImageView btn_Efetuadas;
+    ImageView btn_Pesquisar;
 
 
     @Override
@@ -32,6 +29,7 @@ public class menu_municipe extends AppCompatActivity {
         btn_Perfil = (ImageView) findViewById(R.id.user_Inner_menu_cliente);
         btn_Marcadas = (ImageView) findViewById(R.id.bt_Viagens_Marcadas_menu_cliente);
         btn_Efetuadas = (ImageView) findViewById(R.id.btn_Viagens_Efetuadas_menu_cliente);
+        btn_Pesquisar = (ImageView) findViewById(R.id.btn_Pesquisar_Utilizador_menu_cliente);
         btn_Perfil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -50,6 +48,12 @@ public class menu_municipe extends AppCompatActivity {
                 Clicar_Viagens_Marcadas();
             }
         });
+        btn_Pesquisar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Clicar_Pesquisar();
+            }
+        } );
 
         Intent X = getIntent();
         Bundle b = X.getExtras();
@@ -81,6 +85,13 @@ public class menu_municipe extends AppCompatActivity {
     {
         Intent Viagens = new Intent(menu_municipe.this, viagens_efetuadas.class);
         startActivity(Viagens);
+
+    }
+
+    public void Clicar_Pesquisar()
+    {
+        Intent Pesquisar = new Intent(menu_municipe.this, pesquisar_utilizador.class);
+        startActivity(Pesquisar);
 
     }
 
