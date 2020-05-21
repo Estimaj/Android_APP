@@ -1,4 +1,4 @@
-package com.example.pint_android_v3;
+package com.example.pint_android_v3.viagens_efetuadas;
 
 public class viagens_efetuadas_array_test {
 

@@ -1,8 +1,10 @@
-package com.example.pint_android_v3;
+package com.example.pint_android_v3.perfis;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.pint_android_v3.R;
 
 public class perfil_motorista_edit extends AppCompatActivity {
 

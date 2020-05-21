@@ -8,4 +8,9 @@
     <color name="Black">#363332</color>
     <color name="White">#FFFFFF</color>
     <color name="colorDarkGray">#707070</color>
+    <color name="DarkGray">#373433</color>
+    <color name="Menu_LighterDarkGray">#4A4746</color>
+
+
+
 </resources>

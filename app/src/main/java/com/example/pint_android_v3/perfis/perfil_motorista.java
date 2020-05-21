@@ -1,4 +1,4 @@
-package com.example.pint_android_v3;
+package com.example.pint_android_v3.perfis;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.example.pint_android_v3.R;
+import com.example.pint_android_v3.menus.menu_municipe;
 
 public class perfil_motorista extends AppCompatActivity {
 

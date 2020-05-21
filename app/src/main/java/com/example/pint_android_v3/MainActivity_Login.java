@@ -1,5 +1,6 @@
 package com.example.pint_android_v3;
 
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,11 +10,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.pint_android_v3.menus.desambiguacao;
 import com.google.android.material.textfield.TextInputLayout;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity_Login extends AppCompatActivity {
 
 
     TextView Mail;
@@ -30,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        final basedados bd = new basedados(MainActivity.this);
+        final basedados bd = new basedados(MainActivity_Login.this);
         bd.apagar_Tabelas(bd.dbw);
         bd.criar_tabelas(bd.dbw);
         bd.InserirUtilizadoresParaTeste(bd.dbw);
@@ -53,10 +56,10 @@ public class MainActivity extends AppCompatActivity {
     {
 
 
-        basedados bd = new basedados(MainActivity.this);
+        basedados bd = new basedados(MainActivity_Login.this);
         if(bd.confirmarLogin(bd.dbr ,Mail.getText().toString(), Password.getText().toString())){
             Log.i("Sucesso:", "Existe uma conta com esse registo");
-            Intent I = new Intent(MainActivity.this, desambiguacao.class);
+            Intent I = new Intent(MainActivity_Login.this, desambiguacao.class);
             I.putExtra("User_Login", Mail.getText().toString());
             I.putExtra("Password_Login", Password.getText().toString());
             startActivity(I);
@@ -64,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         else{
             Log.i("Errado:", "Não existe uma conta com esse registo");
             int duration = Toast.LENGTH_SHORT;
-            Toast toast = Toast.makeText(MainActivity.this, "Email ou Password Incorreta", duration);
+            Toast toast = Toast.makeText(MainActivity_Login.this, "Email ou Password Incorreta", duration);
             toast.show();}
 
 

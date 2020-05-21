@@ -6,6 +6,7 @@
         <!-- To change the background of options menu-->
         <item name="android:itemBackground">#FFFFFF</item>
 
+
     </style>
 
     <style name="AppTheme.NoActionBar">
@@ -24,6 +25,7 @@
         <!-- <item name="colorAccent">@color/colorAccent</item> -->
         <item name="colorPrimaryDark">#373433</item>
         <item name="colorAccent">#FFD400</item>
+        <item name="android:actionMenuTextColor">@color/Yellow</item>
     </style>
 
     <style name="AppThemeDark" parent="AppTheme">

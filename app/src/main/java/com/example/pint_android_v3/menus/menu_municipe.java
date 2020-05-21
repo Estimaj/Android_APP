@@ -1,4 +1,4 @@
-package com.example.pint_android_v3;
+package com.example.pint_android_v3.menus;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +8,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.pint_android_v3.R;
+import com.example.pint_android_v3.perfis.perfil_motorista;
+import com.example.pint_android_v3.pesquisar_utilizador;
+import com.example.pint_android_v3.viagens_efetuadas.viagens_efetuadas;
+import com.example.pint_android_v3.viagens_marcadas.viagens_marcadas;
 
 public class menu_municipe extends AppCompatActivity {
 

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorLightgray"
-    tools:context=".perfil_motorista">
+    tools:context=".perfis.perfil_motorista">
 
     <ImageView
         android:id="@+id/bg_White_Big_perfil_motorista"
