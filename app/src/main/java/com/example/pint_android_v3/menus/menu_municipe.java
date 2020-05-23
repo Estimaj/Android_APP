@@ -7,15 +7,20 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.example.pint_android_v3.R;
+import com.example.pint_android_v3.barra_lateral_pro;
 import com.example.pint_android_v3.perfis.perfil_motorista;
 import com.example.pint_android_v3.pesquisar_utilizador;
 import com.example.pint_android_v3.viagens_efetuadas.viagens_efetuadas;
 import com.example.pint_android_v3.viagens_marcadas.viagens_marcadas;
+import com.google.android.material.navigation.NavigationView;
 
-public class menu_municipe extends AppCompatActivity {
+public class menu_municipe extends barra_lateral_pro {
 
     TextView Nome;
     TextView Localidade;
@@ -24,12 +29,35 @@ public class menu_municipe extends AppCompatActivity {
     ImageView btn_Efetuadas;
     ImageView btn_Pesquisar;
 
+    private Toolbar toolbar;
+    private DrawerLayout drawerLayout;
+    private NavigationView navigationView;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Log.i("oncreate:", "on create Menu");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu_cliente);
+        toolbar = findViewById(R.id.barra_lateral_toolbar);
+        setSupportActionBar(toolbar);
+
+        drawerLayout = findViewById(R.id.barra_lateral_drawer_layout);
+        navigationView = findViewById(R.id.nav_view_barra);
+
+        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle
+                (this, drawerLayout, toolbar, R.string.openNavDrawer, R.string.closeNavDrawer);
+
+        drawerLayout.addDrawerListener(actionBarDrawerToggle);
+        actionBarDrawerToggle.syncState();
+        navigationView.setNavigationItemSelectedListener(this);
+
+
+
+
+
+
         Nome = (TextView) findViewById(R.id.user_Name_menu_cliente);
         Localidade = (TextView) findViewById(R.id.user_localidade_menu_cliente);
         btn_Perfil = (ImageView) findViewById(R.id.user_Inner_menu_cliente);

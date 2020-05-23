@@ -7,42 +7,7 @@
     android:layout_height="match_parent"
     android:background="#373433">
 
-
-    <ImageView
-        android:id="@+id/imageViewMenuAmarelo_menu_cliente"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/btbg2" />
-
-    <ImageView
-        android:id="@+id/MUV_icon_menu_cliente"
-        android:layout_width="170dp"
-        android:layout_height="60dp"
-        app:layout_constraintBottom_toBottomOf="@id/imageViewMenuAmarelo_menu_cliente"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/imageViewMenuAmarelo_menu_cliente"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/logo_muv_black"
-        tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/button_hamburguer_slide_menu_menu_cliente"
-        android:layout_width="35dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginEnd="70dp"
-        android:layout_marginRight="70dp"
-        app:layout_constraintBottom_toTopOf="@id/imageViewMenuAmarelo_menu_cliente"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.628"
-        app:layout_constraintStart_toEndOf="@id/imageViewMenuAmarelo_menu_cliente"
-        app:layout_constraintTop_toBottomOf="@id/imageViewMenuAmarelo_menu_cliente"
-        app:layout_constraintVertical_bias="0.494"
-        android:background="@drawable/hamburguer_slide_menu"/>
+    <include layout="@layout/barra_lateral_pro" />
 
     <ImageView
         android:id="@+id/btn_Marcar_Viagem_menu_cliente"
@@ -155,10 +120,10 @@
         android:id="@+id/user_outer_menu_cliente"
         android:layout_width="253dp"
         android:layout_height="189dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="85dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imageViewMenuAmarelo_menu_cliente"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/caixa_blck" />
 
     <ImageView

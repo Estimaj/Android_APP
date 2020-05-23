@@ -13,7 +13,6 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.pint_android_v3.menus.desambiguacao;
 import com.google.android.material.textfield.TextInputLayout;
 
 public class MainActivity_Login extends AppCompatActivity {
@@ -34,6 +33,7 @@ public class MainActivity_Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         final basedados bd = new basedados(MainActivity_Login.this);
+
         bd.apagar_Tabelas(bd.dbw);
         bd.criar_tabelas(bd.dbw);
         bd.InserirUtilizadoresParaTeste(bd.dbw);

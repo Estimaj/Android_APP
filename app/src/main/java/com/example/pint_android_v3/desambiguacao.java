@@ -1,4 +1,4 @@
-package com.example.pint_android_v3.menus;
+package com.example.pint_android_v3;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,7 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.pint_android_v3.R;
+import com.example.pint_android_v3.menus.menu_motorista;
+import com.example.pint_android_v3.menus.menu_municipe;
 
 public class desambiguacao extends AppCompatActivity {
 
