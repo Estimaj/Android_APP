@@ -28,6 +28,8 @@
         <activity android:name=".menus.menu_motorista" />
         <activity android:name=".pesquisar_utilizador" />
         <activity android:name=".barra_lateral_pro"/>
+        <activity android:name=".perfis.perfil_cliente"/>
+        <activity android:name=".perfis.perfil_cliente_edit"/>
     </application>
 
 </manifest>

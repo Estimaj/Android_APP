@@ -11,10 +11,11 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.pint_android_v3.R;
+import com.example.pint_android_v3.barra_lateral_pro;
 import com.example.pint_android_v3.menus.menu_municipe;
 import com.google.android.material.navigation.NavigationView;
 
-public class perfil_motorista extends AppCompatActivity {
+public class perfil_cliente extends barra_lateral_pro {
 
     private Toolbar toolbar;
     private DrawerLayout drawerLayout;
@@ -24,8 +25,8 @@ public class perfil_motorista extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil_motorista);
-       // Button X = (Button) findViewById(R.id.button_back_arrow_black_perfil_motorista);
-       /* X.setOnClickListener(new View.OnClickListener() {
+        /*Button X = (Button) findViewById(R.id.button_back_arrow_black_perfil_motorista);
+        X.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Go_Back();
@@ -40,11 +41,12 @@ public class perfil_motorista extends AppCompatActivity {
             Nome.setText(j);
 
         }
+        Bar_Settings();
     }
 
     public void Go_Back()
     {
-        Intent GO = new Intent(perfil_motorista.this, menu_municipe.class);
+        Intent GO = new Intent(perfil_cliente.this, menu_municipe.class);
         startActivity(GO);
 
     }

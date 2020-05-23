@@ -25,18 +25,7 @@ public class pesquisar_utilizador extends barra_lateral_pro {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pesquisar_utilizador);
 
-        toolbar = findViewById(R.id.barra_lateral_toolbar);
-        setSupportActionBar(toolbar);
-
-        drawerLayout = findViewById(R.id.barra_lateral_drawer_layout);
-        navigationView = findViewById(R.id.nav_view_barra);
-
-        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle
-                (this, drawerLayout, toolbar, R.string.openNavDrawer, R.string.closeNavDrawer);
-
-        drawerLayout.addDrawerListener(actionBarDrawerToggle);
-        actionBarDrawerToggle.syncState();
-        navigationView.setNavigationItemSelectedListener(this);
+       Bar_Settings();
 
 
 

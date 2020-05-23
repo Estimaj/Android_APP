@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="Opções de Viagem">
+    <item android:title="Opções de Viagem" android:id="@+id/op_menu_cliente_barra">
 
         <menu>
             <item android:title="Perfil" android:icon="@drawable/ic_user_solid" android:iconTint="@color/Yellow" android:id="@+id/User_btn_menu"/>
@@ -12,7 +12,7 @@
     </item>
 
 
-    <item android:title="Sair">
+    <item android:title="Sair" android:id="@+id/sair_menu_cliente_barra">
 
         <menu>
             <item android:title="LogOut" android:icon="@drawable/log_out_icon" android:iconTint="@color/Yellow"
