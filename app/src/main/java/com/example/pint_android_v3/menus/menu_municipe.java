@@ -17,6 +17,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.example.pint_android_v3.R;
 import com.example.pint_android_v3.barra_lateral_pro;
+import com.example.pint_android_v3.marcar_viagem;
 import com.example.pint_android_v3.perfis.perfil_cliente;
 import com.example.pint_android_v3.perfis.perfil_motorista;
 import com.example.pint_android_v3.pesquisar_utilizador;
@@ -34,6 +35,7 @@ public class menu_municipe extends barra_lateral_pro {
     ImageView btn_Marcadas;
     ImageView btn_Efetuadas;
     ImageView btn_Pesquisar;
+    ImageView btn_Marcar_Viagem;
 
     private Toolbar toolbar;
     private DrawerLayout drawerLayout;
@@ -55,6 +57,7 @@ public class menu_municipe extends barra_lateral_pro {
         btn_Marcadas = (ImageView) findViewById(R.id.bt_Viagens_Marcadas_menu_cliente);
         btn_Efetuadas = (ImageView) findViewById(R.id.btn_Viagens_Efetuadas_menu_cliente);
         btn_Pesquisar = (ImageView) findViewById(R.id.btn_Pesquisar_Utilizador_menu_cliente);
+        btn_Marcar_Viagem = (ImageView) findViewById(R.id.btn_Marcar_Viagem_menu_cliente);
         btn_Perfil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -79,6 +82,12 @@ public class menu_municipe extends barra_lateral_pro {
                 Clicar_Pesquisar();
             }
         } );
+        btn_Marcar_Viagem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Clicar_Marcar_Viagem();
+            }
+        });
 
         Intent X = getIntent();
         Bundle b = X.getExtras();
@@ -119,5 +128,12 @@ public class menu_municipe extends barra_lateral_pro {
         startActivity(Pesquisar);
 
     }
+    public void Clicar_Marcar_Viagem()
+    {
+        Intent Marcar = new Intent(menu_municipe.this, marcar_viagem.class);
+        startActivity(Marcar);
+
+    }
+
 
 }

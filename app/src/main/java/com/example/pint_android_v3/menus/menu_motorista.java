@@ -43,6 +43,7 @@ public class menu_motorista extends AppCompatActivity {
             j = (String) b.get("Localidade");
             Localidade.setText(j);
         }
+
     }
 
 

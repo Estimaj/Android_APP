@@ -31,6 +31,12 @@
         app:srcCompat="@drawable/bg_black_radius_edges"
         tools:ignore="MissingConstraints" />
 
+    <include
+        layout="@layout/barra_lateral_pro"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <!--Top yellow bar with the muv logo-->
 
     <ImageView
@@ -346,11 +352,5 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@id/bg_black_perfil_motorista"
         app:layout_constraintTop_toBottomOf="@id/gray_circle_foto_perfil_motorista" />
-
-    <include
-        layout="@layout/barra_lateral_pro"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

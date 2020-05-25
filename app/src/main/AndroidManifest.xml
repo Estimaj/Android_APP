@@ -30,6 +30,7 @@
         <activity android:name=".barra_lateral_pro"/>
         <activity android:name=".perfis.perfil_cliente"/>
         <activity android:name=".perfis.perfil_cliente_edit"/>
+        <activity android:name=".marcar_viagem"/>
     </application>
 
 </manifest>

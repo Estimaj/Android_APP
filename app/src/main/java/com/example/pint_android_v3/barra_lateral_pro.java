@@ -4,8 +4,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.style.TextAppearanceSpan;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -66,6 +68,10 @@ public class barra_lateral_pro extends AppCompatActivity implements NavigationVi
 
     }
 
+
+
+
+
     public void Bar_Settings()
     {
         toolbar = findViewById(R.id.barra_lateral_toolbar);
@@ -93,6 +99,7 @@ public class barra_lateral_pro extends AppCompatActivity implements NavigationVi
 
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
+
         navigationView.setNavigationItemSelectedListener(this);
 
 
