@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.pint_android_v3.menus.menu_municipe;
 import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.HashMap;
@@ -21,8 +22,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class MainActivity extends AppCompatActivity {
-
+public class MainActivity_Login extends AppCompatActivity {
 
     private Retrofit retrofit;
     private BaseDadosInterface baseDadosInterface;
@@ -42,15 +42,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        final basedados bd = new basedados(MainActivity.this);
-        bd.apagar_Tabelas(bd.dbw);
-        bd.criar_tabelas(bd.dbw);
-        bd.InserirUtilizadoresParaTeste(bd.dbw);
-        Mail = (EditText) findViewById(R.id.user_login_text_MainActivity);
-        Password = (EditText) findViewById(R.id.user_password_text_MainActivity);
-        emailError = (TextInputLayout)findViewById(R.id.User_BOX_MainActivity);
-        passError = (TextInputLayout)findViewById(R.id.Pass_BOX_MainActivity);
-        login = (Button) findViewById(R.id.Entrar_Motorista_MainActivity);
+        Mail = findViewById(R.id.user_login_text_MainActivity);
+        Password = findViewById(R.id.user_password_text_MainActivity);
+        emailError = findViewById(R.id.User_BOX_MainActivity);
+        passError = findViewById(R.id.Pass_BOX_MainActivity);
+        login = findViewById(R.id.Entrar_Motorista_MainActivity);
 
         retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
@@ -78,36 +74,31 @@ public class MainActivity extends AppCompatActivity {
 
         Call<Post> call = baseDadosInterface.executeLogin(map);
 
-        //Log.i("info_AQUI", "ja fiz login com :" + map.values().toString());
-
         call.enqueue(new Callback<Post>() {
             @Override
             public void onResponse(Call<Post> call, Response<Post> response) {
-                //response vai ser um obj que contem os campos do Post
+                //response vai ser um obj do tipo Post logo contem os campos do Post
                 if(!response.isSuccessful()){
-                    Toast.makeText(MainActivity.this, "Code: " + response.code(),
-                            Toast.LENGTH_LONG).show();
+                    makeToastForMain("Credenciais Erradas");
                     return;
                 }
                 if(response.code() == 200) {
-                    Log.i("AQUI", "Entrei aqui");
                     int tipo = response.body().getTipo();
                     switch (tipo) {
                         case 5:{ //cidadao
-                            Intent I_c = new Intent(MainActivity.this, menu_municipe.class);
+                            Intent I_c = new Intent(MainActivity_Login.this, menu_municipe.class);
                             startActivity(I_c);
                             break;
                         }
                         case 6:{ //motorista
-                            Intent I = new Intent(MainActivity.this, desambiguacao.class);
+                            Intent I = new Intent(MainActivity_Login.this, desambiguacao.class);
                             I.putExtra("User_Login", Mail.getText().toString());
                             I.putExtra("Password_Login", Password.getText().toString());
                             startActivity(I);
                             break;
                         }
                         default:{
-                            Toast.makeText(MainActivity.this, "Erro no tipo de utilizador, registo mal efetuado!",
-                                    Toast.LENGTH_LONG).show();
+                            makeToastForMain("Erro no tipo de utilizador, registo mal efetuado!");
                             Log.i("Tipo_Utilizador", ": " + tipo);
                         }
 
@@ -115,14 +106,13 @@ public class MainActivity extends AppCompatActivity {
 
                 }
                 else if(response.code() == 404){
-                    Toast.makeText(MainActivity.this, "Code: " + response.code(),
-                            Toast.LENGTH_LONG).show();
+                    makeToastForMain("Code: " + response.code());
                 }
             }
 
             @Override
             public void onFailure(Call<Post> call, Throwable t) {
-                Toast.makeText(MainActivity.this, "onFailure ln97: "+ t.getMessage(),
+                Toast.makeText(MainActivity_Login.this, "onFailure ln97: "+ t.getMessage(),
                         Toast.LENGTH_LONG).show();
             }
         });
@@ -156,5 +146,10 @@ public class MainActivity extends AppCompatActivity {
             Login_Start();
 
         }
+    }
+
+    public void makeToastForMain(String msg){
+        Toast.makeText(MainActivity_Login.this, msg,
+                Toast.LENGTH_LONG).show();
     }
 }
