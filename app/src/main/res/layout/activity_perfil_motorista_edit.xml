@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorLightgray"
-    tools:context=".perfil_motorista_edit">
+    tools:context=".perfis.perfil_motorista_edit">
 
     <ImageView
         android:id="@+id/bg_White_Big_perfil_motorista_edit"
@@ -31,54 +31,7 @@
         tools:ignore="MissingConstraints" />
 
     <!--Top yellow bar with the muv logo-->
-    <ImageView
-        android:id="@+id/imageViewMenuAmarelo_perfil_motorista_edit"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/btbg2" />
 
-    <ImageView
-        android:id="@+id/MUV_icon_perfil_motorista_edit"
-        android:layout_width="170dp"
-        android:layout_height="60dp"
-        app:layout_constraintBottom_toBottomOf="@id/imageViewMenuAmarelo_perfil_motorista_edit"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/imageViewMenuAmarelo_perfil_motorista_edit"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/logo_muv_black"
-        tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/button_back_arrow_black_perfil_motorista_edit"
-        android:layout_width="34dp"
-        android:layout_height="34dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="360dp"
-        android:layout_marginBottom="13dp"
-        app:layout_constraintBottom_toBottomOf="@id/imageViewMenuAmarelo_perfil_motorista_edit"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/imageViewMenuAmarelo_perfil_motorista_edit"
-        app:layout_constraintVertical_bias="1.0"
-        android:background="@drawable/back_menu_black_arrow"/>
-
-    <Button
-        android:id="@+id/button_hamburguer_slide_menu_perfil_motorista_edit"
-        android:layout_width="35dp"
-        android:layout_height="25dp"
-        android:layout_marginLeft="70dp"
-        android:layout_marginRight="16dp"
-        app:layout_constraintTop_toTopOf="@id/imageViewMenuAmarelo_perfil_motorista_edit"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/MUV_icon_perfil_motorista_edit"
-        app:layout_constraintBottom_toBottomOf="@id/imageViewMenuAmarelo_perfil_motorista_edit"
-        android:background="@drawable/hamburguer_slide_menu"
-        />
     <!--End-->
     <!--Black zone with the user foto-->
 
@@ -459,5 +412,8 @@
         android:layout_marginLeft="265dp"
         android:background="@drawable/edit_solid_black_perfil_motorista_edit"
         />
+
+    <include
+        layout="@layout/barra_lateral_pro" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

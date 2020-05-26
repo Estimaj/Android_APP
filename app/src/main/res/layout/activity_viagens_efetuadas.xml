@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorLightgray"
-    tools:context=".viagens_efetuadas">
+    tools:context=".viagens_efetuadas.viagens_efetuadas">
 
     <!--black bg with a single text-->
     <ListView

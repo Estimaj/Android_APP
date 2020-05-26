@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".MainActivity_Login"
     android:background="@color/Black">
 
     <ImageView
@@ -111,10 +111,12 @@
         android:layout_marginStart="105dp"
         android:layout_marginEnd="106dp"
         android:layout_marginBottom="124dp"
-        android:background="#FFD400"
+        android:background="@drawable/button_login_entrar"
         android:text="@string/entrar"
         android:textColor="#373433"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,27 +5,30 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.TextView;
 
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
 
-import com.google.android.material.textfield.TextInputLayout;
+import com.example.pint_android_v3.menus.menu_municipe;
+import com.google.android.material.navigation.NavigationView;
 
-public class pesquisar_utilizador extends AppCompatActivity {
+public class pesquisar_utilizador extends barra_lateral_pro {
+
+    private Toolbar toolbar;
+    private DrawerLayout drawerLayout;
+    private NavigationView navigationView;
 
     protected void onCreate(Bundle savedInstanceState) {
         Log.i("oncreate:", "on create pesquisa utilizador");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pesquisar_utilizador);
-        Button X = (Button) findViewById(R.id.button_back_arrow_black_pesquisar_utilizador);
-        X.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Go_Back();
-            }
-        });
+
+       Bar_Settings();
+
+
+
 
     }
 

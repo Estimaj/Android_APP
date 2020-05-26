@@ -1,6 +1,8 @@
-package com.example.pint_android_v3;
+package com.example.pint_android_v3.perfis;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,20 +10,27 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.pint_android_v3.R;
+import com.example.pint_android_v3.menus.menu_municipe;
+import com.google.android.material.navigation.NavigationView;
+
 public class perfil_motorista extends AppCompatActivity {
 
+    private Toolbar toolbar;
+    private DrawerLayout drawerLayout;
+    private NavigationView navigationView;
     TextView Nome;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil_motorista);
-        Button X = (Button) findViewById(R.id.button_back_arrow_black_perfil_motorista);
-        X.setOnClickListener(new View.OnClickListener() {
+       // Button X = (Button) findViewById(R.id.button_back_arrow_black_perfil_motorista);
+       /* X.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Go_Back();
             }
-        });
+        });*/
         Intent I = getIntent();
         Bundle b = I.getExtras();
         Nome = (TextView) findViewById(R.id.User_Name);

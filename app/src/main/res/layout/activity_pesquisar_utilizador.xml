@@ -15,54 +15,17 @@
         app:layout_constraintTop_toTopOf="@+id/imageViewMenuAmarelo_viagens_efetuadas"
         app:srcCompat="@drawable/bg_black_radius_edges" />
 
-    <ImageView
-        android:id="@+id/imageViewMenuAmarelo_pesquisar_utilizador"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/btbg2" />
-
-    <Button
-        android:id="@+id/button_back_arrow_black_pesquisar_utilizador"
-        android:layout_width="34dp"
-        android:layout_height="34dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="13dp"
-        android:layout_marginRight="360dp"
-
-        android:layout_marginBottom="13dp"
-        android:background="@drawable/back_menu_black_arrow"
-        app:layout_constraintBottom_toBottomOf="@+id/imageViewMenuAmarelo_viagens_efetuadas"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.042"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/button_hamburguer_slide_menu_pesquisar_utilizador"
-        android:layout_width="35dp"
-        android:layout_height="25dp"
-        android:layout_marginLeft="70dp"
-        android:layout_marginRight="16dp"
-        android:background="@drawable/hamburguer_slide_menu"
-        app:layout_constraintBottom_toBottomOf="@id/imageViewMenuAmarelo_pesquisar_utilizador"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/MUV_icon_pesquisar_utilizador"
-        app:layout_constraintTop_toTopOf="@id/imageViewMenuAmarelo_pesquisar_utilizador" />
-
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/search_box_pesquisar_utilizador"
         android:layout_width="338dp"
         android:layout_height="61dp"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="135dp"
         android:background="#FFFFFF"
         app:hintTextColor="#373433"
         app:layout_constraintEnd_toStartOf="@+id/bg_big_black_pesquisar_utilizador"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/bg_big_black_pesquisar_utilizador"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewMenuAmarelo_pesquisar_utilizador"
+        app:layout_constraintTop_toTopOf="@+id/bg_big_black_pesquisar_utilizador"
         app:startIconContentDescription="search_Icon"
         app:startIconDrawable="@drawable/seach_icon">
 
@@ -76,29 +39,20 @@
             android:textColorHint="#FFD400" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <ImageView
-        android:id="@+id/MUV_icon_pesquisar_utilizador"
-        android:layout_width="170dp"
-        android:layout_height="60dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageViewMenuAmarelo_viagens_efetuadas"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageViewMenuAmarelo_viagens_efetuadas"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/logo_muv_black" />
-
     <TextView
         android:id="@+id/textView_nome_pesquisar_utilizador"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="140dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="88dp"
         android:text="@string/pesquisar_utilizador"
         android:textColor="@color/White"
         android:textSize="23sp"
         app:layout_constraintEnd_toStartOf="@+id/bg_big_black_pesquisar_utilizador"
         app:layout_constraintHorizontal_bias="0.683"
         app:layout_constraintStart_toEndOf="@+id/bg_big_black_pesquisar_utilizador"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewMenuAmarelo_pesquisar_utilizador" />
+        app:layout_constraintTop_toTopOf="@+id/bg_big_black_pesquisar_utilizador" />
+
+    <include layout="@layout/barra_lateral_pro"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

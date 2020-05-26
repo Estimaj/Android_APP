@@ -1,4 +1,4 @@
-package com.example.pint_android_v3;
+package com.example.pint_android_v3.viagens_efetuadas;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.pint_android_v3.R;
 
 public class CustomListAdapter_efetuadas_teste extends BaseAdapter {
 

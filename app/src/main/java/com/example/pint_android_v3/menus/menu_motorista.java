@@ -1,4 +1,4 @@
-package com.example.pint_android_v3;
+package com.example.pint_android_v3.menus;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +10,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.pint_android_v3.R;
 
 import java.util.Locale;
 
@@ -41,6 +43,7 @@ public class menu_motorista extends AppCompatActivity {
             j = (String) b.get("Localidade");
             Localidade.setText(j);
         }
+
     }
 
 
