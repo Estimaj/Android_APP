@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorLightgray"
+    tools:context=".notificacoes_mais_info">
+
+    <!--
+    Era bue porreiro adicionar o notificacoes_adapter do qual carregamos 'mais info',
+    havia menos codigo e menos uma ida a base de dados
+    -->
+
+    <!--Detalhes da alteração do preço-->
+    <ImageView
+        android:id="@+id/bg_white_alteracao_preco_notificacoes_mais_info"
+        android:layout_width="match_parent"
+        android:layout_height="135dp"
+        app:layout_constraintTop_toBottomOf="@id/bg_white_viagem_afetada_notificacoes_mais_info"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"
+        android:background="@color/white_gray"
+        />
+
+    <TextView
+        android:id="@+id/textView_alteracao_preco_notificacoes_mais_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Alteração do Preço:"
+        android:textStyle="bold"
+        android:textColor="@color/Black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/bg_white_alteracao_preco_notificacoes_mais_info"
+        />
+
+    <!--Preco antigo-->
+    <ImageView
+        android:id="@+id/bg_preco_antigo_alteracao_preco_notificacoes_mais_info"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        app:layout_constraintTop_toBottomOf="@id/textView_alteracao_preco_notificacoes_mais_info"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="10dp"
+        android:background="@color/White"
+        />
+
+    <ImageView
+        android:id="@+id/euro_money_icon_alteracao_preco_notificacoes_mais_info"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        app:layout_constraintTop_toTopOf="@id/bg_preco_antigo_alteracao_preco_notificacoes_mais_info"
+        app:layout_constraintBottom_toBottomOf="@id/bg_preco_antigo_alteracao_preco_notificacoes_mais_info"
+        app:layout_constraintStart_toStartOf="@id/bg_preco_antigo_alteracao_preco_notificacoes_mais_info"
+        android:layout_margin="15dp"
+        app:srcCompat="@drawable/euro_money_icon"
+        />
+
+    <TextView
+        android:id="@+id/textView_preco_antigo_alteracao_preco_notificacoes_mais_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/bg_preco_antigo_alteracao_preco_notificacoes_mais_info"
+        app:layout_constraintStart_toEndOf="@id/euro_money_icon_alteracao_preco_notificacoes_mais_info"
+        android:text="Preço Antigo"
+        android:textColor="@color/Black"
+        android:textStyle="bold"
+        android:layout_marginTop="1dp"
+        android:layout_marginLeft="10dp"
+        />
+
+    <TextView
+        android:id="@+id/custo_user_preco_antigo_alteracao_preco_notificacoes_mais_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/textView_preco_antigo_alteracao_preco_notificacoes_mais_info"
+        app:layout_constraintStart_toStartOf="@id/textView_preco_antigo_alteracao_preco_notificacoes_mais_info"
+        android:text="5 €"
+        />
+    <!--Preco atual-->
+    <ImageView
+        android:id="@+id/bg_preco_atual_alteracao_preco_notificacoes_mais_info"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        app:layout_constraintTop_toBottomOf="@id/bg_preco_antigo_alteracao_preco_notificacoes_mais_info"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="10dp"
+        android:background="@color/White"
+        />
+
+    <ImageView
+        android:id="@+id/euro_money_icon_atual_alteracao_preco_notificacoes_mais_info"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        app:layout_constraintTop_toTopOf="@id/bg_preco_atual_alteracao_preco_notificacoes_mais_info"
+        app:layout_constraintBottom_toBottomOf="@id/bg_preco_atual_alteracao_preco_notificacoes_mais_info"
+        app:layout_constraintStart_toStartOf="@id/bg_preco_atual_alteracao_preco_notificacoes_mais_info"
+        android:layout_margin="15dp"
+        app:srcCompat="@drawable/euro_money_icon"
+        />
+
+    <TextView
+        android:id="@+id/textView_preco_atual_alteracao_preco_notificacoes_mais_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/bg_preco_atual_alteracao_preco_notificacoes_mais_info"
+        app:layout_constraintStart_toEndOf="@id/euro_money_icon_atual_alteracao_preco_notificacoes_mais_info"
+        android:text="Preço Atual"
+        android:textColor="@color/Black"
+        android:textStyle="bold"
+        android:layout_marginTop="1dp"
+        android:layout_marginLeft="10dp"
+        />
+
+    <TextView
+        android:id="@+id/custo_user_preco_atual_alteracao_preco_notificacoes_mais_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/textView_preco_atual_alteracao_preco_notificacoes_mais_info"
+        app:layout_constraintStart_toStartOf="@id/textView_preco_atual_alteracao_preco_notificacoes_mais_info"
+        android:text="3 €"
+        />
+
+    <!--Mais informação da viagem afetada-->
+    <ImageView
+        android:id="@+id/bg_white_viagem_afetada_notificacoes_mais_info"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        app:layout_constraintTop_toBottomOf="@id/bg_white_with_notificacao_msg_notificacoes_mais_info"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"
+        android:background="@color/white_gray"
+        />
+
+    <TextView
+        android:id="@+id/textView_viagem_afetada_notificacoes_mais_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Detalhes da viagem afetada:"
+        android:textStyle="bold"
+        android:textColor="@color/Black"
+        android:textSize="14sp"
+        app:layout_constraintTop_toTopOf="@id/bg_white_viagem_afetada_notificacoes_mais_info"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="10dp"
+        />
+
+    <!--Origem-->
+    <ImageView
+        android:id="@+id/origem_viagem_afetada_notificacoes_mais_info"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:layout_constraintTop_toBottomOf="@id/textView_viagem_afetada_notificacoes_mais_info"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="10dp"
+        android:background="@color/White"
+        />
+
+    <ImageView
+        android:id="@+id/icon_marker_origem_viagem_afetada_notificacoes_mais_info"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        app:layout_constraintTop_toTopOf="@id/origem_viagem_afetada_notificacoes_mais_info"
+        app:layout_constraintBottom_toBottomOf="@id/origem_viagem_afetada_notificacoes_mais_info"
+        app:layout_constraintStart_toStartOf="@id/origem_viagem_afetada_notificacoes_mais_info"
+        android:layout_margin="20dp"
+        app:srcCompat="@drawable/marker_icon"
+        />
+
+    <TextView
+        android:id="@+id/textView_origem_viagem_afetada_notificacoes_mais_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/origem_viagem_afetada_notificacoes_mais_info"
+        app:layout_constraintStart_toEndOf="@id/icon_marker_origem_viagem_afetada_notificacoes_mais_info"
+        android:text="Origem"
+        android:textColor="@color/Black"
+        android:textStyle="bold"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        />
+
+    <TextView
+        android:id="@+id/local_user_textView_origem_viagem_afetada_notificacoes_mais_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/textView_origem_viagem_afetada_notificacoes_mais_info"
+        app:layout_constraintStart_toStartOf="@id/textView_origem_viagem_afetada_notificacoes_mais_info"
+        android:text="Póvoa de Calde"
+        />
+    <!--Destino-->
+    <ImageView
+        android:id="@+id/destino_viagem_afetada_notificacoes_mais_info"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:layout_constraintTop_toBottomOf="@id/origem_viagem_afetada_notificacoes_mais_info"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="10dp"
+        android:background="@color/White"
+        />
+
+    <ImageView
+        android:id="@+id/icon_marker_destino_viagem_afetada_notificacoes_mais_info"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        app:layout_constraintTop_toTopOf="@id/destino_viagem_afetada_notificacoes_mais_info"
+        app:layout_constraintBottom_toBottomOf="@id/destino_viagem_afetada_notificacoes_mais_info"
+        app:layout_constraintStart_toStartOf="@id/destino_viagem_afetada_notificacoes_mais_info"
+        android:layout_margin="20dp"
+        app:srcCompat="@drawable/marker_icon_solid"
+        />
+
+    <TextView
+        android:id="@+id/textView_destino_viagem_afetada_notificacoes_mais_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/destino_viagem_afetada_notificacoes_mais_info"
+        app:layout_constraintStart_toEndOf="@id/icon_marker_destino_viagem_afetada_notificacoes_mais_info"
+        android:text="Destino"
+        android:textColor="@color/Black"
+        android:textStyle="bold"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        />
+
+    <TextView
+        android:id="@+id/local_user_textView_destino_viagem_afetada_notificacoes_mais_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/textView_destino_viagem_afetada_notificacoes_mais_info"
+        app:layout_constraintStart_toStartOf="@id/textView_destino_viagem_afetada_notificacoes_mais_info"
+        android:text="Centro de Camionagem"
+        />
+    <!--Hora-->
+    <ImageView
+        android:id="@+id/hora_viagem_afetada_notificacoes_mais_info"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:layout_constraintTop_toBottomOf="@id/destino_viagem_afetada_notificacoes_mais_info"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="10dp"
+        android:background="@color/White"
+        />
+
+    <ImageView
+        android:id="@+id/clock_icon_hora_viagem_afetada_notificacoes_mais_info"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        app:layout_constraintTop_toTopOf="@id/hora_viagem_afetada_notificacoes_mais_info"
+        app:layout_constraintBottom_toBottomOf="@id/hora_viagem_afetada_notificacoes_mais_info"
+        app:layout_constraintStart_toStartOf="@id/hora_viagem_afetada_notificacoes_mais_info"
+        android:layout_margin="20dp"
+        app:srcCompat="@drawable/clock_marcar_viagem"
+        />
+
+    <TextView
+        android:id="@+id/textView_hora_viagem_afetada_notificacoes_mais_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/hora_viagem_afetada_notificacoes_mais_info"
+        app:layout_constraintStart_toEndOf="@id/clock_icon_hora_viagem_afetada_notificacoes_mais_info"
+        android:text="Hora"
+        android:textColor="@color/Black"
+        android:textStyle="bold"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        />
+
+    <TextView
+        android:id="@+id/local_user_textView_hora_viagem_afetada_notificacoes_mais_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/textView_hora_viagem_afetada_notificacoes_mais_info"
+        app:layout_constraintStart_toStartOf="@id/textView_hora_viagem_afetada_notificacoes_mais_info"
+        android:text="16:00h"
+        />
+
+    <!--Dia-->
+    <ImageView
+        android:id="@+id/dia_viagem_afetada_notificacoes_mais_info"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:layout_constraintTop_toBottomOf="@id/hora_viagem_afetada_notificacoes_mais_info"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="10dp"
+        android:background="@color/White"
+        />
+
+    <ImageView
+        android:id="@+id/agenda_icon_dia_viagem_afetada_notificacoes_mais_info"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        app:layout_constraintTop_toTopOf="@id/dia_viagem_afetada_notificacoes_mais_info"
+        app:layout_constraintBottom_toBottomOf="@id/dia_viagem_afetada_notificacoes_mais_info"
+        app:layout_constraintStart_toStartOf="@id/dia_viagem_afetada_notificacoes_mais_info"
+        android:layout_margin="20dp"
+        app:srcCompat="@drawable/agenda_marcar_viagem"
+        />
+
+    <TextView
+        android:id="@+id/textView_dia_viagem_afetada_notificacoes_mais_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/dia_viagem_afetada_notificacoes_mais_info"
+        app:layout_constraintStart_toEndOf="@id/agenda_icon_dia_viagem_afetada_notificacoes_mais_info"
+        android:text="Dia"
+        android:textColor="@color/Black"
+        android:textStyle="bold"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        />
+
+    <TextView
+        android:id="@+id/local_user_textView_dia_viagem_afetada_notificacoes_mais_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/textView_dia_viagem_afetada_notificacoes_mais_info"
+        app:layout_constraintStart_toStartOf="@id/textView_dia_viagem_afetada_notificacoes_mais_info"
+        android:text="16/02/2020"
+        />
+    <!--Taxa Desconto-->
+    <ImageView
+        android:id="@+id/taxa_desconto_viagem_afetada_notificacoes_mais_info"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:layout_constraintTop_toBottomOf="@id/dia_viagem_afetada_notificacoes_mais_info"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="10dp"
+        android:background="@color/White"
+        />
+
+    <ImageView
+        android:id="@+id/euro_simbolo_icon_taxa_desconto_viagem_afetada_notificacoes_mais_info"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        app:layout_constraintTop_toTopOf="@id/taxa_desconto_viagem_afetada_notificacoes_mais_info"
+        app:layout_constraintBottom_toBottomOf="@id/taxa_desconto_viagem_afetada_notificacoes_mais_info"
+        app:layout_constraintStart_toStartOf="@id/taxa_desconto_viagem_afetada_notificacoes_mais_info"
+        android:layout_margin="20dp"
+        app:srcCompat="@drawable/euro_simbolo_icon"
+        />
+
+    <TextView
+        android:id="@+id/textView_taxa_desconto_viagem_afetada_notificacoes_mais_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/taxa_desconto_viagem_afetada_notificacoes_mais_info"
+        app:layout_constraintStart_toEndOf="@id/euro_simbolo_icon_taxa_desconto_viagem_afetada_notificacoes_mais_info"
+        android:text="Taxa de Desconto"
+        android:textColor="@color/Black"
+        android:textStyle="bold"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        />
+
+    <TextView
+        android:id="@+id/local_user_textView_taxa_desconto_viagem_afetada_notificacoes_mais_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/textView_taxa_desconto_viagem_afetada_notificacoes_mais_info"
+        app:layout_constraintStart_toStartOf="@id/textView_taxa_desconto_viagem_afetada_notificacoes_mais_info"
+        android:text="3 €"
+        />
+    <!--Notificação da atividade anterior-->
+    <ImageView
+        android:id="@+id/bg_white_with_notificacao_msg_notificacoes_mais_info"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/white_gray"
+        />
+
+    <!--Black notificacao bg-->
+    <ImageView
+        android:id="@+id/bg_black_notificacoes_mais_info"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="5dp"
+        app:srcCompat="@drawable/bg_black_radius_edges"
+        />
+
+    <TextView
+        android:id="@+id/textView_on_black_bg_notificacoes_mais_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/bg_black_notificacoes_mais_info"
+        app:layout_constraintBottom_toBottomOf="@id/bg_black_notificacoes_mais_info"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginRight="100dp"
+        android:layout_marginTop="45dp"
+        android:text="Notificações - Informação"
+        android:textColor="@color/White"
+        android:textSize="20sp"
+        />
+    <!--Barra Amarela-->
+    <include layout="@layout/barra_lateral_pro"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
