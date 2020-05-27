@@ -51,13 +51,9 @@
     <string name="pesquisar_utilizador">Pesquisar Utilizador</string>
     <string name="viagens_marcadas">Viagens Marcadas</string>
     <string name="marcar_viagem">Marcar Viagem</string>
-    
+
     <string name="openNavDrawer">Menu Open</string>
     <string name="closeNavDrawer">Menu Close</string>
-
-
-
-
 
 
 </resources>
