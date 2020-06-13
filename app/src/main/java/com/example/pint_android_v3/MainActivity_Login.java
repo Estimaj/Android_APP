@@ -87,6 +87,7 @@ public class MainActivity_Login extends AppCompatActivity {
                     switch (tipo) {
                         case 5:{ //cidadao
                             Intent I_c = new Intent(MainActivity_Login.this, menu_municipe.class);
+                            I_c.putExtra("user_id", response.body().getId());
                             startActivity(I_c);
                             break;
                         }
@@ -94,6 +95,7 @@ public class MainActivity_Login extends AppCompatActivity {
                             Intent I = new Intent(MainActivity_Login.this, desambiguacao.class);
                             I.putExtra("User_Login", Mail.getText().toString());
                             I.putExtra("Password_Login", Password.getText().toString());
+                            I.putExtra("user_id", response.body().getId());
                             startActivity(I);
                             break;
                         }

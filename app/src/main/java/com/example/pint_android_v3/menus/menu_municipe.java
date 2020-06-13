@@ -2,32 +2,37 @@ package com.example.pint_android_v3.menus;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.SpannableString;
-import android.text.style.TextAppearanceSpan;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.example.pint_android_v3.BaseDadosInterface;
+import com.example.pint_android_v3.Model;
 import com.example.pint_android_v3.R;
 import com.example.pint_android_v3.barra_lateral_pro;
 import com.example.pint_android_v3.marcar_viagem;
 import com.example.pint_android_v3.perfis.perfil_cliente;
-import com.example.pint_android_v3.perfis.perfil_motorista;
 import com.example.pint_android_v3.pesquisar_utilizador;
 import com.example.pint_android_v3.viagens_efetuadas.viagens_efetuadas;
+import com.example.pint_android_v3.Get_user;
 import com.example.pint_android_v3.viagens_marcadas.viagens_marcadas;
 import com.google.android.material.navigation.NavigationView;
 
-import java.util.Objects;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class menu_municipe extends barra_lateral_pro {
+
+    private String BASE_URL ="http://10.0.2.2:3000";
+    private int id_user;
 
     TextView Nome;
     TextView Localidade;
@@ -45,7 +50,7 @@ public class menu_municipe extends barra_lateral_pro {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Log.i("oncreate:", "on create Menu");
+        //Log.i("oncreate:", "on create Menu");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu_cliente);
         Bar_Settings();
@@ -91,14 +96,12 @@ public class menu_municipe extends barra_lateral_pro {
 
         Intent X = getIntent();
         Bundle b = X.getExtras();
-
-        if(b!=null)
-        {
-            String j =(String) b.get("Nome");
-            Nome.setText(j);
-            j = (String) b.get("Localidade");
-            Localidade.setText(j);
+        if(b!=null){
+           id_user = (int) b.get("user_id");
+           //Log.i("id_user", ""+ id_user);
         }
+        Get_user_id_information(id_user);
+
     }
 
     public void Clicar_Perfil()
@@ -106,7 +109,6 @@ public class menu_municipe extends barra_lateral_pro {
         Intent Perfil = new Intent(menu_municipe.this, perfil_cliente.class);
         Perfil.putExtra("Nome", Nome.getText());
         startActivity(Perfil);
-
     }
     public void Clicar_Viagens_Marcadas()
     {
@@ -135,5 +137,46 @@ public class menu_municipe extends barra_lateral_pro {
 
     }
 
+    public void Get_user_id_information(int id){
+        Retrofit retrofit;
+        BaseDadosInterface baseDadosInterface;
 
+        retrofit = new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        baseDadosInterface =  retrofit.create(BaseDadosInterface.class);
+
+        Log.i("O id do user:", ""+ id);
+        Call<Model> call = baseDadosInterface.executeGetUser(""+id);
+
+        call.enqueue(new Callback<Model>() {
+            @Override
+            public void onResponse(Call<Model> call, Response<Model> response) {
+                if (!response.isSuccessful()){
+                    makeToastFordesambiguacao("Erro a ir ao link");
+                }
+                if (response.code() == 200){
+                    if (response.body() != null) {
+                        Log.i("Server Info:", ""+ response.body().getSuccess());
+                        Log.i("Server Info:", ""+ response.body().getGet_user().toString());
+                    }else
+                        makeToastFordesambiguacao("Erro Server Info");
+                }
+                else{
+                    makeToastFordesambiguacao("Erro: 'Sem data'"+ response.message());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Model> call, Throwable t) {
+                makeToastFordesambiguacao("Failure");
+            }
+        });
+    }
+
+    public void makeToastFordesambiguacao(String msg){
+        Toast.makeText(menu_municipe.this, msg,
+                Toast.LENGTH_LONG).show();
+    }
 }
