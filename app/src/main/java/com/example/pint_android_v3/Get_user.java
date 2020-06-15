@@ -1,17 +1,43 @@
 package com.example.pint_android_v3;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 public class Get_user {
+    @SerializedName("id_utilizador")
+    @Expose
     private int id_utilizador;
+    @SerializedName("tipo_utilizador")
+    @Expose
     private int tipo_utilizador;
+    @SerializedName("nome_utilizador")
+    @Expose
     private String nome_utilizador;
+    @SerializedName("email_utilizador")
+    @Expose
     private String email_utilizador;
+    @SerializedName("password_utilizador")
+    @Expose
     private String password_utilizador;
+    @SerializedName("password2_utilizador")
+    @Expose
     private String password2_utilizador;
+    @SerializedName("data_nascimento_utilizador")
+    @Expose
     private String data_nascimento_utilizador;
+    @SerializedName("morada_utilizador")
+    @Expose
     private String morada_utilizador;
+    @SerializedName("telefone_utilizador")
+    @Expose
     private String telefone_utilizador;
+    @SerializedName("cc_utilizador")
+    @Expose
     private String cc_utilizador;
+    @SerializedName("nif_utilizador")
+    @Expose
     private String nif_utilizador;
+
 
     public int getId_utilizador() {
         return id_utilizador;

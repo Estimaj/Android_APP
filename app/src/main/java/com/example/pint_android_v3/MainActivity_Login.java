@@ -83,6 +83,7 @@ public class MainActivity_Login extends AppCompatActivity {
                     return;
                 }
                 if(response.code() == 200) {
+                    //Log.i("Server Info log in:", ""+ response.body().toString());
                     int tipo = response.body().getTipo();
                     switch (tipo) {
                         case 5:{ //cidadao

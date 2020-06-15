@@ -45,7 +45,7 @@ public class menu_municipe extends barra_lateral_pro {
     private Toolbar toolbar;
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
-
+    private Get_user user;
 
 
     @Override
@@ -102,12 +102,18 @@ public class menu_municipe extends barra_lateral_pro {
         }
         Get_user_id_information(id_user);
 
+        if (user != null){
+        Log.i("User info", user.toString());
+        }
     }
 
     public void Clicar_Perfil()
     {
         Intent Perfil = new Intent(menu_municipe.this, perfil_cliente.class);
-        Perfil.putExtra("Nome", Nome.getText());
+        Perfil.putExtra("Nome", user.getNome_utilizador());
+        Perfil.putExtra("Origem", user.getMorada_utilizador());
+        Perfil.putExtra("Idade", user.getData_nascimento_utilizador()); //temos que ver se é null pq se for podemos meter uma msg a dizer que falta dizer a idade ou ent uma func para calcular a idade
+        Perfil.putExtra("Email", user.getEmail_utilizador());
         startActivity(Perfil);
     }
     public void Clicar_Viagens_Marcadas()
@@ -158,8 +164,12 @@ public class menu_municipe extends barra_lateral_pro {
                 }
                 if (response.code() == 200){
                     if (response.body() != null) {
-                        Log.i("Server Info:", ""+ response.body().getSuccess());
-                        Log.i("Server Info:", ""+ response.body().getGet_user().toString());
+                        //Log.i("Server Info:", ""+ response.body().getSuccess());
+                        //Log.i("Server Info:", ""+ response.body().getGet_user().get(0).toString());
+                        Nome.setText(response.body().getGet_user().get(0).getNome_utilizador());
+                        Localidade.setText(response.body().getGet_user().get(0).getMorada_utilizador());
+                        user = response.body().getGet_user().get(0);
+                        //Log.i("user:",user.toString());
                     }else
                         makeToastFordesambiguacao("Erro Server Info");
                 }
@@ -170,9 +180,12 @@ public class menu_municipe extends barra_lateral_pro {
 
             @Override
             public void onFailure(Call<Model> call, Throwable t) {
-                makeToastFordesambiguacao("Failure");
+                Log.i("Failure:", t.toString());
+                makeToastFordesambiguacao("Failure: "+ t.toString());
             }
         });
+
+
     }
 
     public void makeToastFordesambiguacao(String msg){

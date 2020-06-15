@@ -18,4 +18,12 @@ public class Post {
         return message;
     }
 
+    @Override
+    public String toString() {
+        return "Post{" + '\n' +
+                "tipo=" + tipo + '\n' +
+                ", id=" + id + '\n' +
+                ", message='" + message + '\n' +
+                '}';
+    }
 }
