@@ -32,7 +32,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class menu_municipe extends barra_lateral_pro {
 
     private String BASE_URL ="http://10.0.2.2:3000";
-    private int id_user;
+    private int id_user = 1;
 
     TextView Nome;
     TextView Localidade;
@@ -56,13 +56,13 @@ public class menu_municipe extends barra_lateral_pro {
         Bar_Settings();
 
 
-        Nome = (TextView) findViewById(R.id.user_Name_menu_cliente);
-        Localidade = (TextView) findViewById(R.id.user_localidade_menu_cliente);
-        btn_Perfil = (ImageView) findViewById(R.id.user_Inner_menu_cliente);
-        btn_Marcadas = (ImageView) findViewById(R.id.bt_Viagens_Marcadas_menu_cliente);
-        btn_Efetuadas = (ImageView) findViewById(R.id.btn_Viagens_Efetuadas_menu_cliente);
-        btn_Pesquisar = (ImageView) findViewById(R.id.btn_Pesquisar_Utilizador_menu_cliente);
-        btn_Marcar_Viagem = (ImageView) findViewById(R.id.btn_Marcar_Viagem_menu_cliente);
+        Nome = findViewById(R.id.user_Name_menu_cliente);
+        Localidade =  findViewById(R.id.user_localidade_menu_cliente);
+        btn_Perfil =  findViewById(R.id.user_Inner_menu_cliente);
+        btn_Marcadas =  findViewById(R.id.bt_Viagens_Marcadas_menu_cliente);
+        btn_Efetuadas =  findViewById(R.id.btn_Viagens_Efetuadas_menu_cliente);
+        btn_Pesquisar =  findViewById(R.id.btn_Pesquisar_Utilizador_menu_cliente);
+        btn_Marcar_Viagem =  findViewById(R.id.btn_Marcar_Viagem_menu_cliente);
 
         Intent X = getIntent();
         Bundle b = X.getExtras();
