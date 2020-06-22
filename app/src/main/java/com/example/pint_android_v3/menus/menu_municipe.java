@@ -63,6 +63,19 @@ public class menu_municipe extends barra_lateral_pro {
         btn_Efetuadas = (ImageView) findViewById(R.id.btn_Viagens_Efetuadas_menu_cliente);
         btn_Pesquisar = (ImageView) findViewById(R.id.btn_Pesquisar_Utilizador_menu_cliente);
         btn_Marcar_Viagem = (ImageView) findViewById(R.id.btn_Marcar_Viagem_menu_cliente);
+
+        Intent X = getIntent();
+        Bundle b = X.getExtras();
+        if(b!=null){
+            id_user = (int) b.get("user_id");
+            //Log.i("id_user", ""+ id_user);
+        }
+        Get_user_id_information(id_user);
+
+        if (user != null){
+            Log.i("User info", user.toString());
+        }
+
         btn_Perfil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -94,25 +107,16 @@ public class menu_municipe extends barra_lateral_pro {
             }
         });
 
-        Intent X = getIntent();
-        Bundle b = X.getExtras();
-        if(b!=null){
-           id_user = (int) b.get("user_id");
-           //Log.i("id_user", ""+ id_user);
-        }
-        Get_user_id_information(id_user);
-
-        if (user != null){
-        Log.i("User info", user.toString());
-        }
     }
 
     public void Clicar_Perfil()
     {
+        Log.i("User info", user.toString());
         Intent Perfil = new Intent(menu_municipe.this, perfil_cliente.class);
         Perfil.putExtra("Nome", user.getNome_utilizador());
         Perfil.putExtra("Origem", user.getMorada_utilizador());
         Perfil.putExtra("Idade", user.getData_nascimento_utilizador()); //temos que ver se é null pq se for podemos meter uma msg a dizer que falta dizer a idade ou ent uma func para calcular a idade
+        Perfil.putExtra("Telefone", user.getTelefone_utilizador());
         Perfil.putExtra("Email", user.getEmail_utilizador());
         startActivity(Perfil);
     }
@@ -120,27 +124,22 @@ public class menu_municipe extends barra_lateral_pro {
     {
         Intent Viagens = new Intent(menu_municipe.this, viagens_marcadas.class);
         startActivity(Viagens);
-
     }
 
     public void Clicar_Viagens_Efetuadas()
     {
         Intent Viagens = new Intent(menu_municipe.this, viagens_efetuadas.class);
         startActivity(Viagens);
-
     }
-
     public void Clicar_Pesquisar()
     {
         Intent Pesquisar = new Intent(menu_municipe.this, pesquisar_utilizador.class);
         startActivity(Pesquisar);
-
     }
     public void Clicar_Marcar_Viagem()
     {
         Intent Marcar = new Intent(menu_municipe.this, marcar_viagem.class);
         startActivity(Marcar);
-
     }
 
     public void Get_user_id_information(int id){
@@ -153,7 +152,7 @@ public class menu_municipe extends barra_lateral_pro {
                 .build();
         baseDadosInterface =  retrofit.create(BaseDadosInterface.class);
 
-        Log.i("O id do user:", ""+ id);
+        //Log.i("O id do user:", ""+ id);
         Call<Model> call = baseDadosInterface.executeGetUser(""+id);
 
         call.enqueue(new Callback<Model>() {
