@@ -54,6 +54,7 @@
 
     <string name="openNavDrawer">Menu Open</string>
     <string name="closeNavDrawer">Menu Close</string>
+    <string name="novalue">No_Value</string>
 
 
 </resources>

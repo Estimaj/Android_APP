@@ -5,17 +5,21 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
 import com.example.pint_android_v3.R;
+import com.example.pint_android_v3.classificar_condutor;
 import com.example.pint_android_v3.menus.menu_municipe;
 
 public class viagens_efetuadas extends AppCompatActivity {
     ListView lView;
     ListAdapter lAdapter;
     viagens_efetuadas_array_test lItems;
+    ImageView classificar_condutor_btn;
 
 
     @Override
@@ -37,6 +41,13 @@ public class viagens_efetuadas extends AppCompatActivity {
                 lItems.Local_Chegada, lItems.Local_Partida,lItems.hora);
 
         lView.setAdapter(lAdapter);
+        lView.setOnItemClickListener(new ListView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Classificar_Condutor();
+            }
+        });
 
 
     }
@@ -47,4 +58,14 @@ public class viagens_efetuadas extends AppCompatActivity {
         startActivity(GO);
 
     }
+
+    public void Classificar_Condutor()
+    {
+        Intent GO = new Intent(viagens_efetuadas.this, classificar_condutor.class);
+        startActivity(GO);
+
+
+    }
+
+
 }

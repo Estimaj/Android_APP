@@ -5,14 +5,17 @@ import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.style.TextAppearanceSpan;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.example.pint_android_v3.menus.menu_municipe;
@@ -82,13 +85,17 @@ public class barra_lateral_pro extends AppCompatActivity implements NavigationVi
         drawerLayout = findViewById(R.id.barra_lateral_drawer_layout);
         navigationView = findViewById(R.id.nav_view_barra);
 
+        //Vai buscar o menu do navigation drawer
         Menu menu = navigationView.getMenu();
 
+        //Altera a cor do separador opções de viagem do navigation drawer
         MenuItem tools= menu.findItem(R.id.op_menu_cliente_barra);
         SpannableString s = new SpannableString(tools.getTitle());
         s.setSpan(new TextAppearanceSpan(this, R.style.TextAppearance44), 0, s.length(), 0);
         tools.setTitle(s);
 
+
+        //Altera a cor do separador sair do navigation drawer
         tools= menu.findItem(R.id.sair_menu_cliente_barra);
         s = new SpannableString(tools.getTitle());
         s.setSpan(new TextAppearanceSpan(this, R.style.TextAppearance44), 0, s.length(), 0);
@@ -97,11 +104,30 @@ public class barra_lateral_pro extends AppCompatActivity implements NavigationVi
         ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle
                 (this, drawerLayout, toolbar, R.string.openNavDrawer, R.string.closeNavDrawer);
 
+        actionBarDrawerToggle.onDrawerOpened(drawerLayout);
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
+
         actionBarDrawerToggle.syncState();
 
         navigationView.setNavigationItemSelectedListener(this);
 
 
     }
+
+    public void DisableBar(){
+        drawerLayout = findViewById(R.id.barra_lateral_drawer_layout);
+        drawerLayout.setEnabled(false);
+        Toast.makeText(barra_lateral_pro.this, "disable",
+                Toast.LENGTH_LONG).show();
+    }
+    public void EnableBar(){
+        drawerLayout = findViewById(R.id.barra_lateral_drawer_layout);
+        drawerLayout.setEnabled(true);
+        Toast.makeText(barra_lateral_pro.this, "enable",
+                Toast.LENGTH_LONG).show();
+    }
+
+
+
+
 }

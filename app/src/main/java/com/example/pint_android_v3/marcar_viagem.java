@@ -1,17 +1,25 @@
 package com.example.pint_android_v3;
 
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.app.Dialog;
 import android.app.TimePickerDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.example.pint_android_v3.menus.menu_municipe;
 import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.Calendar;
@@ -134,11 +142,63 @@ public class marcar_viagem extends barra_lateral_pro implements DatePickerDialog
 
     }
 
-    public void Click_Botao_marcar()
+    public void Click_Botao_marcar_alert()
     {
         makeToastForMarcar("not available yet");
+        AlertDialog.Builder AlertMarcarViagem = new AlertDialog.Builder(marcar_viagem.this);
+        //AlertMarcarViagem.setTitle("")
+        AlertMarcarViagem.setMessage("Tem a certeza que pretende marcar a viagem?");
+        AlertMarcarViagem.setPositiveButton("Marcar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                makeToastForMarcar("Marcada");
+            }
+        });
+        AlertMarcarViagem.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                makeToastForMarcar("Não marcada");
+            }
+        });
+        AlertMarcarViagem.show();
 
     }
+
+    public void Click_Botao_marcar()
+    {
+        final AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
+// ...Irrelevant code for customizing the buttons and title
+        LayoutInflater inflater = this.getLayoutInflater();
+        final View dialogView = inflater.inflate(R.layout.alertdialog_marcar_viagem_adapter, null);
+        dialogBuilder.setView(dialogView);
+        ImageView yes_btn = dialogView.findViewById(R.id.yes_btn_alert_dialog_adapter);
+        ImageView no_btn = dialogView.findViewById(R.id.no_btn_alert_dialog_adapter);
+        yes_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                makeToastForMarcar("yes");
+                startActivity(new Intent(marcar_viagem.this, menu_municipe.class));
+
+            }
+        });
+        no_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                makeToastForMarcar("no");
+                //v.setVisibility(View.GONE);
+                dialogBuilder.setCancelable(true);
+
+            }
+        });
+
+
+        dialogBuilder.create();
+        dialogBuilder.show();
+
+
+
+    }
+
 
     public void makeToastForMarcar(String msg){
         Toast.makeText(marcar_viagem.this, msg,
