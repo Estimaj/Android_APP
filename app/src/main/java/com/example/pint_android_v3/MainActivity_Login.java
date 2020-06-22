@@ -83,10 +83,12 @@ public class MainActivity_Login extends AppCompatActivity {
                     return;
                 }
                 if(response.code() == 200) {
+                    //Log.i("Server Info log in:", ""+ response.body().toString());
                     int tipo = response.body().getTipo();
                     switch (tipo) {
                         case 5:{ //cidadao
                             Intent I_c = new Intent(MainActivity_Login.this, menu_municipe.class);
+                            I_c.putExtra("user_id", response.body().getId());
                             startActivity(I_c);
                             break;
                         }
@@ -94,6 +96,7 @@ public class MainActivity_Login extends AppCompatActivity {
                             Intent I = new Intent(MainActivity_Login.this, desambiguacao.class);
                             I.putExtra("User_Login", Mail.getText().toString());
                             I.putExtra("Password_Login", Password.getText().toString());
+                            I.putExtra("user_id", response.body().getId());
                             startActivity(I);
                             break;
                         }

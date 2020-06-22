@@ -36,13 +36,12 @@ public class menu_motorista extends AppCompatActivity {
         Intent X = getIntent();
         Bundle b = X.getExtras();
 
-        if(b!=null)
-        {
-            String j =(String) b.get("Nome");
-            Nome.setText(j);
-            j = (String) b.get("Localidade");
-            Localidade.setText(j);
-        }
+
+        String j ="User_name";
+        Nome.setText(j);
+        j = "User_Localidade";
+        Localidade.setText(j);
+
 
     }
 
