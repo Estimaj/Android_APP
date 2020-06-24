@@ -32,7 +32,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class menu_municipe extends barra_lateral_pro {
 
     private String BASE_URL ="http://10.0.2.2:3000";
-    private int id_user = 1;
+    private int id_user = 1; //a remover!! id_user n deve ser iniciliazado
 
     TextView Nome;
     TextView Localidade;

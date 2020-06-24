@@ -150,6 +150,7 @@
         app:layout_constraintBottom_toBottomOf="@id/imageView_origem_bg_perfil_motorista"
         app:layout_constraintStart_toEndOf="@id/marker_origem_icon_perfil_motorista"
         app:layout_constraintTop_toBottomOf="@id/marker_origem_textView_perfil_motorista" />
+
     <!--Idade secção-->
     <ImageView
         android:id="@+id/imageView_Idade_bg_perfil_motorista"

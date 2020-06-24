@@ -14,7 +14,8 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:targetApi="n">
-        <activity android:name=".notificacoes_mais_info"/>
+        <activity android:name=".Cancelar_Viagem"></activity>
+        <activity android:name=".notificacoes_mais_info" />
         <activity android:name=".notificacoes.notificacoes" />
         <activity android:name=".quem_vai_consigo" />
         <activity android:name=".viagens_marcadas.viagens_marcadas" />
@@ -22,14 +23,14 @@
         <activity android:name=".perfis.perfil_motorista_edit" />
         <activity android:name=".perfis.perfil_motorista" />
         <activity android:name=".desambiguacao" />
-        <activity android:name=".MainActivity_Login">
+        <activity android:name=".MainActivity_Login"></activity>
+        <activity android:name=".menus.menu_municipe">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-        <activity android:name=".menus.menu_municipe" > <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter></activity>
         <activity android:name=".menus.menu_motorista" />
         <activity android:name=".pesquisar_utilizador" />
         <activity android:name=".barra_lateral_pro" />

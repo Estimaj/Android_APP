@@ -328,6 +328,7 @@
         app:layout_constraintStart_toStartOf="@id/textView_dia_viagem_afetada_notificacoes_mais_info"
         android:text="16/02/2020"
         />
+
     <!--Taxa Desconto-->
     <ImageView
         android:id="@+id/taxa_desconto_viagem_afetada_notificacoes_mais_info"
