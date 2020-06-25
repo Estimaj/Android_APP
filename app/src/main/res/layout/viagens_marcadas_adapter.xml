@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="8dp">
+    android:layout_height="match_parent">
+
 
     <ImageView
         android:id="@+id/viagens_marcadas_adapter_contentor"
@@ -97,71 +96,25 @@
         app:layout_constraintTop_toTopOf="@+id/viagens_marcadas_adapter_contentor" />
 
     <ImageView
-        android:id="@+id/viagens_efetuadas_adapter_class_viagem"
-        android:layout_width="160dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="108dp"
-        app:layout_constraintEnd_toStartOf="@+id/viagens_marcadas_adapter_contentor"
-        app:layout_constraintHorizontal_bias="0.682"
-        app:layout_constraintStart_toEndOf="@+id/viagens_marcadas_adapter_contentor"
-        app:layout_constraintTop_toTopOf="@+id/viagens_marcadas_adapter_contentor"
-        app:srcCompat="@drawable/botao_class" />
-
-    <ImageView
-        android:id="@+id/viagens_efetuadas_adapter_class_condutor"
-        android:layout_width="160dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="140dp"
-        app:layout_constraintEnd_toStartOf="@+id/viagens_marcadas_adapter_contentor"
-        app:layout_constraintHorizontal_bias="0.681"
-        app:layout_constraintStart_toEndOf="@+id/viagens_marcadas_adapter_contentor"
-        app:layout_constraintTop_toTopOf="@+id/viagens_marcadas_adapter_contentor"
-        app:srcCompat="@drawable/botao_class" />
-
-    <TextView
-        android:id="@+id/viagens_efetuadas_adapter_class_viagem_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
-        android:text="Classificar Viagem"
-        android:textSize="13sp"
-        app:layout_constraintEnd_toStartOf="@+id/viagens_efetuadas_adapter_class_viagem"
-        app:layout_constraintHorizontal_bias="0.481"
-        app:layout_constraintStart_toEndOf="@+id/viagens_efetuadas_adapter_class_viagem"
-        app:layout_constraintTop_toTopOf="@+id/viagens_efetuadas_adapter_class_viagem" />
-
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
-        android:text="Classificar Condutor"
-        android:textSize="13sp"
-        app:layout_constraintEnd_toStartOf="@+id/viagens_efetuadas_adapter_class_viagem"
-        app:layout_constraintHorizontal_bias="0.464"
-        app:layout_constraintStart_toEndOf="@+id/viagens_efetuadas_adapter_class_viagem"
-        app:layout_constraintTop_toTopOf="@+id/viagens_efetuadas_adapter_class_condutor" />
-
-    <ImageView
         android:id="@+id/viagens_marcadas_adapter_mais_info"
-        android:layout_width="95dp"
-        android:layout_height="25dp"
-        android:layout_marginTop="152dp"
+        android:layout_width="105dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="136dp"
         app:layout_constraintEnd_toStartOf="@+id/viagens_marcadas_adapter_contentor"
-        app:layout_constraintHorizontal_bias="0.228"
+        app:layout_constraintHorizontal_bias="0.25"
         app:layout_constraintStart_toEndOf="@+id/viagens_marcadas_adapter_contentor"
         app:layout_constraintTop_toTopOf="@+id/viagens_marcadas_adapter_contentor"
         app:srcCompat="@drawable/btn_mais_info" />
 
     <TextView
         android:id="@+id/viagens_marcadas_adapter_mais_info_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_width="75dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="16dp"
         android:text="Mais Info"
         android:textSize="13sp"
         app:layout_constraintEnd_toStartOf="@+id/viagens_marcadas_adapter_mais_info"
-        app:layout_constraintHorizontal_bias="0.422"
+        app:layout_constraintHorizontal_bias="0.388"
         app:layout_constraintStart_toEndOf="@+id/viagens_marcadas_adapter_mais_info"
         app:layout_constraintTop_toTopOf="@+id/viagens_marcadas_adapter_mais_info" />
 
@@ -186,5 +139,37 @@
         app:layout_constraintHorizontal_bias="0.422"
         app:layout_constraintStart_toEndOf="@+id/viagens_marcadas_adapter_contentor"
         app:layout_constraintTop_toTopOf="@+id/viagens_marcadas_adapter_contentor" />
+
+    <ImageView
+        android:id="@+id/barra_adapter_marcadas_adapter"
+        android:layout_width="300dp"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="120dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/viagens_marcadas_adapter_contentor"
+        app:srcCompat="@drawable/barra_meio_adpater" />
+
+    <ImageView
+        android:id="@+id/viagens_marcadas_adapter_cancelar_viagem_button"
+        android:layout_width="196dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="144dp"
+        app:layout_constraintStart_toStartOf="@+id/viagens_marcadas_adapter_contentor"
+        app:layout_constraintTop_toTopOf="@+id/viagens_marcadas_adapter_contentor"
+        app:srcCompat="@drawable/button_cancelar" />
+
+    <TextView
+        android:id="@+id/viagens_marcadas_adapter_cancelar_viagem_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="8dp"
+        android:text="Cancelar Viagem"
+        android:textColor="@color/Yellow"
+        app:layout_constraintStart_toStartOf="@+id/viagens_marcadas_adapter_cancelar_viagem_button"
+        app:layout_constraintTop_toTopOf="@+id/viagens_marcadas_adapter_cancelar_viagem_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
