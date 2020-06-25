@@ -108,17 +108,6 @@
         app:srcCompat="@drawable/botao_class" />
 
     <ImageView
-        android:id="@+id/viagens_efetuadas_adapter_mais_info"
-        android:layout_width="95dp"
-        android:layout_height="25dp"
-        android:layout_marginTop="152dp"
-        app:layout_constraintEnd_toStartOf="@+id/imageView4"
-        app:layout_constraintHorizontal_bias="0.228"
-        app:layout_constraintStart_toEndOf="@+id/imageView4"
-        app:layout_constraintTop_toTopOf="@+id/imageView4"
-        app:srcCompat="@drawable/btn_mais_info" />
-
-    <ImageView
         android:id="@+id/viagens_efetuadas_adapter_class_condutor"
         android:layout_width="160dp"
         android:layout_height="48dp"
@@ -152,6 +141,17 @@
         app:layout_constraintHorizontal_bias="0.464"
         app:layout_constraintStart_toEndOf="@+id/viagens_efetuadas_adapter_class_viagem"
         app:layout_constraintTop_toTopOf="@+id/viagens_efetuadas_adapter_class_condutor" />
+
+    <ImageView
+        android:id="@+id/viagens_efetuadas_adapter_mais_info"
+        android:layout_width="95dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="152dp"
+        app:layout_constraintEnd_toStartOf="@+id/imageView4"
+        app:layout_constraintHorizontal_bias="0.228"
+        app:layout_constraintStart_toEndOf="@+id/imageView4"
+        app:layout_constraintTop_toTopOf="@+id/imageView4"
+        app:srcCompat="@drawable/btn_mais_info" />
 
     <TextView
         android:id="@+id/textView10"

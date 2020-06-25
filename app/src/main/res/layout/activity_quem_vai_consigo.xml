@@ -201,6 +201,27 @@
                 app:layout_constraintTop_toBottomOf="@+id/tripulante_localidade_1_quem_vai_consigo"
                 app:srcCompat="@drawable/dog_icon_marcar" />
 
+            <ImageView
+                android:id="@+id/Mais_info_1_button_quem_vai_consigo"
+                android:layout_width="95dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="320dp"
+                android:layout_marginTop="69dp"
+                app:layout_constraintStart_toStartOf="@+id/contentor1_quem_vai_consigo"
+                app:layout_constraintTop_toTopOf="@+id/contentor1_quem_vai_consigo"
+                app:srcCompat="@drawable/btn_mais_info" />
+
+            <TextView
+                android:id="@+id/Mais_Info_1_Text_quem_vai_consigo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="4dp"
+                android:text="Mais Info"
+                android:textSize="13sp"
+                app:layout_constraintStart_toStartOf="@+id/Mais_info_1_button_quem_vai_consigo"
+                app:layout_constraintTop_toTopOf="@+id/Mais_info_1_button_quem_vai_consigo" />
+
             <TextView
                 android:id="@+id/canideo_quantidade1_text_quem_vai_consigo"
                 android:layout_width="wrap_content"
@@ -299,6 +320,27 @@
                 app:layout_constraintTop_toTopOf="@+id/contentor2_quem_vai_consigo2" />
 
             <ImageView
+                android:id="@+id/Mais_info_2_button_quem_vai_consigo"
+                android:layout_width="95dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="320dp"
+                android:layout_marginTop="69dp"
+                app:layout_constraintStart_toStartOf="@+id/contentor2_quem_vai_consigo2"
+                app:layout_constraintTop_toTopOf="@+id/contentor2_quem_vai_consigo2"
+                app:srcCompat="@drawable/btn_mais_info" />
+
+            <TextView
+                android:id="@+id/Mais_Info_2_Text_quem_vai_consigo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="4dp"
+                android:text="Mais Info"
+                android:textSize="13sp"
+                app:layout_constraintStart_toStartOf="@+id/Mais_info_2_button_quem_vai_consigo"
+                app:layout_constraintTop_toTopOf="@+id/Mais_info_2_button_quem_vai_consigo" />
+
+            <ImageView
                 android:id="@+id/contentor3_quem_vai_consigo"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
@@ -369,6 +411,27 @@
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="@+id/contentor3_quem_vai_consigo"
                 app:layout_constraintTop_toTopOf="@+id/contentor3_quem_vai_consigo" />
+
+            <ImageView
+                android:id="@+id/Mais_info_3_button_quem_vai_consigo"
+                android:layout_width="95dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="320dp"
+                android:layout_marginTop="69dp"
+                app:layout_constraintStart_toStartOf="@+id/contentor3_quem_vai_consigo"
+                app:layout_constraintTop_toTopOf="@+id/contentor3_quem_vai_consigo"
+                app:srcCompat="@drawable/btn_mais_info" />
+
+            <TextView
+                android:id="@+id/Mais_Info_3_Text_quem_vai_consigo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="4dp"
+                android:text="Mais Info"
+                android:textSize="13sp"
+                app:layout_constraintStart_toStartOf="@+id/Mais_info_3_button_quem_vai_consigo"
+                app:layout_constraintTop_toTopOf="@+id/Mais_info_3_button_quem_vai_consigo" />
 
             <ImageView
                 android:id="@+id/contentor4_quem_vai_consigo2"
@@ -455,6 +518,27 @@
                 app:srcCompat="@drawable/default_user_icon" />
 
             <ImageView
+                android:id="@+id/Mais_info_4_button_quem_vai_consigo"
+                android:layout_width="95dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="320dp"
+                android:layout_marginTop="69dp"
+                app:layout_constraintStart_toStartOf="@+id/contentor4_quem_vai_consigo2"
+                app:layout_constraintTop_toTopOf="@+id/contentor4_quem_vai_consigo2"
+                app:srcCompat="@drawable/btn_mais_info" />
+
+            <TextView
+                android:id="@+id/Mais_Info_4_Text_quem_vai_consigo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="4dp"
+                android:text="Mais Info"
+                android:textSize="13sp"
+                app:layout_constraintStart_toStartOf="@+id/Mais_info_4_button_quem_vai_consigo"
+                app:layout_constraintTop_toTopOf="@+id/Mais_info_4_button_quem_vai_consigo" />
+
+            <ImageView
                 android:id="@+id/contentor5_quem_vai_consigo3"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
@@ -531,10 +615,34 @@
                 android:id="@+id/anchor_quem_vai_consigo"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                android:layout_marginStart="21dp"
                 android:layout_marginTop="800dp"
+                android:layout_marginEnd="391dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/spinner_background_white"
-                tools:layout_editor_absoluteX="20dp" />
+                app:srcCompat="@drawable/spinner_background_white" />
+
+            <ImageView
+                android:id="@+id/Mais_info_5_button_quem_vai_consigo"
+                android:layout_width="95dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="320dp"
+                android:layout_marginTop="69dp"
+                app:layout_constraintStart_toStartOf="@+id/contentor5_quem_vai_consigo3"
+                app:layout_constraintTop_toTopOf="@+id/contentor5_quem_vai_consigo3"
+                app:srcCompat="@drawable/btn_mais_info" />
+
+            <TextView
+                android:id="@+id/Mais_Info_5_Text_quem_vai_consigo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="4dp"
+                android:text="Mais Info"
+                android:textSize="13sp"
+                app:layout_constraintStart_toStartOf="@+id/Mais_info_5_button_quem_vai_consigo"
+                app:layout_constraintTop_toTopOf="@+id/Mais_info_5_button_quem_vai_consigo" />
 
             <!--Outros Tripulantes-->
 
