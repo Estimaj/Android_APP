@@ -11,15 +11,15 @@ import android.widget.Toast;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import com.example.pint_android_v3.BaseDadosInterface;
-import com.example.pint_android_v3.Model;
+import com.example.pint_android_v3.DataBase.BaseDadosInterface;
+import com.example.pint_android_v3.DataBase.Model;
 import com.example.pint_android_v3.R;
 import com.example.pint_android_v3.barra_lateral_pro;
 import com.example.pint_android_v3.marcar_viagem;
 import com.example.pint_android_v3.perfis.perfil_cliente;
 import com.example.pint_android_v3.pesquisar_utilizador;
 import com.example.pint_android_v3.viagens_efetuadas.viagens_efetuadas;
-import com.example.pint_android_v3.Get_user;
+import com.example.pint_android_v3.DataBase.data;
 import com.example.pint_android_v3.viagens_marcadas.viagens_marcadas;
 import com.google.android.material.navigation.NavigationView;
 
@@ -45,7 +45,7 @@ public class menu_municipe extends barra_lateral_pro {
     private Toolbar toolbar;
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
-    private Get_user user;
+    private data user;
 
 
     @Override
@@ -69,8 +69,10 @@ public class menu_municipe extends barra_lateral_pro {
         if(b!=null){
             id_user = (int) b.get("user_id");
             //Log.i("id_user", ""+ id_user);
+            makeToastFordesambiguacao(""+id_user);
+            Get_user_id_information(id_user);
         }
-        Get_user_id_information(id_user);
+
 
         if (user != null){
             Log.i("User info", user.toString());
@@ -163,12 +165,19 @@ public class menu_municipe extends barra_lateral_pro {
                 }
                 if (response.code() == 200){
                     if (response.body() != null) {
-                        //Log.i("Server Info:", ""+ response.body().getSuccess());
-                        //Log.i("Server Info:", ""+ response.body().getGet_user().get(0).toString());
-                        Nome.setText(response.body().getGet_user().get(0).getNome_utilizador());
-                        Localidade.setText(response.body().getGet_user().get(0).getMorada_utilizador());
-                        user = response.body().getGet_user().get(0);
-                        //Log.i("user:",user.toString());
+                        Log.i("Server Info:", ""+ response.body().getSuccess());
+                        makeToastFordesambiguacao(response.body().getSuccess());
+
+                        try {
+                            Nome.setText(response.body().getData().get(0).getNome_utilizador());
+                            Localidade.setText(response.body().getData().get(0).getMorada_utilizador());
+                            user = response.body().getData().get(0);
+                            Log.i("user:",user.toString());
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+
+
                     }else
                         makeToastFordesambiguacao("Erro Server Info");
                 }
