@@ -1,4 +1,4 @@
-package com.example.pint_android_v3;
+package com.example.pint_android_v3.DataBase;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

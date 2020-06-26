@@ -1,4 +1,4 @@
-package com.example.pint_android_v3;
+package com.example.pint_android_v3.DataBase;
 
 import java.util.HashMap;
 
@@ -14,6 +14,6 @@ public interface BaseDadosInterface {
     Call<Post> executeLogin(@Body HashMap<String, String> map);
 
     @GET("/muv/get/{id}")
-    Call< Model > executeGetUser(@Path("id") String id);
+    Call<Model> executeGetUser(@Path("id") String id);
 
 }

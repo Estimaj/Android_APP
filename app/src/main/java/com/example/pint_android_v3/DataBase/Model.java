@@ -1,9 +1,7 @@
-package com.example.pint_android_v3;
+package com.example.pint_android_v3.DataBase;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
-import org.w3c.dom.ls.LSInput;
 
 import java.util.List;
 
@@ -13,7 +11,7 @@ public class Model {
     @Expose
     private String success;
 
-    @SerializedName("get_user")
+    @SerializedName("data")
     @Expose
     private List<Get_user> get_user;
 

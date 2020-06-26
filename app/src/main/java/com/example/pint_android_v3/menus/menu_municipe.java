@@ -11,15 +11,15 @@ import android.widget.Toast;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import com.example.pint_android_v3.BaseDadosInterface;
-import com.example.pint_android_v3.Model;
+import com.example.pint_android_v3.DataBase.BaseDadosInterface;
+import com.example.pint_android_v3.DataBase.Model;
 import com.example.pint_android_v3.R;
 import com.example.pint_android_v3.barra_lateral_pro;
 import com.example.pint_android_v3.marcar_viagem;
 import com.example.pint_android_v3.perfis.perfil_cliente;
 import com.example.pint_android_v3.pesquisar_utilizador;
 import com.example.pint_android_v3.viagens_efetuadas.viagens_efetuadas;
-import com.example.pint_android_v3.Get_user;
+import com.example.pint_android_v3.DataBase.Get_user;
 import com.example.pint_android_v3.viagens_marcadas.viagens_marcadas;
 import com.google.android.material.navigation.NavigationView;
 
