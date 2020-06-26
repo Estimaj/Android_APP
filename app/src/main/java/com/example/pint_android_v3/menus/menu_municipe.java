@@ -32,7 +32,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class menu_municipe extends barra_lateral_pro {
 
     private String BASE_URL ="http://10.0.2.2:3000";
-    private int id_user = 1; //a remover!! id_user n deve ser iniciliazado
+    private int id_user;
 
     TextView Nome;
     TextView Localidade;
@@ -69,8 +69,9 @@ public class menu_municipe extends barra_lateral_pro {
         if(b!=null){
             id_user = (int) b.get("user_id");
             //Log.i("id_user", ""+ id_user);
+            Get_user_id_information(id_user);
         }
-        Get_user_id_information(id_user);
+
 
         if (user != null){
             Log.i("User info", user.toString());
@@ -143,36 +144,36 @@ public class menu_municipe extends barra_lateral_pro {
     }
 
     public void Get_user_id_information(int id){
-        Retrofit retrofit;
-        BaseDadosInterface baseDadosInterface;
+                    Retrofit retrofit;
+                    BaseDadosInterface baseDadosInterface;
 
-        retrofit = new Retrofit.Builder()
-                .baseUrl(BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-        baseDadosInterface =  retrofit.create(BaseDadosInterface.class);
+                    retrofit = new Retrofit.Builder()
+                            .baseUrl(BASE_URL)
+                            .addConverterFactory(GsonConverterFactory.create())
+                            .build();
+                    baseDadosInterface =  retrofit.create(BaseDadosInterface.class);
 
-        //Log.i("O id do user:", ""+ id);
-        Call<Model> call = baseDadosInterface.executeGetUser(""+id);
+                    //Log.i("O id do user:", ""+ id);
+                    Call<Model> call = baseDadosInterface.executeGetUser(""+id);
 
-        call.enqueue(new Callback<Model>() {
-            @Override
-            public void onResponse(Call<Model> call, Response<Model> response) {
-                if (!response.isSuccessful()){
-                    makeToastFordesambiguacao("Erro a ir ao link");
-                }
-                if (response.code() == 200){
-                    if (response.body() != null) {
-                        //Log.i("Server Info:", ""+ response.body().getSuccess());
-                        //Log.i("Server Info:", ""+ response.body().getGet_user().get(0).toString());
-                        Nome.setText(response.body().getGet_user().get(0).getNome_utilizador());
-                        Localidade.setText(response.body().getGet_user().get(0).getMorada_utilizador());
-                        user = response.body().getGet_user().get(0);
-                        //Log.i("user:",user.toString());
-                    }else
-                        makeToastFordesambiguacao("Erro Server Info");
-                }
-                else{
+                    call.enqueue(new Callback<Model>() {
+                        @Override
+                        public void onResponse(Call<Model> call, Response<Model> response) {
+                            if (!response.isSuccessful()){
+                                makeToastFordesambiguacao("Erro a ir ao link");
+                            }
+                            if (response.code() == 200){
+                                if (response.body() != null) {
+                                    //Log.i("Server Info:", ""+ response.body().getSuccess());
+                                    //Log.i("Server Info:", ""+ response.body().getGet_user().get(0).toString());
+                                    Nome.setText(response.body().getGet_user().get(0).getNome_utilizador());
+                                    Localidade.setText(response.body().getGet_user().get(0).getMorada_utilizador());
+                                    user = response.body().getGet_user().get(0);
+                                    //Log.i("user:",user.toString());
+                                }else
+                                    makeToastFordesambiguacao("Erro Server Info");
+                            }
+                            else{
                     makeToastFordesambiguacao("Erro: 'Sem data'"+ response.message());
                 }
             }
