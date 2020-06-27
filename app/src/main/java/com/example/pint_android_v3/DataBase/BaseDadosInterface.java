@@ -16,4 +16,7 @@ public interface BaseDadosInterface {
     @GET("/muv/get/{id}")
     Call<Model> executeGetUser(@Path("id") String id);
 
+    @POST("/muv/pedidos/criar")
+    Call<Pedido_Viagem> executeCriarPedidoViagem(@Body Pedido_Viagem pedido_viagem);
+
 }

@@ -7,6 +7,7 @@ import android.app.TimePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -14,11 +15,14 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.example.pint_android_v3.DataBase.Pedido_Viagem;
 import com.example.pint_android_v3.menus.menu_municipe;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -26,11 +30,30 @@ import java.util.Calendar;
 
 public class marcar_viagem extends barra_lateral_pro implements DatePickerDialog.OnDateSetListener{
 
+    private String BASE_URL ="http://10.0.2.2:3000";
 
     private TextView DateLayout_text;
-    private Button btn_Marcar_Viagem;
     private TextView TimeLayout_text;
+    private Button btn_Marcar_Viagem;
 
+    private Switch switch_pet;
+    private Switch switch_necessidades_especiais;
+    private Switch switch_bagagem;
+    private RadioGroup radioGroup_partilha;
+
+
+    private int id_user;
+    int local_origem_pedido;
+    int local_destino_pedido;
+    //1-yes 0-no
+    int animal;
+    int necessidades_especiais;
+    int bagagem;
+    int partilha;
+    int modalidade = 0; // 0-ida, 1-ida e volta
+
+
+    //...
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +65,7 @@ public class marcar_viagem extends barra_lateral_pro implements DatePickerDialog
                 R.layout.color_spinner_layout
         );
         adapter.setDropDownViewResource(R.layout.spinner_dropdown_layout);
+        //Log.i("adapter", adapter.getPosition().toString());
         String time = GetTime();
         String date = GetDate();
         Bar_Settings();
@@ -52,14 +76,21 @@ public class marcar_viagem extends barra_lateral_pro implements DatePickerDialog
         DateLayout_text.setText(date);
         TimeLayout_text.setText(time);
 
-
+        //Relogio
         TimeLayout_text.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showTimePickerDialog();
             }
         });
-
+        //calendario
+        DateLayout_text.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showDatePickerDialog();
+            }
+        });
+        //botao final aka- marcar_viagem
         btn_Marcar_Viagem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -68,20 +99,73 @@ public class marcar_viagem extends barra_lateral_pro implements DatePickerDialog
         });
 
 
-        DateLayout_text.setOnClickListener(new View.OnClickListener() {
+        Spinner coloredSpinner = findViewById(R.id.spinner_partida_marcar_viagem);
+        coloredSpinner.setAdapter(adapter);
+
+        //meti aqui os switchs todos
+        switchsResumidos();
+
+
+        Intent X = getIntent();
+        Bundle b = X.getExtras();
+        if(b!=null){
+            id_user = (int) b.get("user_id");
+            //Log.i("id_user", ""+ id_user);
+
+
+        }
+    }
+
+    private void switchsResumidos(){
+        switch_pet = findViewById(R.id.dog_switch_marcar_viagem);
+        switch_pet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showDatePickerDialog();
+                if(switch_pet.isChecked()){
+                    Log.i("check", "on");
+                    animal = 1;
+                }else {
+                    Log.i("check", "off");
+                    animal = 0;
+                }
             }
         });
 
-        Spinner coloredSpinner = findViewById(R.id.spinner_partida_marcar_viagem);
-        coloredSpinner.setAdapter(adapter);
-        //coloredSpinner.setOnItemSelectedListener();
+        switch_bagagem = findViewById(R.id.mala_switch_marcar_viagem);
+        switch_bagagem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(switch_bagagem.isChecked()){
+                    //Log.i("check", "on");
+                    bagagem = 1;
+                }else {
+                    //Log.i("check", "off");
+                    bagagem = 0;
+                }
+            }
+        });
+
+        switch_necessidades_especiais = findViewById(R.id.wheel_switch_marcar_viagem);
+        switch_necessidades_especiais.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(switch_necessidades_especiais.isChecked()){
+                    //Log.i("check", "on");
+                    necessidades_especiais = 1;
+                }else {
+                    //Log.i("check", "off");
+                    necessidades_especiais = 0;
+                }
+            }
+        });
+
+        //falta implementar o radio!! e uma das options vai ter que sair xD
+
     }
 
-    private void showDatePickerDialog()
+    private void showDatePickerDialog() //temos que ter em atençao que nos n vamos sempre partir do mm ponto se o utilizador abrir e escolher uma data, quando abrir era porreiro ter essa data
     {
+        //Log.i("passei" , "passei aqui.....");
         DatePickerDialog DPD = new DatePickerDialog(
                 this,
                 this,
@@ -95,6 +179,7 @@ public class marcar_viagem extends barra_lateral_pro implements DatePickerDialog
 
     private void showTimePickerDialog()
     {
+        Log.i("passei" , "passei aqui.....");
         TimePickerDialog TPD = new TimePickerDialog(
                 this,
                 new TimePickerDialog.OnTimeSetListener() {
@@ -124,9 +209,10 @@ public class marcar_viagem extends barra_lateral_pro implements DatePickerDialog
 
     public String GetDate()
     {
+        int month = Calendar.getInstance().get(Calendar.MONTH) + 1; //luis? pq q aqui tb dava um mes a menos
         String x = Calendar.getInstance().get(Calendar.DAY_OF_MONTH) +
                 "/" +
-                Calendar.getInstance().get(Calendar.MONTH) +
+                 month +
                 "/" +
                 Calendar.getInstance().get(Calendar.YEAR);
 
@@ -137,7 +223,9 @@ public class marcar_viagem extends barra_lateral_pro implements DatePickerDialog
 
     public String GetTime()
     {
-        String x = Calendar.getInstance().get(Calendar.HOUR_OF_DAY) + ":" + Calendar.getInstance().get(Calendar.MINUTE);
+        int hora = Calendar.getInstance().get(Calendar.HOUR_OF_DAY) + 1; //luis? pq q isto devolvia uma hora a menos?
+        String x = hora + ":" + Calendar.getInstance().get(Calendar.MINUTE);
+        //Log.i("valor do getTime", x);
         return x;
 
     }
@@ -197,6 +285,16 @@ public class marcar_viagem extends barra_lateral_pro implements DatePickerDialog
 
 
 
+    }
+
+    private void criarPedido_viagem(){
+
+
+        //o cancelar é suposto estar a 0, falta o locals e partilha
+        Pedido_Viagem pedido_viagem = new Pedido_Viagem(1, id_user,
+                0, 0, bagagem, modalidade, 0, animal,
+                necessidades_especiais, 0, GetTime(), GetDate(), DateLayout_text.getText().toString(),
+                TimeLayout_text.getText().toString());
     }
 
 

@@ -114,6 +114,7 @@ public class menu_municipe extends barra_lateral_pro {
     {
         Log.i("User info", user.toString());
         Intent Perfil = new Intent(menu_municipe.this, perfil_cliente.class);
+        Perfil.putExtra("user_id", id_user);
         Perfil.putExtra("Nome", user.getNome_utilizador());
         Perfil.putExtra("Origem", user.getMorada_utilizador());
         Perfil.putExtra("Idade", user.getData_nascimento_utilizador()); //temos que ver se é null pq se for podemos meter uma msg a dizer que falta dizer a idade ou ent uma func para calcular a idade
@@ -124,22 +125,26 @@ public class menu_municipe extends barra_lateral_pro {
     public void Clicar_Viagens_Marcadas()
     {
         Intent Viagens = new Intent(menu_municipe.this, viagens_marcadas.class);
+        Viagens.putExtra("user_id", id_user);
         startActivity(Viagens);
     }
 
     public void Clicar_Viagens_Efetuadas()
     {
         Intent Viagens = new Intent(menu_municipe.this, viagens_efetuadas.class);
+        Viagens.putExtra("user_id", id_user);
         startActivity(Viagens);
     }
     public void Clicar_Pesquisar()
     {
         Intent Pesquisar = new Intent(menu_municipe.this, pesquisar_utilizador.class);
+        Pesquisar.putExtra("user_id", id_user);
         startActivity(Pesquisar);
     }
     public void Clicar_Marcar_Viagem()
     {
         Intent Marcar = new Intent(menu_municipe.this, marcar_viagem.class);
+        Marcar.putExtra("user_id", id_user);
         startActivity(Marcar);
     }
 
