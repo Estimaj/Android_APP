@@ -21,6 +21,6 @@ public class perfil_cliente_edit extends barra_lateral_pro {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil_motorista_edit);
-        Bar_Settings();
+        //Bar_Settings();
     }
 }

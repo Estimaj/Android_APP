@@ -30,12 +30,11 @@ public class barra_lateral_pro extends AppCompatActivity implements NavigationVi
     private Toolbar toolbar;
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
+    private int user_id;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.barra_lateral_pro);
-       Bar_Settings();
-
     }
 
     @Override
@@ -44,16 +43,19 @@ public class barra_lateral_pro extends AppCompatActivity implements NavigationVi
         switch(id)
         {
             case R.id.LogOut_btn_menu:
-                Intent intent1 = new Intent(this, MainActivity_Login.class);
-                startActivity(intent1);
+                Intent logOut = new Intent(this, MainActivity_Login.class);
+                logOut.putExtra("user_id", user_id);
+                startActivity(logOut);
                 break;
             case R.id.User_btn_menu:
-                Intent intent2 = new Intent(this, perfil_cliente.class);
-                startActivity(intent2);
+                Intent perfilCliente = new Intent(this, perfil_cliente.class);
+                perfilCliente.putExtra("user_id", user_id);
+                startActivity(perfilCliente);
                 break;
             case R.id.Home_btn_menu:
-                Intent intent3 = new Intent(this, menu_municipe.class);
-                startActivity(intent3);
+                Intent homePage = new Intent(this, menu_municipe.class);
+                homePage.putExtra("user_id", user_id);
+                startActivity(homePage);
                 break;
             //Criar activity Notificações
             //Default?
@@ -75,8 +77,9 @@ public class barra_lateral_pro extends AppCompatActivity implements NavigationVi
 
 
 
-    public void Bar_Settings()
+    public void Bar_Settings(int id)
     {
+        user_id = id;
         toolbar = findViewById(R.id.barra_lateral_toolbar);
         setSupportActionBar(toolbar);
         Objects.requireNonNull(getSupportActionBar()).setDisplayShowTitleEnabled(false);

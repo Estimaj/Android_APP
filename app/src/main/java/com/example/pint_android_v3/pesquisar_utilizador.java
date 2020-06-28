@@ -25,7 +25,7 @@ public class pesquisar_utilizador extends barra_lateral_pro {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pesquisar_utilizador);
 
-       Bar_Settings();
+       //Bar_Settings();
 
 
 

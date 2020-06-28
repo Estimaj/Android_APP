@@ -32,7 +32,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class menu_municipe extends barra_lateral_pro {
 
     private String BASE_URL ="http://10.0.2.2:3000";
-    private int id_user;
+    private int user_id;
 
     TextView Nome;
     TextView Localidade;
@@ -53,8 +53,6 @@ public class menu_municipe extends barra_lateral_pro {
         //Log.i("oncreate:", "on create Menu");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu_cliente);
-        Bar_Settings();
-
 
         Nome = findViewById(R.id.user_Name_menu_cliente);
         Localidade =  findViewById(R.id.user_localidade_menu_cliente);
@@ -67,11 +65,10 @@ public class menu_municipe extends barra_lateral_pro {
         Intent X = getIntent();
         Bundle b = X.getExtras();
         if(b!=null){
-            id_user = (int) b.get("user_id");
-            //Log.i("id_user", ""+ id_user);
-            Get_user_id_information(id_user);
+            user_id = (int) b.get("user_id");
+            Get_user_id_information(user_id);
         }
-
+        Bar_Settings(user_id);//vai usar a func da class barra_lateral_pro para criar a o hamburger e as setting
 
         if (user != null){
             Log.i("User info", user.toString());
@@ -110,41 +107,42 @@ public class menu_municipe extends barra_lateral_pro {
 
     }
 
-    public void Clicar_Perfil()
+    public void Clicar_Perfil() //ao clicar na foto de perfil do utilizador
     {
-        Log.i("User info", user.toString());
         Intent Perfil = new Intent(menu_municipe.this, perfil_cliente.class);
-        Perfil.putExtra("user_id", id_user);
-        Perfil.putExtra("Nome", user.getNome_utilizador());
-        Perfil.putExtra("Origem", user.getMorada_utilizador());
-        Perfil.putExtra("Idade", user.getData_nascimento_utilizador()); //temos que ver se é null pq se for podemos meter uma msg a dizer que falta dizer a idade ou ent uma func para calcular a idade
-        Perfil.putExtra("Telefone", user.getTelefone_utilizador());
-        Perfil.putExtra("Email", user.getEmail_utilizador());
+        Perfil.putExtra("user_id", user_id);
+        if(user != null){
+            Perfil.putExtra("Nome", user.getNome_utilizador());
+            Perfil.putExtra("Origem", user.getMorada_utilizador());
+            Perfil.putExtra("Idade", user.getData_nascimento_utilizador()); //temos que ver se é null pq se for podemos meter uma msg a dizer que falta dizer a idade ou ent uma func para calcular a idade
+            Perfil.putExtra("Telefone", user.getTelefone_utilizador());
+            Perfil.putExtra("Email", user.getEmail_utilizador());
+        }
         startActivity(Perfil);
     }
     public void Clicar_Viagens_Marcadas()
     {
         Intent Viagens = new Intent(menu_municipe.this, viagens_marcadas.class);
-        Viagens.putExtra("user_id", id_user);
+        Viagens.putExtra("user_id", user_id);
         startActivity(Viagens);
     }
 
     public void Clicar_Viagens_Efetuadas()
     {
         Intent Viagens = new Intent(menu_municipe.this, viagens_efetuadas.class);
-        Viagens.putExtra("user_id", id_user);
+        Viagens.putExtra("user_id", user_id);
         startActivity(Viagens);
     }
     public void Clicar_Pesquisar()
     {
         Intent Pesquisar = new Intent(menu_municipe.this, pesquisar_utilizador.class);
-        Pesquisar.putExtra("user_id", id_user);
+        Pesquisar.putExtra("user_id", user_id);
         startActivity(Pesquisar);
     }
     public void Clicar_Marcar_Viagem()
     {
         Intent Marcar = new Intent(menu_municipe.this, marcar_viagem.class);
-        Marcar.putExtra("user_id", id_user);
+        Marcar.putExtra("user_id", user_id);
         startActivity(Marcar);
     }
 

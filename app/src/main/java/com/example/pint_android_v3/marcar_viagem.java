@@ -74,7 +74,6 @@ public class marcar_viagem extends barra_lateral_pro implements DatePickerDialog
 
         String time = GetTime();
         String date = GetDate();
-        Bar_Settings();
 
         DateLayout_text = findViewById(R.id.agenda_date_picker_text_marcar_viagem);
         btn_Marcar_Viagem = findViewById(R.id.btn_marcar_viagem_marcar_viagem);
@@ -118,8 +117,8 @@ public class marcar_viagem extends barra_lateral_pro implements DatePickerDialog
             id_user = (int) b.get("user_id");
             //Log.i("id_user", ""+ id_user);
 
-
         }
+        //Bar_Settings();
     }
 
     private void switchsResumidos(){

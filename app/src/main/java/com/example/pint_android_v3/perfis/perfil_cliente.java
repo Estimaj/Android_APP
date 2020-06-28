@@ -19,18 +19,13 @@ public class perfil_cliente extends barra_lateral_pro {
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
     private TextView Nome, Origem, Idade, Telefone, Email;
+    private int user_id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil_motorista);
-        /*Button X = (Button) findViewById(R.id.button_back_arrow_black_perfil_motorista);
-        X.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Go_Back();
-            }
-        });*/
+        Log.i("Entrei aqui", "Estou na class perfil_cliente");
         Nome = findViewById(R.id.User_Name);
         Origem = findViewById(R.id.textView_user_location_information_perfil_motorista);
         Idade = findViewById(R.id.textView_user_idade_information_perfil_motorista);
@@ -39,28 +34,18 @@ public class perfil_cliente extends barra_lateral_pro {
 
         Intent I = getIntent();
         Bundle b = I.getExtras();
-
         if(b!=null)
         {
-            Log.i("---", "-----------------");
-            String j =(String) b.get("Nome");
-            Nome.setText(j);
-            Log.i("---", ""+ j);
-            j =(String) b.get("Origem");
-            Origem.setText(j);
-            j =(String) b.get("Idade");
-            Idade.setText(j);
-            j =(String) b.get("Telefone");
-            Telefone.setText(j);
-            j =(String) b.get("Email");
-            Email.setText(j);
+            user_id =(int) b.get("user_id");
         }
-        Bar_Settings();
+
+        Bar_Settings(user_id);
     }
 
     public void Go_Back()
     {
         Intent GO = new Intent(perfil_cliente.this, menu_municipe.class);
+        GO.putExtra("user_id", user_id);
         startActivity(GO);
     }
 

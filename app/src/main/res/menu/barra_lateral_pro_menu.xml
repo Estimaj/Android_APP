@@ -4,9 +4,22 @@
     <item android:title="Opções de Viagem" android:id="@+id/op_menu_cliente_barra">
 
         <menu>
-            <item android:title="Perfil" android:icon="@drawable/ic_user_solid" android:iconTint="@color/Yellow" android:id="@+id/User_btn_menu"/>
-            <item android:title="Home" android:icon="@drawable/home_solid" android:iconTint="@color/Yellow" android:id="@+id/Home_btn_menu"/>
-            <item android:title="Notificações" android:icon="@drawable/notificacao" android:iconTint="@color/Yellow" android:id="@+id/Notif_btn_menu"/>
+            <item
+                android:title="Perfil"
+                android:icon="@drawable/ic_user_solid"
+                android:iconTint="@color/Yellow"
+                android:id="@+id/User_btn_menu"/>
+
+            <item
+                android:title="Home"
+                android:icon="@drawable/home_solid"
+                android:iconTint="@color/Yellow"
+                android:id="@+id/Home_btn_menu"/>
+
+            <item android:title="Notificações"
+                android:icon="@drawable/notificacao"
+                android:iconTint="@color/Yellow"
+                android:id="@+id/Notif_btn_menu"/>
         </menu>
 
     </item>
@@ -15,8 +28,12 @@
     <item android:title="Sair" android:id="@+id/sair_menu_cliente_barra">
 
         <menu>
-            <item android:title="LogOut" android:icon="@drawable/log_out_icon" android:iconTint="@color/Yellow"
-                android:id="@+id/LogOut_btn_menu"/>
+            <item
+                android:title="LogOut"
+                android:icon="@drawable/log_out_icon"
+                android:iconTint="@color/Yellow"
+                android:id="@+id/LogOut_btn_menu"
+                />
         </menu>
 
     </item>
