@@ -22,11 +22,19 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.example.pint_android_v3.DataBase.BaseDadosInterface;
+import com.example.pint_android_v3.DataBase.Model;
 import com.example.pint_android_v3.DataBase.Pedido_Viagem;
 import com.example.pint_android_v3.menus.menu_municipe;
 import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.Calendar;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class marcar_viagem extends barra_lateral_pro implements DatePickerDialog.OnDateSetListener{
 
@@ -41,6 +49,7 @@ public class marcar_viagem extends barra_lateral_pro implements DatePickerDialog
     private Switch switch_bagagem;
     private RadioGroup radioGroup_partilha;
 
+    Spinner spinner;
 
     private int id_user;
     int local_origem_pedido;
@@ -104,6 +113,9 @@ public class marcar_viagem extends barra_lateral_pro implements DatePickerDialog
 
         //meti aqui os switchs todos
         switchsResumidos();
+
+        spinner = findViewById(R.id.spinner_destino_marcar_viagem);
+
 
 
         Intent X = getIntent();
@@ -170,7 +182,7 @@ public class marcar_viagem extends barra_lateral_pro implements DatePickerDialog
                 this,
                 this,
                 Calendar.getInstance().get(Calendar.YEAR),
-                Calendar.getInstance().get(Calendar.MONTH),
+                Calendar.getInstance().get(Calendar.MONTH) + 1,
                 Calendar.getInstance().get(Calendar.DAY_OF_MONTH)
         );
         DPD.show();
@@ -185,10 +197,17 @@ public class marcar_viagem extends barra_lateral_pro implements DatePickerDialog
                 new TimePickerDialog.OnTimeSetListener() {
                     @Override
                     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                        TimeLayout_text.setText(hourOfDay + ":" + minute);
+                        String hora = ""+hourOfDay, min = ""+minute;
+                        if(hourOfDay < 10){
+                            hora = "0" + hourOfDay;
+                        }
+                        if(minute < 10){
+                            min = "0"+ minute;
+                        }
+                        TimeLayout_text.setText(hora + ":" + min);
                     }
                 },
-                Calendar.getInstance().get(Calendar.HOUR_OF_DAY),
+                Calendar.getInstance().get(Calendar.HOUR_OF_DAY) +1,
                 Calendar.getInstance().get(Calendar.MINUTE),
                 true
 
@@ -265,8 +284,8 @@ public class marcar_viagem extends barra_lateral_pro implements DatePickerDialog
             @Override
             public void onClick(View v) {
                 makeToastForMarcar("yes");
+                criarPedido_viagem();
                 startActivity(new Intent(marcar_viagem.this, menu_municipe.class));
-
             }
         });
         no_btn.setOnClickListener(new View.OnClickListener() {
@@ -288,13 +307,45 @@ public class marcar_viagem extends barra_lateral_pro implements DatePickerDialog
     }
 
     private void criarPedido_viagem(){
-
-
         //o cancelar é suposto estar a 0, falta o locals e partilha
+        if(id_user == 0){
+            Log.i("user_id_error", "user id = 0, func criarPedido_viagem, marcar_viagem.java");
+            return;
+        }
         Pedido_Viagem pedido_viagem = new Pedido_Viagem(1, id_user,
                 0, 0, bagagem, modalidade, 0, animal,
                 necessidades_especiais, 0, GetTime(), GetDate(), DateLayout_text.getText().toString(),
                 TimeLayout_text.getText().toString());
+
+        Retrofit retrofit;
+        BaseDadosInterface baseDadosInterface;
+
+        retrofit = new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        baseDadosInterface =  retrofit.create(BaseDadosInterface.class);
+
+        Call<Pedido_Viagem> call = baseDadosInterface.executeCriarPedidoViagem(pedido_viagem);
+
+        call.enqueue(new Callback<Pedido_Viagem>() {
+            @Override
+            public void onResponse(Call<Pedido_Viagem> call, Response<Pedido_Viagem> response) {
+                if (!response.isSuccessful()){
+                    makeToastForMarcar("Erro a ir ao link");
+                }
+                else{
+                    makeToastForMarcar("Penso eu que devia haver um novo pedido");
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Pedido_Viagem> call, Throwable t) {
+                Log.i("onFailure:", t.toString());
+                makeToastForMarcar("Failure: "+ t.toString());
+            }
+        });
+
     }
 
 
