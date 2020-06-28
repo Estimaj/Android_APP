@@ -53,8 +53,6 @@ public class marcar_viagem extends barra_lateral_pro implements DatePickerDialog
 
     Spinner spinner_destino;
     Spinner spiner_partida;
-    int spinner_partida_pos = 0;
-    int spinner_destino_pos = 0;
 
     private int id_user;
     private int local_origem_pedido;
@@ -73,13 +71,7 @@ public class marcar_viagem extends barra_lateral_pro implements DatePickerDialog
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_marcar_viagem);
-        ArrayAdapter adapter = ArrayAdapter.createFromResource(
-                this,
-                R.array.Spinner_items,
-                R.layout.color_spinner_layout
-        );
-        adapter.setDropDownViewResource(R.layout.spinner_dropdown_layout);
-        //Log.i("adapter", adapter.getPosition().toString());
+
         String time = GetTime();
         String date = GetDate();
         Bar_Settings();
@@ -112,39 +104,6 @@ public class marcar_viagem extends barra_lateral_pro implements DatePickerDialog
             }
         });
 
-
-
-
-        spiner_partida = findViewById(R.id.spinner_partida_marcar_viagem);
-        spiner_partida.setAdapter(adapter);
-
-        spiner_partida.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-                spinner_partida_pos = position;
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-
-
-        });
-
-        spinner_destino.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-                spinner_destino_pos = position;
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-
-
-        });
 
         //meti aqui os switchs todos
         switchsResumidos();
@@ -225,6 +184,47 @@ public class marcar_viagem extends barra_lateral_pro implements DatePickerDialog
                 }
             }
         });
+
+        ArrayAdapter adapterViagens = ArrayAdapter.createFromResource(
+                this,
+                R.array.Spinner_items,
+                R.layout.color_spinner_layout
+        );
+        adapterViagens.setDropDownViewResource(R.layout.spinner_dropdown_layout);
+        //Log.i("adapter", adapter.getPosition().toString());
+        spiner_partida = findViewById(R.id.spinner_partida_marcar_viagem);
+        spiner_partida.setAdapter(adapterViagens);
+
+        spiner_partida.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+                local_origem_pedido = position + 1;
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+
+
+        });
+
+        spinner_destino = findViewById(R.id.spinner_destino_marcar_viagem);
+        spinner_destino.setAdapter(adapterViagens); //mm adapter que o de partida
+        spinner_destino.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+                local_destino_pedido = position + 1;
+                Log.i("teste", ""+ local_destino_pedido);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+
+
+        });
     }
 
     private void showDatePickerDialog() //temos que ter em atençao que nos n vamos sempre partir do mm ponto se o utilizador abrir e escolher uma data, quando abrir era porreiro ter essa data
@@ -243,7 +243,6 @@ public class marcar_viagem extends barra_lateral_pro implements DatePickerDialog
 
     private void showTimePickerDialog()
     {
-        Log.i("passei" , "passei aqui.....");
         TimePickerDialog TPD = new TimePickerDialog(
                 this,
                 new TimePickerDialog.OnTimeSetListener() {
@@ -294,33 +293,15 @@ public class marcar_viagem extends barra_lateral_pro implements DatePickerDialog
 
     public String GetTime()
     {
-        int hora = Calendar.getInstance().get(Calendar.HOUR_OF_DAY) + 1; //luis? pq q isto devolvia uma hora a menos?
-        String x = hora + ":" + Calendar.getInstance().get(Calendar.MINUTE);
-        //Log.i("valor do getTime", x);
-        return x;
-
-    }
-
-    public void Click_Botao_marcar_alert()
-    {
-        makeToastForMarcar("not available yet");
-        AlertDialog.Builder AlertMarcarViagem = new AlertDialog.Builder(marcar_viagem.this);
-        //AlertMarcarViagem.setTitle("")
-        AlertMarcarViagem.setMessage("Tem a certeza que pretende marcar a viagem?");
-        AlertMarcarViagem.setPositiveButton("Marcar", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                makeToastForMarcar("Marcada");
-            }
-        });
-        AlertMarcarViagem.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                makeToastForMarcar("Não marcada");
-            }
-        });
-        AlertMarcarViagem.show();
-
+        int nhora = Calendar.getInstance().get(Calendar.HOUR_OF_DAY )+ 1, nMin = Calendar.getInstance().get(Calendar.MINUTE);
+        String hora = ""+ nhora, min = ""+ nMin;
+        if(nhora < 10){
+            hora = "0" + nhora;
+        }
+        if(nMin < 10){
+            min = "0"+ nMin;
+        }
+        return hora + ":" + min;
     }
 
     public void Click_Botao_marcar()
@@ -337,7 +318,10 @@ public class marcar_viagem extends barra_lateral_pro implements DatePickerDialog
             public void onClick(View v) {
                 makeToastForMarcar("yes");
                 criarPedido_viagem();
-                startActivity(new Intent(marcar_viagem.this, menu_municipe.class));
+                //mudar de intent
+                Intent Viagens = new Intent(marcar_viagem.this, menu_municipe.class);
+                Viagens.putExtra("user_id", id_user);
+                startActivity(Viagens);
             }
         });
         no_btn.setOnClickListener(new View.OnClickListener() {
@@ -359,15 +343,17 @@ public class marcar_viagem extends barra_lateral_pro implements DatePickerDialog
     }
 
     private void criarPedido_viagem(){
+        id_user = 4;
         //o cancelar é suposto estar a 0, falta o locals e partilha
         if(id_user == 0){
             Log.i("user_id_error", "user id = 0, func criarPedido_viagem, marcar_viagem.java");
             return;
         }
         Pedido_Viagem pedido_viagem = new Pedido_Viagem(1, id_user,
-                0, 0, bagagem, modalidade, partilha, animal,
+                local_origem_pedido, local_destino_pedido, bagagem, modalidade, partilha, animal,
                 necessidades_especiais, 0, GetTime(), GetDate(), DateLayout_text.getText().toString(),
                 TimeLayout_text.getText().toString());
+        Log.i("Pedido", pedido_viagem.toString());
 
         Retrofit retrofit;
         BaseDadosInterface baseDadosInterface;
