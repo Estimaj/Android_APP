@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -49,7 +50,11 @@ public class marcar_viagem extends barra_lateral_pro implements DatePickerDialog
     private Switch switch_bagagem;
     private RadioGroup radioGroup_partilha;
 
-    Spinner spinner;
+
+    Spinner spinner_destino;
+    Spinner spiner_partida;
+    int spinner_partida_pos = 0;
+    int spinner_destino_pos = 0;
 
     private int id_user;
     private int local_origem_pedido;
@@ -108,13 +113,43 @@ public class marcar_viagem extends barra_lateral_pro implements DatePickerDialog
         });
 
 
-        Spinner coloredSpinner = findViewById(R.id.spinner_partida_marcar_viagem);
-        coloredSpinner.setAdapter(adapter);
+
+
+        spiner_partida = findViewById(R.id.spinner_partida_marcar_viagem);
+        spiner_partida.setAdapter(adapter);
+
+        spiner_partida.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+                spinner_partida_pos = position;
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+
+
+        });
+
+        spinner_destino.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+                spinner_destino_pos = position;
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+
+
+        });
 
         //meti aqui os switchs todos
         switchsResumidos();
 
-        spinner = findViewById(R.id.spinner_destino_marcar_viagem);
+
 
 
 
