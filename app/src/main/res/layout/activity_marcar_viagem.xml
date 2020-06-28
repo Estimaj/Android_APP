@@ -325,13 +325,16 @@
                     android:layout_height="wrap_content"
                     android:text="Sem Partilha"
                     android:textSize="16sp" />
-
+                <!--Este botao tem que ser implementado no futuro-->
                 <RadioButton
                     android:id="@+id/radio_so_com_partilha_marcar_viagem"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Só com Partilha"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"
+                    android:visibility="invisible"
+                    />
+                <!---->
             </RadioGroup>
 
             <TextView

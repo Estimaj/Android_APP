@@ -335,7 +335,12 @@ public class marcar_viagem extends barra_lateral_pro implements DatePickerDialog
                     makeToastForMarcar("Erro a ir ao link");
                 }
                 else{
-                    makeToastForMarcar("Penso eu que devia haver um novo pedido");
+                    if(response.body() != null) {
+                        makeToastForMarcar("Penso eu que devia haver um novo pedido");
+                        response.body().toString();
+                    }else{
+                        makeToastForMarcar("ocurreu um erro na criaçao da sua viagem!");
+                    }
                 }
             }
 
