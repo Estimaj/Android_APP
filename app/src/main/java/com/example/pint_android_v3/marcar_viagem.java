@@ -52,14 +52,14 @@ public class marcar_viagem extends barra_lateral_pro implements DatePickerDialog
     Spinner spinner;
 
     private int id_user;
-    int local_origem_pedido;
-    int local_destino_pedido;
+    private int local_origem_pedido;
+    private int local_destino_pedido;
     //1-yes 0-no
-    int animal;
-    int necessidades_especiais;
-    int bagagem;
-    int partilha;
-    int modalidade = 0; // 0-ida, 1-ida e volta
+    private int animal;
+    private int necessidades_especiais;
+    private int bagagem;
+    private int partilha;
+    private int modalidade = 0; // 0-ida, 1-ida e volta
 
 
     //...
@@ -171,8 +171,25 @@ public class marcar_viagem extends barra_lateral_pro implements DatePickerDialog
             }
         });
 
-        //falta implementar o radio!! e uma das options vai ter que sair xD
-
+        radioGroup_partilha = findViewById(R.id.partilha_radio_group_marcar_viagem);
+        radioGroup_partilha.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                switch (checkedId){
+                    case R.id.radio_com_partilha_marcar_viagem:{
+                        partilha = 1;
+                        break;
+                    }
+                    case R.id.radio_sem_partilha_marcar_viagem:{
+                        partilha=0;
+                        break;
+                    }
+                    default:{
+                        makeToastForMarcar("Erro no radiogroup!!");
+                        break;
+                    }
+                }
+            }
+        });
     }
 
     private void showDatePickerDialog() //temos que ter em atençao que nos n vamos sempre partir do mm ponto se o utilizador abrir e escolher uma data, quando abrir era porreiro ter essa data
@@ -313,7 +330,7 @@ public class marcar_viagem extends barra_lateral_pro implements DatePickerDialog
             return;
         }
         Pedido_Viagem pedido_viagem = new Pedido_Viagem(1, id_user,
-                0, 0, bagagem, modalidade, 0, animal,
+                0, 0, bagagem, modalidade, partilha, animal,
                 necessidades_especiais, 0, GetTime(), GetDate(), DateLayout_text.getText().toString(),
                 TimeLayout_text.getText().toString());
 
