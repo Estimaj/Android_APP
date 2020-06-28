@@ -12,6 +12,7 @@ import com.example.pint_android_v3.menus.menu_municipe;
 
 public class viagens_marcadas extends AppCompatActivity {
 
+    private int id_user;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,11 +24,18 @@ public class viagens_marcadas extends AppCompatActivity {
                 Go_Back();
             }
         });
+
+        Intent I = getIntent();
+        Bundle b = I.getExtras();
+        if(b!=null){
+            id_user = (int) b.get("user_id");
+        }
     }
 
     public void Go_Back()
     {
         Intent GO = new Intent(viagens_marcadas.this, menu_municipe.class);
+        GO.putExtra("user_id", id_user);
         startActivity(GO);
 
     }
