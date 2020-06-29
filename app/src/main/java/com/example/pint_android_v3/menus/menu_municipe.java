@@ -144,7 +144,7 @@ public class menu_municipe extends barra_lateral_pro {
     }
     public void Clicar_Marcar_Viagem()
     {
-        Intent Marcar = new Intent(menu_municipe.this, mais_info_mapa_cliente.class);
+        Intent Marcar = new Intent(menu_municipe.this, marcar_viagem.class);
         Marcar.putExtra("user_id", user_id);
         startActivity(Marcar);
     }

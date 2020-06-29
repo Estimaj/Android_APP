@@ -32,7 +32,6 @@
         <activity android:name=".menus.menu_municipe">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -46,6 +45,7 @@
         <activity android:name=".perfis.perfil_cliente_edit" />
         <activity android:name=".marcar_viagem" />
         <activity android:name=".classificar_condutor" />
+        <!--
         <activity
             android:name="com.esri.arcgisruntime.security.DefaultOAuthIntentReceiver"
             android:label="OAuthIntentReceiver"
@@ -58,6 +58,7 @@
                 <data android:scheme="my-app"/>
             </intent-filter>
         </activity>
+        -->
     </application>
 
 </manifest>

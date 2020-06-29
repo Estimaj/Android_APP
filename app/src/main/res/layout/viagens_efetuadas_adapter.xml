@@ -112,10 +112,10 @@
         android:layout_width="160dp"
         android:layout_height="48dp"
         android:layout_marginTop="140dp"
-        app:layout_constraintEnd_toStartOf="@+id/viagens_marcadas_adapter_contentor"
+        app:layout_constraintEnd_toStartOf="@id/viagens_marcadas_adapter_contentor"
         app:layout_constraintHorizontal_bias="0.681"
-        app:layout_constraintStart_toEndOf="@+id/viagens_marcadas_adapter_contentor"
-        app:layout_constraintTop_toTopOf="@+id/viagens_marcadas_adapter_contentor"
+        app:layout_constraintStart_toEndOf="@id/viagens_marcadas_adapter_contentor"
+        app:layout_constraintTop_toTopOf="@id/viagens_marcadas_adapter_contentor"
         app:srcCompat="@drawable/botao_class" />
 
     <TextView
@@ -125,10 +125,11 @@
         android:layout_marginTop="14dp"
         android:text="Classificar Viagem"
         android:textSize="13sp"
-        app:layout_constraintEnd_toStartOf="@+id/viagens_efetuadas_adapter_class_viagem"
+        app:layout_constraintEnd_toStartOf="@id/viagens_efetuadas_adapter_class_viagem"
         app:layout_constraintHorizontal_bias="0.481"
-        app:layout_constraintStart_toEndOf="@+id/viagens_efetuadas_adapter_class_viagem"
-        app:layout_constraintTop_toTopOf="@+id/viagens_efetuadas_adapter_class_viagem" />
+        app:layout_constraintStart_toEndOf="@id/viagens_efetuadas_adapter_class_viagem"
+        app:layout_constraintTop_toTopOf="@id/viagens_efetuadas_adapter_class_viagem"
+        />
 
     <TextView
         android:id="@+id/textView9"
@@ -137,10 +138,10 @@
         android:layout_marginTop="14dp"
         android:text="Classificar Condutor"
         android:textSize="13sp"
-        app:layout_constraintEnd_toStartOf="@+id/viagens_efetuadas_adapter_class_viagem"
+        app:layout_constraintEnd_toStartOf="@id/viagens_efetuadas_adapter_class_viagem"
         app:layout_constraintHorizontal_bias="0.464"
-        app:layout_constraintStart_toEndOf="@+id/viagens_efetuadas_adapter_class_viagem"
-        app:layout_constraintTop_toTopOf="@+id/viagens_efetuadas_adapter_class_condutor" />
+        app:layout_constraintStart_toEndOf="@id/viagens_efetuadas_adapter_class_viagem"
+        app:layout_constraintTop_toTopOf="@id/viagens_efetuadas_adapter_class_condutor" />
 
     <ImageView
         android:id="@+id/viagens_marcadas_adapter_mais_info"
