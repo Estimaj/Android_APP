@@ -31,12 +31,6 @@
         app:srcCompat="@drawable/bg_black_radius_edges"
         tools:ignore="MissingConstraints" />
 
-    <include
-        layout="@layout/barra_lateral_pro"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <!--Top yellow bar with the muv logo-->
 
     <ImageView
@@ -66,7 +60,7 @@
         app:layout_constraintEnd_toEndOf="@id/gray_circle_foto_perfil_motorista"
         app:layout_constraintStart_toStartOf="@id/gray_circle_foto_perfil_motorista"
         app:layout_constraintTop_toTopOf="@id/gray_circle_foto_perfil_motorista"
-        app:srcCompat="@drawable/foto_de_perfil_usuario" />
+        app:srcCompat="@drawable/ic_launcher_foreground" />
 
     <Button
         android:id="@+id/button_edit_perfil_motorista"
@@ -144,7 +138,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginBottom="1dp"
-        android:text="Póvoa de Calve"
+        android:text="Vazio"
         android:textColor="@color/colorDarkGray"
         android:textSize="12dp"
         app:layout_constraintBottom_toBottomOf="@id/imageView_origem_bg_perfil_motorista"
@@ -192,7 +186,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginBottom="1dp"
-        android:text="23 anos"
+        android:text="Vazio"
         android:textColor="@color/colorDarkGray"
         android:textSize="12dp"
         app:layout_constraintBottom_toBottomOf="@id/imageView_Idade_bg_perfil_motorista"
@@ -240,7 +234,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginBottom="1dp"
-        android:text="911222333"
+        android:text="000000000"
         android:textColor="@color/colorDarkGray"
         android:textSize="12dp"
         app:layout_constraintBottom_toBottomOf="@id/imageView_telefone_bg_perfil_motorista"
@@ -281,19 +275,21 @@
         app:layout_constraintStart_toEndOf="@id/email_envelope_icon_perfil_motorista"
         app:layout_constraintTop_toTopOf="@id/imageView_Email_bg_perfil_motorista" />
 
+    <!--Money secção-->
     <TextView
         android:id="@+id/textView_user_email_information_perfil_motorista"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
         android:layout_marginBottom="1dp"
-        android:text="sergio@gmail.com"
+        android:text="Vazio"
         android:textColor="@color/colorDarkGray"
-        android:textSize="12dp"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="@id/imageView_Email_bg_perfil_motorista"
         app:layout_constraintStart_toEndOf="@id/email_envelope_icon_perfil_motorista"
-        app:layout_constraintTop_toBottomOf="@id/email_envelope_textView_perfil_motorista" />
-    <!--Money secção-->
+        app:layout_constraintTop_toBottomOf="@id/email_envelope_textView_perfil_motorista"
+        app:layout_constraintVertical_bias="1.0" />
+
     <ImageView
         android:id="@+id/imageView_Money_bg_perfil_motorista"
         android:layout_width="370dp"
@@ -334,7 +330,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginBottom="1dp"
-        android:text="30.50€"
+        android:text="0"
         android:textColor="@color/colorDarkGray"
         android:textSize="12dp"
         app:layout_constraintBottom_toBottomOf="@id/imageView_Money_bg_perfil_motorista"
@@ -353,5 +349,31 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@id/bg_black_perfil_motorista"
         app:layout_constraintTop_toBottomOf="@id/gray_circle_foto_perfil_motorista" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="anos"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/textView_user_idade_information_perfil_motorista"
+        app:layout_constraintTop_toBottomOf="@+id/idade_birthday_cake_textView_perfil_motorista" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="€"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/textView_user_money_information_perfil_motorista"
+        app:layout_constraintTop_toBottomOf="@+id/money_textView_perfil_motorista" />
+
+    <include
+        layout="@layout/barra_lateral_pro"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

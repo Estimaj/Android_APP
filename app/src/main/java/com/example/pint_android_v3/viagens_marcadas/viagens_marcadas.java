@@ -17,13 +17,7 @@ public class viagens_marcadas extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_viagens_marcadas);
-        Button X = (Button) findViewById(R.id.button_back_arrow_black_viagens_marcadas);
-        X.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Go_Back();
-            }
-        });
+
 
         Intent I = getIntent();
         Bundle b = I.getExtras();
@@ -32,11 +26,5 @@ public class viagens_marcadas extends AppCompatActivity {
         }
     }
 
-    public void Go_Back()
-    {
-        Intent GO = new Intent(viagens_marcadas.this, menu_municipe.class);
-        GO.putExtra("user_id", id_user);
-        startActivity(GO);
 
-    }
-}
+        }

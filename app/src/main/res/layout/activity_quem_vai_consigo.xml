@@ -650,5 +650,6 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
+    <include layout="@layout/barra_lateral_pro" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
