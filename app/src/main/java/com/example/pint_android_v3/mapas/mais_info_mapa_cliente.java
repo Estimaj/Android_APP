@@ -3,9 +3,12 @@ package com.example.pint_android_v3.mapas;
 import android.graphics.Color;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MotionEvent;
+import android.widget.Toast;
 
 
+import com.esri.arcgisruntime.concurrent.ListenableFuture;
 import com.esri.arcgisruntime.data.ServiceFeatureTable;
 import com.esri.arcgisruntime.geometry.Point;
 import com.esri.arcgisruntime.geometry.PointCollection;
@@ -14,6 +17,7 @@ import com.esri.arcgisruntime.geometry.Polyline;
 import com.esri.arcgisruntime.geometry.SpatialReferences;
 import com.esri.arcgisruntime.layers.ArcGISMapImageLayer;
 import com.esri.arcgisruntime.layers.FeatureLayer;
+import com.esri.arcgisruntime.loadable.LoadStatus;
 import com.esri.arcgisruntime.mapping.ArcGISMap;
 import com.esri.arcgisruntime.mapping.Basemap;
 import com.esri.arcgisruntime.mapping.view.DefaultMapViewOnTouchListener;
@@ -26,10 +30,20 @@ import com.esri.arcgisruntime.security.OAuthConfiguration;
 import com.esri.arcgisruntime.symbology.SimpleFillSymbol;
 import com.esri.arcgisruntime.symbology.SimpleLineSymbol;
 import com.esri.arcgisruntime.symbology.SimpleMarkerSymbol;
+
+import com.esri.arcgisruntime.tasks.networkanalysis.Route;
+import com.esri.arcgisruntime.tasks.networkanalysis.RouteParameters;
+
+import com.esri.arcgisruntime.tasks.networkanalysis.RouteResult;
+import com.esri.arcgisruntime.tasks.networkanalysis.RouteTask;
+import com.esri.arcgisruntime.tasks.networkanalysis.Stop;
 import com.example.pint_android_v3.barra_lateral.barra_lateral_pro;
 import com.example.pint_android_v3.R;
 
 import java.net.MalformedURLException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 public class mais_info_mapa_cliente extends barra_lateral_pro {
 
@@ -47,11 +61,14 @@ public class mais_info_mapa_cliente extends barra_lateral_pro {
         // Retrieve the map and initial extent from XML layout
         //1
         mMapView = findViewById(R.id.mapView_mais_info_cliente);
-        setupOAuthManager();
+
         setupMap();
+
 
         //2
         createGraphicsOverlay();
+        setupOAuthManager();
+
 
     }
 
@@ -93,6 +110,7 @@ public class mais_info_mapa_cliente extends barra_lateral_pro {
             // Both locations are set; re-set the start to the tapped location
             setStartMarker(location);
         }
+        findRoute();
     }
 
     private void setupOAuthManager() {
@@ -107,6 +125,11 @@ public class mais_info_mapa_cliente extends barra_lateral_pro {
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
+    }
+
+    private void showError(String message) {
+        Log.d("FindRoute", message);
+        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
     }
 
     private void setupMap() {
@@ -129,13 +152,49 @@ public class mais_info_mapa_cliente extends barra_lateral_pro {
                 }
             });
 
-            ArcGISMapImageLayer traffic = new ArcGISMapImageLayer(getResources().getString(R.string.traffic_service));
-            map.getOperationalLayers().add(traffic);
+            //ArcGISMapImageLayer traffic = new ArcGISMapImageLayer(getResources().getString(R.string.traffic_service));
+            //map.getOperationalLayers().add(traffic);
         }
 
     }
 
+    private void findRoute() {
+        String routeServiceURI = getResources().getString(R.string.routing_url);
+        final RouteTask solveRouteTask = new RouteTask(getApplicationContext(), routeServiceURI);
+        solveRouteTask.loadAsync();
 
+        solveRouteTask.addDoneLoadingListener(() -> {
+            if (solveRouteTask.getLoadStatus() == LoadStatus.LOADED) {
+                final ListenableFuture<RouteParameters> routeParamsFuture = solveRouteTask.createDefaultParametersAsync();
+                routeParamsFuture.addDoneListener(() -> {
+                    try {
+                        RouteParameters routeParameters = routeParamsFuture.get();
+                        List<Stop> stops = new ArrayList<>();
+                        stops.add(new Stop(mStart));
+                        stops.add(new Stop(mEnd));
+                        routeParameters.setStops(stops);
+                        final ListenableFuture<RouteResult> routeResultFuture = solveRouteTask.solveRouteAsync(routeParameters);
+                        routeResultFuture.addDoneListener(() -> {
+                            try {
+                                RouteResult routeResult = routeResultFuture.get();
+                                Route firstRoute = routeResult.getRoutes().get(0);
+                                Polyline routePolyline = firstRoute.getRouteGeometry();
+                                SimpleLineSymbol routeSymbol = new SimpleLineSymbol(SimpleLineSymbol.Style.SOLID, Color.BLUE, 4.0f);
+                                Graphic routeGraphic = new Graphic(routePolyline, routeSymbol);
+                                mGraphicsOverlay.getGraphics().add(routeGraphic);
+                            } catch (InterruptedException | ExecutionException e) {
+                                showError("Solve RouteTask failed " + e.getMessage());
+                            }
+                        });
+                    } catch (InterruptedException | ExecutionException e) {
+                        showError("Cannot create RouteTask parameters " + e.getMessage());
+                    }
+                });
+            } else {
+                showError("Unable to load RouteTask " + solveRouteTask.getLoadStatus().toString());
+            }
+        });
+    }
 
     @Override
     protected void onPause() {

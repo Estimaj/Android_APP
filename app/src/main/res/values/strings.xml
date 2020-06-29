@@ -56,5 +56,7 @@
     <string name="closeNavDrawer">Menu Close</string>
     <string name="novalue">No_Value</string>
 
-
+    <string name="redirect_url">my-app://auth</string>
+    <string name="client_id">YOUR_CLIENT_ID</string>
+    <string name="routing_url">https://route.arcgis.com/arcgis/rest/services/World/Route/NAServer/Route_World</string>
 </resources>
