@@ -1,4 +1,4 @@
-package com.example.pint_android_v3.viagens_efetuadas;
+package com.example.pint_android_v3.viagens_marcadas;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import com.example.pint_android_v3.R;
 
-public class CustomListAdapter_efetuadas_teste extends BaseAdapter {
+public class CustomListAdapter_marcadas_teste extends BaseAdapter {
 
     Context context;
     private final String[] data;
@@ -19,7 +19,7 @@ public class CustomListAdapter_efetuadas_teste extends BaseAdapter {
     private final String[] Local_Partida;
     private final String[] hora;
 
-    public CustomListAdapter_efetuadas_teste(Context cont, String[] data, String[] tempo, String[] distancia, String[] local_Chegada, String[] local_Partida, String[] hora) {
+    public CustomListAdapter_marcadas_teste(Context cont, String[] data, String[] tempo, String[] distancia, String[] local_Chegada, String[] local_Partida, String[] hora) {
 
         context = cont;
         this.data = data;
@@ -48,14 +48,14 @@ public class CustomListAdapter_efetuadas_teste extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        ViewHolder viewHolder;
+        CustomListAdapter_marcadas_teste.ViewHolder viewHolder;
         final View result;
 
         if(convertView == null)
         {
-            viewHolder = new ViewHolder();
+            viewHolder = new CustomListAdapter_marcadas_teste.ViewHolder();
             LayoutInflater inflater = LayoutInflater.from(context);
-            convertView = inflater.inflate(R.layout.viagens_efetuadas_adapter, parent, false);
+            convertView = inflater.inflate(R.layout.viagens_marcadas_adapter, parent, false);
             viewHolder.txt_data = (TextView)convertView.findViewById(R.id.viagens_efetuadas_adapter_data_trip);
             viewHolder.txt_tempo = (TextView)convertView.findViewById(R.id.viagens_marcadas_adapter_Tempo);
             viewHolder.txt_distancia = (TextView)convertView.findViewById(R.id.viagens_marcadas_adapter_Distancia);
@@ -68,7 +68,7 @@ public class CustomListAdapter_efetuadas_teste extends BaseAdapter {
         }
         else
         {
-            viewHolder = (ViewHolder) convertView.getTag();
+            viewHolder = (CustomListAdapter_marcadas_teste.ViewHolder) convertView.getTag();
             result = convertView;
         }
 
@@ -94,5 +94,4 @@ public class CustomListAdapter_efetuadas_teste extends BaseAdapter {
 
     }
 }
-
 

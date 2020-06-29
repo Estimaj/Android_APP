@@ -8,7 +8,7 @@
     android:padding="8dp">
 
     <ImageView
-        android:id="@+id/viagens_marcadas_adapter_contentor"
+        android:id="@+id/viagens_efetuadas_adapter_contentor"
         android:layout_width="wrap_content"
         android:layout_height="200dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -17,94 +17,94 @@
         app:srcCompat="@drawable/caixa_viagens_efetuadas" />
 
     <TextView
-        android:id="@+id/viagens_marcadas_adapter_data_trip"
+        android:id="@+id/viagens_efetuadas_adapter_data_trip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="data_trip"
         android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toStartOf="@+id/viagens_marcadas_adapter_contentor"
+        app:layout_constraintEnd_toStartOf="@+id/viagens_efetuadas_adapter_contentor"
         app:layout_constraintHorizontal_bias="0.792"
-        app:layout_constraintStart_toEndOf="@+id/viagens_marcadas_adapter_contentor"
-        app:layout_constraintTop_toTopOf="@+id/viagens_marcadas_adapter_contentor" />
+        app:layout_constraintStart_toEndOf="@+id/viagens_efetuadas_adapter_contentor"
+        app:layout_constraintTop_toTopOf="@+id/viagens_efetuadas_adapter_contentor" />
 
     <TextView
-        android:id="@+id/viagens_marcadas_adapter_hora_trip"
+        android:id="@+id/viagens_efetuadas_adapter_hora_trip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="hora_trip"
         android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toStartOf="@+id/viagens_marcadas_adapter_contentor"
+        app:layout_constraintEnd_toStartOf="@+id/viagens_efetuadas_adapter_contentor"
         app:layout_constraintHorizontal_bias="0.176"
-        app:layout_constraintStart_toEndOf="@+id/viagens_marcadas_adapter_contentor"
-        app:layout_constraintTop_toTopOf="@+id/viagens_marcadas_adapter_contentor" />
+        app:layout_constraintStart_toEndOf="@+id/viagens_efetuadas_adapter_contentor"
+        app:layout_constraintTop_toTopOf="@+id/viagens_efetuadas_adapter_contentor" />
 
     <ImageView
-        android:id="@+id/viagens_marcadas_adapter_barra_distância"
+        android:id="@+id/viagens_efetuadas_adapter_barra_distância"
         android:layout_width="181dp"
         android:layout_height="19dp"
         android:layout_marginTop="70dp"
-        app:layout_constraintEnd_toStartOf="@+id/viagens_marcadas_adapter_contentor"
-        app:layout_constraintStart_toEndOf="@+id/viagens_marcadas_adapter_contentor"
-        app:layout_constraintTop_toTopOf="@+id/viagens_marcadas_adapter_contentor"
+        app:layout_constraintEnd_toStartOf="@+id/viagens_efetuadas_adapter_contentor"
+        app:layout_constraintStart_toEndOf="@+id/viagens_efetuadas_adapter_contentor"
+        app:layout_constraintTop_toTopOf="@+id/viagens_efetuadas_adapter_contentor"
         app:srcCompat="@drawable/distancia_viagens_efetuadas" />
 
     <TextView
-        android:id="@+id/viagens_marcadas_adapter_Distancia_txt"
+        android:id="@+id/viagens_efetuadas_adapter_Distancia_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="54dp"
         android:text="Distância"
-        app:layout_constraintEnd_toStartOf="@+id/viagens_marcadas_adapter_contentor"
+        app:layout_constraintEnd_toStartOf="@+id/viagens_efetuadas_adapter_contentor"
         app:layout_constraintHorizontal_bias="0.596"
-        app:layout_constraintStart_toEndOf="@+id/viagens_marcadas_adapter_contentor"
-        app:layout_constraintTop_toTopOf="@+id/viagens_marcadas_adapter_contentor" />
+        app:layout_constraintStart_toEndOf="@+id/viagens_efetuadas_adapter_contentor"
+        app:layout_constraintTop_toTopOf="@+id/viagens_efetuadas_adapter_contentor" />
 
     <TextView
-        android:id="@+id/viagens_marcadas_adapter_tempo"
+        android:id="@+id/viagens_efetuadas_adapter_tempo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="54dp"
         android:text="Tempo"
-        app:layout_constraintEnd_toStartOf="@+id/viagens_marcadas_adapter_barra_distância"
+        app:layout_constraintEnd_toStartOf="@+id/viagens_efetuadas_adapter_barra_distância"
         app:layout_constraintHorizontal_bias="0.345"
-        app:layout_constraintStart_toEndOf="@+id/viagens_marcadas_adapter_barra_distância"
-        app:layout_constraintTop_toTopOf="@+id/viagens_marcadas_adapter_contentor" />
+        app:layout_constraintStart_toEndOf="@+id/viagens_efetuadas_adapter_barra_distância"
+        app:layout_constraintTop_toTopOf="@+id/viagens_efetuadas_adapter_contentor" />
 
     <TextView
-        android:id="@+id/viagens_marcadas_adapter_Local_Partida"
+        android:id="@+id/viagens_efetuadas_adapter_Local_Partida"
         android:layout_width="80dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
         android:text="Local_Partida"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/viagens_marcadas_adapter_contentor"
+        app:layout_constraintEnd_toStartOf="@+id/viagens_efetuadas_adapter_contentor"
         app:layout_constraintHorizontal_bias="0.802"
-        app:layout_constraintStart_toEndOf="@+id/viagens_marcadas_adapter_contentor"
-        app:layout_constraintTop_toTopOf="@+id/viagens_marcadas_adapter_contentor" />
+        app:layout_constraintStart_toEndOf="@+id/viagens_efetuadas_adapter_contentor"
+        app:layout_constraintTop_toTopOf="@+id/viagens_efetuadas_adapter_contentor" />
 
     <TextView
-        android:id="@+id/viagens_marcadas_adapter_Local_Chegada"
+        android:id="@+id/viagens_efetuadas_adapter_Local_Chegada"
         android:layout_width="80dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
         android:text="Local_Chegada"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/viagens_marcadas_adapter_contentor"
+        app:layout_constraintEnd_toStartOf="@+id/viagens_efetuadas_adapter_contentor"
         app:layout_constraintHorizontal_bias="0.195"
-        app:layout_constraintStart_toEndOf="@+id/viagens_marcadas_adapter_contentor"
-        app:layout_constraintTop_toTopOf="@+id/viagens_marcadas_adapter_contentor" />
+        app:layout_constraintStart_toEndOf="@+id/viagens_efetuadas_adapter_contentor"
+        app:layout_constraintTop_toTopOf="@+id/viagens_efetuadas_adapter_contentor" />
 
     <ImageView
         android:id="@+id/viagens_efetuadas_adapter_class_viagem"
         android:layout_width="160dp"
         android:layout_height="48dp"
         android:layout_marginTop="108dp"
-        app:layout_constraintEnd_toStartOf="@+id/viagens_marcadas_adapter_contentor"
+        app:layout_constraintEnd_toStartOf="@+id/viagens_efetuadas_adapter_contentor"
         app:layout_constraintHorizontal_bias="0.682"
-        app:layout_constraintStart_toEndOf="@+id/viagens_marcadas_adapter_contentor"
-        app:layout_constraintTop_toTopOf="@+id/viagens_marcadas_adapter_contentor"
+        app:layout_constraintStart_toEndOf="@+id/viagens_efetuadas_adapter_contentor"
+        app:layout_constraintTop_toTopOf="@+id/viagens_efetuadas_adapter_contentor"
         app:srcCompat="@drawable/botao_class" />
 
     <ImageView
@@ -112,10 +112,10 @@
         android:layout_width="160dp"
         android:layout_height="48dp"
         android:layout_marginTop="140dp"
-        app:layout_constraintEnd_toStartOf="@+id/viagens_marcadas_adapter_contentor"
+        app:layout_constraintEnd_toStartOf="@+id/viagens_efetuadas_adapter_contentor"
         app:layout_constraintHorizontal_bias="0.681"
-        app:layout_constraintStart_toEndOf="@+id/viagens_marcadas_adapter_contentor"
-        app:layout_constraintTop_toTopOf="@+id/viagens_marcadas_adapter_contentor"
+        app:layout_constraintStart_toEndOf="@+id/viagens_efetuadas_adapter_contentor"
+        app:layout_constraintTop_toTopOf="@+id/viagens_efetuadas_adapter_contentor"
         app:srcCompat="@drawable/botao_class" />
 
     <TextView
@@ -147,10 +147,10 @@
         android:layout_width="95dp"
         android:layout_height="25dp"
         android:layout_marginTop="152dp"
-        app:layout_constraintEnd_toStartOf="@+id/viagens_marcadas_adapter_contentor"
+        app:layout_constraintEnd_toStartOf="@+id/viagens_efetuadas_adapter_contentor"
         app:layout_constraintHorizontal_bias="0.228"
-        app:layout_constraintStart_toEndOf="@+id/viagens_marcadas_adapter_contentor"
-        app:layout_constraintTop_toTopOf="@+id/viagens_marcadas_adapter_contentor"
+        app:layout_constraintStart_toEndOf="@+id/viagens_efetuadas_adapter_contentor"
+        app:layout_constraintTop_toTopOf="@+id/viagens_efetuadas_adapter_contentor"
         app:srcCompat="@drawable/btn_mais_info" />
 
     <TextView
@@ -171,10 +171,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="88dp"
         android:text="distancia"
-        app:layout_constraintEnd_toStartOf="@+id/viagens_marcadas_adapter_contentor"
+        app:layout_constraintEnd_toStartOf="@+id/viagens_efetuadas_adapter_contentor"
         app:layout_constraintHorizontal_bias="0.594"
-        app:layout_constraintStart_toEndOf="@+id/viagens_marcadas_adapter_contentor"
-        app:layout_constraintTop_toTopOf="@+id/viagens_marcadas_adapter_contentor" />
+        app:layout_constraintStart_toEndOf="@+id/viagens_efetuadas_adapter_contentor"
+        app:layout_constraintTop_toTopOf="@+id/viagens_efetuadas_adapter_contentor" />
 
     <TextView
         android:id="@+id/viagens_marcadas_adapter_Tempo"
@@ -182,9 +182,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="88dp"
         android:text="tempo"
-        app:layout_constraintEnd_toStartOf="@+id/viagens_marcadas_adapter_contentor"
+        app:layout_constraintEnd_toStartOf="@+id/viagens_efetuadas_adapter_contentor"
         app:layout_constraintHorizontal_bias="0.422"
-        app:layout_constraintStart_toEndOf="@+id/viagens_marcadas_adapter_contentor"
-        app:layout_constraintTop_toTopOf="@+id/viagens_marcadas_adapter_contentor" />
+        app:layout_constraintStart_toEndOf="@+id/viagens_efetuadas_adapter_contentor"
+        app:layout_constraintTop_toTopOf="@+id/viagens_efetuadas_adapter_contentor" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
