@@ -4,11 +4,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.style.TextAppearanceSpan;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -77,12 +79,14 @@ public class barra_lateral_pro extends AppCompatActivity implements NavigationVi
 
     public void Bar_Settings()
     {
+
         toolbar = findViewById(R.id.barra_lateral_toolbar);
         setSupportActionBar(toolbar);
         Objects.requireNonNull(getSupportActionBar()).setDisplayShowTitleEnabled(false);
 
 
         drawerLayout = findViewById(R.id.barra_lateral_drawer_layout);
+        final int heightX = drawerLayout.getLayoutParams().height;
         navigationView = findViewById(R.id.nav_view_barra);
 
         //Vai buscar o menu do navigation drawer
@@ -102,29 +106,42 @@ public class barra_lateral_pro extends AppCompatActivity implements NavigationVi
         tools.setTitle(s);
 
         ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle
-                (this, drawerLayout, toolbar, R.string.openNavDrawer, R.string.closeNavDrawer);
+                (this, drawerLayout, toolbar, R.string.openNavDrawer, R.string.closeNavDrawer)
+        {
 
-        actionBarDrawerToggle.onDrawerOpened(drawerLayout);
+            /** Called when a drawer has settled in a completely closed state. */
+            public void onDrawerClosed(View view) {
+                super.onDrawerClosed(view);
+                /*ViewGroup.LayoutParams Params = view.getLayoutParams();
+                Params.height = 50;
+                view.setLayoutParams(Params);
+                view.invalidate();*/
+                drawerLayout.getLayoutParams().height = toolbar.getLayoutParams().height;
+                drawerLayout.requestLayout();
+
+
+            }
+
+            /** Called when a drawer has settled in a completely open state. */
+            public void onDrawerOpened(View drawerView) {
+                super.onDrawerOpened(drawerView);
+                /*ViewGroup.LayoutParams Params = drawerView.getLayoutParams();
+                Params.height = 1000;
+                drawerView.setLayoutParams(Params);
+                drawerView.invalidate();*/
+                drawerLayout.getLayoutParams().height = heightX;
+                drawerLayout.bringToFront();
+                drawerLayout.requestLayout();
+
+            }
+        };
+
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
-
-        actionBarDrawerToggle.syncState();
-
+        actionBarDrawerToggle.onDrawerClosed(drawerLayout);
+        actionBarDrawerToggle.syncState(); //animação do hamburguer muda com isto
         navigationView.setNavigationItemSelectedListener(this);
 
 
-    }
-
-    public void DisableBar(){
-        drawerLayout = findViewById(R.id.barra_lateral_drawer_layout);
-        drawerLayout.setEnabled(false);
-        Toast.makeText(barra_lateral_pro.this, "disable",
-                Toast.LENGTH_LONG).show();
-    }
-    public void EnableBar(){
-        drawerLayout = findViewById(R.id.barra_lateral_drawer_layout);
-        drawerLayout.setEnabled(true);
-        Toast.makeText(barra_lateral_pro.this, "enable",
-                Toast.LENGTH_LONG).show();
     }
 
 
