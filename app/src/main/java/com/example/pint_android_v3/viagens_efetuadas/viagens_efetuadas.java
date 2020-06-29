@@ -42,7 +42,7 @@ public class viagens_efetuadas extends barra_lateral_pro {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                TextView sacarInfoDaViagem = view.findViewById(R.id.viagens_marcadas_adapter_Local_Partida);
+                TextView sacarInfoDaViagem = view.findViewById(R.id.viagens_efetuadas_adapter_Local_Partida);
                 sacarInfoDaViagem.setText("ola");
                 //Classificar_Condutor();
             }
