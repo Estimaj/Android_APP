@@ -15,6 +15,9 @@ import com.example.pint_android_v3.barra_lateral_pro;
 import com.example.pint_android_v3.menus.menu_municipe;
 import com.google.android.material.navigation.NavigationView;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -47,7 +50,7 @@ public class perfil_cliente extends barra_lateral_pro {
         if(b!=null)
         {
             user_id =(int) b.get("user_id");
-            //Get_user_id_information(user_id);
+            Get_user_id_information(user_id);
         }
 
         Bar_Settings(user_id);
@@ -82,9 +85,10 @@ public class perfil_cliente extends barra_lateral_pro {
                 }
                 if (response.code() == 200){
                     if (response.body() != null) {
+                        Log.i("user_perfil_cliente", response.body().getGet_user().get(0).toString());
                         Nome.setText(response.body().getGet_user().get(0).getNome_utilizador());
                         Origem.setText(response.body().getGet_user().get(0).getMorada_utilizador());
-                        //Idade.setText(""+ getIdadeUser(response.body().getGet_user().get(0).getData_nascimento_utilizador()));
+                        Idade.setText(""+ getIdadeUser(response.body().getGet_user().get(0).getData_nascimento_utilizador()));
                         Telefone.setText(response.body().getGet_user().get(0).getTelefone_utilizador());
                         Email.setText(response.body().getGet_user().get(0).getEmail_utilizador());
                     }
@@ -107,8 +111,25 @@ public class perfil_cliente extends barra_lateral_pro {
     }
 
     public int getIdadeUser(String dataNascimento){
-        int idade=0;
+        if(dataNascimento == null) return 0;
+        int idade;
+        //get data nascimento separado dia[0] mes[1] ano[2]
+        String dividindoDataNascimento[]= dataNascimento.split("\\W");//dividir a data nascimento em numeros separados... o \\W é a dizer que o separador é '/'
 
+        //get data current separado dia[0] mes[1] ano[2]
+        SimpleDateFormat formatter= new SimpleDateFormat("dd/MM/yyyy");
+        Date date = new Date(System.currentTimeMillis());
+        String dividindoDataCurrent [] = formatter.format(date).split("\\W");
+
+        idade = Integer.parseInt(dividindoDataCurrent[2]) - Integer.parseInt(dividindoDataNascimento[2]);
+        if(Integer.parseInt(dividindoDataNascimento[1]) > Integer.parseInt(dividindoDataCurrent[1])){ //comparar dia
+            idade --;
+        }
+        else if(Integer.parseInt(dividindoDataNascimento[1]) == Integer.parseInt(dividindoDataCurrent[1])){
+            if(Integer.parseInt(dividindoDataNascimento[0]) > Integer.parseInt(dividindoDataCurrent[0])){
+                idade--;
+            }
+        }
         return idade;
     }
 
