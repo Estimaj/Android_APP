@@ -12,31 +12,19 @@ import com.example.pint_android_v3.menus.menu_municipe;
 
 public class viagens_marcadas extends AppCompatActivity {
 
-    private int user_id;
+    private int id_user;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_viagens_marcadas);
-        Button X = (Button) findViewById(R.id.button_back_arrow_black_viagens_marcadas);
-        X.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Go_Back();
-            }
-        });
+
 
         Intent I = getIntent();
         Bundle b = I.getExtras();
         if(b!=null){
-            user_id = (int) b.get("user_id");
+            id_user = (int) b.get("user_id");
         }
     }
 
-    public void Go_Back()
-    {
-        Intent GO = new Intent(viagens_marcadas.this, menu_municipe.class);
-        GO.putExtra("user_id", user_id);
-        startActivity(GO);
 
-    }
-}
+        }

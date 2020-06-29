@@ -54,6 +54,8 @@ public class menu_municipe extends barra_lateral_pro {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu_cliente);
 
+
+
         Nome = findViewById(R.id.user_Name_menu_cliente);
         Localidade =  findViewById(R.id.user_localidade_menu_cliente);
         btn_Perfil =  findViewById(R.id.user_Inner_menu_cliente);

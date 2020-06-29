@@ -8,10 +8,11 @@
     <com.google.android.gms.maps.MapView
         android:id="@+id/mapView_mais_info_cliente"
         android:layout_width="match_parent"
-        android:layout_height="500dp"
+        android:layout_height="443dp"
+        android:layout_marginTop="56dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/include" />
 
     <ImageView
         android:id="@+id/contentor_mais_info_cliente"
@@ -209,5 +210,9 @@
         android:text="€"
         app:layout_constraintStart_toEndOf="@+id/Dinheiro_pagar_mais_info_cliente"
         app:layout_constraintTop_toTopOf="@+id/total_image_view_mais_info_cliente" />
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/barra_lateral_pro" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

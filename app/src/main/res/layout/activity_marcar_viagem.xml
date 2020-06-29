@@ -6,9 +6,6 @@
     android:layout_height="match_parent"
     android:background="@color/colorLightgray">
 
-    <include layout="@layout/barra_lateral_pro" />
-
-
 
     <ScrollView
         android:id="@+id/scrollView2"
@@ -406,9 +403,6 @@
 
     </ScrollView>
 
-
-
-
     <Button
         android:id="@+id/btn_marcar_viagem_marcar_viagem"
         android:layout_width="match_parent"
@@ -422,7 +416,8 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <!-- <include layout="@layout/barra_lateral_pro" /> -->
+    <include layout="@layout/barra_lateral_pro" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

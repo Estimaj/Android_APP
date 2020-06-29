@@ -20,6 +20,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.example.pint_android_v3.menus.menu_motorista;
 import com.example.pint_android_v3.menus.menu_municipe;
 import com.example.pint_android_v3.perfis.perfil_cliente;
 import com.example.pint_android_v3.perfis.perfil_motorista;
@@ -27,7 +28,7 @@ import com.google.android.material.navigation.NavigationView;
 
 import java.util.Objects;
 
-public class barra_lateral_pro extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class barra_lateral_condutor extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private Toolbar toolbar;
     private DrawerLayout drawerLayout;
@@ -36,7 +37,7 @@ public class barra_lateral_pro extends AppCompatActivity implements NavigationVi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.barra_lateral_pro);
-       Bar_Settings();
+        Bar_Settings();
 
     }
 
@@ -50,11 +51,11 @@ public class barra_lateral_pro extends AppCompatActivity implements NavigationVi
                 startActivity(intent1);
                 break;
             case R.id.User_btn_menu:
-                Intent intent2 = new Intent(this, perfil_cliente.class);
+                Intent intent2 = new Intent(this, perfil_motorista.class);
                 startActivity(intent2);
                 break;
             case R.id.Home_btn_menu:
-                Intent intent3 = new Intent(this, menu_municipe.class);
+                Intent intent3 = new Intent(this, menu_motorista.class);
                 startActivity(intent3);
                 break;
             //Criar activity Notificações
@@ -132,7 +133,7 @@ public class barra_lateral_pro extends AppCompatActivity implements NavigationVi
 
             public void onDrawerStateChanged(int newState)
             {
-               drawerLayout.requestLayout();
+                drawerLayout.requestLayout();
 
 
             }

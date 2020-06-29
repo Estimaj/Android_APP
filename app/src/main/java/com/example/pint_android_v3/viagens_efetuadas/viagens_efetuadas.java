@@ -26,13 +26,7 @@ public class viagens_efetuadas extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_viagens_efetuadas);
-        Button X = (Button) findViewById(R.id.button_back_arrow_black_viagens_efetuadas);
-        X.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Go_Back();
-            }
-        });
+
 
         lItems = new viagens_efetuadas_array_test();
         lView = (ListView)findViewById(R.id.viagens_efetuadas_listview);
@@ -52,12 +46,7 @@ public class viagens_efetuadas extends AppCompatActivity {
 
     }
 
-    public void Go_Back()
-    {
-        Intent GO = new Intent(viagens_efetuadas.this, menu_municipe.class);
-        startActivity(GO);
 
-    }
 
     public void Classificar_Condutor()
     {
