@@ -1,15 +1,10 @@
 package com.example.pint_android_v3.viagens_marcadas;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 
 import com.example.pint_android_v3.R;
 import com.example.pint_android_v3.barra_lateral_pro;
-import com.example.pint_android_v3.menus.menu_municipe;
 
 public class viagens_marcadas extends barra_lateral_pro {
 

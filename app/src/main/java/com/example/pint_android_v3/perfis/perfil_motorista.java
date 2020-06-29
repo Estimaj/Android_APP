@@ -11,35 +11,31 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.pint_android_v3.R;
+import com.example.pint_android_v3.barra_lateral_condutor;
 import com.example.pint_android_v3.menus.menu_municipe;
 import com.google.android.material.navigation.NavigationView;
 
-public class perfil_motorista extends AppCompatActivity {
+public class perfil_motorista extends barra_lateral_condutor {
 
     private Toolbar toolbar;
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
     TextView Nome;
+    private int user_id;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil_motorista);
-       // Button X = (Button) findViewById(R.id.button_back_arrow_black_perfil_motorista);
-       /* X.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Go_Back();
-            }
-        });*/
+
         Intent I = getIntent();
         Bundle b = I.getExtras();
         Nome = (TextView) findViewById(R.id.User_Name);
         if(b!=null)
         {
-            String j =(String) b.get("Nome");
-            Nome.setText(j);
-
+            user_id = (int) b.get("user_id");
         }
+        Bar_Settings(user_id);
     }
 
     public void Go_Back()

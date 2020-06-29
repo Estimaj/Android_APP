@@ -16,6 +16,7 @@ import com.example.pint_android_v3.DataBase.BaseDadosInterface;
 import com.example.pint_android_v3.DataBase.Get_user;
 import com.example.pint_android_v3.DataBase.Model;
 import com.example.pint_android_v3.R;
+import com.example.pint_android_v3.barra_lateral_condutor;
 
 import java.util.Locale;
 
@@ -25,10 +26,11 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class menu_motorista extends AppCompatActivity {
+public class menu_motorista extends barra_lateral_condutor {
 
     private String BASE_URL ="http://10.0.2.2:3000";
     private Get_user user;
+    private int user_id;
 
     TextView Nome;
     TextView Localidade;
@@ -49,9 +51,9 @@ public class menu_motorista extends AppCompatActivity {
         Intent X = getIntent();
         Bundle b = X.getExtras();
         if(b!=null){
-            int id_user = (int) b.get("user_id");
+            user_id = (int) b.get("user_id");
             //Log.i("id_user", ""+ id_user);
-            Get_user_id_information(id_user);
+            Get_user_id_information(user_id);
         }
 
         if(user != null){
@@ -59,6 +61,7 @@ public class menu_motorista extends AppCompatActivity {
             Localidade.setText(user.getMorada_utilizador());
         }
 
+        Bar_Settings(user_id);
     }
 
     public void Get_user_id_information(int id){

@@ -33,11 +33,11 @@ public class barra_lateral_condutor extends AppCompatActivity implements Navigat
     private Toolbar toolbar;
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
+    private int user_id;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.barra_lateral_pro);
-        Bar_Settings();
 
     }
 
@@ -47,16 +47,19 @@ public class barra_lateral_condutor extends AppCompatActivity implements Navigat
         switch(id)
         {
             case R.id.LogOut_btn_menu:
-                Intent intent1 = new Intent(this, MainActivity_Login.class);
-                startActivity(intent1);
+                Intent logOut = new Intent(this, MainActivity_Login.class);
+                logOut.putExtra("user_id", user_id);
+                startActivity(logOut);
                 break;
             case R.id.User_btn_menu:
-                Intent intent2 = new Intent(this, perfil_motorista.class);
-                startActivity(intent2);
+                Intent perfilUser = new Intent(this, perfil_motorista.class);
+                perfilUser.putExtra("user_id", user_id);
+                startActivity(perfilUser);
                 break;
             case R.id.Home_btn_menu:
-                Intent intent3 = new Intent(this, menu_motorista.class);
-                startActivity(intent3);
+                Intent homePage = new Intent(this, menu_motorista.class);
+                homePage.putExtra("user_id", user_id);
+                startActivity(homePage);
                 break;
             //Criar activity Notificações
             //Default?
@@ -78,9 +81,9 @@ public class barra_lateral_condutor extends AppCompatActivity implements Navigat
 
 
 
-    public void Bar_Settings()
+    public void Bar_Settings(int id)
     {
-
+        user_id = id;
         toolbar = findViewById(R.id.barra_lateral_toolbar);
         setSupportActionBar(toolbar);
         Objects.requireNonNull(getSupportActionBar()).setDisplayShowTitleEnabled(false);
