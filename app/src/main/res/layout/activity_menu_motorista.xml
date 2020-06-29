@@ -30,7 +30,7 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/activity_menu_motorista_user_outer" />
+        app:layout_constraintTop_toBottomOf="@id/activity_menu_motorista_user_localidade" />
 
     <ImageView
         android:id="@+id/activity_menu_motorista_btn_Viagens_Efetuadas"
@@ -112,9 +112,7 @@
         app:layout_constraintStart_toEndOf="@+id/activity_menu_motorista_user_outer"
         app:layout_constraintTop_toBottomOf="@+id/activity_menu_motorista_user_Name" />
 
-    <include
-        android:id="@+id/include2"
-        layout="@layout/barra_lateral_pro" />
+    <include layout="@layout/barra_lateral_pro" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
