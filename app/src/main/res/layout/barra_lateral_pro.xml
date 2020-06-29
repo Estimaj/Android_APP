@@ -8,7 +8,7 @@
     android:alwaysDrawnWithCache="false"
 
     android:fitsSystemWindows="false"
-    tools:context=".barra_lateral_pro">
+    tools:context=".barra_lateral.barra_lateral_pro">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"

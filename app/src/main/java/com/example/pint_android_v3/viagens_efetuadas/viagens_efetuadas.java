@@ -1,20 +1,16 @@
 package com.example.pint_android_v3.viagens_efetuadas;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
 import com.example.pint_android_v3.R;
-import com.example.pint_android_v3.barra_lateral_pro;
+import com.example.pint_android_v3.barra_lateral.barra_lateral_pro;
 import com.example.pint_android_v3.classificar_condutor;
-import com.example.pint_android_v3.menus.menu_municipe;
 
 public class viagens_efetuadas extends barra_lateral_pro {
     ListView lView;

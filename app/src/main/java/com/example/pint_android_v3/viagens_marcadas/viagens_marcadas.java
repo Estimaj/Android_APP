@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.pint_android_v3.R;
-import com.example.pint_android_v3.barra_lateral_pro;
+import com.example.pint_android_v3.barra_lateral.barra_lateral_pro;
 
 public class viagens_marcadas extends barra_lateral_pro {
 

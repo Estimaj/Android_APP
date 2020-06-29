@@ -5,7 +5,9 @@ import android.view.View;
 import android.widget.RatingBar;
 import android.widget.Toast;
 
-public class classificar_condutor extends barra_lateral_pro{
+import com.example.pint_android_v3.barra_lateral.barra_lateral_pro;
+
+public class classificar_condutor extends barra_lateral_pro {
 
 
     protected void onCreate(Bundle savedInstanceState) {

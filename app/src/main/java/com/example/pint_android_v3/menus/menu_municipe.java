@@ -13,8 +13,9 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.example.pint_android_v3.DataBase.BaseDadosInterface;
 import com.example.pint_android_v3.DataBase.Model;
+import com.example.pint_android_v3.mapas.mais_info_mapa_cliente;
 import com.example.pint_android_v3.R;
-import com.example.pint_android_v3.barra_lateral_pro;
+import com.example.pint_android_v3.barra_lateral.barra_lateral_pro;
 import com.example.pint_android_v3.marcar_viagem;
 import com.example.pint_android_v3.perfis.perfil_cliente;
 import com.example.pint_android_v3.pesquisar_utilizador;
@@ -143,7 +144,7 @@ public class menu_municipe extends barra_lateral_pro {
     }
     public void Clicar_Marcar_Viagem()
     {
-        Intent Marcar = new Intent(menu_municipe.this, marcar_viagem.class);
+        Intent Marcar = new Intent(menu_municipe.this, mais_info_mapa_cliente.class);
         Marcar.putExtra("user_id", user_id);
         startActivity(Marcar);
     }

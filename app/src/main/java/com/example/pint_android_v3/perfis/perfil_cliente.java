@@ -11,7 +11,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import com.example.pint_android_v3.DataBase.BaseDadosInterface;
 import com.example.pint_android_v3.DataBase.Model;
 import com.example.pint_android_v3.R;
-import com.example.pint_android_v3.barra_lateral_pro;
+import com.example.pint_android_v3.barra_lateral.barra_lateral_pro;
 import com.example.pint_android_v3.menus.menu_municipe;
 import com.google.android.material.navigation.NavigationView;
 

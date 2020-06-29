@@ -1,28 +1,22 @@
-package com.example.pint_android_v3;
+package com.example.pint_android_v3.barra_lateral;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.style.TextAppearanceSpan;
-import android.util.DisplayMetrics;
-import android.util.Log;
-import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.example.pint_android_v3.MainActivity_Login;
+import com.example.pint_android_v3.R;
 import com.example.pint_android_v3.menus.menu_motorista;
-import com.example.pint_android_v3.menus.menu_municipe;
-import com.example.pint_android_v3.perfis.perfil_cliente;
 import com.example.pint_android_v3.perfis.perfil_motorista;
 import com.google.android.material.navigation.NavigationView;
 

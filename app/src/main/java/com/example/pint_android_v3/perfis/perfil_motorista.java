@@ -1,17 +1,14 @@
 package com.example.pint_android_v3.perfis;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.pint_android_v3.R;
-import com.example.pint_android_v3.barra_lateral_condutor;
+import com.example.pint_android_v3.barra_lateral.barra_lateral_condutor;
 import com.example.pint_android_v3.menus.menu_municipe;
 import com.google.android.material.navigation.NavigationView;
 
