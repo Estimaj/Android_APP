@@ -24,7 +24,9 @@
         <activity android:name=".perfis.perfil_motorista_edit" />
         <activity android:name=".perfis.perfil_motorista" />
         <activity android:name=".desambiguacao" />
-        <activity android:name=".MainActivity_Login" />
+        <activity android:name=".MainActivity_Login" >
+
+        </activity>
         <activity android:name=".menus.menu_municipe">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

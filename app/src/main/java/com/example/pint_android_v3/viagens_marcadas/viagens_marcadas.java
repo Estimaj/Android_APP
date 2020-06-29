@@ -8,9 +8,10 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.pint_android_v3.R;
+import com.example.pint_android_v3.barra_lateral_pro;
 import com.example.pint_android_v3.menus.menu_municipe;
 
-public class viagens_marcadas extends AppCompatActivity {
+public class viagens_marcadas extends barra_lateral_pro {
 
     private int id_user;
     @Override
@@ -23,8 +24,8 @@ public class viagens_marcadas extends AppCompatActivity {
         Bundle b = I.getExtras();
         if(b!=null){
             id_user = (int) b.get("user_id");
+
         }
+        Bar_Settings(id_user);
     }
-
-
-        }
+}

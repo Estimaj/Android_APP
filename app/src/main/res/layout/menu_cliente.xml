@@ -62,7 +62,8 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btn_Viagens_Efetuadas_menu_cliente"
-        app:srcCompat="@drawable/pesquisar_user" />
+        app:srcCompat="@drawable/pesquisar_user"
+        android:visibility="gone"/>
 
     <TextView
         android:id="@+id/txt_Marcar_Viagem_menu_cliente"
@@ -114,7 +115,9 @@
         app:layout_constraintEnd_toStartOf="@id/btn_Pesquisar_Utilizador_menu_cliente"
         app:layout_constraintHorizontal_bias="0.461"
         app:layout_constraintStart_toEndOf="@id/btn_Pesquisar_Utilizador_menu_cliente"
-        app:layout_constraintTop_toBottomOf="@id/btn_Viagens_Efetuadas_menu_cliente" />
+        app:layout_constraintTop_toBottomOf="@id/btn_Viagens_Efetuadas_menu_cliente"
+        android:visibility="gone"/>
+
 
     <ImageView
         android:id="@+id/user_outer_menu_cliente"
@@ -158,7 +161,8 @@
         app:layout_constraintEnd_toStartOf="@id/user_outer_menu_cliente"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toEndOf="@id/user_outer_menu_cliente"
-        app:layout_constraintTop_toBottomOf="@id/user_Name_menu_cliente" />
+        app:layout_constraintTop_toBottomOf="@id/user_Name_menu_cliente"
+        />
 
     <include layout="@layout/barra_lateral_pro" />
 

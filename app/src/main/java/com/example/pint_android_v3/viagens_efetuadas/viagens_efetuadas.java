@@ -12,14 +12,17 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 
 import com.example.pint_android_v3.R;
+import com.example.pint_android_v3.barra_lateral_pro;
 import com.example.pint_android_v3.classificar_condutor;
 import com.example.pint_android_v3.menus.menu_municipe;
 
-public class viagens_efetuadas extends AppCompatActivity {
+public class viagens_efetuadas extends barra_lateral_pro {
     ListView lView;
     ListAdapter lAdapter;
     viagens_efetuadas_array_test lItems;
     ImageView classificar_condutor_btn;
+
+    private int user_id;
 
 
     @Override
@@ -43,7 +46,15 @@ public class viagens_efetuadas extends AppCompatActivity {
             }
         });
 
+        Intent X = getIntent();
+        Bundle b = X.getExtras();
+        if(b!=null){
+            user_id = (int) b.get("user_id");
+            //Log.i("id_user", ""+ id_user);
 
+        }
+
+        Bar_Settings(user_id);
     }
 
 

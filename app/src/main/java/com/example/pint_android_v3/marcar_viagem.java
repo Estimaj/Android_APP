@@ -54,7 +54,7 @@ public class marcar_viagem extends barra_lateral_pro implements DatePickerDialog
     Spinner spinner_destino;
     Spinner spiner_partida;
 
-    private int id_user;
+    private int user_id;
     private int local_origem_pedido;
     private int local_destino_pedido;
     //1-yes 0-no
@@ -114,11 +114,11 @@ public class marcar_viagem extends barra_lateral_pro implements DatePickerDialog
         Intent X = getIntent();
         Bundle b = X.getExtras();
         if(b!=null){
-            id_user = (int) b.get("user_id");
+            user_id = (int) b.get("user_id");
             //Log.i("id_user", ""+ id_user);
 
         }
-        //Bar_Settings();
+        Bar_Settings(user_id);
     }
 
     private void switchsResumidos(){
@@ -319,7 +319,7 @@ public class marcar_viagem extends barra_lateral_pro implements DatePickerDialog
                 criarPedido_viagem();
                 //mudar de intent
                 Intent Viagens = new Intent(marcar_viagem.this, menu_municipe.class);
-                Viagens.putExtra("user_id", id_user);
+                Viagens.putExtra("user_id", user_id);
                 startActivity(Viagens);
             }
         });
@@ -342,13 +342,12 @@ public class marcar_viagem extends barra_lateral_pro implements DatePickerDialog
     }
 
     private void criarPedido_viagem(){
-        id_user = 4;
         //o cancelar é suposto estar a 0, falta o locals e partilha
-        if(id_user == 0){
+        if(user_id == 0){
             Log.i("user_id_error", "user id = 0, func criarPedido_viagem, marcar_viagem.java");
             return;
         }
-        Pedido_Viagem pedido_viagem = new Pedido_Viagem(1, id_user,
+        Pedido_Viagem pedido_viagem = new Pedido_Viagem(1, user_id,
                 local_origem_pedido, local_destino_pedido, bagagem, modalidade, partilha, animal,
                 necessidades_especiais, 0, GetTime(), GetDate(), DateLayout_text.getText().toString(),
                 TimeLayout_text.getText().toString());
