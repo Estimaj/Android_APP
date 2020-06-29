@@ -131,7 +131,7 @@
         app:layout_constraintTop_toTopOf="@+id/viagens_efetuadas_adapter_class_viagem" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/classificar_condutor_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="14dp"
@@ -143,7 +143,7 @@
         app:layout_constraintTop_toTopOf="@+id/viagens_efetuadas_adapter_class_condutor" />
 
     <ImageView
-        android:id="@+id/viagens_marcadas_adapter_mais_info"
+        android:id="@+id/viagens_efetuadas_adapter_mais_info"
         android:layout_width="95dp"
         android:layout_height="25dp"
         android:layout_marginTop="152dp"
@@ -154,19 +154,18 @@
         app:srcCompat="@drawable/btn_mais_info" />
 
     <TextView
-        android:id="@+id/viagens_marcadas_adapter_mais_info_text"
+        android:id="@+id/viagens_efetuadas_adapter_mais_info_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="4dp"
         android:text="Mais Info"
         android:textSize="13sp"
-        app:layout_constraintEnd_toStartOf="@+id/viagens_marcadas_adapter_mais_info"
-        app:layout_constraintHorizontal_bias="0.422"
-        app:layout_constraintStart_toEndOf="@+id/viagens_marcadas_adapter_mais_info"
-        app:layout_constraintTop_toTopOf="@+id/viagens_marcadas_adapter_mais_info" />
+        app:layout_constraintStart_toStartOf="@+id/viagens_efetuadas_adapter_mais_info"
+        app:layout_constraintTop_toTopOf="@+id/viagens_efetuadas_adapter_mais_info" />
 
     <TextView
-        android:id="@+id/viagens_marcadas_adapter_Distancia"
+        android:id="@+id/viagens_efetuadas_adapter_Distancia"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="88dp"
@@ -177,7 +176,7 @@
         app:layout_constraintTop_toTopOf="@+id/viagens_efetuadas_adapter_contentor" />
 
     <TextView
-        android:id="@+id/viagens_marcadas_adapter_Tempo"
+        android:id="@+id/viagens_efetuadas_adapter_Tempo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="88dp"
