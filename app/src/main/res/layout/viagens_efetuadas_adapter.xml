@@ -128,7 +128,8 @@
         app:layout_constraintEnd_toStartOf="@+id/viagens_efetuadas_adapter_class_viagem"
         app:layout_constraintHorizontal_bias="0.481"
         app:layout_constraintStart_toEndOf="@+id/viagens_efetuadas_adapter_class_viagem"
-        app:layout_constraintTop_toTopOf="@+id/viagens_efetuadas_adapter_class_viagem" />
+        app:layout_constraintTop_toTopOf="@+id/viagens_efetuadas_adapter_class_viagem"
+        android:onClick="Classificar_Condutor"/>
 
     <TextView
         android:id="@+id/textView9"

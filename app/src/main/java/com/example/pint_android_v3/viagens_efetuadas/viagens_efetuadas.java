@@ -38,15 +38,19 @@ public class viagens_efetuadas extends barra_lateral_pro {
 
         lView.setAdapter(lAdapter);
 
+
+        /*
         lView.setOnItemClickListener(new ListView.OnItemClickListener() {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 TextView sacarInfoDaViagem = view.findViewById(R.id.viagens_efetuadas_adapter_Local_Partida);
                 sacarInfoDaViagem.setText("ola");
+                //lAdapter.getItem(position);
                 //Classificar_Condutor();
             }
         });
+        */
 
         Intent X = getIntent();
         Bundle b = X.getExtras();
@@ -61,14 +65,28 @@ public class viagens_efetuadas extends barra_lateral_pro {
 
 
 
-    public void Classificar_Condutor()
+    public void Classificar_Condutor(View view) //o textview tem um onclick
     {
+        //falta saber como enviar a viagem certa
         Intent GO = new Intent(viagens_efetuadas.this, classificar_condutor.class);
         GO.putExtra("user_id", user_id);
         startActivity(GO);
-
-
     }
 
+    /*
+    public void Classificar_Viagem(View view){//falta saber como enviar a viagem certa
+        Intent Classificar_Viagem = new Intent(viagens_efetuadas.this, classificar_viagem.class);
+        Classificar_Viagem.putExtra("user_id", user_id);
+        startActivity(Classificar_Viagem);
+    }
+     */
+
+    /*
+    public void maisInfo(View view){ //falta saber como enviar a viagem certa
+        Intent goMaisInfo = new Intent(viagens_efetuadas.this, mais_info_viagem.class);
+        goMaisInfo.putExtra("user_id", user_id);
+        startActivity(goMaisInfo);
+    }
+     */
 
 }
