@@ -17,7 +17,7 @@ public class viagens_efetuadas extends barra_lateral_pro {
     ListView lView;
     ListAdapter lAdapter;
     viagens_efetuadas_array_test lItems;
-    ImageView classificar_condutor_btn;
+
 
     private int user_id;
 

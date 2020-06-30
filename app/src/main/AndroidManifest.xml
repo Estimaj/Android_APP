@@ -18,7 +18,7 @@
         tools:targetApi="n">
         <activity android:name=".sevico_a_decorrer"/>
         <activity android:name=".Cancelar_Viagem" />
-        <activity android:name=".notificacoes_mais_info" />
+        <activity android:name=".notificacoes.notificacoes_mais_info" />
         <activity android:name=".notificacoes.notificacoes" />
         <activity android:name=".quem_vai_consigo" />
         <activity android:name=".viagens_marcadas.viagens_marcadas" />

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorLightgray"
-    tools:context=".notificacoes_mais_info">
+    tools:context=".notificacoes.notificacoes_mais_info">
 
     <!--
     Era bue porreiro adicionar o notificacoes_adapter do qual carregamos 'mais info',

@@ -20,6 +20,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import com.example.pint_android_v3.MainActivity_Login;
 import com.example.pint_android_v3.R;
 import com.example.pint_android_v3.menus.menu_municipe;
+import com.example.pint_android_v3.notificacoes.notificacoes;
 import com.example.pint_android_v3.perfis.perfil_cliente;
 import com.google.android.material.navigation.NavigationView;
 
@@ -58,6 +59,11 @@ public class barra_lateral_pro extends AppCompatActivity implements NavigationVi
                 homePage.putExtra("user_id", user_id);
                 startActivity(homePage);
                 break;
+            case R.id.Notif_btn_menu:
+                Intent NotPage = new Intent(this, notificacoes.class);
+                NotPage.putExtra("user_id", user_id);
+                startActivity(NotPage);
+
             //Criar activity Notificações
             //Default?
             //Trocar perfil_motorista por municipe
@@ -84,7 +90,9 @@ public class barra_lateral_pro extends AppCompatActivity implements NavigationVi
         user_id = id;
         toolbar = findViewById(R.id.barra_lateral_toolbar);
         setSupportActionBar(toolbar);
+
         Objects.requireNonNull(getSupportActionBar()).setDisplayShowTitleEnabled(false);
+
 
 
         drawerLayout = findViewById(R.id.barra_lateral_drawer_layout);
