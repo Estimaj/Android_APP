@@ -9,8 +9,8 @@
 
     <ListView
         android:id="@+id/viagens_marcadas_listview"
-        android:layout_width="415dp"
-        android:layout_height="518dp"
+        android:layout_width="match_parent"
+        android:layout_height="520dp"
         android:layout_marginTop="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

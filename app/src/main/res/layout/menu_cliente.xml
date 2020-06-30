@@ -8,7 +8,6 @@
     android:background="#373433">
 
 
-
     <ImageView
         android:id="@+id/btn_Marcar_Viagem_menu_cliente"
         android:layout_width="330dp"
@@ -69,40 +68,37 @@
         android:id="@+id/txt_Marcar_Viagem_menu_cliente"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="24dp"
         android:text="Marcar Viagem"
         android:textColor="#FFFFFF"
-        android:textSize="22sp"
-        app:layout_constraintEnd_toStartOf="@id/btn_Marcar_Viagem_menu_cliente"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toEndOf="@id/btn_Marcar_Viagem_menu_cliente"
-        app:layout_constraintTop_toBottomOf="@id/O_que_pretende_menu_cliente" />
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/btn_Marcar_Viagem_menu_cliente"
+        app:layout_constraintTop_toTopOf="@+id/btn_Marcar_Viagem_menu_cliente" />
 
     <TextView
         android:id="@+id/txt_Viagens_Marcadas_menu_cliente"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
         android:layout_marginTop="24dp"
         android:text="Viagens Marcadas"
         android:textColor="#FFFFFF"
-        android:textSize="22sp"
-        app:layout_constraintEnd_toStartOf="@id/bt_Viagens_Marcadas_menu_cliente"
-        app:layout_constraintHorizontal_bias="0.473"
-        app:layout_constraintStart_toEndOf="@id/bt_Viagens_Marcadas_menu_cliente"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/bt_Viagens_Marcadas_menu_cliente"
         app:layout_constraintTop_toBottomOf="@id/btn_Marcar_Viagem_menu_cliente" />
 
     <TextView
         android:id="@+id/txt_Viagens_Efetuadas_menu_cliente"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="24dp"
         android:text="@string/ver_viagens_efetuadas"
         android:textColor="#FFFFFF"
-        android:textSize="22sp"
-        app:layout_constraintEnd_toStartOf="@id/btn_Viagens_Efetuadas_menu_cliente"
-        app:layout_constraintHorizontal_bias="0.439"
-        app:layout_constraintStart_toEndOf="@id/btn_Viagens_Efetuadas_menu_cliente"
-        app:layout_constraintTop_toBottomOf="@id/txt_Viagens_Marcadas_menu_cliente" />
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/btn_Viagens_Efetuadas_menu_cliente"
+        app:layout_constraintTop_toTopOf="@+id/btn_Viagens_Efetuadas_menu_cliente" />
 
     <TextView
         android:id="@+id/txt_Pesquisar_utilizador_menu_cliente"
