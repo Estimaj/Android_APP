@@ -301,7 +301,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/bg_White_Big_perfil_motorista"
+                app:layout_constraintTop_toBottomOf="@id/bg_White_Big_perfil_motorista"
                 app:srcCompat="@drawable/caixa_classificar_condutor" />
 
             <ImageView
@@ -311,7 +311,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView10"
+                app:layout_constraintTop_toBottomOf="@id/imageView10"
                 app:srcCompat="@drawable/caixa_feedback_class_condutor" />
 
             <TextView
@@ -323,8 +323,8 @@
                 android:text="Classificação"
                 android:textColor="@color/White"
                 android:textSize="18sp"
-                app:layout_constraintStart_toStartOf="@+id/imageView10"
-                app:layout_constraintTop_toTopOf="@+id/imageView10" />
+                app:layout_constraintStart_toStartOf="@id/imageView10"
+                app:layout_constraintTop_toTopOf="@id/imageView10" />
 
             <RatingBar
                 android:id="@+id/rating_classificar_condutor"
@@ -334,8 +334,8 @@
                 android:layout_marginTop="60dp"
                 android:numStars="5"
                 android:saveEnabled="true"
-                app:layout_constraintStart_toStartOf="@+id/imageView10"
-                app:layout_constraintTop_toTopOf="@+id/imageView10" />
+                app:layout_constraintStart_toStartOf="@id/imageView10"
+                app:layout_constraintTop_toTopOf="@id/imageView10" />
 
             <EditText
                 android:id="@+id/editText2"
@@ -346,11 +346,11 @@
                 android:ems="10"
                 android:gravity="start|top"
                 android:inputType="textMultiLine"
-                app:layout_constraintBottom_toBottomOf="@+id/Caixa_Texto_classificar_condutor"
-                app:layout_constraintEnd_toStartOf="@+id/Caixa_Texto_classificar_condutor"
+                app:layout_constraintBottom_toBottomOf="@id/Caixa_Texto_classificar_condutor"
+                app:layout_constraintEnd_toStartOf="@id/Caixa_Texto_classificar_condutor"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/Caixa_Texto_classificar_condutor"
-                app:layout_constraintTop_toTopOf="@+id/Caixa_Texto_classificar_condutor" />
+                app:layout_constraintStart_toEndOf="@id/Caixa_Texto_classificar_condutor"
+                app:layout_constraintTop_toTopOf="@id/Caixa_Texto_classificar_condutor" />
 
 
             <TextView
@@ -362,8 +362,8 @@
                 android:text="Feedback"
                 android:textColor="@color/White"
                 android:textSize="18sp"
-                app:layout_constraintStart_toStartOf="@+id/Caixa_Texto_classificar_condutor"
-                app:layout_constraintTop_toTopOf="@+id/Caixa_Texto_classificar_condutor" />
+                app:layout_constraintStart_toStartOf="@id/Caixa_Texto_classificar_condutor"
+                app:layout_constraintTop_toTopOf="@id/Caixa_Texto_classificar_condutor" />
 
             <ImageView
                 android:id="@+id/imageView2"
@@ -373,7 +373,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/Caixa_Texto_classificar_condutor"
+                app:layout_constraintTop_toBottomOf="@id/Caixa_Texto_classificar_condutor"
                 app:srcCompat="@drawable/caixa_viagens_efetuadas" />
 
 

@@ -15,7 +15,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bg_big_black_viagens_marcadas" />
+        app:layout_constraintTop_toBottomOf="@id/bg_big_black_viagens_marcadas" />
 
     <!--black bg with a single text-->
     <ImageView
@@ -36,8 +36,8 @@
         android:text="Viagens Marcadas"
         android:textColor="@color/White"
         android:textSize="23sp"
-        app:layout_constraintStart_toStartOf="@+id/bg_big_black_viagens_marcadas"
-        app:layout_constraintTop_toTopOf="@+id/bg_big_black_viagens_marcadas" />
+        app:layout_constraintStart_toStartOf="@id/bg_big_black_viagens_marcadas"
+        app:layout_constraintTop_toTopOf="@id/bg_big_black_viagens_marcadas" />
 
     <include layout="@layout/barra_lateral_pro" />
 

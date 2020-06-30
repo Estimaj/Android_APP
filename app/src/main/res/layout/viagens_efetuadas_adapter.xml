@@ -25,8 +25,8 @@
         android:layout_marginTop="20dp"
         android:text="data_trip"
         android:textColor="#FFFFFF"
-        app:layout_constraintStart_toStartOf="@+id/viagens_efetuadas_adapter_contentor"
-        app:layout_constraintTop_toTopOf="@+id/viagens_efetuadas_adapter_contentor" />
+        app:layout_constraintStart_toStartOf="@id/viagens_efetuadas_adapter_contentor"
+        app:layout_constraintTop_toTopOf="@id/viagens_efetuadas_adapter_contentor" />
 
     <TextView
         android:id="@+id/viagens_efetuadas_adapter_hora_trip"
@@ -36,8 +36,8 @@
         android:layout_marginTop="20dp"
         android:text="hora_trip"
         android:textColor="#FFFFFF"
-        app:layout_constraintStart_toStartOf="@+id/viagens_efetuadas_adapter_contentor"
-        app:layout_constraintTop_toTopOf="@+id/viagens_efetuadas_adapter_contentor" />
+        app:layout_constraintStart_toStartOf="@id/viagens_efetuadas_adapter_contentor"
+        app:layout_constraintTop_toTopOf="@id/viagens_efetuadas_adapter_contentor" />
 
     <ImageView
         android:id="@+id/viagens_efetuadas_adapter_barra_distância"
@@ -45,8 +45,8 @@
         android:layout_height="19dp"
         android:layout_marginStart="5dp"
         android:layout_marginTop="72dp"
-        app:layout_constraintStart_toEndOf="@+id/viagens_efetuadas_adapter_Local_Partida"
-        app:layout_constraintTop_toTopOf="@+id/viagens_efetuadas_adapter_contentor"
+        app:layout_constraintStart_toEndOf="@id/viagens_efetuadas_adapter_Local_Partida"
+        app:layout_constraintTop_toTopOf="@id/viagens_efetuadas_adapter_contentor"
         app:srcCompat="@drawable/distancia_viagens_efetuadas" />
 
     <TextView
@@ -56,8 +56,8 @@
         android:layout_marginStart="21dp"
         android:layout_marginTop="54dp"
         android:text="Distância"
-        app:layout_constraintStart_toEndOf="@+id/viagens_efetuadas_adapter_Local_Partida"
-        app:layout_constraintTop_toTopOf="@+id/viagens_efetuadas_adapter_contentor" />
+        app:layout_constraintStart_toEndOf="@id/viagens_efetuadas_adapter_Local_Partida"
+        app:layout_constraintTop_toTopOf="@id/viagens_efetuadas_adapter_contentor" />
 
     <TextView
         android:id="@+id/viagens_efetuadas_adapter_tempo"
@@ -66,8 +66,8 @@
         android:layout_marginStart="185dp"
         android:layout_marginTop="54dp"
         android:text="Tempo"
-        app:layout_constraintStart_toStartOf="@+id/viagens_efetuadas_adapter_Local_Partida"
-        app:layout_constraintTop_toTopOf="@+id/viagens_efetuadas_adapter_contentor" />
+        app:layout_constraintStart_toStartOf="@id/viagens_efetuadas_adapter_Local_Partida"
+        app:layout_constraintTop_toTopOf="@id/viagens_efetuadas_adapter_contentor" />
 
     <TextView
         android:id="@+id/viagens_efetuadas_adapter_Local_Partida"
@@ -77,8 +77,8 @@
         android:layout_marginTop="56dp"
         android:text="Local_Partida"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/viagens_efetuadas_adapter_contentor"
-        app:layout_constraintTop_toTopOf="@+id/viagens_efetuadas_adapter_contentor" />
+        app:layout_constraintStart_toStartOf="@id/viagens_efetuadas_adapter_contentor"
+        app:layout_constraintTop_toTopOf="@id/viagens_efetuadas_adapter_contentor" />
 
     <TextView
         android:id="@+id/viagens_efetuadas_adapter_Local_Chegada"
@@ -88,8 +88,8 @@
         android:layout_marginTop="56dp"
         android:text="Local_Chegada"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/viagens_efetuadas_adapter_barra_distância"
-        app:layout_constraintTop_toTopOf="@+id/viagens_efetuadas_adapter_contentor" />
+        app:layout_constraintStart_toEndOf="@id/viagens_efetuadas_adapter_barra_distância"
+        app:layout_constraintTop_toTopOf="@id/viagens_efetuadas_adapter_contentor" />
 
     <ImageView
         android:id="@+id/viagens_efetuadas_adapter_class_viagem"
@@ -97,8 +97,8 @@
         android:layout_height="48dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="104dp"
-        app:layout_constraintStart_toStartOf="@+id/viagens_efetuadas_adapter_contentor"
-        app:layout_constraintTop_toTopOf="@+id/viagens_efetuadas_adapter_contentor"
+        app:layout_constraintStart_toStartOf="@id/viagens_efetuadas_adapter_contentor"
+        app:layout_constraintTop_toTopOf="@id/viagens_efetuadas_adapter_contentor"
         app:srcCompat="@drawable/botao_class" />
 
     <ImageView
@@ -107,8 +107,8 @@
         android:layout_height="48dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="140dp"
-        app:layout_constraintStart_toStartOf="@+id/viagens_efetuadas_adapter_contentor"
-        app:layout_constraintTop_toTopOf="@+id/viagens_efetuadas_adapter_contentor"
+        app:layout_constraintStart_toStartOf="@id/viagens_efetuadas_adapter_contentor"
+        app:layout_constraintTop_toTopOf="@id/viagens_efetuadas_adapter_contentor"
         app:srcCompat="@drawable/botao_class" />
 
     <TextView
@@ -119,10 +119,10 @@
         android:onClick="Classificar_Viagem"
         android:text="Classificar Viagem"
         android:textSize="13sp"
-        app:layout_constraintEnd_toStartOf="@+id/viagens_efetuadas_adapter_class_viagem"
+        app:layout_constraintEnd_toStartOf="@id/viagens_efetuadas_adapter_class_viagem"
         app:layout_constraintHorizontal_bias="0.481"
-        app:layout_constraintStart_toEndOf="@+id/viagens_efetuadas_adapter_class_viagem"
-        app:layout_constraintTop_toTopOf="@+id/viagens_efetuadas_adapter_class_viagem" />
+        app:layout_constraintStart_toEndOf="@id/viagens_efetuadas_adapter_class_viagem"
+        app:layout_constraintTop_toTopOf="@id/viagens_efetuadas_adapter_class_viagem" />
 
     <TextView
         android:id="@+id/classificar_condutor_textview"
@@ -133,18 +133,18 @@
         android:onClick="Classificar_Condutor"
         android:text="Classificar Condutor"
         android:textSize="13sp"
-        app:layout_constraintStart_toStartOf="@+id/viagens_efetuadas_adapter_class_condutor"
-        app:layout_constraintTop_toTopOf="@+id/viagens_efetuadas_adapter_class_condutor" />
+        app:layout_constraintStart_toStartOf="@id/viagens_efetuadas_adapter_class_condutor"
+        app:layout_constraintTop_toTopOf="@id/viagens_efetuadas_adapter_class_condutor" />
 
     <ImageView
         android:id="@+id/viagens_efetuadas_adapter_mais_info"
         android:layout_width="100dp"
         android:layout_height="48dp"
         android:layout_marginTop="138dp"
-        app:layout_constraintEnd_toStartOf="@+id/viagens_efetuadas_adapter_contentor"
+        app:layout_constraintEnd_toStartOf="@id/viagens_efetuadas_adapter_contentor"
         app:layout_constraintHorizontal_bias="0.248"
-        app:layout_constraintStart_toEndOf="@+id/viagens_efetuadas_adapter_contentor"
-        app:layout_constraintTop_toTopOf="@+id/viagens_efetuadas_adapter_contentor"
+        app:layout_constraintStart_toEndOf="@id/viagens_efetuadas_adapter_contentor"
+        app:layout_constraintTop_toTopOf="@id/viagens_efetuadas_adapter_contentor"
         app:srcCompat="@drawable/btn_mais_info" />
 
     <TextView
@@ -156,8 +156,8 @@
         android:onClick="maisInfo"
         android:text="Mais Info"
         android:textSize="13sp"
-        app:layout_constraintStart_toStartOf="@+id/viagens_efetuadas_adapter_mais_info"
-        app:layout_constraintTop_toTopOf="@+id/viagens_efetuadas_adapter_mais_info" />
+        app:layout_constraintStart_toStartOf="@id/viagens_efetuadas_adapter_mais_info"
+        app:layout_constraintTop_toTopOf="@id/viagens_efetuadas_adapter_mais_info" />
 
     <TextView
         android:id="@+id/viagens_efetuadas_adapter_Distancia"
@@ -166,8 +166,8 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="88dp"
         android:text="distancia"
-        app:layout_constraintStart_toEndOf="@+id/viagens_efetuadas_adapter_Local_Partida"
-        app:layout_constraintTop_toTopOf="@+id/viagens_efetuadas_adapter_contentor" />
+        app:layout_constraintStart_toEndOf="@id/viagens_efetuadas_adapter_Local_Partida"
+        app:layout_constraintTop_toTopOf="@id/viagens_efetuadas_adapter_contentor" />
 
     <TextView
         android:id="@+id/viagens_efetuadas_adapter_Tempo"
@@ -176,7 +176,7 @@
         android:layout_marginStart="108dp"
         android:layout_marginTop="88dp"
         android:text="tempo"
-        app:layout_constraintStart_toEndOf="@+id/viagens_efetuadas_adapter_Local_Partida"
-        app:layout_constraintTop_toTopOf="@+id/viagens_efetuadas_adapter_contentor" />
+        app:layout_constraintStart_toEndOf="@id/viagens_efetuadas_adapter_Local_Partida"
+        app:layout_constraintTop_toTopOf="@id/viagens_efetuadas_adapter_contentor" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

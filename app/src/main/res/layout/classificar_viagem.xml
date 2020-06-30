@@ -27,7 +27,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/Classificar_viagem_textview_top_classificar_viagem"
+                app:layout_constraintTop_toBottomOf="@id/Classificar_viagem_textview_top_classificar_viagem"
                 app:srcCompat="@drawable/white_square" />
 
             <ImageView
@@ -38,7 +38,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/caixa6_distancia_classificar_viagem"
+                app:layout_constraintTop_toBottomOf="@id/caixa6_distancia_classificar_viagem"
                 app:srcCompat="@drawable/white_square_shadow" />
 
             <ImageView
@@ -49,7 +49,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/caixa5_desconto_classificar_viagem"
+                app:layout_constraintTop_toBottomOf="@id/caixa5_desconto_classificar_viagem"
                 app:srcCompat="@drawable/white_square_shadow" />
 
             <ImageView
@@ -60,7 +60,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/caixa4_dia_classificar_viagem"
+                app:layout_constraintTop_toBottomOf="@id/caixa4_dia_classificar_viagem"
                 app:srcCompat="@drawable/white_square_shadow" />
 
             <ImageView
@@ -71,7 +71,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/caixa3_hora_classificar_viagem"
+                app:layout_constraintTop_toBottomOf="@id/caixa3_hora_classificar_viagem"
                 app:srcCompat="@drawable/white_square_shadow" />
 
             <ImageView
@@ -82,7 +82,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/caixa2_destino_classificar_viagem"
+                app:layout_constraintTop_toBottomOf="@id/caixa2_destino_classificar_viagem"
                 app:srcCompat="@drawable/white_square_shadow" />
 
             <ImageView
@@ -93,7 +93,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/caixa1_origem_classificar_viagem"
+                app:layout_constraintTop_toBottomOf="@id/caixa1_origem_classificar_viagem"
                 app:srcCompat="@drawable/white_square_shadow" />
 
             <ImageView
@@ -104,7 +104,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/mala_classificar_viagem"
+                app:layout_constraintTop_toBottomOf="@id/mala_classificar_viagem"
                 app:srcCompat="@drawable/white_square_shadow" />
 
             <ImageView
@@ -112,9 +112,9 @@
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_marginStart="5dp"
-                app:layout_constraintBottom_toBottomOf="@+id/caixa4_dia_classificar_viagem"
-                app:layout_constraintStart_toStartOf="@+id/caixa4_dia_classificar_viagem"
-                app:layout_constraintTop_toTopOf="@+id/caixa4_dia_classificar_viagem"
+                app:layout_constraintBottom_toBottomOf="@id/caixa4_dia_classificar_viagem"
+                app:layout_constraintStart_toStartOf="@id/caixa4_dia_classificar_viagem"
+                app:layout_constraintTop_toTopOf="@id/caixa4_dia_classificar_viagem"
                 app:srcCompat="@drawable/agenda_marcar_viagem" />
 
             <ImageView
@@ -122,9 +122,9 @@
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_marginStart="5dp"
-                app:layout_constraintBottom_toBottomOf="@+id/caixa5_desconto_classificar_viagem"
-                app:layout_constraintStart_toStartOf="@+id/caixa5_desconto_classificar_viagem"
-                app:layout_constraintTop_toTopOf="@+id/caixa5_desconto_classificar_viagem"
+                app:layout_constraintBottom_toBottomOf="@id/caixa5_desconto_classificar_viagem"
+                app:layout_constraintStart_toStartOf="@id/caixa5_desconto_classificar_viagem"
+                app:layout_constraintTop_toTopOf="@id/caixa5_desconto_classificar_viagem"
                 app:srcCompat="@drawable/euro_simbolo_icon" />
 
             <ImageView
@@ -132,9 +132,9 @@
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_marginStart="5dp"
-                app:layout_constraintBottom_toBottomOf="@+id/caixa6_distancia_classificar_viagem"
-                app:layout_constraintStart_toStartOf="@+id/caixa6_distancia_classificar_viagem"
-                app:layout_constraintTop_toTopOf="@+id/caixa6_distancia_classificar_viagem"
+                app:layout_constraintBottom_toBottomOf="@id/caixa6_distancia_classificar_viagem"
+                app:layout_constraintStart_toStartOf="@id/caixa6_distancia_classificar_viagem"
+                app:layout_constraintTop_toTopOf="@id/caixa6_distancia_classificar_viagem"
                 app:srcCompat="@drawable/icon_viagem_marcar" />
 
             <ImageView
@@ -142,9 +142,9 @@
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_marginStart="5dp"
-                app:layout_constraintBottom_toBottomOf="@+id/caixa2_destino_classificar_viagem"
-                app:layout_constraintStart_toStartOf="@+id/caixa2_destino_classificar_viagem"
-                app:layout_constraintTop_toTopOf="@+id/caixa2_destino_classificar_viagem"
+                app:layout_constraintBottom_toBottomOf="@id/caixa2_destino_classificar_viagem"
+                app:layout_constraintStart_toStartOf="@id/caixa2_destino_classificar_viagem"
+                app:layout_constraintTop_toTopOf="@id/caixa2_destino_classificar_viagem"
                 app:srcCompat="@drawable/marker_icon_solid" />
 
             <ImageView
@@ -152,9 +152,9 @@
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_marginStart="5dp"
-                app:layout_constraintBottom_toBottomOf="@+id/caixa1_origem_classificar_viagem"
-                app:layout_constraintStart_toStartOf="@+id/caixa1_origem_classificar_viagem"
-                app:layout_constraintTop_toTopOf="@+id/caixa1_origem_classificar_viagem"
+                app:layout_constraintBottom_toBottomOf="@id/caixa1_origem_classificar_viagem"
+                app:layout_constraintStart_toStartOf="@id/caixa1_origem_classificar_viagem"
+                app:layout_constraintTop_toTopOf="@id/caixa1_origem_classificar_viagem"
                 app:srcCompat="@drawable/marker_icon" />
 
             <ImageView
@@ -162,9 +162,9 @@
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_marginStart="5dp"
-                app:layout_constraintBottom_toBottomOf="@+id/caixa3_hora_classificar_viagem"
-                app:layout_constraintStart_toStartOf="@+id/caixa3_hora_classificar_viagem"
-                app:layout_constraintTop_toTopOf="@+id/caixa3_hora_classificar_viagem"
+                app:layout_constraintBottom_toBottomOf="@id/caixa3_hora_classificar_viagem"
+                app:layout_constraintStart_toStartOf="@id/caixa3_hora_classificar_viagem"
+                app:layout_constraintTop_toTopOf="@id/caixa3_hora_classificar_viagem"
                 app:srcCompat="@drawable/clock_marcar_viagem" />
 
             <ImageView
@@ -172,9 +172,9 @@
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_marginStart="5dp"
-                app:layout_constraintBottom_toBottomOf="@+id/caixa7_tempo_previsto_classificar_viagem"
-                app:layout_constraintStart_toStartOf="@+id/caixa7_tempo_previsto_classificar_viagem"
-                app:layout_constraintTop_toTopOf="@+id/caixa7_tempo_previsto_classificar_viagem"
+                app:layout_constraintBottom_toBottomOf="@id/caixa7_tempo_previsto_classificar_viagem"
+                app:layout_constraintStart_toStartOf="@id/caixa7_tempo_previsto_classificar_viagem"
+                app:layout_constraintTop_toTopOf="@id/caixa7_tempo_previsto_classificar_viagem"
                 app:srcCompat="@drawable/tempo_previsto" />
 
             <ImageView
@@ -196,8 +196,8 @@
                 android:text="Classificação da Viagem"
                 android:textColor="@color/White"
                 android:textSize="23sp"
-                app:layout_constraintStart_toStartOf="@+id/Caixa_negra_Top_classificar_viagem"
-                app:layout_constraintTop_toTopOf="@+id/Caixa_negra_Top_classificar_viagem" />
+                app:layout_constraintStart_toStartOf="@id/Caixa_negra_Top_classificar_viagem"
+                app:layout_constraintTop_toTopOf="@id/Caixa_negra_Top_classificar_viagem" />
 
             <TextView
                 android:id="@+id/detalhes_viagem_classificar_viagem"
@@ -210,17 +210,17 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/Caixa_negra_Top_classificar_viagem" />
+                app:layout_constraintTop_toBottomOf="@id/Caixa_negra_Top_classificar_viagem" />
 
             <ImageView
                 android:id="@+id/cao_classificar_viagem"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_marginTop="55dp"
-                app:layout_constraintEnd_toStartOf="@+id/mala_classificar_viagem"
+                app:layout_constraintEnd_toStartOf="@id/mala_classificar_viagem"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/detalhes_viagem_classificar_viagem"
+                app:layout_constraintTop_toTopOf="@id/detalhes_viagem_classificar_viagem"
                 app:srcCompat="@drawable/dog_icon_marcar" />
 
             <ImageView
@@ -231,7 +231,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/Caixa_negra_Top_classificar_viagem"
+                app:layout_constraintTop_toBottomOf="@id/Caixa_negra_Top_classificar_viagem"
                 app:srcCompat="@drawable/caixa_classificar_condutor" />
 
             <ImageView
@@ -239,10 +239,10 @@
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_marginTop="55dp"
-                app:layout_constraintEnd_toStartOf="@+id/cadeira_rodas_classificar_viagem"
+                app:layout_constraintEnd_toStartOf="@id/cadeira_rodas_classificar_viagem"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/cao_classificar_viagem"
-                app:layout_constraintTop_toTopOf="@+id/detalhes_viagem_classificar_viagem"
+                app:layout_constraintStart_toEndOf="@id/cao_classificar_viagem"
+                app:layout_constraintTop_toTopOf="@id/detalhes_viagem_classificar_viagem"
                 app:srcCompat="@drawable/mala_icon_marcar" />
 
             <ImageView
@@ -252,8 +252,8 @@
                 android:layout_marginTop="55dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/mala_classificar_viagem"
-                app:layout_constraintTop_toTopOf="@+id/detalhes_viagem_classificar_viagem"
+                app:layout_constraintStart_toEndOf="@id/mala_classificar_viagem"
+                app:layout_constraintTop_toTopOf="@id/detalhes_viagem_classificar_viagem"
                 app:srcCompat="@drawable/wheel_icon_marcar" />
 
             <ImageView
@@ -263,8 +263,8 @@
                 android:layout_marginEnd="44dp"
                 android:layout_marginBottom="48dp"
                 android:alpha="1"
-                app:layout_constraintBottom_toBottomOf="@+id/cao_classificar_viagem"
-                app:layout_constraintEnd_toEndOf="@+id/cao_classificar_viagem"
+                app:layout_constraintBottom_toBottomOf="@id/cao_classificar_viagem"
+                app:layout_constraintEnd_toEndOf="@id/cao_classificar_viagem"
                 app:srcCompat="@drawable/check_icon_yes" />
 
             <ImageView
@@ -273,8 +273,8 @@
                 android:layout_height="20dp"
                 android:layout_marginEnd="44dp"
                 android:layout_marginBottom="48dp"
-                app:layout_constraintBottom_toBottomOf="@+id/mala_classificar_viagem"
-                app:layout_constraintEnd_toEndOf="@+id/mala_classificar_viagem"
+                app:layout_constraintBottom_toBottomOf="@id/mala_classificar_viagem"
+                app:layout_constraintEnd_toEndOf="@id/mala_classificar_viagem"
                 app:srcCompat="@drawable/check_icon_yes" />
 
             <ImageView
@@ -283,8 +283,8 @@
                 android:layout_height="20dp"
                 android:layout_marginEnd="44dp"
                 android:layout_marginBottom="48dp"
-                app:layout_constraintBottom_toBottomOf="@+id/cadeira_rodas_classificar_viagem"
-                app:layout_constraintEnd_toEndOf="@+id/cadeira_rodas_classificar_viagem"
+                app:layout_constraintBottom_toBottomOf="@id/cadeira_rodas_classificar_viagem"
+                app:layout_constraintEnd_toEndOf="@id/cadeira_rodas_classificar_viagem"
                 app:srcCompat="@drawable/check_icon_yes" />
 
             <TextView
@@ -295,9 +295,9 @@
                 android:layout_marginBottom="15dp"
                 android:text="Origem"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/caixa1_origem_classificar_viagem"
-                app:layout_constraintStart_toEndOf="@+id/origem_icon_classificar_viagem"
-                app:layout_constraintTop_toTopOf="@+id/caixa1_origem_classificar_viagem" />
+                app:layout_constraintBottom_toBottomOf="@id/caixa1_origem_classificar_viagem"
+                app:layout_constraintStart_toEndOf="@id/origem_icon_classificar_viagem"
+                app:layout_constraintTop_toTopOf="@id/caixa1_origem_classificar_viagem" />
 
             <TextView
                 android:id="@+id/destino_title_classificar_viagem"
@@ -307,9 +307,9 @@
                 android:layout_marginBottom="15dp"
                 android:text="Destino"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/caixa2_destino_classificar_viagem"
-                app:layout_constraintStart_toEndOf="@+id/destino_icon_classificar_viagem"
-                app:layout_constraintTop_toTopOf="@+id/caixa2_destino_classificar_viagem" />
+                app:layout_constraintBottom_toBottomOf="@id/caixa2_destino_classificar_viagem"
+                app:layout_constraintStart_toEndOf="@id/destino_icon_classificar_viagem"
+                app:layout_constraintTop_toTopOf="@id/caixa2_destino_classificar_viagem" />
 
             <TextView
                 android:id="@+id/hora_title_classificar_viagem"
@@ -319,9 +319,9 @@
                 android:layout_marginBottom="15dp"
                 android:text="Hora Partida"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/caixa3_hora_classificar_viagem"
-                app:layout_constraintStart_toEndOf="@+id/hora_icon_classificar_viagem"
-                app:layout_constraintTop_toTopOf="@+id/caixa3_hora_classificar_viagem" />
+                app:layout_constraintBottom_toBottomOf="@id/caixa3_hora_classificar_viagem"
+                app:layout_constraintStart_toEndOf="@id/hora_icon_classificar_viagem"
+                app:layout_constraintTop_toTopOf="@id/caixa3_hora_classificar_viagem" />
 
             <TextView
                 android:id="@+id/dia_title_classificar_viagem"
@@ -331,9 +331,9 @@
                 android:layout_marginBottom="15dp"
                 android:text="Dia"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/caixa4_dia_classificar_viagem"
-                app:layout_constraintStart_toEndOf="@+id/dia_icon_classificar_viagem"
-                app:layout_constraintTop_toTopOf="@+id/caixa4_dia_classificar_viagem" />
+                app:layout_constraintBottom_toBottomOf="@id/caixa4_dia_classificar_viagem"
+                app:layout_constraintStart_toEndOf="@id/dia_icon_classificar_viagem"
+                app:layout_constraintTop_toTopOf="@id/caixa4_dia_classificar_viagem" />
 
             <TextView
                 android:id="@+id/desconto_title_classificar_viagem"
@@ -343,9 +343,9 @@
                 android:layout_marginBottom="15dp"
                 android:text="Taxa de Desconto"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/caixa5_desconto_classificar_viagem"
-                app:layout_constraintStart_toEndOf="@+id/desconto_icon_classificar_viagem"
-                app:layout_constraintTop_toTopOf="@+id/caixa5_desconto_classificar_viagem" />
+                app:layout_constraintBottom_toBottomOf="@id/caixa5_desconto_classificar_viagem"
+                app:layout_constraintStart_toEndOf="@id/desconto_icon_classificar_viagem"
+                app:layout_constraintTop_toTopOf="@id/caixa5_desconto_classificar_viagem" />
 
             <TextView
                 android:id="@+id/distancia_title_classificar_viagem"
@@ -355,9 +355,9 @@
                 android:layout_marginBottom="15dp"
                 android:text="Distância"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/caixa6_distancia_classificar_viagem"
-                app:layout_constraintStart_toEndOf="@+id/distancia_icon_classificar_viagem"
-                app:layout_constraintTop_toTopOf="@+id/caixa6_distancia_classificar_viagem" />
+                app:layout_constraintBottom_toBottomOf="@id/caixa6_distancia_classificar_viagem"
+                app:layout_constraintStart_toEndOf="@id/distancia_icon_classificar_viagem"
+                app:layout_constraintTop_toTopOf="@id/caixa6_distancia_classificar_viagem" />
 
             <TextView
                 android:id="@+id/tempo_previsto_title_classificar_viagem"
@@ -367,9 +367,9 @@
                 android:layout_marginBottom="15dp"
                 android:text="Tempo Previsto"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/caixa7_tempo_previsto_classificar_viagem"
-                app:layout_constraintStart_toEndOf="@+id/tempo_previsto_icon_classificar_viagem"
-                app:layout_constraintTop_toTopOf="@+id/caixa7_tempo_previsto_classificar_viagem" />
+                app:layout_constraintBottom_toBottomOf="@id/caixa7_tempo_previsto_classificar_viagem"
+                app:layout_constraintStart_toEndOf="@id/tempo_previsto_icon_classificar_viagem"
+                app:layout_constraintTop_toTopOf="@id/caixa7_tempo_previsto_classificar_viagem" />
 
             <TextView
                 android:id="@+id/origem_value_classificar_viagem"
@@ -378,9 +378,9 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginBottom="2dp"
                 android:text="@string/novalue"
-                app:layout_constraintBottom_toBottomOf="@+id/caixa1_origem_classificar_viagem"
-                app:layout_constraintStart_toEndOf="@+id/origem_icon_classificar_viagem"
-                app:layout_constraintTop_toBottomOf="@+id/origem_title_classificar_viagem" />
+                app:layout_constraintBottom_toBottomOf="@id/caixa1_origem_classificar_viagem"
+                app:layout_constraintStart_toEndOf="@id/origem_icon_classificar_viagem"
+                app:layout_constraintTop_toBottomOf="@id/origem_title_classificar_viagem" />
 
             <TextView
                 android:id="@+id/destino_value_classificar_viagem"
@@ -389,9 +389,9 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginBottom="2dp"
                 android:text="@string/novalue"
-                app:layout_constraintBottom_toBottomOf="@+id/caixa2_destino_classificar_viagem"
-                app:layout_constraintStart_toEndOf="@+id/destino_icon_classificar_viagem"
-                app:layout_constraintTop_toBottomOf="@+id/destino_title_classificar_viagem" />
+                app:layout_constraintBottom_toBottomOf="@id/caixa2_destino_classificar_viagem"
+                app:layout_constraintStart_toEndOf="@id/destino_icon_classificar_viagem"
+                app:layout_constraintTop_toBottomOf="@id/destino_title_classificar_viagem" />
 
             <TextView
                 android:id="@+id/textView16"
@@ -400,9 +400,9 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginBottom="2dp"
                 android:text="@string/novalue"
-                app:layout_constraintBottom_toBottomOf="@+id/caixa3_hora_classificar_viagem"
-                app:layout_constraintStart_toEndOf="@+id/hora_icon_classificar_viagem"
-                app:layout_constraintTop_toBottomOf="@+id/hora_title_classificar_viagem" />
+                app:layout_constraintBottom_toBottomOf="@id/caixa3_hora_classificar_viagem"
+                app:layout_constraintStart_toEndOf="@id/hora_icon_classificar_viagem"
+                app:layout_constraintTop_toBottomOf="@id/hora_title_classificar_viagem" />
 
             <TextView
                 android:id="@+id/dia_value_classificar_viagem"
@@ -411,9 +411,9 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginBottom="2dp"
                 android:text="@string/novalue"
-                app:layout_constraintBottom_toBottomOf="@+id/caixa4_dia_classificar_viagem"
-                app:layout_constraintStart_toEndOf="@+id/dia_icon_classificar_viagem"
-                app:layout_constraintTop_toBottomOf="@+id/dia_title_classificar_viagem" />
+                app:layout_constraintBottom_toBottomOf="@id/caixa4_dia_classificar_viagem"
+                app:layout_constraintStart_toEndOf="@id/dia_icon_classificar_viagem"
+                app:layout_constraintTop_toBottomOf="@id/dia_title_classificar_viagem" />
 
             <TextView
                 android:id="@+id/desconto_value_classificar_viagem"
@@ -422,9 +422,9 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginBottom="2dp"
                 android:text="@string/novalue"
-                app:layout_constraintBottom_toBottomOf="@+id/caixa5_desconto_classificar_viagem"
-                app:layout_constraintStart_toEndOf="@+id/desconto_icon_classificar_viagem"
-                app:layout_constraintTop_toBottomOf="@+id/desconto_title_classificar_viagem" />
+                app:layout_constraintBottom_toBottomOf="@id/caixa5_desconto_classificar_viagem"
+                app:layout_constraintStart_toEndOf="@id/desconto_icon_classificar_viagem"
+                app:layout_constraintTop_toBottomOf="@id/desconto_title_classificar_viagem" />
 
             <TextView
                 android:id="@+id/distancia_value_classificar_viagem"
@@ -433,9 +433,9 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginBottom="2dp"
                 android:text="@string/novalue"
-                app:layout_constraintBottom_toBottomOf="@+id/caixa6_distancia_classificar_viagem"
-                app:layout_constraintStart_toEndOf="@+id/distancia_icon_classificar_viagem"
-                app:layout_constraintTop_toBottomOf="@+id/distancia_title_classificar_viagem" />
+                app:layout_constraintBottom_toBottomOf="@id/caixa6_distancia_classificar_viagem"
+                app:layout_constraintStart_toEndOf="@id/distancia_icon_classificar_viagem"
+                app:layout_constraintTop_toBottomOf="@id/distancia_title_classificar_viagem" />
 
             <TextView
                 android:id="@+id/tempo_previsto_value_classificar_viagem"
@@ -444,9 +444,9 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginBottom="2dp"
                 android:text="@string/novalue"
-                app:layout_constraintBottom_toBottomOf="@+id/caixa7_tempo_previsto_classificar_viagem"
-                app:layout_constraintStart_toEndOf="@+id/tempo_previsto_icon_classificar_viagem"
-                app:layout_constraintTop_toBottomOf="@+id/tempo_previsto_title_classificar_viagem" />
+                app:layout_constraintBottom_toBottomOf="@id/caixa7_tempo_previsto_classificar_viagem"
+                app:layout_constraintStart_toEndOf="@id/tempo_previsto_icon_classificar_viagem"
+                app:layout_constraintTop_toBottomOf="@id/tempo_previsto_title_classificar_viagem" />
 
             <ImageView
                 android:id="@+id/imageView16"
@@ -455,7 +455,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/bg_White_Big_perfil_motorista2"
+                app:layout_constraintTop_toBottomOf="@id/bg_White_Big_perfil_motorista2"
                 app:srcCompat="@drawable/caixa_classificar_condutor" />
 
             <TextView
@@ -467,8 +467,8 @@
                 android:text="Classificação"
                 android:textColor="@color/White"
                 android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="@+id/imageView16"
-                app:layout_constraintTop_toTopOf="@+id/imageView16" />
+                app:layout_constraintEnd_toEndOf="@id/imageView16"
+                app:layout_constraintTop_toTopOf="@id/imageView16" />
 
             <RatingBar
                 android:id="@+id/rating_classificar_viagem"
@@ -478,8 +478,8 @@
                 android:layout_marginTop="60dp"
                 android:numStars="5"
                 android:saveEnabled="true"
-                app:layout_constraintStart_toStartOf="@+id/imageView16"
-                app:layout_constraintTop_toTopOf="@+id/imageView16" />
+                app:layout_constraintStart_toStartOf="@id/imageView16"
+                app:layout_constraintTop_toTopOf="@id/imageView16" />
 
             <ImageView
                 android:id="@+id/imageView20"
@@ -488,7 +488,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView16"
+                app:layout_constraintTop_toBottomOf="@id/imageView16"
                 app:srcCompat="@drawable/caixa_feedback_class_condutor" />
 
             <TextView
@@ -501,7 +501,7 @@
                 android:textColor="@color/White"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/imageView20" />
+                app:layout_constraintTop_toTopOf="@id/imageView20" />
 
             <EditText
                 android:id="@+id/editText"
@@ -512,11 +512,11 @@
                 android:ems="10"
                 android:gravity="start|top"
                 android:inputType="textMultiLine"
-                app:layout_constraintBottom_toBottomOf="@+id/imageView20"
-                app:layout_constraintEnd_toStartOf="@+id/imageView20"
+                app:layout_constraintBottom_toBottomOf="@id/imageView20"
+                app:layout_constraintEnd_toStartOf="@id/imageView20"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/imageView20"
-                app:layout_constraintTop_toTopOf="@+id/imageView20" />
+                app:layout_constraintStart_toEndOf="@id/imageView20"
+                app:layout_constraintTop_toTopOf="@id/imageView20" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

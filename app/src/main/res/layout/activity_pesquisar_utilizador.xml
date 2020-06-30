@@ -12,7 +12,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageViewMenuAmarelo_viagens_efetuadas"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/bg_black_radius_edges" />
 
     <com.google.android.material.textfield.TextInputLayout
@@ -22,10 +22,10 @@
         android:layout_marginTop="135dp"
         android:background="#FFFFFF"
         app:hintTextColor="#373433"
-        app:layout_constraintEnd_toStartOf="@+id/bg_big_black_pesquisar_utilizador"
+        app:layout_constraintEnd_toStartOf="@id/bg_big_black_pesquisar_utilizador"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/bg_big_black_pesquisar_utilizador"
-        app:layout_constraintTop_toTopOf="@+id/bg_big_black_pesquisar_utilizador"
+        app:layout_constraintStart_toEndOf="@id/bg_big_black_pesquisar_utilizador"
+        app:layout_constraintTop_toTopOf="@id/bg_big_black_pesquisar_utilizador"
         app:startIconContentDescription="search_Icon"
         app:startIconDrawable="@drawable/seach_icon">
 
@@ -48,10 +48,10 @@
         android:text="@string/pesquisar_utilizador"
         android:textColor="@color/White"
         android:textSize="23sp"
-        app:layout_constraintEnd_toStartOf="@+id/bg_big_black_pesquisar_utilizador"
+        app:layout_constraintEnd_toStartOf="@id/bg_big_black_pesquisar_utilizador"
         app:layout_constraintHorizontal_bias="0.683"
-        app:layout_constraintStart_toEndOf="@+id/bg_big_black_pesquisar_utilizador"
-        app:layout_constraintTop_toTopOf="@+id/bg_big_black_pesquisar_utilizador" />
+        app:layout_constraintStart_toEndOf="@id/bg_big_black_pesquisar_utilizador"
+        app:layout_constraintTop_toTopOf="@id/bg_big_black_pesquisar_utilizador" />
 
     <include layout="@layout/barra_lateral_pro"/>
 

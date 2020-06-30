@@ -39,7 +39,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/activity_menu_motorista_btn_Servicos"
+        app:layout_constraintTop_toBottomOf="@id/activity_menu_motorista_btn_Servicos"
         app:srcCompat="@drawable/clock" />
 
     <TextView
@@ -51,8 +51,8 @@
         android:text="Serviços a Decorrer"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/activity_menu_motorista_btn_Servicos"
-        app:layout_constraintTop_toTopOf="@+id/activity_menu_motorista_btn_Servicos" />
+        app:layout_constraintStart_toStartOf="@id/activity_menu_motorista_btn_Servicos"
+        app:layout_constraintTop_toTopOf="@id/activity_menu_motorista_btn_Servicos" />
 
     <TextView
         android:id="@+id/activity_menu_motorista_txt_Viagens_Efetuadas"
@@ -63,8 +63,8 @@
         android:text="@string/ver_viagens_efetuadas"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/activity_menu_motorista_btn_Viagens_Efetuadas"
-        app:layout_constraintTop_toTopOf="@+id/activity_menu_motorista_btn_Viagens_Efetuadas" />
+        app:layout_constraintStart_toStartOf="@id/activity_menu_motorista_btn_Viagens_Efetuadas"
+        app:layout_constraintTop_toTopOf="@id/activity_menu_motorista_btn_Viagens_Efetuadas" />
 
     <ImageView
         android:id="@+id/activity_menu_motorista_user_outer"
@@ -105,10 +105,10 @@
         android:layout_marginTop="4dp"
         android:text="@string/user_localidade"
         android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toStartOf="@+id/activity_menu_motorista_user_outer"
+        app:layout_constraintEnd_toStartOf="@id/activity_menu_motorista_user_outer"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/activity_menu_motorista_user_outer"
-        app:layout_constraintTop_toBottomOf="@+id/activity_menu_motorista_user_Name" />
+        app:layout_constraintStart_toEndOf="@id/activity_menu_motorista_user_outer"
+        app:layout_constraintTop_toBottomOf="@id/activity_menu_motorista_user_Name" />
 
     <include layout="@layout/barra_lateral_pro" />
 
