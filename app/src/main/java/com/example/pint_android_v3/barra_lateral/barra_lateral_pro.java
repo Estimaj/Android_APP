@@ -2,11 +2,14 @@ package com.example.pint_android_v3.barra_lateral;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.SpannableString;
 import android.text.style.TextAppearanceSpan;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -77,6 +80,7 @@ public class barra_lateral_pro extends AppCompatActivity implements NavigationVi
 
     public void Bar_Settings(int id)
     {
+
         user_id = id;
         toolbar = findViewById(R.id.barra_lateral_toolbar);
         setSupportActionBar(toolbar);
@@ -115,29 +119,31 @@ public class barra_lateral_pro extends AppCompatActivity implements NavigationVi
 
 
 
+
             }
 
             /** Called when a drawer has settled in a completely open state. */
             public void onDrawerOpened(View drawerView) {
                 super.onDrawerOpened(drawerView);
-                drawerLayout.getLayoutParams().height = heightX;
-                drawerLayout.bringToFront();
-                drawerLayout.requestLayout();
+
 
 
 
             }
-
             public void onDrawerStateChanged(int newState)
             {
-               drawerLayout.requestLayout();
+                if (newState == DrawerLayout.STATE_SETTLING) {
+
+                    drawerLayout.getLayoutParams().height = heightX;
+                    drawerLayout.bringToFront();
+                    drawerLayout.requestLayout();
 
 
+                }
             }
 
 
         };
-
 
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.onDrawerClosed(drawerLayout);
@@ -146,6 +152,8 @@ public class barra_lateral_pro extends AppCompatActivity implements NavigationVi
 
 
     }
+
+
 
 
 

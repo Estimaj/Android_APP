@@ -7,6 +7,16 @@
     android:background="@color/colorLightgray"
     tools:context=".viagens_marcadas.viagens_marcadas">
 
+    <ListView
+        android:id="@+id/viagens_marcadas_listview"
+        android:layout_width="415dp"
+        android:layout_height="518dp"
+        android:layout_marginTop="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bg_big_black_viagens_marcadas" />
+
     <!--black bg with a single text-->
     <ImageView
         android:id="@+id/bg_big_black_viagens_marcadas"

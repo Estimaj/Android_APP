@@ -7,6 +7,18 @@
     android:background="@color/colorLightgray">
 
 
+    <Button
+        android:id="@+id/Btn_classificar_condutor"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/btn_marcar_viagem"
+        android:text="Classificar Condutor"
+        android:textColor="@color/White"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <ScrollView
         android:id="@+id/scrollView2"
         android:layout_width="match_parent"
@@ -40,8 +52,7 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/bg_black_radius_edges"
-                />
+                app:srcCompat="@drawable/bg_black_radius_edges" />
 
             <!--Top yellow bar with the muv logo-->
 
@@ -64,7 +75,7 @@
                 app:layout_constraintEnd_toEndOf="@id/gray_circle_foto_perfil_motorista"
                 app:layout_constraintStart_toStartOf="@id/gray_circle_foto_perfil_motorista"
                 app:layout_constraintTop_toTopOf="@id/gray_circle_foto_perfil_motorista"
-                app:srcCompat="@drawable/foto_de_perfil_usuario" />
+                app:srcCompat="@drawable/default_user_icon" />
 
 
             <!--/////////////////Informações Pessoais .. secção\\\\\\\\\\\\\\\\\\\\\-->
@@ -342,7 +353,6 @@
                 app:layout_constraintTop_toTopOf="@+id/Caixa_Texto_classificar_condutor" />
 
 
-
             <TextView
                 android:id="@+id/comentarios_classificar_condutor"
                 android:layout_width="wrap_content"
@@ -370,20 +380,6 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
-
-    <Button
-        android:id="@+id/Btn_classificar_condutor"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:background="@drawable/btn_marcar_viagem"
-        android:text="Classificar Condutor"
-        android:textColor="@color/White"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:visibility="visible" />
 
     <include layout="@layout/barra_lateral_pro" />
 
