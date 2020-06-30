@@ -1,5 +1,6 @@
 package com.example.pint_android_v3.mapas;
 
+import android.content.Intent;
 import android.graphics.Color;
 
 import android.os.Bundle;
@@ -51,6 +52,7 @@ public class mais_info_mapa_cliente extends barra_lateral_pro {
     private GraphicsOverlay mGraphicsOverlay;
     private Point mStart;
     private Point mEnd;
+    private int user_id;
 
 
 
@@ -68,6 +70,16 @@ public class mais_info_mapa_cliente extends barra_lateral_pro {
         //2
         createGraphicsOverlay();
         setupOAuthManager();
+
+        /*Intent X = getIntent();
+        Bundle b = X.getExtras();
+        if(b!=null){
+            user_id = (int) b.get("user_id");
+            //Log.i("id_user", ""+ id_user);
+
+        }
+
+        Bar_Settings(user_id);*/
 
 
     }

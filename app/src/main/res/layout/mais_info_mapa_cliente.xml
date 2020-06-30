@@ -8,20 +8,20 @@
     <com.esri.arcgisruntime.mapping.view.MapView
         android:id="@+id/mapView_mais_info_cliente"
         android:layout_width="match_parent"
-        android:layout_height="443dp"
+        android:layout_height="440dp"
         android:layout_marginTop="56dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/include"
-        />
+        app:layout_constraintTop_toTopOf="@id/include" />
 
     <ImageView
         android:id="@+id/contentor_mais_info_cliente"
         android:layout_width="match_parent"
         android:layout_height="230dp"
-        app:layout_constraintTop_toBottomOf="@+id/mapView_mais_info_cliente"
-        app:srcCompat="@drawable/white_square"
-        tools:layout_editor_absoluteX="-8dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/include"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/white_square" />
 
     <ImageView
         android:id="@+id/mala_icon_mais_info_cliente"

@@ -16,7 +16,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
 
             <ImageView
@@ -41,7 +41,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/bg_black_radius_edges"
-                tools:ignore="MissingConstraints" />
+                />
 
             <!--Top yellow bar with the muv logo-->
 
@@ -99,7 +99,6 @@
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_marginStart="15dp"
-                android:layout_marginLeft="5dp"
                 app:layout_constraintBottom_toBottomOf="@id/imageView_origem_bg_perfil_motorista"
                 app:layout_constraintStart_toStartOf="@id/imageView_origem_bg_perfil_motorista"
                 app:layout_constraintTop_toTopOf="@id/imageView_origem_bg_perfil_motorista"
@@ -109,11 +108,11 @@
                 android:id="@+id/marker_origem_textView_perfil_motorista"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginBottom="15dp"
                 android:text="Origem"
                 android:textColor="@color/Black"
-                android:textSize="12dp"
+                android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="@id/imageView_origem_bg_perfil_motorista"
                 app:layout_constraintStart_toEndOf="@id/marker_origem_icon_perfil_motorista"
                 app:layout_constraintTop_toTopOf="@id/imageView_origem_bg_perfil_motorista" />
@@ -122,7 +121,7 @@
                 android:id="@+id/textView_user_location_information_perfil_motorista"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginBottom="1dp"
                 android:text="@string/novalue"
                 android:textColor="@color/colorDarkGray"
@@ -146,7 +145,6 @@
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_marginStart="15dp"
-                android:layout_marginLeft="5dp"
                 app:layout_constraintBottom_toBottomOf="@id/imageView_Idade_bg_perfil_motorista"
                 app:layout_constraintStart_toStartOf="@id/imageView_Idade_bg_perfil_motorista"
                 app:layout_constraintTop_toTopOf="@id/imageView_Idade_bg_perfil_motorista"
@@ -156,11 +154,11 @@
                 android:id="@+id/idade_birthday_cake_textView_perfil_motorista"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginBottom="15dp"
-                android:text="Idade"
+                android:text="@string/idade"
                 android:textColor="@color/Black"
-                android:textSize="12dp"
+                android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="@id/imageView_Idade_bg_perfil_motorista"
                 app:layout_constraintStart_toEndOf="@id/idade_birthday_cake_icon_perfil_motorista"
                 app:layout_constraintTop_toTopOf="@id/imageView_Idade_bg_perfil_motorista" />
@@ -169,7 +167,7 @@
                 android:id="@+id/textView_user_idade_information_perfil_motorista"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginBottom="1dp"
                 android:text="@string/novalue"
                 android:textColor="@color/colorDarkGray"
@@ -194,7 +192,6 @@
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_marginStart="15dp"
-                android:layout_marginLeft="5dp"
                 app:layout_constraintBottom_toBottomOf="@id/imageView_telefone_bg_perfil_motorista"
                 app:layout_constraintStart_toStartOf="@id/imageView_telefone_bg_perfil_motorista"
                 app:layout_constraintTop_toTopOf="@id/imageView_telefone_bg_perfil_motorista"
@@ -204,11 +201,11 @@
                 android:id="@+id/telefone_textView_perfil_motorista"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginBottom="15dp"
-                android:text="Telefone"
+                android:text="@string/telefone"
                 android:textColor="@color/Black"
-                android:textSize="12dp"
+                android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="@id/imageView_telefone_bg_perfil_motorista"
                 app:layout_constraintStart_toEndOf="@id/telefone_icon_perfil_motorista"
                 app:layout_constraintTop_toTopOf="@id/imageView_telefone_bg_perfil_motorista" />
@@ -217,7 +214,7 @@
                 android:id="@+id/textView_user_telefone_information_perfil_motorista"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginBottom="1dp"
                 android:text="@string/novalue"
                 android:textColor="@color/colorDarkGray"
@@ -241,7 +238,6 @@
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_marginStart="15dp"
-                android:layout_marginLeft="5dp"
                 app:layout_constraintBottom_toBottomOf="@id/imageView_Email_bg_perfil_motorista"
                 app:layout_constraintStart_toStartOf="@id/imageView_Email_bg_perfil_motorista"
                 app:layout_constraintTop_toTopOf="@id/imageView_Email_bg_perfil_motorista"
@@ -251,11 +247,11 @@
                 android:id="@+id/email_envelope_textView_perfil_motorista"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginBottom="15dp"
                 android:text="E-mail"
                 android:textColor="@color/Black"
-                android:textSize="12dp"
+                android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="@id/imageView_Email_bg_perfil_motorista"
                 app:layout_constraintStart_toEndOf="@id/email_envelope_icon_perfil_motorista"
                 app:layout_constraintTop_toTopOf="@id/imageView_Email_bg_perfil_motorista" />
@@ -345,16 +341,7 @@
                 app:layout_constraintStart_toEndOf="@+id/Caixa_Texto_classificar_condutor"
                 app:layout_constraintTop_toTopOf="@+id/Caixa_Texto_classificar_condutor" />
 
-            <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_marginTop="100dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/Caixa_Texto_classificar_condutor"
-                app:srcCompat="@drawable/caixa_viagens_efetuadas" />
+
 
             <TextView
                 android:id="@+id/comentarios_classificar_condutor"
@@ -367,6 +354,17 @@
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="@+id/Caixa_Texto_classificar_condutor"
                 app:layout_constraintTop_toTopOf="@+id/Caixa_Texto_classificar_condutor" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="100dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Caixa_Texto_classificar_condutor"
+                app:srcCompat="@drawable/caixa_viagens_efetuadas" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -384,7 +382,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:visibility="visible" />
 
     <include layout="@layout/barra_lateral_pro" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

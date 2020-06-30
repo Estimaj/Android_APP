@@ -59,4 +59,6 @@
     <string name="redirect_url">my-app://auth</string>
     <string name="client_id">YOUR_CLIENT_ID</string>
     <string name="routing_url">https://route.arcgis.com/arcgis/rest/services/World/Route/NAServer/Route_World</string>
+    <string name="telefone">Telefone</string>
+    <string name="idade">Idade</string>
 </resources>

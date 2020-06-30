@@ -44,7 +44,8 @@
         <activity android:name=".perfis.perfil_cliente" />
         <activity android:name=".perfis.perfil_cliente_edit" />
         <activity android:name=".marcar_viagem" />
-        <activity android:name=".classificar_condutor" />
+        <activity android:name=".classificar.classificar_condutor" />
+        <activity android:name=".classificar.classificar_viagem" />
         <!--
         <activity
             android:name="com.esri.arcgisruntime.security.DefaultOAuthIntentReceiver"

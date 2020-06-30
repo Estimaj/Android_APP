@@ -1,14 +1,17 @@
-package com.example.pint_android_v3;
+package com.example.pint_android_v3.classificar;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.RatingBar;
 import android.widget.Toast;
 
+import com.example.pint_android_v3.R;
 import com.example.pint_android_v3.barra_lateral.barra_lateral_pro;
 
 public class classificar_condutor extends barra_lateral_pro {
 
+    private int user_id;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,5 +24,14 @@ public class classificar_condutor extends barra_lateral_pro {
                 Toast.makeText(classificar_condutor.this, rating, Toast.LENGTH_LONG).show();
             }
         });
+
+        Intent X = getIntent();
+        Bundle b = X.getExtras();
+        if(b!=null){
+            user_id = (int) b.get("user_id");
+            //Log.i("id_user", ""+ id_user);
+
+        }
+        Bar_Settings(user_id);
 
 }}

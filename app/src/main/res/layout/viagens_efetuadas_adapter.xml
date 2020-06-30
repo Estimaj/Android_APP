@@ -123,19 +123,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="14dp"
+        android:onClick="Classificar_Viagem"
         android:text="Classificar Viagem"
         android:textSize="13sp"
         app:layout_constraintEnd_toStartOf="@+id/viagens_efetuadas_adapter_class_viagem"
         app:layout_constraintHorizontal_bias="0.481"
         app:layout_constraintStart_toEndOf="@+id/viagens_efetuadas_adapter_class_viagem"
-        app:layout_constraintTop_toTopOf="@+id/viagens_efetuadas_adapter_class_viagem"
-        android:onClick="Classificar_Condutor"/>
+        app:layout_constraintTop_toTopOf="@+id/viagens_efetuadas_adapter_class_viagem" />
 
     <TextView
         android:id="@+id/classificar_condutor_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="14dp"
+        android:onClick="Classificar_Condutor"
         android:text="Classificar Condutor"
         android:textSize="13sp"
         app:layout_constraintEnd_toStartOf="@+id/viagens_efetuadas_adapter_class_viagem"
@@ -160,6 +161,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="4dp"
+        android:onClick="maisInfo"
         android:text="Mais Info"
         android:textSize="13sp"
         app:layout_constraintStart_toStartOf="@+id/viagens_efetuadas_adapter_mais_info"

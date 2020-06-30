@@ -2,18 +2,16 @@ package com.example.pint_android_v3.viagens_efetuadas;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.example.pint_android_v3.R;
 import com.example.pint_android_v3.barra_lateral.barra_lateral_pro;
-import com.example.pint_android_v3.classificar_condutor;
+import com.example.pint_android_v3.classificar.classificar_condutor;
+import com.example.pint_android_v3.classificar.classificar_viagem;
+import com.example.pint_android_v3.mapas.mais_info_mapa_cliente;
 
 public class viagens_efetuadas extends barra_lateral_pro {
     ListView lView;
@@ -73,20 +71,20 @@ public class viagens_efetuadas extends barra_lateral_pro {
         startActivity(GO);
     }
 
-    /*
+
     public void Classificar_Viagem(View view){//falta saber como enviar a viagem certa
         Intent Classificar_Viagem = new Intent(viagens_efetuadas.this, classificar_viagem.class);
         Classificar_Viagem.putExtra("user_id", user_id);
         startActivity(Classificar_Viagem);
     }
-     */
 
-    /*
+
+
     public void maisInfo(View view){ //falta saber como enviar a viagem certa
-        Intent goMaisInfo = new Intent(viagens_efetuadas.this, mais_info_viagem.class);
+        Intent goMaisInfo = new Intent(viagens_efetuadas.this, mais_info_mapa_cliente.class);
         goMaisInfo.putExtra("user_id", user_id);
         startActivity(goMaisInfo);
     }
-     */
+
 
 }
