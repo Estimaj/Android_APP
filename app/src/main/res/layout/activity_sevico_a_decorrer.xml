@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".sevico_a_decorrer">
+    tools:context=".servico_a_decorrer">
 
     <!--black bg with a single text-->
     <ImageView

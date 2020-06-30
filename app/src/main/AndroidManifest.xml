@@ -16,7 +16,7 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:targetApi="n">
-        <activity android:name=".sevico_a_decorrer"/>
+        <activity android:name=".servico_a_decorrer"/>
         <activity android:name=".Cancelar_Viagem" />
         <activity android:name=".notificacoes.notificacoes_mais_info" />
         <activity android:name=".notificacoes.notificacoes" />
@@ -30,12 +30,15 @@
 
         </activity>
         <activity android:name=".menus.menu_municipe">
+
+        </activity>
+        <activity android:name=".menus.menu_motorista">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
-        <activity android:name=".menus.menu_motorista" />
         <activity android:name=".barra_lateral.barra_lateral_condutor" />
         <activity android:name=".mapas.mais_info_mapa_cliente" />
         <activity android:name=".mapas.mais_info_mapa_condutor" />

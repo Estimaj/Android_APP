@@ -3,6 +3,7 @@ package com.example.pint_android_v3.menus;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -12,6 +13,7 @@ import com.example.pint_android_v3.DataBase.Get_user;
 import com.example.pint_android_v3.DataBase.Model;
 import com.example.pint_android_v3.R;
 import com.example.pint_android_v3.barra_lateral.barra_lateral_condutor;
+import com.example.pint_android_v3.servico_a_decorrer;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -29,6 +31,7 @@ public class menu_motorista extends barra_lateral_condutor {
     TextView Localidade;
     ImageView btn_Perfil;
     ImageView btn_Efetuadas;
+    ImageView btn_Servicos;
 
 
     @Override
@@ -40,6 +43,8 @@ public class menu_motorista extends barra_lateral_condutor {
         Localidade =  findViewById(R.id.activity_menu_motorista_user_localidade);
         btn_Perfil =  findViewById(R.id.activity_menu_motorista_user_Inner);
         btn_Efetuadas =  findViewById(R.id.activity_menu_motorista_btn_Viagens_Efetuadas);
+        btn_Servicos = findViewById(R.id.activity_menu_motorista_btn_Servicos);
+
 
         Intent X = getIntent();
         Bundle b = X.getExtras();
@@ -55,6 +60,21 @@ public class menu_motorista extends barra_lateral_condutor {
         }
 
         Bar_Settings(user_id);
+
+        btn_Servicos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Clicar_Servicos();
+            }
+        });
+
+    }
+
+    public void Clicar_Servicos()
+    {
+        Intent servico = new Intent(menu_motorista.this, servico_a_decorrer.class);
+        servico.putExtra("user_id", user_id);
+        startActivity(servico);
     }
 
     public void Get_user_id_information(int id){

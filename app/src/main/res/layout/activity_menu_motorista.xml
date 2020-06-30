@@ -8,10 +8,10 @@
 
 
     <ImageView
-        android:id="@+id/activity_menu_motorista_btn_Marcar_Viagem"
+        android:id="@+id/activity_menu_motorista_btn_Servicos"
         android:layout_width="330dp"
         android:layout_height="80dp"
-        android:layout_marginTop="9dp"
+        android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="43dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="80dp"
         android:layout_marginEnd="197dp"
         android:text="@string/o_que_pretende_fazer"
         android:textColor="#FFFFFF"
@@ -39,34 +39,32 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/activity_menu_motorista_btn_Marcar_Viagem"
+        app:layout_constraintTop_toBottomOf="@+id/activity_menu_motorista_btn_Servicos"
         app:srcCompat="@drawable/clock" />
 
     <TextView
-        android:id="@+id/activity_menu_motorista_txt_Marcar_Viagem"
+        android:id="@+id/activity_menu_motorista_txt_Servicos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="@string/marcar_viagem"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="24dp"
+        android:text="Serviços a Decorrer"
         android:textColor="#FFFFFF"
-        android:textSize="22sp"
-        app:layout_constraintEnd_toStartOf="@id/activity_menu_motorista_btn_Marcar_Viagem"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toEndOf="@id/activity_menu_motorista_btn_Marcar_Viagem"
-        app:layout_constraintTop_toBottomOf="@id/activity_menu_motorista_O_que_pretende" />
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/activity_menu_motorista_btn_Servicos"
+        app:layout_constraintTop_toTopOf="@+id/activity_menu_motorista_btn_Servicos" />
 
     <TextView
         android:id="@+id/activity_menu_motorista_txt_Viagens_Efetuadas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="26dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="24dp"
         android:text="@string/ver_viagens_efetuadas"
         android:textColor="#FFFFFF"
-        android:textSize="22sp"
-        app:layout_constraintEnd_toStartOf="@id/activity_menu_motorista_btn_Viagens_Efetuadas"
-        app:layout_constraintHorizontal_bias="0.455"
-        app:layout_constraintStart_toEndOf="@id/activity_menu_motorista_btn_Viagens_Efetuadas"
-        app:layout_constraintTop_toBottomOf="@+id/activity_menu_motorista_btn_Marcar_Viagem" />
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/activity_menu_motorista_btn_Viagens_Efetuadas"
+        app:layout_constraintTop_toTopOf="@+id/activity_menu_motorista_btn_Viagens_Efetuadas" />
 
     <ImageView
         android:id="@+id/activity_menu_motorista_user_outer"
@@ -75,7 +73,7 @@
         android:layout_marginTop="85dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/include2"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/caixa_blck" />
 
     <ImageView

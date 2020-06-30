@@ -66,21 +66,15 @@ public class barra_lateral_condutor extends AppCompatActivity implements Navigat
 
     }
 
-    @Override
-    public void onPointerCaptureChanged(boolean hasCapture) {
-
-    }
-
-
-
-
-
     public void Bar_Settings(int id)
     {
+
         user_id = id;
         toolbar = findViewById(R.id.barra_lateral_toolbar);
         setSupportActionBar(toolbar);
+
         Objects.requireNonNull(getSupportActionBar()).setDisplayShowTitleEnabled(false);
+
 
 
         drawerLayout = findViewById(R.id.barra_lateral_drawer_layout);
@@ -115,29 +109,31 @@ public class barra_lateral_condutor extends AppCompatActivity implements Navigat
 
 
 
+
             }
 
             /** Called when a drawer has settled in a completely open state. */
             public void onDrawerOpened(View drawerView) {
                 super.onDrawerOpened(drawerView);
-                drawerLayout.getLayoutParams().height = heightX;
-                drawerLayout.bringToFront();
-                drawerLayout.requestLayout();
+
 
 
 
             }
-
             public void onDrawerStateChanged(int newState)
             {
-                drawerLayout.requestLayout();
+                if (newState == DrawerLayout.STATE_SETTLING) {
+
+                    drawerLayout.getLayoutParams().height = heightX;
+                    drawerLayout.bringToFront();
+                    drawerLayout.requestLayout();
 
 
+                }
             }
 
 
         };
-
 
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.onDrawerClosed(drawerLayout);
@@ -146,8 +142,6 @@ public class barra_lateral_condutor extends AppCompatActivity implements Navigat
 
 
     }
-
-
 
 
 }
