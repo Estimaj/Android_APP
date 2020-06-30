@@ -143,7 +143,7 @@ public class barra_lateral_pro extends AppCompatActivity implements NavigationVi
                 if (newState == DrawerLayout.STATE_SETTLING) {
 
                     drawerLayout.getLayoutParams().height = heightX;
-                    drawerLayout.bringToFront();
+                    //drawerLayout.bringToFront();
                     drawerLayout.requestLayout();
 
 

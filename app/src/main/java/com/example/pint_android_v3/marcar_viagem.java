@@ -57,7 +57,7 @@ public class marcar_viagem extends barra_lateral_pro implements DatePickerDialog
     private int animal;
     private int necessidades_especiais;
     private int bagagem;
-    private int partilha;
+    private int partilha = 1;
     private int modalidade = 0; // 0-ida, 1-ida e volta
 
 
@@ -229,7 +229,7 @@ public class marcar_viagem extends barra_lateral_pro implements DatePickerDialog
                 this,
                 this,
                 Calendar.getInstance().get(Calendar.YEAR),
-                Calendar.getInstance().get(Calendar.MONTH) + 1,
+                Calendar.getInstance().get(Calendar.MONTH),
                 Calendar.getInstance().get(Calendar.DAY_OF_MONTH)
         );
         DPD.show();
@@ -265,16 +265,14 @@ public class marcar_viagem extends barra_lateral_pro implements DatePickerDialog
 
     @Override
     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-
+        month += 1;
         String date = dayOfMonth + "/" + month + "/" +  year;
         DateLayout_text.setText(date);
-
-
     }
 
     public String GetDate()
     {
-        int month = Calendar.getInstance().get(Calendar.MONTH) + 1; //luis? pq q aqui tb dava um mes a menos
+        int month = Calendar.getInstance().get(Calendar.MONTH) + 1;
         String x = Calendar.getInstance().get(Calendar.DAY_OF_MONTH) +
                 "/" +
                  month +

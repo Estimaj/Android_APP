@@ -71,7 +71,7 @@ public class mais_info_mapa_cliente extends barra_lateral_pro {
         createGraphicsOverlay();
         setupOAuthManager();
 
-        /*Intent X = getIntent();
+        Intent X = getIntent();
         Bundle b = X.getExtras();
         if(b!=null){
             user_id = (int) b.get("user_id");
@@ -79,7 +79,7 @@ public class mais_info_mapa_cliente extends barra_lateral_pro {
 
         }
 
-        Bar_Settings(user_id);*/
+        Bar_Settings(user_id);
 
 
     }

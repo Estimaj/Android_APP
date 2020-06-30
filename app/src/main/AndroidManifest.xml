@@ -27,18 +27,13 @@
         <activity android:name=".perfis.perfil_motorista" />
         <activity android:name=".desambiguacao" />
         <activity android:name=".MainActivity_Login" >
-
-        </activity>
-        <activity android:name=".menus.menu_municipe">
-
-        </activity>
-        <activity android:name=".menus.menu_motorista">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
+        <activity android:name=".menus.menu_municipe"/>
+        <activity android:name=".menus.menu_motorista"/>
         <activity android:name=".barra_lateral.barra_lateral_condutor" />
         <activity android:name=".mapas.mais_info_mapa_cliente" />
         <activity android:name=".mapas.mais_info_mapa_condutor" />

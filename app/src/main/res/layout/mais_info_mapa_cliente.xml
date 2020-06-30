@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -12,13 +12,13 @@
         android:layout_marginTop="56dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/include" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/contentor_mais_info_cliente"
         android:layout_width="match_parent"
         android:layout_height="230dp"
-        app:layout_constraintBottom_toBottomOf="@+id/include"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/white_square" />
@@ -169,6 +169,7 @@
         android:background="@drawable/ver_pass"
         android:text="       Ver Passageiros"
         android:textSize="12sp"
+        android:translationZ="-2dp"
         app:layout_constraintStart_toStartOf="@id/contentor_mais_info_cliente"
         app:layout_constraintTop_toTopOf="@id/contentor_mais_info_cliente" />
 
