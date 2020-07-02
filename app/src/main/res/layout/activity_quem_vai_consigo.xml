@@ -7,39 +7,17 @@
     android:background="@color/colorLightgray"
     tools:context=".quem_vai_consigo.quem_vai_consigo">
 
-    <include layout="@layout/barra_lateral_pro" />
-
-    <ImageView
-        android:id="@+id/bg_big_black_quem_vai_consigo"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/bg_black_radius_edges" />
-
-    <TextView
-        android:id="@+id/textView_quem_vai_consigo_content"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="50dp"
-        android:text="Quem vai consigo"
-        android:textColor="@color/White"
-        android:textSize="23sp"
-        app:layout_constraintBottom_toBottomOf="@id/bg_big_black_quem_vai_consigo"
-        app:layout_constraintStart_toStartOf="@id/bg_big_black_quem_vai_consigo"
-        app:layout_constraintTop_toTopOf="@id/bg_big_black_quem_vai_consigo" />
-
     <!--black bg with a single text-->
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="550dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/bg_big_black_quem_vai_consigo">
+        app:layout_constraintTop_toBottomOf="@+id/bg_big_black_quem_vai_consigo">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -184,6 +162,16 @@
                 app:layout_constraintTop_toTopOf="@id/contentor1_quem_vai_consigo" />
 
             <ImageView
+                android:id="@+id/canideo_1_quem_vai_consigo"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="120dp"
+                android:layout_marginTop="9dp"
+                app:layout_constraintStart_toStartOf="@id/contentor1_quem_vai_consigo"
+                app:layout_constraintTop_toBottomOf="@id/tripulante_localidade_1_quem_vai_consigo"
+                app:srcCompat="@drawable/dog_icon_marcar" />
+
+            <ImageView
                 android:id="@+id/canideo_quantidade_icon1_quem_vai_consigo"
                 android:layout_width="15dp"
                 android:layout_height="15dp"
@@ -193,15 +181,20 @@
                 app:layout_constraintEnd_toEndOf="@id/canideo_1_quem_vai_consigo"
                 app:srcCompat="@drawable/canideo_check" />
 
-            <ImageView
-                android:id="@+id/canideo_1_quem_vai_consigo"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginStart="120dp"
-                android:layout_marginTop="9dp"
-                app:layout_constraintStart_toStartOf="@id/contentor1_quem_vai_consigo"
-                app:layout_constraintTop_toBottomOf="@id/tripulante_localidade_1_quem_vai_consigo"
-                app:srcCompat="@drawable/dog_icon_marcar" />
+            <TextView
+                android:id="@+id/canideo_quantidade1_text_quem_vai_consigo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="7dp"
+                android:text="0"
+                android:textColor="@color/White"
+                app:layout_constraintBottom_toBottomOf="@id/canideo_quantidade_icon1_quem_vai_consigo"
+                app:layout_constraintEnd_toEndOf="@id/canideo_quantidade_icon1_quem_vai_consigo"
+                app:layout_constraintEnd_toStartOf="@id/canideo_1_quem_vai_consigo"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@id/canideo_quantidade_icon1_quem_vai_consigo"
+                app:layout_constraintStart_toStartOf="@id/canideo_quantidade_icon1_quem_vai_consigo"
+                app:layout_constraintTop_toTopOf="@id/canideo_quantidade_icon1_quem_vai_consigo" />
 
             <ImageView
                 android:id="@+id/Mais_info_1_button_quem_vai_consigo"
@@ -223,21 +216,6 @@
                 android:textSize="13sp"
                 app:layout_constraintStart_toStartOf="@id/Mais_info_1_button_quem_vai_consigo"
                 app:layout_constraintTop_toTopOf="@id/Mais_info_1_button_quem_vai_consigo" />
-
-            <TextView
-                android:id="@+id/canideo_quantidade1_text_quem_vai_consigo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="7dp"
-                android:text="0"
-                android:textColor="@color/White"
-                app:layout_constraintBottom_toBottomOf="@id/canideo_quantidade_icon1_quem_vai_consigo"
-                app:layout_constraintEnd_toEndOf="@id/canideo_quantidade_icon1_quem_vai_consigo"
-                app:layout_constraintEnd_toStartOf="@id/canideo_1_quem_vai_consigo"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@id/canideo_quantidade_icon1_quem_vai_consigo"
-                app:layout_constraintStart_toStartOf="@id/canideo_quantidade_icon1_quem_vai_consigo"
-                app:layout_constraintTop_toTopOf="@id/canideo_quantidade_icon1_quem_vai_consigo" />
 
             <TextView
                 android:id="@+id/tripulante_localidade_1_quem_vai_consigo"
@@ -672,5 +650,31 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
+
+    <ImageView
+        android:id="@+id/bg_big_black_quem_vai_consigo"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/bg_black_radius_edges" />
+
+    <TextView
+        android:id="@+id/textView_quem_vai_consigo_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="50dp"
+        android:text="Quem vai consigo"
+        android:textColor="@color/White"
+        android:textSize="23sp"
+        app:layout_constraintBottom_toBottomOf="@id/bg_big_black_quem_vai_consigo"
+        app:layout_constraintStart_toStartOf="@id/bg_big_black_quem_vai_consigo"
+        app:layout_constraintTop_toTopOf="@id/bg_big_black_quem_vai_consigo" />
+
+    <include
+
+        layout="@layout/barra_lateral_pro" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
