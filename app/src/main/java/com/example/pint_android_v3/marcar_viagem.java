@@ -3,7 +3,10 @@ package com.example.pint_android_v3;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -299,10 +302,11 @@ public class marcar_viagem extends barra_lateral_pro implements DatePickerDialog
 
     public void Click_Botao_marcar()
     {
-        final AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
+        final AlertDialog dialogBuilder = new AlertDialog.Builder(this).create();
 // ...Irrelevant code for customizing the buttons and title
         LayoutInflater inflater = this.getLayoutInflater();
         final View dialogView = inflater.inflate(R.layout.alertdialog_marcar_viagem_adapter, null);
+        dialogBuilder.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialogBuilder.setView(dialogView);
         ImageView yes_btn = dialogView.findViewById(R.id.yes_btn_alert_dialog_adapter);
         ImageView no_btn = dialogView.findViewById(R.id.no_btn_alert_dialog_adapter);
@@ -320,19 +324,11 @@ public class marcar_viagem extends barra_lateral_pro implements DatePickerDialog
         no_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                makeToastForMarcar("no");
-                //v.setVisibility(View.GONE);
-                dialogBuilder.setCancelable(true);
-
+                dialogBuilder.dismiss();
             }
         });
 
-
-        dialogBuilder.create();
         dialogBuilder.show();
-
-
-
     }
 
     private void criarPedido_viagem(){
@@ -366,8 +362,8 @@ public class marcar_viagem extends barra_lateral_pro implements DatePickerDialog
                 }
                 else{
                     if(response.body() != null) {
-                        makeToastForMarcar("Penso eu que devia haver um novo pedido");
-                        response.body().toString();
+                        //makeToastForMarcar("Penso eu que devia haver um novo pedido");
+                        Log.i("Pedido", response.body().toString());
                     }else{
                         makeToastForMarcar("ocurreu um erro na criaçao da sua viagem!");
                     }
