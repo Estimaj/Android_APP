@@ -167,6 +167,7 @@
         android:layout_marginStart="28dp"
         android:layout_marginTop="175dp"
         android:background="@drawable/ver_pass"
+        android:onClick="Click_Quem_Vai"
         android:text="       Ver Passageiros"
         android:textSize="12sp"
         android:translationZ="-2dp"

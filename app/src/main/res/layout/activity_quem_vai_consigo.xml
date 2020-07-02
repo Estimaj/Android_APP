@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorLightgray"
-    tools:context=".quem_vai_consigo">
+    tools:context=".quem_vai_consigo.quem_vai_consigo">
+
+    <include layout="@layout/barra_lateral_pro" />
 
     <ImageView
         android:id="@+id/bg_big_black_quem_vai_consigo"
@@ -33,7 +35,7 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="800dp"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -129,7 +131,7 @@
                 android:id="@+id/condutor_nome_quem_vai_consigo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="128dp"
+                android:layout_marginStart="120dp"
                 android:layout_marginTop="12dp"
                 android:text="Condutor_Nome"
                 android:textSize="18sp"
@@ -140,7 +142,7 @@
                 android:id="@+id/ratingBar_condutor_quem_vai_consigo"
                 android:layout_width="239dp"
                 android:layout_height="44dp"
-                android:layout_marginStart="128dp"
+                android:layout_marginStart="120dp"
                 android:isIndicator="true"
                 android:max="5"
                 android:scaleX=".8"
@@ -174,7 +176,7 @@
                 android:id="@+id/tripulante_nome_1_quem_vai_consigo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="128dp"
+                android:layout_marginStart="120dp"
                 android:layout_marginTop="12dp"
                 android:text="Vazio"
                 android:textSize="18sp"
@@ -195,7 +197,7 @@
                 android:id="@+id/canideo_1_quem_vai_consigo"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_marginStart="128dp"
+                android:layout_marginStart="120dp"
                 android:layout_marginTop="9dp"
                 app:layout_constraintStart_toStartOf="@id/contentor1_quem_vai_consigo"
                 app:layout_constraintTop_toBottomOf="@id/tripulante_localidade_1_quem_vai_consigo"
@@ -241,7 +243,7 @@
                 android:id="@+id/tripulante_localidade_1_quem_vai_consigo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="128dp"
+                android:layout_marginStart="120dp"
                 android:text="Vazio"
                 app:layout_constraintStart_toStartOf="@id/contentor1_quem_vai_consigo"
                 app:layout_constraintTop_toBottomOf="@id/tripulante_nome_1_quem_vai_consigo" />
@@ -260,7 +262,7 @@
                 android:id="@+id/canideo_2_quem_vai_consigo2"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_marginStart="128dp"
+                android:layout_marginStart="120dp"
                 android:layout_marginTop="9dp"
                 app:layout_constraintStart_toStartOf="@id/contentor2_quem_vai_consigo2"
                 app:layout_constraintTop_toBottomOf="@id/tripulante_localidade_2_quem_vai_consigo2"
@@ -293,7 +295,7 @@
                 android:id="@+id/tripulante_localidade_2_quem_vai_consigo2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="128dp"
+                android:layout_marginStart="120dp"
                 android:text="Vazio"
                 app:layout_constraintStart_toStartOf="@id/contentor2_quem_vai_consigo2"
                 app:layout_constraintTop_toBottomOf="@id/tripulante_nome_2_quem_vai_consigo2" />
@@ -312,7 +314,7 @@
                 android:id="@+id/tripulante_nome_2_quem_vai_consigo2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="128dp"
+                android:layout_marginStart="120dp"
                 android:layout_marginTop="12dp"
                 android:text="Vazio"
                 android:textSize="18sp"
@@ -353,7 +355,7 @@
                 android:id="@+id/canideo_3_quem_vai_consigo"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_marginStart="128dp"
+                android:layout_marginStart="120dp"
                 android:layout_marginTop="9dp"
                 app:layout_constraintStart_toStartOf="@id/contentor3_quem_vai_consigo"
                 app:layout_constraintTop_toBottomOf="@id/tripulante_localidade_3_quem_vai_consigo"
@@ -396,7 +398,7 @@
                 android:id="@+id/tripulante_localidade_3_quem_vai_consigo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="128dp"
+                android:layout_marginStart="120dp"
                 android:text="Vazio"
                 app:layout_constraintStart_toStartOf="@id/contentor3_quem_vai_consigo"
                 app:layout_constraintTop_toBottomOf="@id/tripulante_nome_3_quem_vai_consigo" />
@@ -405,7 +407,7 @@
                 android:id="@+id/tripulante_nome_3_quem_vai_consigo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="128dp"
+                android:layout_marginStart="120dp"
                 android:layout_marginTop="12dp"
                 android:text="Vazio"
                 android:textSize="18sp"
@@ -448,7 +450,7 @@
                 android:id="@+id/tripulante_nome_4_quem_vai_consigo2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="128dp"
+                android:layout_marginStart="120dp"
                 android:layout_marginTop="12dp"
                 android:text="Vazio"
                 android:textSize="18sp"
@@ -459,7 +461,7 @@
                 android:id="@+id/tripulante_localidade_4_quem_vai_consigo2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="128dp"
+                android:layout_marginStart="120dp"
                 android:text="Vazio"
                 app:layout_constraintStart_toStartOf="@id/contentor4_quem_vai_consigo2"
                 app:layout_constraintTop_toBottomOf="@id/tripulante_nome_4_quem_vai_consigo2" />
@@ -478,7 +480,7 @@
                 android:id="@+id/canideo_4_quem_vai_consigo"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_marginStart="128dp"
+                android:layout_marginStart="120dp"
                 android:layout_marginTop="9dp"
                 app:layout_constraintStart_toStartOf="@id/contentor4_quem_vai_consigo2"
                 app:layout_constraintTop_toBottomOf="@id/tripulante_localidade_4_quem_vai_consigo2"
@@ -553,7 +555,7 @@
                 android:id="@+id/tripulante_localidade_5_quem_vai_consigo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="128dp"
+                android:layout_marginStart="120dp"
                 android:text="Vazio"
                 app:layout_constraintStart_toStartOf="@id/contentor5_quem_vai_consigo3"
                 app:layout_constraintTop_toBottomOf="@id/tripulante_nome_5_quem_vai_consigo" />
@@ -562,7 +564,7 @@
                 android:id="@+id/tripulante_nome_5_quem_vai_consigo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="128dp"
+                android:layout_marginStart="120dp"
                 android:layout_marginTop="12dp"
                 android:text="Vazio"
                 android:textSize="18sp"
@@ -582,7 +584,7 @@
                 android:id="@+id/canideo_5_quem_vai_consigo"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_marginStart="128dp"
+                android:layout_marginStart="120dp"
                 android:layout_marginTop="9dp"
                 app:layout_constraintStart_toStartOf="@id/contentor5_quem_vai_consigo3"
                 app:layout_constraintTop_toBottomOf="@id/tripulante_localidade_5_quem_vai_consigo"
@@ -644,12 +646,31 @@
                 app:layout_constraintStart_toStartOf="@id/Mais_info_5_button_quem_vai_consigo"
                 app:layout_constraintTop_toTopOf="@id/Mais_info_5_button_quem_vai_consigo" />
 
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="95dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="320dp"
+                android:layout_marginTop="69dp"
+                app:layout_constraintStart_toStartOf="@+id/bg_white_O_seu_condutor_quem_vai_consigo"
+                app:layout_constraintTop_toTopOf="@+id/bg_white_O_seu_condutor_quem_vai_consigo"
+                app:srcCompat="@drawable/btn_mais_info" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="4dp"
+                android:text="Mais Info"
+                android:textSize="13sp"
+                app:layout_constraintStart_toStartOf="@+id/imageView3"
+                app:layout_constraintTop_toTopOf="@+id/imageView3" />
+
             <!--Outros Tripulantes-->
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
-
-    <include layout="@layout/barra_lateral_pro" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,18 +6,13 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
+import android.view.View;
 import android.widget.Toast;
 
 
 import com.esri.arcgisruntime.concurrent.ListenableFuture;
-import com.esri.arcgisruntime.data.ServiceFeatureTable;
 import com.esri.arcgisruntime.geometry.Point;
-import com.esri.arcgisruntime.geometry.PointCollection;
-import com.esri.arcgisruntime.geometry.Polygon;
 import com.esri.arcgisruntime.geometry.Polyline;
-import com.esri.arcgisruntime.geometry.SpatialReferences;
-import com.esri.arcgisruntime.layers.ArcGISMapImageLayer;
-import com.esri.arcgisruntime.layers.FeatureLayer;
 import com.esri.arcgisruntime.loadable.LoadStatus;
 import com.esri.arcgisruntime.mapping.ArcGISMap;
 import com.esri.arcgisruntime.mapping.Basemap;
@@ -28,7 +23,6 @@ import com.esri.arcgisruntime.mapping.view.MapView;
 import com.esri.arcgisruntime.security.AuthenticationManager;
 import com.esri.arcgisruntime.security.DefaultAuthenticationChallengeHandler;
 import com.esri.arcgisruntime.security.OAuthConfiguration;
-import com.esri.arcgisruntime.symbology.SimpleFillSymbol;
 import com.esri.arcgisruntime.symbology.SimpleLineSymbol;
 import com.esri.arcgisruntime.symbology.SimpleMarkerSymbol;
 
@@ -40,6 +34,7 @@ import com.esri.arcgisruntime.tasks.networkanalysis.RouteTask;
 import com.esri.arcgisruntime.tasks.networkanalysis.Stop;
 import com.example.pint_android_v3.barra_lateral.barra_lateral_pro;
 import com.example.pint_android_v3.R;
+import com.example.pint_android_v3.quem_vai_consigo.quem_vai_consigo;
 
 import java.net.MalformedURLException;
 import java.util.ArrayList;
@@ -83,6 +78,16 @@ public class mais_info_mapa_cliente extends barra_lateral_pro {
 
 
     }
+
+    public void Click_Quem_Vai(View view){
+
+        Intent Consigo = new Intent(mais_info_mapa_cliente.this, quem_vai_consigo.class);
+        Consigo.putExtra("user_id", user_id);
+        startActivity(Consigo);
+
+
+    }
+
 
     private void createGraphicsOverlay() {
         mGraphicsOverlay = new GraphicsOverlay();
