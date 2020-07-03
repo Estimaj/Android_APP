@@ -170,7 +170,6 @@
         android:onClick="Click_Quem_Vai"
         android:text="       Ver Passageiros"
         android:textSize="12sp"
-        android:translationZ="-2dp"
         app:layout_constraintStart_toStartOf="@id/contentor_mais_info_cliente"
         app:layout_constraintTop_toTopOf="@id/contentor_mais_info_cliente" />
 
