@@ -48,7 +48,7 @@ public class Cancelar_Viagem extends AppCompatActivity {
     }
 
     private void showSucessoDialog(){
-        final AlertDialog dialogBuilder = new AlertDialog.Builder(this).create();
+        final AlertDialog dialogBuilder = new AlertDialog.Builder(this).create();//create precisa de estar aqui para haver um dismiss()
         LayoutInflater inflater = this.getLayoutInflater();
         final View dialogView = inflater.inflate(R.layout.cancelar_viagem_pop_up_sucesso, null);
         dialogBuilder.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
@@ -61,7 +61,7 @@ public class Cancelar_Viagem extends AppCompatActivity {
                 dialogBuilder.dismiss();
             }
         });
-        
+
         dialogBuilder.show();
     }
 }
