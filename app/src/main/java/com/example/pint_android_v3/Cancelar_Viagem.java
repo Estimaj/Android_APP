@@ -1,9 +1,8 @@
 package com.example.pint_android_v3;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.AlertDialog;
-import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.pint_android_v3.menus.menu_municipe;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class Cancelar_Viagem extends AppCompatActivity {
 
@@ -49,21 +48,20 @@ public class Cancelar_Viagem extends AppCompatActivity {
     }
 
     private void showSucessoDialog(){
-        final AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
-// ...Irrelevant code for customizing the buttons and title
+        final AlertDialog dialogBuilder = new AlertDialog.Builder(this).create();//create precisa de estar aqui para haver um dismiss()
         LayoutInflater inflater = this.getLayoutInflater();
         final View dialogView = inflater.inflate(R.layout.cancelar_viagem_pop_up_sucesso, null);
+        dialogBuilder.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialogBuilder.setView(dialogView);
         ImageView yes_btn = dialogView.findViewById(R.id.yes_btn_cancelar_viagem_pop_up_sucesso);
         yes_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(Cancelar_Viagem.this, "yes",Toast.LENGTH_LONG).show();
-                dialogBuilder.setCancelable(true);
+                dialogBuilder.dismiss();
             }
         });
 
-        dialogBuilder.create();
         dialogBuilder.show();
     }
 }
