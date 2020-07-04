@@ -13,7 +13,7 @@
     -->
 
     <ScrollView
-        android:id="@+id/scrollView2"
+        android:id="@+id/scrollView2_not_mais_info"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout_editor_absoluteX="-8dp"
@@ -25,14 +25,14 @@
 
             <!--Detalhes da alteração do preço-->
             <ImageView
-                android:id="@+id/bg_white_alteracao_preco_notificacoes_mais_info"
+                android:id="@+id/bg_white_alteracao_preco__not_mais_info"
                 android:layout_width="match_parent"
                 android:layout_height="135dp"
                 android:layout_marginTop="10dp"
                 android:background="@color/white_gray"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/bg_white_viagem_afetada_notificacoes_mais_info" />
+                app:layout_constraintTop_toBottomOf="@id/bg_white__not_mais_info" />
 
             <TextView
                 android:id="@+id/textView_alteracao_preco_notificacoes_mais_info"
@@ -43,7 +43,7 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/bg_white_alteracao_preco_notificacoes_mais_info" />
+                app:layout_constraintTop_toTopOf="@id/bg_white_alteracao_preco__not_mais_info" />
 
             <!--Preco antigo-->
             <ImageView
@@ -97,7 +97,7 @@
                 app:layout_constraintTop_toBottomOf="@id/bg_preco_antigo_alteracao_preco_notificacoes_mais_info" />
 
             <ImageView
-                android:id="@+id/euro_money_icon_atual_alteracao_preco_notificacoes_mais_info"
+                android:id="@+id/anchor__not_mais_info"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_margin="15dp"
@@ -115,7 +115,7 @@
                 android:text="Preço Atual"
                 android:textColor="@color/Black"
                 android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@id/euro_money_icon_atual_alteracao_preco_notificacoes_mais_info"
+                app:layout_constraintStart_toEndOf="@id/anchor__not_mais_info"
                 app:layout_constraintTop_toTopOf="@id/bg_preco_atual_alteracao_preco_notificacoes_mais_info" />
 
             <TextView
@@ -128,17 +128,17 @@
 
             <!--Mais informação da viagem afetada-->
             <ImageView
-                android:id="@+id/bg_white_viagem_afetada_notificacoes_mais_info"
+                android:id="@+id/bg_white__not_mais_info"
                 android:layout_width="match_parent"
                 android:layout_height="350dp"
                 android:layout_marginTop="10dp"
                 android:background="@color/white_gray"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/bg_white_with_notificacao_msg_notificacoes_mais_info" />
+                app:layout_constraintTop_toBottomOf="@id/bg_white_with_not_mais_info" />
 
             <TextView
-                android:id="@+id/textView_viagem_afetada_notificacoes_mais_info"
+                android:id="@+id/textView_detalhes__not_mais_info"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -148,31 +148,31 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/bg_white_viagem_afetada_notificacoes_mais_info" />
+                app:layout_constraintTop_toTopOf="@id/bg_white__not_mais_info" />
 
             <!--Origem-->
             <ImageView
-                android:id="@+id/origem_viagem_afetada_notificacoes_mais_info"
+                android:id="@+id/origem__not_mais_info"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_margin="10dp"
                 android:background="@color/White"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textView_viagem_afetada_notificacoes_mais_info" />
+                app:layout_constraintTop_toBottomOf="@id/textView_detalhes__not_mais_info" />
 
             <ImageView
-                android:id="@+id/icon_marker_origem_viagem_afetada_notificacoes_mais_info"
+                android:id="@+id/icon_marker_origem__not_mais_info"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_margin="20dp"
-                app:layout_constraintBottom_toBottomOf="@id/origem_viagem_afetada_notificacoes_mais_info"
-                app:layout_constraintStart_toStartOf="@id/origem_viagem_afetada_notificacoes_mais_info"
-                app:layout_constraintTop_toTopOf="@id/origem_viagem_afetada_notificacoes_mais_info"
+                app:layout_constraintBottom_toBottomOf="@id/origem__not_mais_info"
+                app:layout_constraintStart_toStartOf="@id/origem__not_mais_info"
+                app:layout_constraintTop_toTopOf="@id/origem__not_mais_info"
                 app:srcCompat="@drawable/marker_icon" />
 
             <TextView
-                android:id="@+id/textView_origem_viagem_afetada_notificacoes_mais_info"
+                android:id="@+id/textView_origem__not_mais_info"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
@@ -180,39 +180,39 @@
                 android:text="Origem"
                 android:textColor="@color/Black"
                 android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@id/icon_marker_origem_viagem_afetada_notificacoes_mais_info"
-                app:layout_constraintTop_toTopOf="@id/origem_viagem_afetada_notificacoes_mais_info" />
+                app:layout_constraintStart_toEndOf="@id/icon_marker_origem__not_mais_info"
+                app:layout_constraintTop_toTopOf="@id/origem__not_mais_info" />
 
             <TextView
-                android:id="@+id/local_user_textView_origem_viagem_afetada_notificacoes_mais_info"
+                android:id="@+id/local_user_textView_origem_not_mais_info"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Póvoa de Calde"
-                app:layout_constraintStart_toStartOf="@id/textView_origem_viagem_afetada_notificacoes_mais_info"
-                app:layout_constraintTop_toBottomOf="@id/textView_origem_viagem_afetada_notificacoes_mais_info" />
+                app:layout_constraintStart_toStartOf="@id/textView_origem__not_mais_info"
+                app:layout_constraintTop_toBottomOf="@id/textView_origem__not_mais_info" />
             <!--Destino-->
             <ImageView
-                android:id="@+id/destino_viagem_afetada_notificacoes_mais_info"
+                android:id="@+id/destino__not_mais_info"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_margin="10dp"
                 android:background="@color/White"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/origem_viagem_afetada_notificacoes_mais_info" />
+                app:layout_constraintTop_toBottomOf="@id/origem__not_mais_info" />
 
             <ImageView
-                android:id="@+id/icon_marker_destino_viagem_afetada_notificacoes_mais_info"
+                android:id="@+id/icon_marker_destino_not_mais_info"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_margin="20dp"
-                app:layout_constraintBottom_toBottomOf="@id/destino_viagem_afetada_notificacoes_mais_info"
-                app:layout_constraintStart_toStartOf="@id/destino_viagem_afetada_notificacoes_mais_info"
-                app:layout_constraintTop_toTopOf="@id/destino_viagem_afetada_notificacoes_mais_info"
+                app:layout_constraintBottom_toBottomOf="@id/destino__not_mais_info"
+                app:layout_constraintStart_toStartOf="@id/destino__not_mais_info"
+                app:layout_constraintTop_toTopOf="@id/destino__not_mais_info"
                 app:srcCompat="@drawable/marker_icon_solid" />
 
             <TextView
-                android:id="@+id/textView_destino_viagem_afetada_notificacoes_mais_info"
+                android:id="@+id/textView_destino_not_mais_info"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
@@ -220,39 +220,39 @@
                 android:text="Destino"
                 android:textColor="@color/Black"
                 android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@id/icon_marker_destino_viagem_afetada_notificacoes_mais_info"
-                app:layout_constraintTop_toTopOf="@id/destino_viagem_afetada_notificacoes_mais_info" />
+                app:layout_constraintStart_toEndOf="@id/icon_marker_destino_not_mais_info"
+                app:layout_constraintTop_toTopOf="@id/destino__not_mais_info" />
 
             <TextView
-                android:id="@+id/local_user_textView_destino_viagem_afetada_notificacoes_mais_info"
+                android:id="@+id/local_user_textView_not_mais_info"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Centro de Camionagem"
-                app:layout_constraintStart_toStartOf="@id/textView_destino_viagem_afetada_notificacoes_mais_info"
-                app:layout_constraintTop_toBottomOf="@id/textView_destino_viagem_afetada_notificacoes_mais_info" />
+                app:layout_constraintStart_toStartOf="@id/textView_destino_not_mais_info"
+                app:layout_constraintTop_toBottomOf="@id/textView_destino_not_mais_info" />
             <!--Hora-->
             <ImageView
-                android:id="@+id/hora_viagem_afetada_notificacoes_mais_info"
+                android:id="@+id/hora_not_mais_info"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_margin="10dp"
                 android:background="@color/White"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/destino_viagem_afetada_notificacoes_mais_info" />
+                app:layout_constraintTop_toBottomOf="@id/destino__not_mais_info" />
 
             <ImageView
-                android:id="@+id/clock_icon_hora_viagem_afetada_notificacoes_mais_info"
+                android:id="@+id/clock_icon_hora_not_mais_info"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_margin="20dp"
-                app:layout_constraintBottom_toBottomOf="@id/hora_viagem_afetada_notificacoes_mais_info"
-                app:layout_constraintStart_toStartOf="@id/hora_viagem_afetada_notificacoes_mais_info"
-                app:layout_constraintTop_toTopOf="@id/hora_viagem_afetada_notificacoes_mais_info"
+                app:layout_constraintBottom_toBottomOf="@id/hora_not_mais_info"
+                app:layout_constraintStart_toStartOf="@id/hora_not_mais_info"
+                app:layout_constraintTop_toTopOf="@id/hora_not_mais_info"
                 app:srcCompat="@drawable/clock_marcar_viagem" />
 
             <TextView
-                android:id="@+id/textView_hora_viagem_afetada_notificacoes_mais_info"
+                android:id="@+id/textView_hora_not_mais_info"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
@@ -260,40 +260,40 @@
                 android:text="Hora"
                 android:textColor="@color/Black"
                 android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@id/clock_icon_hora_viagem_afetada_notificacoes_mais_info"
-                app:layout_constraintTop_toTopOf="@id/hora_viagem_afetada_notificacoes_mais_info" />
+                app:layout_constraintStart_toEndOf="@id/clock_icon_hora_not_mais_info"
+                app:layout_constraintTop_toTopOf="@id/hora_not_mais_info" />
 
             <TextView
-                android:id="@+id/local_user_textView_hora_viagem_afetada_notificacoes_mais_info"
+                android:id="@+id/local_user_textView_hora_not_mais_info"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="16:00h"
-                app:layout_constraintStart_toStartOf="@id/textView_hora_viagem_afetada_notificacoes_mais_info"
-                app:layout_constraintTop_toBottomOf="@id/textView_hora_viagem_afetada_notificacoes_mais_info" />
+                app:layout_constraintStart_toStartOf="@id/textView_hora_not_mais_info"
+                app:layout_constraintTop_toBottomOf="@id/textView_hora_not_mais_info" />
 
             <!--Dia-->
             <ImageView
-                android:id="@+id/dia_viagem_afetada_notificacoes_mais_info"
+                android:id="@+id/dia_not_mais_info"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_margin="10dp"
                 android:background="@color/White"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/hora_viagem_afetada_notificacoes_mais_info" />
+                app:layout_constraintTop_toBottomOf="@id/hora_not_mais_info" />
 
             <ImageView
-                android:id="@+id/agenda_icon_dia_viagem_afetada_notificacoes_mais_info"
+                android:id="@+id/agenda_icon_dia_not_mais_info"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_margin="20dp"
-                app:layout_constraintBottom_toBottomOf="@id/dia_viagem_afetada_notificacoes_mais_info"
-                app:layout_constraintStart_toStartOf="@id/dia_viagem_afetada_notificacoes_mais_info"
-                app:layout_constraintTop_toTopOf="@id/dia_viagem_afetada_notificacoes_mais_info"
+                app:layout_constraintBottom_toBottomOf="@id/dia_not_mais_info"
+                app:layout_constraintStart_toStartOf="@id/dia_not_mais_info"
+                app:layout_constraintTop_toTopOf="@id/dia_not_mais_info"
                 app:srcCompat="@drawable/agenda_marcar_viagem" />
 
             <TextView
-                android:id="@+id/textView_dia_viagem_afetada_notificacoes_mais_info"
+                android:id="@+id/textView_dia_not_mais_info"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
@@ -301,40 +301,40 @@
                 android:text="Dia"
                 android:textColor="@color/Black"
                 android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@id/agenda_icon_dia_viagem_afetada_notificacoes_mais_info"
-                app:layout_constraintTop_toTopOf="@id/dia_viagem_afetada_notificacoes_mais_info" />
+                app:layout_constraintStart_toEndOf="@id/agenda_icon_dia_not_mais_info"
+                app:layout_constraintTop_toTopOf="@id/dia_not_mais_info" />
 
             <TextView
-                android:id="@+id/local_user_textView_dia_viagem_afetada_notificacoes_mais_info"
+                android:id="@+id/local_user_textView_dia_not_mais_info"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="16/02/2020"
-                app:layout_constraintStart_toStartOf="@id/textView_dia_viagem_afetada_notificacoes_mais_info"
-                app:layout_constraintTop_toBottomOf="@id/textView_dia_viagem_afetada_notificacoes_mais_info" />
+                app:layout_constraintStart_toStartOf="@id/textView_dia_not_mais_info"
+                app:layout_constraintTop_toBottomOf="@id/textView_dia_not_mais_info" />
 
             <!--Taxa Desconto-->
             <ImageView
-                android:id="@+id/taxa_desconto_viagem_afetada_notificacoes_mais_info"
+                android:id="@+id/taxa_desconto_not_mais_info"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_margin="10dp"
                 android:background="@color/White"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/dia_viagem_afetada_notificacoes_mais_info" />
+                app:layout_constraintTop_toBottomOf="@id/dia_not_mais_info" />
 
             <ImageView
-                android:id="@+id/euro_simbolo_icon_taxa_desconto_viagem_afetada_notificacoes_mais_info"
+                android:id="@+id/euro_simbolo_icon_taxa_desconto_not_mais_info"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_margin="20dp"
-                app:layout_constraintBottom_toBottomOf="@id/taxa_desconto_viagem_afetada_notificacoes_mais_info"
-                app:layout_constraintStart_toStartOf="@id/taxa_desconto_viagem_afetada_notificacoes_mais_info"
-                app:layout_constraintTop_toTopOf="@id/taxa_desconto_viagem_afetada_notificacoes_mais_info"
+                app:layout_constraintBottom_toBottomOf="@id/taxa_desconto_not_mais_info"
+                app:layout_constraintStart_toStartOf="@id/taxa_desconto_not_mais_info"
+                app:layout_constraintTop_toTopOf="@id/taxa_desconto_not_mais_info"
                 app:srcCompat="@drawable/euro_simbolo_icon" />
 
             <TextView
-                android:id="@+id/textView_taxa_desconto_viagem_afetada_notificacoes_mais_info"
+                android:id="@+id/textView_taxa_desconto_not_mais_info"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
@@ -342,19 +342,19 @@
                 android:text="Taxa de Desconto"
                 android:textColor="@color/Black"
                 android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@id/euro_simbolo_icon_taxa_desconto_viagem_afetada_notificacoes_mais_info"
-                app:layout_constraintTop_toTopOf="@id/taxa_desconto_viagem_afetada_notificacoes_mais_info" />
+                app:layout_constraintStart_toEndOf="@id/euro_simbolo_icon_taxa_desconto_not_mais_info"
+                app:layout_constraintTop_toTopOf="@id/taxa_desconto_not_mais_info" />
 
             <TextView
-                android:id="@+id/local_user_textView_taxa_desconto_viagem_afetada_notificacoes_mais_info"
+                android:id="@+id/local_user_textView_taxa_desconto_not_mais_info"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="3 €"
-                app:layout_constraintStart_toStartOf="@id/textView_taxa_desconto_viagem_afetada_notificacoes_mais_info"
-                app:layout_constraintTop_toBottomOf="@id/textView_taxa_desconto_viagem_afetada_notificacoes_mais_info" />
+                app:layout_constraintStart_toStartOf="@id/textView_taxa_desconto_not_mais_info"
+                app:layout_constraintTop_toBottomOf="@id/textView_taxa_desconto_not_mais_info" />
             <!--Notificação da atividade anterior-->
             <ImageView
-                android:id="@+id/bg_white_with_notificacao_msg_notificacoes_mais_info"
+                android:id="@+id/bg_white_with_not_mais_info"
                 android:layout_width="match_parent"
                 android:layout_height="270dp"
                 android:background="@color/white_gray"
@@ -364,7 +364,7 @@
 
             <!--Black notificacao bg-->
             <ImageView
-                android:id="@+id/bg_black_notificacoes_mais_info"
+                android:id="@+id/bg_black_not_mais_info"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:layout_marginTop="5dp"
@@ -374,7 +374,7 @@
                 app:srcCompat="@drawable/bg_black_radius_edges" />
 
             <TextView
-                android:id="@+id/textView_on_black_bg_notificacoes_mais_info"
+                android:id="@+id/textView_on_black_bg_not_mais_info"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="45dp"
@@ -382,21 +382,21 @@
                 android:text="Notificações - Informação"
                 android:textColor="@color/White"
                 android:textSize="20sp"
-                app:layout_constraintBottom_toBottomOf="@id/bg_black_notificacoes_mais_info"
+                app:layout_constraintBottom_toBottomOf="@id/bg_black_not_mais_info"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/bg_black_notificacoes_mais_info" />
+                app:layout_constraintTop_toTopOf="@id/bg_black_not_mais_info" />
 
             <ImageView
-                android:id="@+id/canideo_not_mais_info"
+                android:id="@+id/canideo__not_mais_info"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_marginTop="180dp"
                 android:layout_marginEnd="50dp"
                 app:layout_constraintEnd_toStartOf="@+id/mala_not_mais_info"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/bg_white_with_notificacao_msg_notificacoes_mais_info"
-                app:layout_constraintTop_toTopOf="@+id/bg_white_with_notificacao_msg_notificacoes_mais_info"
+                app:layout_constraintStart_toEndOf="@+id/bg_white_with_not_mais_info"
+                app:layout_constraintTop_toTopOf="@+id/bg_white_with_not_mais_info"
                 app:srcCompat="@drawable/dog_icon_marcar" />
 
             <ImageView
@@ -407,8 +407,8 @@
                 android:layout_marginEnd="50dp"
                 app:layout_constraintEnd_toStartOf="@+id/wheel_not_mais_info"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/canideo_not_mais_info"
-                app:layout_constraintTop_toTopOf="@+id/bg_white_with_notificacao_msg_notificacoes_mais_info"
+                app:layout_constraintStart_toEndOf="@+id/canideo__not_mais_info"
+                app:layout_constraintTop_toTopOf="@+id/bg_white_with_not_mais_info"
                 app:srcCompat="@drawable/mala_icon_marcar" />
 
             <ImageView
@@ -416,10 +416,10 @@
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_marginTop="180dp"
-                app:layout_constraintEnd_toStartOf="@+id/bg_white_with_notificacao_msg_notificacoes_mais_info"
+                app:layout_constraintEnd_toStartOf="@+id/bg_white_with_not_mais_info"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/mala_not_mais_info"
-                app:layout_constraintTop_toTopOf="@+id/bg_white_with_notificacao_msg_notificacoes_mais_info"
+                app:layout_constraintTop_toTopOf="@+id/bg_white_with_not_mais_info"
                 app:srcCompat="@drawable/wheel_icon_marcar" />
 
             <ImageView
@@ -428,12 +428,12 @@
                 android:layout_height="20dp"
                 android:layout_marginEnd="45dp"
                 android:layout_marginBottom="45dp"
-                app:layout_constraintBottom_toBottomOf="@+id/canideo_not_mais_info"
-                app:layout_constraintEnd_toEndOf="@+id/canideo_not_mais_info"
+                app:layout_constraintBottom_toBottomOf="@+id/canideo__not_mais_info"
+                app:layout_constraintEnd_toEndOf="@+id/canideo__not_mais_info"
                 app:srcCompat="@drawable/check_icon_yes" />
 
             <ImageView
-                android:id="@+id/mala_check_not_mais_infoew12"
+                android:id="@+id/mala_check_not_mais_info"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_marginEnd="45dp"

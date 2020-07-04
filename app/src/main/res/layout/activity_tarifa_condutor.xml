@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorLightgray"
+    tools:context=".notificacoes.notificacoes_mais_info">
+
+    <!--
+    Era bue porreiro adicionar o notificacoes_adapter do qual carregamos 'mais info',
+    havia menos codigo e menos uma ida a base de dados
+    -->
+
+    <ScrollView
+        android:id="@+id/scrollView2_tarifa_condutor"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="-8dp"
+        tools:layout_editor_absoluteY="3dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!--Detalhes da alteração do preço-->
+
+            <!--Preco antigo-->
+
+            <!--Preco atual-->
+
+            <ImageView
+                android:id="@+id/anchor_tarifa_condutor"
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:layout_margin="15dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="386dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bg_white_tarifa_condutor"
+                app:srcCompat="@drawable/caixa_classificar_condutor" />
+
+            <!--Mais informação da viagem afetada-->
+            <ImageView
+                android:id="@+id/bg_white_tarifa_condutor"
+                android:layout_width="match_parent"
+                android:layout_height="460dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/white_gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/bg_white_with__tarifa_condutor" />
+
+            <ImageView
+                android:id="@+id/tempo_tarifa_condutor"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:background="@color/White"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/distancia_tarifa_condutor" />
+
+            <ImageView
+                android:id="@+id/distancia_tarifa_condutor"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:background="@color/White"
+                app:layout_constraintEnd_toStartOf="@+id/bg_white_tarifa_condutor"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/bg_white_tarifa_condutor"
+                app:layout_constraintTop_toBottomOf="@+id/taxa_desconto_tarifa_condutor" />
+
+            <TextView
+                android:id="@+id/textView_detalhes_tarifa_condutor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Detalhes da viagem "
+                android:textColor="@color/Black"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/bg_white_tarifa_condutor" />
+
+            <!--Origem-->
+            <ImageView
+                android:id="@+id/origem_tarifa_condutor"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:background="@color/White"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView_detalhes_tarifa_condutor" />
+
+            <ImageView
+                android:id="@+id/icon_marker_origem_tarifa_condutor"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_margin="20dp"
+                android:layout_marginStart="20dp"
+                app:layout_constraintBottom_toBottomOf="@id/origem_tarifa_condutor"
+                app:layout_constraintStart_toStartOf="@id/origem_tarifa_condutor"
+                app:layout_constraintTop_toTopOf="@id/origem_tarifa_condutor"
+                app:srcCompat="@drawable/marker_icon" />
+
+            <TextView
+                android:id="@+id/textView_origem_tarifa_condutor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:text="Origem"
+                android:textColor="@color/Black"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/icon_marker_origem_tarifa_condutor"
+                app:layout_constraintTop_toTopOf="@id/origem_tarifa_condutor" />
+
+            <TextView
+                android:id="@+id/local_user_textView_origem_tarifa_condutor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vazio"
+                app:layout_constraintStart_toStartOf="@id/textView_origem_tarifa_condutor"
+                app:layout_constraintTop_toBottomOf="@id/textView_origem_tarifa_condutor" />
+            <!--Destino-->
+            <ImageView
+                android:id="@+id/destino_tarifa_condutor"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:background="@color/White"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/origem_tarifa_condutor" />
+
+            <ImageView
+                android:id="@+id/icon_marker_destino__tarifa_condutor"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_margin="20dp"
+                android:layout_marginStart="20dp"
+                app:layout_constraintBottom_toBottomOf="@id/destino_tarifa_condutor"
+                app:layout_constraintStart_toStartOf="@id/destino_tarifa_condutor"
+                app:layout_constraintTop_toTopOf="@id/destino_tarifa_condutor"
+                app:srcCompat="@drawable/marker_icon_solid" />
+
+            <TextView
+                android:id="@+id/textView_destino_tarifa_condutor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:text="Destino"
+                android:textColor="@color/Black"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/icon_marker_destino__tarifa_condutor"
+                app:layout_constraintTop_toTopOf="@id/destino_tarifa_condutor" />
+
+            <TextView
+                android:id="@+id/local_user_textView_destino__tarifa_condutor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vazio"
+                app:layout_constraintStart_toStartOf="@id/textView_destino_tarifa_condutor"
+                app:layout_constraintTop_toBottomOf="@id/textView_destino_tarifa_condutor" />
+            <!--Hora-->
+            <ImageView
+                android:id="@+id/hora__tarifa_condutor"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:background="@color/White"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/destino_tarifa_condutor" />
+
+            <ImageView
+                android:id="@+id/clock_icon_hora_tarifa_condutor"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_margin="20dp"
+                android:layout_marginStart="20dp"
+                app:layout_constraintBottom_toBottomOf="@id/hora__tarifa_condutor"
+                app:layout_constraintStart_toStartOf="@id/hora__tarifa_condutor"
+                app:layout_constraintTop_toTopOf="@id/hora__tarifa_condutor"
+                app:srcCompat="@drawable/clock_marcar_viagem" />
+
+            <TextView
+                android:id="@+id/textView_hora_tarifa_condutor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:text="Hora"
+                android:textColor="@color/Black"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/clock_icon_hora_tarifa_condutor"
+                app:layout_constraintTop_toTopOf="@id/hora__tarifa_condutor" />
+
+            <TextView
+                android:id="@+id/local_user_textView_hora_tarifa_condutor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vazio"
+                app:layout_constraintStart_toStartOf="@id/textView_hora_tarifa_condutor"
+                app:layout_constraintTop_toBottomOf="@id/textView_hora_tarifa_condutor" />
+
+            <!--Dia-->
+            <ImageView
+                android:id="@+id/dia__tarifa_condutor"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:background="@color/White"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/hora__tarifa_condutor" />
+
+            <ImageView
+                android:id="@+id/agenda_icon_dia__tarifa_condutor"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_margin="20dp"
+                android:layout_marginStart="20dp"
+                app:layout_constraintBottom_toBottomOf="@id/dia__tarifa_condutor"
+                app:layout_constraintStart_toStartOf="@id/dia__tarifa_condutor"
+                app:layout_constraintTop_toTopOf="@id/dia__tarifa_condutor"
+                app:srcCompat="@drawable/agenda_marcar_viagem" />
+
+            <TextView
+                android:id="@+id/textView_dia_tarifa_condutor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:text="Dia"
+                android:textColor="@color/Black"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/agenda_icon_dia__tarifa_condutor"
+                app:layout_constraintTop_toTopOf="@id/dia__tarifa_condutor" />
+
+            <TextView
+                android:id="@+id/local_user_textView_dia_tarifa_condutor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vazio"
+                app:layout_constraintStart_toStartOf="@id/textView_dia_tarifa_condutor"
+                app:layout_constraintTop_toBottomOf="@id/textView_dia_tarifa_condutor" />
+
+            <!--Taxa Desconto-->
+            <ImageView
+                android:id="@+id/taxa_desconto_tarifa_condutor"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:background="@color/White"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/dia__tarifa_condutor" />
+
+            <ImageView
+                android:id="@+id/euro_simbolo_icon_taxa_desconto_tarifa_condutor"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_margin="20dp"
+                android:layout_marginStart="20dp"
+                app:layout_constraintBottom_toBottomOf="@id/taxa_desconto_tarifa_condutor"
+                app:layout_constraintStart_toStartOf="@id/taxa_desconto_tarifa_condutor"
+                app:layout_constraintTop_toTopOf="@id/taxa_desconto_tarifa_condutor"
+                app:srcCompat="@drawable/euro_simbolo_icon" />
+
+            <TextView
+                android:id="@+id/textView_taxa_desconto_tarifa_condutor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:text="Taxa de Desconto"
+                android:textColor="@color/Black"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/euro_simbolo_icon_taxa_desconto_tarifa_condutor"
+                app:layout_constraintTop_toTopOf="@id/taxa_desconto_tarifa_condutor" />
+
+            <TextView
+                android:id="@+id/local_user_textView_taxa_desconto_tarifa_condutor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vazio"
+                app:layout_constraintStart_toStartOf="@id/textView_taxa_desconto_tarifa_condutor"
+                app:layout_constraintTop_toBottomOf="@id/textView_taxa_desconto_tarifa_condutor" />
+            <!--Notificação da atividade anterior-->
+            <ImageView
+                android:id="@+id/bg_white_with__tarifa_condutor"
+                android:layout_width="match_parent"
+                android:layout_height="270dp"
+                android:background="@color/white_gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!--Black notificacao bg-->
+            <ImageView
+                android:id="@+id/bg_black__tarifa_condutor"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginTop="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/bg_black_radius_edges" />
+
+            <TextView
+                android:id="@+id/textView_on_black_bg_tarifa_condutor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="45dp"
+                android:text="Tarifa"
+                android:textColor="@color/White"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@id/bg_black__tarifa_condutor"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/bg_black__tarifa_condutor" />
+
+            <ImageView
+                android:id="@+id/canideo_tarifa_condutor"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="180dp"
+                android:layout_marginEnd="50dp"
+                app:layout_constraintEnd_toStartOf="@+id/mala_tarifa_condutor"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/bg_white_with__tarifa_condutor"
+                app:layout_constraintTop_toTopOf="@+id/bg_white_with__tarifa_condutor"
+                app:srcCompat="@drawable/dog_icon_marcar" />
+
+            <ImageView
+                android:id="@+id/mala_tarifa_condutor"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="180dp"
+                android:layout_marginEnd="50dp"
+                app:layout_constraintEnd_toStartOf="@+id/wheel_tarifa_condutor"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/canideo_tarifa_condutor"
+                app:layout_constraintTop_toTopOf="@+id/bg_white_with__tarifa_condutor"
+                app:srcCompat="@drawable/mala_icon_marcar" />
+
+            <ImageView
+                android:id="@+id/wheel_tarifa_condutor"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="180dp"
+                app:layout_constraintEnd_toStartOf="@+id/bg_white_with__tarifa_condutor"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/mala_tarifa_condutor"
+                app:layout_constraintTop_toTopOf="@+id/bg_white_with__tarifa_condutor"
+                app:srcCompat="@drawable/wheel_icon_marcar" />
+
+            <ImageView
+                android:id="@+id/canideo_check_tarifa_condutor"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="45dp"
+                android:layout_marginBottom="45dp"
+                app:layout_constraintBottom_toBottomOf="@+id/canideo_tarifa_condutor"
+                app:layout_constraintEnd_toEndOf="@+id/canideo_tarifa_condutor"
+                app:srcCompat="@drawable/check_icon_yes" />
+
+            <ImageView
+                android:id="@+id/mala_check_tarifa_condutor"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="45dp"
+                android:layout_marginBottom="45dp"
+                app:layout_constraintBottom_toBottomOf="@+id/mala_tarifa_condutor"
+                app:layout_constraintEnd_toEndOf="@+id/mala_tarifa_condutor"
+                app:srcCompat="@drawable/check_icon_yes" />
+
+            <ImageView
+                android:id="@+id/wheel_check_tarifa_condutor"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="45dp"
+                android:layout_marginBottom="45dp"
+                app:layout_constraintBottom_toBottomOf="@+id/wheel_tarifa_condutor"
+                app:layout_constraintEnd_toEndOf="@+id/wheel_tarifa_condutor"
+                app:srcCompat="@drawable/check_icon_yes" />
+
+            <ImageView
+                android:id="@+id/distancia_icon_tarifa_condutor"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="20dp"
+                app:layout_constraintBottom_toTopOf="@+id/distancia_tarifa_condutor"
+                app:layout_constraintEnd_toStartOf="@+id/distancia_tarifa_condutor"
+                app:layout_constraintHorizontal_bias="0.871"
+                app:layout_constraintStart_toEndOf="@+id/distancia_tarifa_condutor"
+                app:layout_constraintTop_toBottomOf="@+id/distancia_tarifa_condutor"
+                app:layout_constraintVertical_bias="0.505"
+                app:srcCompat="@drawable/icon_viagem_marcar" />
+
+            <ImageView
+                android:id="@+id/tempo_icon_tarifa_condutor"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                app:layout_constraintBottom_toTopOf="@+id/tempo_tarifa_condutor"
+                app:layout_constraintEnd_toStartOf="@+id/tempo_tarifa_condutor"
+                app:layout_constraintHorizontal_bias="0.871"
+                app:layout_constraintStart_toEndOf="@+id/tempo_tarifa_condutor"
+                app:layout_constraintTop_toBottomOf="@+id/tempo_tarifa_condutor"
+                app:layout_constraintVertical_bias="0.505"
+                app:srcCompat="@drawable/tempo_previsto" />
+
+            <TextView
+                android:id="@+id/cifrao_tarifa_condutor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:text="€"
+                app:layout_constraintStart_toEndOf="@+id/local_user_textView_taxa_desconto_tarifa_condutor"
+                app:layout_constraintTop_toBottomOf="@+id/textView_taxa_desconto_tarifa_condutor" />
+
+            <TextView
+                android:id="@+id/distancia_textview_tarifa_condutor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:text="Distância"
+                android:textColor="@color/Black"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/distancia_icon_tarifa_condutor"
+                app:layout_constraintTop_toTopOf="@+id/distancia_tarifa_condutor" />
+
+            <TextView
+                android:id="@+id/distancia_valor_tarifa_condutor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vazio"
+                app:layout_constraintStart_toStartOf="@+id/distancia_textview_tarifa_condutor"
+                app:layout_constraintTop_toBottomOf="@+id/distancia_textview_tarifa_condutor" />
+
+            <TextView
+                android:id="@+id/tempo_textview_tarifa_condutor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:text="Tempo"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/tempo_icon_tarifa_condutor"
+                app:layout_constraintTop_toTopOf="@+id/tempo_tarifa_condutor" />
+
+            <TextView
+                android:id="@+id/tempo_valor_tarifa_condutor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vazio"
+                app:layout_constraintStart_toStartOf="@+id/tempo_textview_tarifa_condutor"
+                app:layout_constraintTop_toBottomOf="@+id/tempo_textview_tarifa_condutor" />
+
+
+            <!--Barra Amarela-->
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <ImageView
+        android:id="@+id/caixa_recibo_tarifa_condutor"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/caixa_recibo" />
+
+    <ImageView
+        android:id="@+id/dinheiro_btn_tarifa_condutor"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toStartOf="@+id/talao_btn_tarifa_condutor"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/scrollView2_tarifa_condutor"
+        app:layout_constraintTop_toTopOf="@+id/caixa_recibo_tarifa_condutor"
+        app:srcCompat="@drawable/dinheiro_btn" />
+
+    <TextView
+        android:id="@+id/pagamento_textview_tarifa_condutor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="20dp"
+        android:text="Pagamento"
+        android:textColor="@color/Black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/dinheiro_btn_tarifa_condutor"
+        app:layout_constraintTop_toTopOf="@+id/dinheiro_btn_tarifa_condutor" />
+
+    <ImageView
+        android:id="@+id/talao_btn_tarifa_condutor"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toStartOf="@+id/scrollView2_tarifa_condutor"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/dinheiro_btn_tarifa_condutor"
+        app:layout_constraintTop_toTopOf="@+id/caixa_recibo_tarifa_condutor"
+        app:srcCompat="@drawable/talao_btn" />
+
+    <TextView
+        android:id="@+id/talao_textview_tarifa_condutor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="20dp"
+        android:text="Talão"
+        android:textColor="@color/Black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/talao_btn_tarifa_condutor"
+        app:layout_constraintTop_toTopOf="@+id/talao_btn_tarifa_condutor" />
+
+    <TextView
+        android:id="@+id/Recibo_textview_tarifa_condutor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        android:text="Recibo"
+        android:textColor="@color/White"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/caixa_recibo_tarifa_condutor"
+        app:layout_constraintTop_toTopOf="@+id/caixa_recibo_tarifa_condutor" />
+
+    <include layout="@layout/barra_lateral_pro" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

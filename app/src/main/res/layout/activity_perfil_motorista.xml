@@ -370,10 +370,6 @@
         app:layout_constraintStart_toEndOf="@+id/textView_user_money_information_perfil_motorista"
         app:layout_constraintTop_toBottomOf="@+id/money_textView_perfil_motorista" />
 
-    <include
-        layout="@layout/barra_lateral_pro"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <include layout="@layout/barra_lateral_pro" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
