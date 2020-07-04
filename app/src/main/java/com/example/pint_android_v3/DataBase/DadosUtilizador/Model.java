@@ -1,5 +1,6 @@
-package com.example.pint_android_v3.DataBase;
+package com.example.pint_android_v3.DataBase.DadosUtilizador;
 
+import com.example.pint_android_v3.DataBase.DadosUtilizador.Get_user;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 

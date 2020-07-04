@@ -1,5 +1,7 @@
 package com.example.pint_android_v3.DataBase;
 
+import com.example.pint_android_v3.DataBase.DadosUtilizador.Model;
+
 import java.util.HashMap;
 
 import retrofit2.Call;
