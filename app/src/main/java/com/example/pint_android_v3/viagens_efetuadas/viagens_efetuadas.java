@@ -11,6 +11,7 @@ import android.widget.ListView;
 import com.example.pint_android_v3.DataBase.BaseDadosInterface;
 import com.example.pint_android_v3.DataBase.DadosUtilizador.Model_User_Information;
 import com.example.pint_android_v3.DataBase.ViagensEfetuadas.Model_Viagens_Efetuadas;
+import com.example.pint_android_v3.DataBase.ViagensEfetuadas.dataViagem;
 import com.example.pint_android_v3.R;
 import com.example.pint_android_v3.barra_lateral.barra_lateral_pro;
 import com.example.pint_android_v3.classificar.classificar_condutor;
@@ -31,12 +32,13 @@ public class viagens_efetuadas extends barra_lateral_pro {
     private String BASE_URL ="http://10.0.2.2:3000";
     private int user_id;
 
-    private String[] Local_Partida;
-    private String[] Local_Chegada;
-    private String[] distancia;
-    private String[] tempo;
-    private String[] data;
-    private String[] hora;
+    //luis 
+    private String[] Local_Partida = {};
+    private String[] Local_Chegada = {};
+    private String[] distancia= {};
+    private String[] tempo= {};
+    private String[] data= {};
+    private String[] hora= {};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,15 +55,20 @@ public class viagens_efetuadas extends barra_lateral_pro {
         user_id = 4;
         getInformationFromdb(user_id);
 
-        /*
-        lItems = new viagens_efetuadas_array_test(Local_Partida, Local_Chegada, distancia, tempo, data, hora);
+        Local_Partida[0] = "";
+        Local_Chegada[0] = "";
+        distancia[0] = "";
+        tempo[0] = "";
+        data[0] = "";
+        hora[0] = "";
+
         lView = findViewById(R.id.viagens_efetuadas_listview);
         lAdapter = new CustomListAdapter_efetuadas_teste(viagens_efetuadas.this,
                 lItems.data, lItems.tempo, lItems.distancia,
                 lItems.Local_Chegada, lItems.Local_Partida,lItems.hora);
 
         lView.setAdapter(lAdapter);
-        */
+
 
         /*
         lView.setOnItemClickListener(new ListView.OnItemClickListener() {
@@ -102,8 +109,25 @@ public class viagens_efetuadas extends barra_lateral_pro {
                 }
                 if (response.code() == 200){
                     if (response.body() != null) {
-                        Log.i("body", ""+ response.body().getDataViagem().get(0));
-                        Log.i("ola", "ola");
+                        Log.i("body", ""+ response.body().getDataViagem().get(0).toString());
+                       for (int i = 0; i < response.body().getDataViagem().size(); i++){
+                           /*private String[] Local_Partida;
+                            private String[] Local_Chegada;
+                            private String[] distancia;
+                            private String[] tempo;
+                            private String[] data;
+                            private String[] hora;*/
+                           Local_Partida[i] =response.body().getDataViagem().get(i).getLocalidade_Origem().getNome_localidade();
+                           Local_Chegada[i] =response.body().getDataViagem().get(i).getLocalidade_Destino().getNome_localidade();
+
+                           distancia[i] = "";
+                           tempo[i] = "";
+
+                           data[i] = response.body().getDataViagem().get(i).getViagemRegistada().getDia_viagem();
+                           hora[i] = response.body().getDataViagem().get(i).getViagemRegistada().getHora_viagem();
+
+                           lItems = new viagens_efetuadas_array_test(Local_Partida, Local_Chegada, distancia, tempo, data, hora);
+                       }
                     }else
                         Log.i("Erro", "L105 viagens efetuadas");
                         //makeToastFordesambiguacao("Erro Server Info");

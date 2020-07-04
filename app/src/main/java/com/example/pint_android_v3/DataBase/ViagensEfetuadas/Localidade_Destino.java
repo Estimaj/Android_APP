@@ -3,7 +3,7 @@ package com.example.pint_android_v3.DataBase.ViagensEfetuadas;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-class Localidade_Destino {
+public class Localidade_Destino {
     @SerializedName("id_localidade")
     @Expose
     private int id_localidade;

@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-class dataViagem {
+public class dataViagem {
 
     @SerializedName("id_viagem")
     @Expose
