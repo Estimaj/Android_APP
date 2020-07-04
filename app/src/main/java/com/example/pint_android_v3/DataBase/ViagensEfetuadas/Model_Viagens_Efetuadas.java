@@ -1,12 +1,11 @@
-package com.example.pint_android_v3.DataBase.DadosUtilizador;
+package com.example.pint_android_v3.DataBase.ViagensEfetuadas;
 
-import com.example.pint_android_v3.DataBase.DadosUtilizador.Get_user;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-public class Model {
+public class Model_Viagens_Efetuadas {
 
     @SerializedName("success")
     @Expose
@@ -14,13 +13,13 @@ public class Model {
 
     @SerializedName("data")
     @Expose
-    private List<Get_user> get_user;
+    private List<dataViagem> dataViagem;
 
     public String getSuccess() {
         return success;
     }
 
-    public List<Get_user> getGet_user() {
-        return get_user;
+    public List<dataViagem> getDataViagem() {
+        return dataViagem;
     }
 }

@@ -1,6 +1,7 @@
 package com.example.pint_android_v3.DataBase;
 
-import com.example.pint_android_v3.DataBase.DadosUtilizador.Model;
+import com.example.pint_android_v3.DataBase.DadosUtilizador.Model_User_Information;
+import com.example.pint_android_v3.DataBase.ViagensEfetuadas.Model_Viagens_Efetuadas;
 
 import java.util.HashMap;
 
@@ -16,9 +17,12 @@ public interface BaseDadosInterface {
     Call<Post> executeLogin(@Body HashMap<String, String> map);
 
     @GET("/muv/get/{id}")
-    Call<Model> executeGetUser(@Path("id") String id);
+    Call<Model_User_Information> executeGetUser(@Path("id") int id);
 
     @POST("/muv/pedidos/criar")
     Call<Pedido_Viagem> executeCriarPedidoViagem(@Body Pedido_Viagem pedido_viagem);
+
+    @GET("muv/percurso/get/{id}")
+    Call<Model_Viagens_Efetuadas> executeViagemEfetuada(@Path("id") int id);
 
 }

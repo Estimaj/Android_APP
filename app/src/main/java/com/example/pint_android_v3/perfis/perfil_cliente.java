@@ -9,7 +9,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.example.pint_android_v3.DataBase.BaseDadosInterface;
-import com.example.pint_android_v3.DataBase.DadosUtilizador.Model;
+import com.example.pint_android_v3.DataBase.DadosUtilizador.Model_User_Information;
 import com.example.pint_android_v3.R;
 import com.example.pint_android_v3.barra_lateral.barra_lateral_pro;
 import com.example.pint_android_v3.menus.menu_municipe;
@@ -74,11 +74,11 @@ public class perfil_cliente extends barra_lateral_pro {
         baseDadosInterface =  retrofit.create(BaseDadosInterface.class);
 
         //Log.i("O id do user:", ""+ id);
-        Call<Model> call = baseDadosInterface.executeGetUser(""+id);
+        Call<Model_User_Information> call = baseDadosInterface.executeGetUser(id);
 
-        call.enqueue(new Callback<Model>() {
+        call.enqueue(new Callback<Model_User_Information>() {
             @Override
-            public void onResponse(Call<Model> call, Response<Model> response) {
+            public void onResponse(Call<Model_User_Information> call, Response<Model_User_Information> response) {
                 if (!response.isSuccessful()){
                     //makeToastFordesambiguacao("Erro a ir ao link");
                     Log.i("Erro", "Erro a ir ao link class perfil_cliente");
@@ -101,7 +101,7 @@ public class perfil_cliente extends barra_lateral_pro {
             }
 
             @Override
-            public void onFailure(Call<Model> call, Throwable t) {
+            public void onFailure(Call<Model_User_Information> call, Throwable t) {
                 Log.i("Failure:", t.toString());
                 //makeToastFordesambiguacao("Failure: "+ t.toString());
             }
