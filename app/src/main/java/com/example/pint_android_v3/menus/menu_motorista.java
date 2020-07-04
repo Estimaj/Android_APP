@@ -9,8 +9,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.pint_android_v3.DataBase.BaseDadosInterface;
-import com.example.pint_android_v3.DataBase.Get_user;
-import com.example.pint_android_v3.DataBase.Model;
+import com.example.pint_android_v3.DataBase.DadosUtilizador.Get_user;
+import com.example.pint_android_v3.DataBase.DadosUtilizador.Model;
 import com.example.pint_android_v3.R;
 import com.example.pint_android_v3.barra_lateral.barra_lateral_condutor;
 import com.example.pint_android_v3.servico_a_decorrer;

@@ -2,49 +2,24 @@ package com.example.pint_android_v3.viagens_efetuadas;
 
 public class viagens_efetuadas_array_test {
 
-    String[] Local_Partida = {
-                    "Póvoa de Calde",
-                    "Matosinhos",
-                    "Remonde",
-                    "Carragoso"
-            };
+    String[] Local_Partida;
 
-    String[] Local_Chegada = {
-            "Remonde",
-            "Carragoso",
-            "Póvoa de Calde",
-            "Matosinhos"
-    };
+    String[] Local_Chegada;
 
-    String[] distancia = {
-            "2km",
-            "3km",
-            "4km",
-            "6km"
-    };
+    String[] distancia;
 
-    String[] tempo = {
-            "2m",
-            "3m",
-            "4m",
-            "6m"
-    };
+    String[] tempo;
 
-    String[] data = {
-            "1/01/2001",
-            "16/05/2020",
-            "12/06/2015",
-            "4/08/2017"
-    };
+    String[] data;
 
-    String[] hora = {
-            "16:00",
-            "15:30",
-            "14:00",
-            "17:20"
-    };
+    String[] hora;
 
-    public viagens_efetuadas_array_test() {}
-
-
+    public viagens_efetuadas_array_test(String[] local_Partida, String[] local_Chegada, String[] distancia, String[] tempo, String[] data, String[] hora) {
+        Local_Partida = local_Partida;
+        Local_Chegada = local_Chegada;
+        this.distancia = distancia;
+        this.tempo = tempo;
+        this.data = data;
+        this.hora = hora;
+    }
 }

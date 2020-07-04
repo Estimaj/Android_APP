@@ -21,15 +21,30 @@ public class viagens_efetuadas extends barra_lateral_pro {
 
     private int user_id;
 
+    private String[] Local_Partida;
+    private String[] Local_Chegada;
+    private String[] distancia;
+    private String[] tempo;
+    private String[] data;
+    private String[] hora;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_viagens_efetuadas);
 
+        Intent X = getIntent();
+        Bundle b = X.getExtras();
+        if(b!=null){
+            user_id = (int) b.get("user_id");
+            //Log.i("id_user", ""+ id_user);
 
-        lItems = new viagens_efetuadas_array_test();
-        lView = (ListView)findViewById(R.id.viagens_efetuadas_listview);
+        }
+
+        getInformationFromdb(user_id);
+
+        lItems = new viagens_efetuadas_array_test(Local_Partida, Local_Chegada, distancia, tempo, data, hora);
+        lView = findViewById(R.id.viagens_efetuadas_listview);
         lAdapter = new CustomListAdapter_efetuadas_teste(viagens_efetuadas.this,
                 lItems.data, lItems.tempo, lItems.distancia,
                 lItems.Local_Chegada, lItems.Local_Partida,lItems.hora);
@@ -50,17 +65,13 @@ public class viagens_efetuadas extends barra_lateral_pro {
         });
         */
 
-        Intent X = getIntent();
-        Bundle b = X.getExtras();
-        if(b!=null){
-            user_id = (int) b.get("user_id");
-            //Log.i("id_user", ""+ id_user);
-
-        }
-
         Bar_Settings(user_id);
     }
 
+    private void getInformationFromdb(int id) {
+        if(id == 0) return;
+
+    }
 
 
     public void Classificar_Condutor(View view) //o textview tem um onclick
