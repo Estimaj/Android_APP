@@ -5,9 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.pint_android_v3.barra_lateral.barra_lateral_condutor;
 import com.example.pint_android_v3.barra_lateral.barra_lateral_pro;
 
-public class servico_a_decorrer extends barra_lateral_pro {
+public class servico_a_decorrer extends barra_lateral_condutor {
 
     private int user_id;
 

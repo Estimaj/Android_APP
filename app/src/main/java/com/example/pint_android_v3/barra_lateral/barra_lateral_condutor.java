@@ -123,7 +123,7 @@ public class barra_lateral_condutor extends AppCompatActivity implements Navigat
             public void onDrawerStateChanged(int newState)
             {
                 if (newState == DrawerLayout.STATE_SETTLING) {
-
+                    drawerLayout.setTranslationZ(20);
                     drawerLayout.getLayoutParams().height = heightX;
                     drawerLayout.bringToFront();
                     drawerLayout.requestLayout();

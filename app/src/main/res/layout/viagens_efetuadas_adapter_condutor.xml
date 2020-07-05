@@ -60,6 +60,16 @@
         app:layout_constraintTop_toTopOf="@id/viagens_efetuadas_adapter_contentor_condutor" />
 
     <TextView
+        android:id="@+id/viagens_efetuadas_adapter_tempo_condutor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="185dp"
+        android:layout_marginTop="54dp"
+        android:text="Tempo"
+        app:layout_constraintStart_toStartOf="@id/viagens_efetuadas_adapter_Local_Partida_condutor"
+        app:layout_constraintTop_toTopOf="@id/viagens_efetuadas_adapter_contentor_condutor" />
+
+    <TextView
         android:id="@+id/viagens_efetuadas_adapter_Local_Partida_condutor"
         android:layout_width="80dp"
         android:layout_height="wrap_content"
@@ -86,6 +96,7 @@
         android:layout_width="100dp"
         android:layout_height="48dp"
         android:layout_marginTop="138dp"
+        android:onClick="Mais_Info_Condutor_efetuadas"
         app:layout_constraintEnd_toStartOf="@id/viagens_efetuadas_adapter_contentor_condutor"
         app:layout_constraintHorizontal_bias="0.248"
         app:layout_constraintStart_toEndOf="@id/viagens_efetuadas_adapter_contentor_condutor"
@@ -98,7 +109,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="34dp"
         android:layout_marginTop="14dp"
-        android:onClick="maisInfo"
         android:text="Mais Info"
         android:textSize="13sp"
         app:layout_constraintStart_toStartOf="@id/viagens_efetuadas_adapter_mais_info_condutor"
