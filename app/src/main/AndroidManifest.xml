@@ -36,7 +36,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".menus.menu_motorista" android:noHistory="true"/>
+        <activity android:name=".menus.menu_motorista" android:noHistory="false"/>
         <activity android:name=".barra_lateral.barra_lateral_condutor" android:noHistory="true" />
         <activity android:name=".mapas.mais_info_mapa_cliente" android:noHistory="true"/>
         <activity android:name=".mapas.mais_info_mapa_condutor" android:noHistory="true" />
@@ -47,6 +47,8 @@
         <activity android:name=".Marcar_viagem" android:noHistory="true"/>
         <activity android:name=".classificar.classificar_condutor" android:noHistory="true"/>
         <activity android:name=".classificar.classificar_viagem" android:noHistory="true"/>
+        <activity android:name=".pagamentoCondutor" android:noHistory="true"/>
+        <activity android:name=".viagens_efetuadas_condutor.viagens_efetuadas_condutor" android:noHistory="true"/>
         <!--
         <activity
             android:name="com.esri.arcgisruntime.security.DefaultOAuthIntentReceiver"

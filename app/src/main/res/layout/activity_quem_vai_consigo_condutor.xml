@@ -253,6 +253,7 @@
                 android:layout_width="100dp"
                 android:layout_height="25dp"
                 android:layout_marginTop="69dp"
+                android:onClick="Click_Pagamento"
                 app:layout_constraintEnd_toStartOf="@+id/Mais_info_1_button_quem_vai_consigo_condutor"
                 app:layout_constraintTop_toTopOf="@+id/contentor1_quem_vai_consigo_condutor"
                 app:srcCompat="@drawable/btn_pagamento" />
@@ -369,6 +370,7 @@
                 android:layout_width="100dp"
                 android:layout_height="25dp"
                 android:layout_marginTop="69dp"
+                android:onClick="Click_Pagamento"
                 app:layout_constraintEnd_toStartOf="@+id/Mais_info_2_button_quem_vai_consigo_condutor"
                 app:layout_constraintTop_toTopOf="@+id/contentor2_quem_vai_consigo2_condutor"
                 app:srcCompat="@drawable/btn_pagamento" />
@@ -484,6 +486,7 @@
                 android:layout_width="100dp"
                 android:layout_height="25dp"
                 android:layout_marginTop="69dp"
+                android:onClick="Click_Pagamento"
                 app:layout_constraintEnd_toStartOf="@+id/Mais_info_3_button_quem_vai_consigo_condutor"
                 app:layout_constraintTop_toTopOf="@+id/contentor3_quem_vai_consigo_condutor"
                 app:srcCompat="@drawable/btn_pagamento" />
@@ -611,6 +614,7 @@
                 android:layout_width="100dp"
                 android:layout_height="25dp"
                 android:layout_marginTop="69dp"
+                android:onClick="Click_Pagamento"
                 app:layout_constraintEnd_toStartOf="@+id/Mais_info_4_button_quem_vai_consigo_condutor"
                 app:layout_constraintTop_toTopOf="@+id/contentor4_quem_vai_consigo2_condutor"
                 app:srcCompat="@drawable/btn_pagamento" />
@@ -738,6 +742,7 @@
                 android:layout_width="100dp"
                 android:layout_height="25dp"
                 android:layout_marginTop="69dp"
+                android:onClick="Click_Pagamento"
                 app:layout_constraintEnd_toStartOf="@+id/Mais_info_5_button_quem_vai_consigo_condutor"
                 app:layout_constraintTop_toTopOf="@+id/contentor5_quem_vai_consigo3_condutor"
                 app:srcCompat="@drawable/btn_pagamento" />
