@@ -27,4 +27,13 @@ public class Localidade_Destino {
     public String getPontos_paragem() {
         return pontos_paragem;
     }
+
+    @Override
+    public String toString() {
+        return "Localidade_Destino{" +
+                "id_localidade=" + id_localidade +
+                ", nome_localidade='" + nome_localidade + '\'' +
+                ", pontos_paragem='" + pontos_paragem + '\'' +
+                '}';
+    }
 }

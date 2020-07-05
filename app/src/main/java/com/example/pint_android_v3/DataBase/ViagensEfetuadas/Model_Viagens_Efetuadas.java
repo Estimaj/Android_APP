@@ -3,6 +3,7 @@ package com.example.pint_android_v3.DataBase.ViagensEfetuadas;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Model_Viagens_Efetuadas {
@@ -13,13 +14,21 @@ public class Model_Viagens_Efetuadas {
 
     @SerializedName("data")
     @Expose
-    private List<dataViagem> dataViagem;
+    private ArrayList<dataViagem> dataViagem;
 
     public String getSuccess() {
         return success;
     }
 
-    public List<dataViagem> getDataViagem() {
+    public ArrayList<dataViagem> getDataViagem() {
         return dataViagem;
+    }
+
+    @Override
+    public String toString() {
+        return "Model_Viagens_Efetuadas{" +
+                "success='" + success + '\'' +
+                ", dataViagem=" + dataViagem +
+                '}';
     }
 }

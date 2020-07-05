@@ -28,4 +28,13 @@ public class Localidade_Origem {
     public String getPontos_paragem() {
         return pontos_paragem;
     }
+
+    @Override
+    public String toString() {
+        return "Localidade_Origem{" +
+                "id_localidade=" + id_localidade +
+                ", nome_localidade='" + nome_localidade + '\'' +
+                ", pontos_paragem='" + pontos_paragem + '\'' +
+                '}';
+    }
 }

@@ -9,17 +9,19 @@ import android.widget.TextView;
 
 import com.example.pint_android_v3.R;
 
+import java.util.ArrayList;
+
 public class CustomListAdapter_efetuadas_teste extends BaseAdapter {
 
     Context context;
-    private final String[] data;
-    private final String[] tempo;
-    private final String[] distancia;
-    private final String[] Local_Chegada;
-    private final String[] Local_Partida;
-    private final String[] hora;
+    private final ArrayList<String> data;
+    private final ArrayList<String> tempo;
+    private final ArrayList<String> distancia;
+    private final ArrayList<String> Local_Chegada;
+    private final ArrayList<String> Local_Partida;
+    private final ArrayList<String> hora;
 
-    public CustomListAdapter_efetuadas_teste(Context cont, String[] data, String[] tempo, String[] distancia, String[] local_Chegada, String[] local_Partida, String[] hora) {
+    public CustomListAdapter_efetuadas_teste(Context cont, ArrayList<String> data, ArrayList<String> tempo, ArrayList<String> distancia, ArrayList<String> local_Chegada, ArrayList<String> local_Partida, ArrayList<String> hora) {
 
         context = cont;
         this.data = data;
@@ -32,7 +34,7 @@ public class CustomListAdapter_efetuadas_teste extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return Local_Chegada.length;
+        return Local_Chegada.size();
     }
 
     @Override
@@ -72,12 +74,12 @@ public class CustomListAdapter_efetuadas_teste extends BaseAdapter {
             result = convertView;
         }
 
-        viewHolder.txt_data.setText(data[position]);
-        viewHolder.txt_distancia.setText(distancia[position]);
-        viewHolder.txt_tempo.setText(tempo[position]);
-        viewHolder.txt_Local_Chegada.setText(Local_Chegada[position]);
-        viewHolder.txt_Local_Partida.setText(Local_Partida[position]);
-        viewHolder.txt_hora.setText(hora[position]);
+        viewHolder.txt_data.setText(data.get(position));
+        viewHolder.txt_distancia.setText(distancia.get(position));
+        viewHolder.txt_tempo.setText(tempo.get(position));
+        viewHolder.txt_Local_Chegada.setText(Local_Chegada.get(position));
+        viewHolder.txt_Local_Partida.setText(Local_Partida.get(position));
+        viewHolder.txt_hora.setText(hora.get(position));
 
 
 

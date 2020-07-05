@@ -1,20 +1,23 @@
 package com.example.pint_android_v3.viagens_efetuadas;
 
+import java.util.ArrayList;
+
 public class viagens_efetuadas_array_test {
 
-    String[] Local_Partida;
+    ArrayList<String> Local_Partida;
 
-    String[] Local_Chegada;
+    ArrayList<String> Local_Chegada;
 
-    String[] distancia;
+    ArrayList<String> distancia;
 
-    String[] tempo;
+    ArrayList<String> tempo;
 
-    String[] data;
+    ArrayList<String> data;
 
-    String[] hora;
+    ArrayList<String> hora;
 
-    public viagens_efetuadas_array_test(String[] local_Partida, String[] local_Chegada, String[] distancia, String[] tempo, String[] data, String[] hora) {
+    public viagens_efetuadas_array_test(ArrayList<String> local_Partida, ArrayList<String> local_Chegada
+            , ArrayList<String> distancia, ArrayList<String> tempo, ArrayList<String> data, ArrayList<String> hora) {
         Local_Partida = local_Partida;
         Local_Chegada = local_Chegada;
         this.distancia = distancia;

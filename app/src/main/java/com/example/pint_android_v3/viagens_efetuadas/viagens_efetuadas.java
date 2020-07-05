@@ -18,6 +18,8 @@ import com.example.pint_android_v3.classificar.classificar_condutor;
 import com.example.pint_android_v3.classificar.classificar_viagem;
 import com.example.pint_android_v3.mapas.mais_info_mapa_cliente;
 
+import java.util.ArrayList;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -27,18 +29,13 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class viagens_efetuadas extends barra_lateral_pro {
     ListView lView;
     ListAdapter lAdapter;
-    viagens_efetuadas_array_test lItems;
+
 
     private String BASE_URL ="http://10.0.2.2:3000";
     private int user_id;
+    private ArrayList<dataViagem>  informacaoViagem;
 
-    //luis 
-    private String[] Local_Partida = {};
-    private String[] Local_Chegada = {};
-    private String[] distancia= {};
-    private String[] tempo= {};
-    private String[] data= {};
-    private String[] hora= {};
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,19 +52,6 @@ public class viagens_efetuadas extends barra_lateral_pro {
         user_id = 4;
         getInformationFromdb(user_id);
 
-        Local_Partida[0] = "";
-        Local_Chegada[0] = "";
-        distancia[0] = "";
-        tempo[0] = "";
-        data[0] = "";
-        hora[0] = "";
-
-        lView = findViewById(R.id.viagens_efetuadas_listview);
-        lAdapter = new CustomListAdapter_efetuadas_teste(viagens_efetuadas.this,
-                lItems.data, lItems.tempo, lItems.distancia,
-                lItems.Local_Chegada, lItems.Local_Partida,lItems.hora);
-
-        lView.setAdapter(lAdapter);
 
 
         /*
@@ -109,25 +93,10 @@ public class viagens_efetuadas extends barra_lateral_pro {
                 }
                 if (response.code() == 200){
                     if (response.body() != null) {
-                        Log.i("body", ""+ response.body().getDataViagem().get(0).toString());
-                       for (int i = 0; i < response.body().getDataViagem().size(); i++){
-                           /*private String[] Local_Partida;
-                            private String[] Local_Chegada;
-                            private String[] distancia;
-                            private String[] tempo;
-                            private String[] data;
-                            private String[] hora;*/
-                           Local_Partida[i] =response.body().getDataViagem().get(i).getLocalidade_Origem().getNome_localidade();
-                           Local_Chegada[i] =response.body().getDataViagem().get(i).getLocalidade_Destino().getNome_localidade();
-
-                           distancia[i] = "";
-                           tempo[i] = "";
-
-                           data[i] = response.body().getDataViagem().get(i).getViagemRegistada().getDia_viagem();
-                           hora[i] = response.body().getDataViagem().get(i).getViagemRegistada().getHora_viagem();
-
-                           lItems = new viagens_efetuadas_array_test(Local_Partida, Local_Chegada, distancia, tempo, data, hora);
-                       }
+                        Log.i("body", "" + response.body().getDataViagem().get(0).toString());
+                        //Log.i("viagem", ""+ response.body().getDataViagem().get(0).getViagemRegistada().toString());
+                        informacaoViagem = response.body().getDataViagem();
+                        createAdapters();
                     }else
                         Log.i("Erro", "L105 viagens efetuadas");
                         //makeToastFordesambiguacao("Erro Server Info");
@@ -144,6 +113,35 @@ public class viagens_efetuadas extends barra_lateral_pro {
                 //makeToastFordesambiguacao("Failure: "+ t.toString());
             }
         });
+    }
+
+    public void createAdapters(){
+        ArrayList<String> Local_Partida = new ArrayList<>();
+        ArrayList<String> Local_Chegada = new ArrayList<>();
+        ArrayList<String> distancia = new ArrayList<>();
+        ArrayList<String> tempo = new ArrayList<>();
+        ArrayList<String> data = new ArrayList<>();
+        ArrayList<String> hora = new ArrayList<>();
+
+        for (int i = 0; i < informacaoViagem.size(); i++) {
+            Local_Partida.add(informacaoViagem.get(i).getLocalidade_Origem().getNome_localidade());
+            Local_Chegada.add(informacaoViagem.get(i).getLocalidade_Destino().getNome_localidade());
+
+            distancia.add("1");
+            tempo.add("1");
+
+            data.add(informacaoViagem.get(i).getViagemRegistada().getDia_viagem());
+            hora.add(informacaoViagem.get(i).getViagemRegistada().getHora_viagem());
+        }
+        viagens_efetuadas_array_test lItems = new viagens_efetuadas_array_test(Local_Partida, Local_Chegada, distancia, tempo, data, hora);
+
+
+        lView = findViewById(R.id.viagens_efetuadas_listview);
+        lAdapter = new CustomListAdapter_efetuadas_teste(viagens_efetuadas.this,
+                lItems.data, lItems.tempo, lItems.distancia,
+                lItems.Local_Chegada, lItems.Local_Partida,lItems.hora);
+
+        lView.setAdapter(lAdapter);
     }
 
 
@@ -165,6 +163,8 @@ public class viagens_efetuadas extends barra_lateral_pro {
 
 
     public void maisInfo(View view){ //falta saber como enviar a viagem certa
+        //String user_local_destino = view.findViewById(R.id.viagens_efetuadas_adapter_Local_Partida).toString();
+
         Intent goMaisInfo = new Intent(viagens_efetuadas.this, mais_info_mapa_cliente.class);
         goMaisInfo.putExtra("user_id", user_id);
         startActivity(goMaisInfo);

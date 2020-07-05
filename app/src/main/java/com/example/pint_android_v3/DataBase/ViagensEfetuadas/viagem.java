@@ -36,4 +36,14 @@ public class viagem {
     public String getHora_viagem() {
         return hora_viagem;
     }
+
+    @Override
+    public String toString() {
+        return "viagem{"+ '\n' +
+                "id_viagem=" + id_viagem + '\n' +
+                ", tipo_viagem='" + tipo_viagem + '\n' +
+                ", dia_viagem='" + dia_viagem + '\n' +
+                ", hora_viagem='" + hora_viagem + '\n' +
+                '}';
+    }
 }
