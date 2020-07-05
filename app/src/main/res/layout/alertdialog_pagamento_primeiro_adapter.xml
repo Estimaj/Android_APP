@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_black_radius_edges"
+    android:padding="20dp"
+    >
+
+    <ImageView
+        android:id="@+id/no_btn_alert_dialog_adapter_pagamento_primeiro"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="46dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@id/yes_btn_alert_dialog_adapter_pagamento_primeiro"
+        app:layout_constraintTop_toBottomOf="@id/textView2_pagamento_primeiro"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="15dp"
+        app:srcCompat="@drawable/no_btn" />
+
+    <ImageView
+        android:id="@+id/yes_btn_alert_dialog_adapter_pagamento_primeiro"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="46dp"
+        app:layout_constraintEnd_toStartOf="@id/no_btn_alert_dialog_adapter_pagamento_primeiro"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView2_pagamento_primeiro"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="15dp"
+        app:srcCompat="@drawable/yes_btn" />
+
+    <ImageView
+        android:id="@+id/imageView7_pagamento_primeiro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/euro" />
+
+    <TextView
+        android:id="@+id/textView_pagamento_primeiro"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:text="Pagamento Efetuado?"
+        android:textColor="@color/White"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageView7_pagamento_primeiro" />
+
+    <TextView
+        android:id="@+id/textView2_pagamento_primeiro"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:text="Preço da viagem: (dinheiro) euros"
+        android:textSize="18sp"
+        android:textColor="@color/White"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView_pagamento_primeiro" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
