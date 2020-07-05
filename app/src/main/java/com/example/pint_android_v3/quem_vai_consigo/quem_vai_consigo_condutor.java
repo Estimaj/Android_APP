@@ -15,7 +15,7 @@ public class quem_vai_consigo_condutor extends barra_lateral_pro {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_quem_vai_consigo);
+        setContentView(R.layout.activity_quem_vai_consigo_condutor);
 
         Intent X = getIntent();
         Bundle b = X.getExtras();

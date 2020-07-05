@@ -110,6 +110,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
+        android:onClick="Mais_Info_Condutor_Servico"
         android:text="Mais Info"
         android:textSize="13sp"
         app:layout_constraintEnd_toStartOf="@id/servico_a_decorrer_adapter_mais_info"

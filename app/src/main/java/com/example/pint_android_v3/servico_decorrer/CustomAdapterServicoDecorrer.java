@@ -1,4 +1,4 @@
-package com.example.pint_android_v3.viagens_marcadas;
+package com.example.pint_android_v3.servico_decorrer;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,8 +8,9 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.example.pint_android_v3.R;
+import com.example.pint_android_v3.viagens_efetuadas_condutor.CustomListAdapter_efetuadas_condutor;
 
-public class CustomListAdapter_marcadas_teste extends BaseAdapter {
+public class CustomAdapterServicoDecorrer extends BaseAdapter {
 
     Context context;
     private final String[] data;
@@ -19,7 +20,7 @@ public class CustomListAdapter_marcadas_teste extends BaseAdapter {
     private final String[] Local_Partida;
     private final String[] hora;
 
-    public CustomListAdapter_marcadas_teste(Context cont, String[] data, String[] tempo, String[] distancia, String[] local_Chegada, String[] local_Partida, String[] hora) {
+    public CustomAdapterServicoDecorrer(Context cont, String[] data, String[] tempo, String[] distancia, String[] local_Chegada, String[] local_Partida, String[] hora) {
 
         context = cont;
         this.data = data;
@@ -32,6 +33,7 @@ public class CustomListAdapter_marcadas_teste extends BaseAdapter {
 
     @Override
     public int getCount() {
+
         if(Local_Chegada == null)
             return 0;
         return Local_Chegada.length;
@@ -50,27 +52,27 @@ public class CustomListAdapter_marcadas_teste extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        CustomListAdapter_marcadas_teste.ViewHolder viewHolder;
+        CustomAdapterServicoDecorrer.ViewHolder viewHolder;
         final View result;
 
         if(convertView == null)
         {
-            viewHolder = new CustomListAdapter_marcadas_teste.ViewHolder();
+            viewHolder = new CustomAdapterServicoDecorrer.ViewHolder();
             LayoutInflater inflater = LayoutInflater.from(context);
-            convertView = inflater.inflate(R.layout.viagens_marcadas_adapter, parent, false);
-            viewHolder.txt_data = (TextView)convertView.findViewById(R.id.viagens_marcadas_adapter_data_trip);
-            viewHolder.txt_tempo = (TextView)convertView.findViewById(R.id.viagens_marcadas_adapter_Tempo);
-            viewHolder.txt_distancia = (TextView)convertView.findViewById(R.id.viagens_marcadas_adapter_Distancia);
-            viewHolder.txt_Local_Chegada = (TextView)convertView.findViewById(R.id.viagens_marcadas_adapter_Local_Chegada);
-            viewHolder.txt_Local_Partida = (TextView)convertView.findViewById(R.id.viagens_marcadas_adapter_Local_Partida);
-            viewHolder.txt_hora = (TextView)convertView.findViewById(R.id.viagens_marcadas_adapter_hora_trip);
+            convertView = inflater.inflate(R.layout.servico_a_decorrer_adapter, parent, false);
+            viewHolder.txt_data = (TextView)convertView.findViewById(R.id.servico_a_decorrer_adapter_data_trip);
+            viewHolder.txt_tempo = (TextView)convertView.findViewById(R.id.servico_a_decorrer_adapter_Tempo);
+            viewHolder.txt_distancia = (TextView)convertView.findViewById(R.id.servico_a_decorrer_adapter_Distancia);
+            viewHolder.txt_Local_Chegada = (TextView)convertView.findViewById(R.id.servico_a_decorrer_adapter_Local_Chegada);
+            viewHolder.txt_Local_Partida = (TextView)convertView.findViewById(R.id.servico_a_decorrer_adapter_Local_Partida);
+            viewHolder.txt_hora = (TextView)convertView.findViewById(R.id.servico_a_decorrer_adapter_hora_trip);
 
             result = convertView;
             convertView.setTag(viewHolder);
         }
         else
         {
-            viewHolder = (CustomListAdapter_marcadas_teste.ViewHolder) convertView.getTag();
+            viewHolder = (CustomAdapterServicoDecorrer.ViewHolder) convertView.getTag();
             result = convertView;
         }
 
@@ -94,6 +96,4 @@ public class CustomListAdapter_marcadas_teste extends BaseAdapter {
         TextView txt_Local_Partida;
         TextView txt_hora;
 
-    }
-}
-
+    }}
