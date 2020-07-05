@@ -48,6 +48,7 @@ public class barra_lateral_pro extends AppCompatActivity implements NavigationVi
                 Intent logOut = new Intent(this, MainActivity_Login.class);
                 logOut.putExtra("user_id", user_id);
                 startActivity(logOut);
+                finish();
                 break;
             case R.id.User_btn_menu:
                 Intent perfilCliente = new Intent(this, perfil_cliente.class);
@@ -60,9 +61,9 @@ public class barra_lateral_pro extends AppCompatActivity implements NavigationVi
                 startActivity(homePage);
                 break;
             case R.id.Notif_btn_menu:
-                Intent NotPage = new Intent(this, notificacoes.class);
-                NotPage.putExtra("user_id", user_id);
-                startActivity(NotPage);
+                Intent notPage = new Intent(this, notificacoes.class);
+                notPage.putExtra("user_id", user_id);
+                startActivity(notPage);
 
             //Criar activity Notificações
             //Default?

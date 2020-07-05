@@ -16,34 +16,37 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:targetApi="n">
-        <activity android:name=".servico_a_decorrer"/>
-        <activity android:name=".Cancelar_Viagem" />
-        <activity android:name=".notificacoes.notificacoes_mais_info" />
-        <activity android:name=".notificacoes.notificacoes" />
-        <activity android:name=".quem_vai_consigo.quem_vai_consigo" />
-        <activity android:name=".viagens_marcadas.viagens_marcadas" />
-        <activity android:name=".viagens_efetuadas.viagens_efetuadas" />
-        <activity android:name=".perfis.perfil_motorista_edit" />
-        <activity android:name=".perfis.perfil_motorista" />
-        <activity android:name=".desambiguacao" />
-        <activity android:name=".MainActivity_Login" >
+        <activity android:name=".servico_a_decorrer" android:noHistory="true"/>
+        <activity android:name=".Cancelar_Viagem" android:noHistory="true"/>
+        <activity android:name=".notificacoes.notificacoes_mais_info" android:noHistory="true"/>
+        <activity android:name=".notificacoes.notificacoes" android:noHistory="true"/>
+        <activity android:name=".quem_vai_consigo.quem_vai_consigo" android:noHistory="true"/>
+        <activity android:name=".viagens_marcadas.viagens_marcadas" android:noHistory="true" />
+        <activity android:name=".viagens_efetuadas.viagens_efetuadas" android:noHistory="true" />
+        <activity android:name=".perfis.perfil_motorista_edit" android:noHistory="true"/>
+        <activity android:name=".perfis.perfil_motorista" android:noHistory="true" />
+        <activity android:name=".Desambiguacao" android:noHistory="true" />
+        <activity android:name=".MainActivity_Login" android:noHistory="true">
+
+        </activity>
+
+        <activity android:name=".menus.menu_municipe" >
             <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-            <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".menus.menu_municipe"/>
-        <activity android:name=".menus.menu_motorista"/>
-        <activity android:name=".barra_lateral.barra_lateral_condutor" />
-        <activity android:name=".mapas.mais_info_mapa_cliente" />
-        <activity android:name=".mapas.mais_info_mapa_condutor" />
-        <activity android:name=".pesquisar_utilizador" />
-        <activity android:name=".barra_lateral.barra_lateral_pro" />
-        <activity android:name=".perfis.perfil_cliente" />
-        <activity android:name=".perfis.perfil_cliente_edit" />
-        <activity android:name=".marcar_viagem" />
-        <activity android:name=".classificar.classificar_condutor" />
-        <activity android:name=".classificar.classificar_viagem" />
+        <activity android:name=".menus.menu_motorista" android:noHistory="true"/>
+        <activity android:name=".barra_lateral.barra_lateral_condutor" android:noHistory="true" />
+        <activity android:name=".mapas.mais_info_mapa_cliente" android:noHistory="true"/>
+        <activity android:name=".mapas.mais_info_mapa_condutor" android:noHistory="true" />
+        <activity android:name=".pesquisar_utilizador" android:noHistory="true"/>
+        <activity android:name=".barra_lateral.barra_lateral_pro" android:noHistory="true" />
+        <activity android:name=".perfis.perfil_cliente" android:noHistory="true"/>
+        <activity android:name=".perfis.perfil_cliente_edit" android:noHistory="true"/>
+        <activity android:name=".Marcar_viagem" android:noHistory="true"/>
+        <activity android:name=".classificar.classificar_condutor" android:noHistory="true"/>
+        <activity android:name=".classificar.classificar_viagem" android:noHistory="true"/>
         <!--
         <activity
             android:name="com.esri.arcgisruntime.security.DefaultOAuthIntentReceiver"

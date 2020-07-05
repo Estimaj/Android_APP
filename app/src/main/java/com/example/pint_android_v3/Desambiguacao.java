@@ -9,12 +9,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.pint_android_v3.menus.menu_motorista;
 import com.example.pint_android_v3.menus.menu_municipe;
 
-public class desambiguacao extends AppCompatActivity {
+public class Desambiguacao extends AppCompatActivity {
 
     Button login_mun;
     Button login_mot;
@@ -59,14 +58,14 @@ public class desambiguacao extends AppCompatActivity {
 
     public void Menu_Go_Motorista()
     {
-        Intent Menu_Intent = new Intent(desambiguacao.this, menu_motorista.class);
+        Intent Menu_Intent = new Intent(Desambiguacao.this, menu_motorista.class);
         Menu_Intent.putExtra("user_id", id);
         startActivity(Menu_Intent);
     }
 
     public void Menu_Go_Cliente()
     {
-        Intent Menu_Intent_Municipe = new Intent(desambiguacao.this, menu_municipe.class);
+        Intent Menu_Intent_Municipe = new Intent(Desambiguacao.this, menu_municipe.class);
         Menu_Intent_Municipe.putExtra("user_id", id);
         startActivity(Menu_Intent_Municipe);
     }

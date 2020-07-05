@@ -1,5 +1,8 @@
 package com.example.pint_android_v3.viagens_efetuadas;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class viagens_efetuadas_array_test {
 
     String[] Local_Partida;

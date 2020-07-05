@@ -54,6 +54,8 @@ public class MainActivity_Login extends AppCompatActivity {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
+
+
         baseDadosInterface =  retrofit.create(BaseDadosInterface.class);
 
         //Log.i("info_AQUI", "ainda n fiz login!!");
@@ -64,6 +66,12 @@ public class MainActivity_Login extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finishAffinity();
     }
 
     private void Login_Start()
@@ -94,7 +102,7 @@ public class MainActivity_Login extends AppCompatActivity {
                             break;
                         }
                         case 6:{ //motorista
-                            Intent I = new Intent(MainActivity_Login.this, desambiguacao.class);
+                            Intent I = new Intent(MainActivity_Login.this, Desambiguacao.class);
                             I.putExtra("User_Login", Mail.getText().toString());
                             I.putExtra("Password_Login", Password.getText().toString());
                             I.putExtra("user_id", response.body().getId());
