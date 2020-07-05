@@ -144,7 +144,6 @@ public class menu_municipe extends barra_lateral_pro {
         Intent Pesquisar = new Intent(menu_municipe.this, pesquisar_utilizador.class);
         Pesquisar.putExtra("user_id", user_id);
         startActivity(Pesquisar);
-        finish();
     }
     public void Clicar_Marcar_Viagem()
     {
