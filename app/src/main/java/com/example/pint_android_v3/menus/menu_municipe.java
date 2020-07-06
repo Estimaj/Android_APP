@@ -15,7 +15,7 @@ import com.example.pint_android_v3.DataBase.BaseDadosInterface;
 import com.example.pint_android_v3.DataBase.DadosUtilizador.Model_User_Information;
 import com.example.pint_android_v3.R;
 import com.example.pint_android_v3.barra_lateral.barra_lateral_pro;
-import com.example.pint_android_v3.marcar_viagem;
+import com.example.pint_android_v3.Marcar_viagem;
 import com.example.pint_android_v3.perfis.perfil_cliente;
 import com.example.pint_android_v3.pesquisar_utilizador;
 import com.example.pint_android_v3.viagens_efetuadas.viagens_efetuadas;
@@ -46,6 +46,7 @@ public class menu_municipe extends barra_lateral_pro {
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
     private Get_user user;
+
 
 
     @Override
@@ -109,6 +110,9 @@ public class menu_municipe extends barra_lateral_pro {
 
     }
 
+
+
+
     public void Clicar_Perfil() //ao clicar na foto de perfil do utilizador
     {
         Intent Perfil = new Intent(menu_municipe.this, perfil_cliente.class);
@@ -143,7 +147,7 @@ public class menu_municipe extends barra_lateral_pro {
     }
     public void Clicar_Marcar_Viagem()
     {
-        Intent Marcar = new Intent(menu_municipe.this, marcar_viagem.class);
+        Intent Marcar = new Intent(menu_municipe.this, Marcar_viagem.class);
         Marcar.putExtra("user_id", user_id);
         startActivity(Marcar);
     }

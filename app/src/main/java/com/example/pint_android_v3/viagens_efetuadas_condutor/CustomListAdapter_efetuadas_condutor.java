@@ -1,4 +1,4 @@
-package com.example.pint_android_v3.viagens_marcadas;
+package com.example.pint_android_v3.viagens_efetuadas_condutor;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import com.example.pint_android_v3.R;
 
-public class CustomListAdapter_marcadas_teste extends BaseAdapter {
+public class CustomListAdapter_efetuadas_condutor extends BaseAdapter {
 
     Context context;
     private final String[] data;
@@ -19,7 +19,7 @@ public class CustomListAdapter_marcadas_teste extends BaseAdapter {
     private final String[] Local_Partida;
     private final String[] hora;
 
-    public CustomListAdapter_marcadas_teste(Context cont, String[] data, String[] tempo, String[] distancia, String[] local_Chegada, String[] local_Partida, String[] hora) {
+    public CustomListAdapter_efetuadas_condutor(Context cont, String[] data, String[] tempo, String[] distancia, String[] local_Chegada, String[] local_Partida, String[] hora) {
 
         context = cont;
         this.data = data;
@@ -32,8 +32,6 @@ public class CustomListAdapter_marcadas_teste extends BaseAdapter {
 
     @Override
     public int getCount() {
-        if(Local_Chegada == null)
-            return 0;
         return Local_Chegada.length;
     }
 
@@ -50,27 +48,27 @@ public class CustomListAdapter_marcadas_teste extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        CustomListAdapter_marcadas_teste.ViewHolder viewHolder;
+        CustomListAdapter_efetuadas_condutor.ViewHolder viewHolder;
         final View result;
 
         if(convertView == null)
         {
-            viewHolder = new CustomListAdapter_marcadas_teste.ViewHolder();
+            viewHolder = new CustomListAdapter_efetuadas_condutor.ViewHolder();
             LayoutInflater inflater = LayoutInflater.from(context);
-            convertView = inflater.inflate(R.layout.viagens_marcadas_adapter, parent, false);
-            viewHolder.txt_data = (TextView)convertView.findViewById(R.id.viagens_marcadas_adapter_data_trip);
-            viewHolder.txt_tempo = (TextView)convertView.findViewById(R.id.viagens_marcadas_adapter_Tempo);
-            viewHolder.txt_distancia = (TextView)convertView.findViewById(R.id.viagens_marcadas_adapter_Distancia);
-            viewHolder.txt_Local_Chegada = (TextView)convertView.findViewById(R.id.viagens_marcadas_adapter_Local_Chegada);
-            viewHolder.txt_Local_Partida = (TextView)convertView.findViewById(R.id.viagens_marcadas_adapter_Local_Partida);
-            viewHolder.txt_hora = (TextView)convertView.findViewById(R.id.viagens_marcadas_adapter_hora_trip);
+            convertView = inflater.inflate(R.layout.viagens_efetuadas_adapter_condutor, parent, false);
+            viewHolder.txt_data = (TextView)convertView.findViewById(R.id.viagens_efetuadas_adapter_data_trip_condutor);
+            viewHolder.txt_tempo = (TextView)convertView.findViewById(R.id.viagens_efetuadas_adapter_Tempo_condutor);
+            viewHolder.txt_distancia = (TextView)convertView.findViewById(R.id.viagens_efetuadas_adapter_Distancia_condutor);
+            viewHolder.txt_Local_Chegada = (TextView)convertView.findViewById(R.id.viagens_efetuadas_adapter_Local_Chegada_condutor);
+            viewHolder.txt_Local_Partida = (TextView)convertView.findViewById(R.id.viagens_efetuadas_adapter_Local_Partida_condutor);
+            viewHolder.txt_hora = (TextView)convertView.findViewById(R.id.viagens_efetuadas_adapter_hora_trip_condutor);
 
             result = convertView;
             convertView.setTag(viewHolder);
         }
         else
         {
-            viewHolder = (CustomListAdapter_marcadas_teste.ViewHolder) convertView.getTag();
+            viewHolder = (CustomListAdapter_efetuadas_condutor.ViewHolder) convertView.getTag();
             result = convertView;
         }
 
@@ -96,4 +94,3 @@ public class CustomListAdapter_marcadas_teste extends BaseAdapter {
 
     }
 }
-

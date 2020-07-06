@@ -2,10 +2,14 @@ package com.example.pint_android_v3.mapas;
 
 import android.content.Intent;
 import android.graphics.Color;
+
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
+
 
 import com.esri.arcgisruntime.concurrent.ListenableFuture;
 import com.esri.arcgisruntime.geometry.Point;
@@ -22,14 +26,18 @@ import com.esri.arcgisruntime.security.DefaultAuthenticationChallengeHandler;
 import com.esri.arcgisruntime.security.OAuthConfiguration;
 import com.esri.arcgisruntime.symbology.SimpleLineSymbol;
 import com.esri.arcgisruntime.symbology.SimpleMarkerSymbol;
+
 import com.esri.arcgisruntime.tasks.networkanalysis.Route;
 import com.esri.arcgisruntime.tasks.networkanalysis.RouteParameters;
+
 import com.esri.arcgisruntime.tasks.networkanalysis.RouteResult;
 import com.esri.arcgisruntime.tasks.networkanalysis.RouteTask;
 import com.esri.arcgisruntime.tasks.networkanalysis.Stop;
-import com.example.pint_android_v3.R;
 import com.example.pint_android_v3.barra_lateral.barra_lateral_condutor;
 import com.example.pint_android_v3.barra_lateral.barra_lateral_pro;
+import com.example.pint_android_v3.R;
+import com.example.pint_android_v3.quem_vai_consigo.quem_vai_consigo;
+import com.example.pint_android_v3.quem_vai_consigo.quem_vai_consigo_condutor;
 
 import java.net.MalformedURLException;
 import java.util.ArrayList;
@@ -50,6 +58,9 @@ public class mais_info_mapa_condutor extends barra_lateral_condutor {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mais_info_mapa_condutor);
 
+        Button Ver_Passageiros = findViewById(R.id.ver_passageiros_mais_info_condutor);
+
+
         // Retrieve the map and initial extent from XML layout
         //1
         mMapView = findViewById(R.id.mapView_mais_info_condutor);
@@ -61,7 +72,7 @@ public class mais_info_mapa_condutor extends barra_lateral_condutor {
         createGraphicsOverlay();
         setupOAuthManager();
 
-       /*Intent X = getIntent();
+        Intent X = getIntent();
         Bundle b = X.getExtras();
         if(b!=null){
             user_id = (int) b.get("user_id");
@@ -69,9 +80,20 @@ public class mais_info_mapa_condutor extends barra_lateral_condutor {
 
         }
 
-        Bar_Settings(user_id);*/
+        Bar_Settings(user_id);
+
 
     }
+
+    public void Click_Quem_Vai(View view){
+
+        Intent Consigo = new Intent(mais_info_mapa_condutor.this, quem_vai_consigo_condutor.class);
+        Consigo.putExtra("user_id", user_id);
+        startActivity(Consigo);
+
+
+    }
+
 
     private void createGraphicsOverlay() {
         mGraphicsOverlay = new GraphicsOverlay();
@@ -220,6 +242,7 @@ public class mais_info_mapa_condutor extends barra_lateral_condutor {
         }
         super.onDestroy();
     }
+
 
 
 

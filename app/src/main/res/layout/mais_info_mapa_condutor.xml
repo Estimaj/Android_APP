@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.google.android.gms.maps.MapView
+    <com.esri.arcgisruntime.mapping.view.MapView
         android:id="@+id/mapView_mais_info_condutor"
         android:layout_width="match_parent"
-        android:layout_height="441dp"
+        android:layout_height="440dp"
         android:layout_marginTop="56dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -19,9 +19,10 @@
         android:id="@+id/contentor_mais_info_condutor"
         android:layout_width="match_parent"
         android:layout_height="230dp"
-        app:layout_constraintTop_toBottomOf="@id/mapView_mais_info_condutor"
-        app:srcCompat="@drawable/white_square"
-        tools:layout_editor_absoluteX="0dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/white_square" />
 
     <ImageView
         android:id="@+id/mala_icon_mais_info_condutor"
@@ -167,6 +168,7 @@
         android:layout_marginStart="28dp"
         android:layout_marginTop="175dp"
         android:background="@drawable/ver_pass"
+        android:onClick="Click_Quem_Vai"
         android:text="       Ver Passageiros"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="@id/contentor_mais_info_condutor"

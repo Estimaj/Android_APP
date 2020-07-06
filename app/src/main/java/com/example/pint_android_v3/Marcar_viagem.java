@@ -36,7 +36,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class marcar_viagem extends barra_lateral_pro implements DatePickerDialog.OnDateSetListener{
+public class Marcar_viagem extends barra_lateral_pro implements DatePickerDialog.OnDateSetListener{
 
     private String BASE_URL ="http://10.0.2.2:3000";
 
@@ -316,7 +316,7 @@ public class marcar_viagem extends barra_lateral_pro implements DatePickerDialog
                 makeToastForMarcar("yes");
                 criarPedido_viagem();
                 //mudar de intent
-                Intent Viagens = new Intent(marcar_viagem.this, menu_municipe.class);
+                Intent Viagens = new Intent(Marcar_viagem.this, menu_municipe.class);
                 Viagens.putExtra("user_id", user_id);
                 startActivity(Viagens);
             }
@@ -381,7 +381,7 @@ public class marcar_viagem extends barra_lateral_pro implements DatePickerDialog
 
 
     public void makeToastForMarcar(String msg){
-        Toast.makeText(marcar_viagem.this, msg,
+        Toast.makeText(Marcar_viagem.this, msg,
                 Toast.LENGTH_LONG).show();
     }
 }
