@@ -113,20 +113,21 @@ public class perfil_cliente extends barra_lateral_pro {
     public int getIdadeUser(String dataNascimento){
         if(dataNascimento == null) return 0;
         int idade;
+        Log.i("idade", dataNascimento);
         //get data nascimento separado dia[0] mes[1] ano[2]
         String dividindoDataNascimento[]= dataNascimento.split("\\W");//dividir a data nascimento em numeros separados... o \\W é a dizer que o separador é '/'
 
         //get data current separado dia[0] mes[1] ano[2]
-        SimpleDateFormat formatter= new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat formatter= new SimpleDateFormat("yyyy/MM/dd");
         Date date = new Date(System.currentTimeMillis());
         String dividindoDataCurrent [] = formatter.format(date).split("\\W");
 
-        idade = Integer.parseInt(dividindoDataCurrent[2]) - Integer.parseInt(dividindoDataNascimento[2]);
-        if(Integer.parseInt(dividindoDataNascimento[1]) > Integer.parseInt(dividindoDataCurrent[1])){ //comparar dia
+        idade = Integer.parseInt(dividindoDataCurrent[0]) - Integer.parseInt(dividindoDataNascimento[0]);
+        if(Integer.parseInt(dividindoDataNascimento[1]) > Integer.parseInt(dividindoDataCurrent[1])){ //comparar mes
             idade --;
         }
         else if(Integer.parseInt(dividindoDataNascimento[1]) == Integer.parseInt(dividindoDataCurrent[1])){
-            if(Integer.parseInt(dividindoDataNascimento[0]) > Integer.parseInt(dividindoDataCurrent[0])){
+            if(Integer.parseInt(dividindoDataNascimento[2]) > Integer.parseInt(dividindoDataCurrent[2])){ //compara o dia
                 idade--;
             }
         }

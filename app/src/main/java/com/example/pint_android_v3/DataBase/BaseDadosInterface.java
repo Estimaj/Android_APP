@@ -2,6 +2,7 @@ package com.example.pint_android_v3.DataBase;
 
 import com.example.pint_android_v3.DataBase.DadosUtilizador.Model_User_Information;
 import com.example.pint_android_v3.DataBase.ViagensEfetuadas.Model_Viagens_Efetuadas;
+import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 
 import java.util.HashMap;
 
@@ -19,7 +20,7 @@ public interface BaseDadosInterface {
     @GET("/muv/get/{id}")
     Call<Model_User_Information> executeGetUser(@Path("id") int id);
 
-    @POST("/muv/pedidos/criar")
+    @POST("/muv/pedidos/criarmobile")
     Call<Pedido_Viagem> executeCriarPedidoViagem(@Body Pedido_Viagem pedido_viagem);
 
     @GET("muv/percurso/get/{id}")

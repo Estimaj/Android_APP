@@ -21,6 +21,10 @@ public class viagem {
     @Expose
     private String hora_viagem;
 
+    @SerializedName("viagem_efetuada")
+    @Expose
+    private int viagem_efetuada;
+
     public int getId_viagem() {
         return id_viagem;
     }
@@ -35,6 +39,10 @@ public class viagem {
 
     public String getHora_viagem() {
         return hora_viagem;
+    }
+
+    public int getViagem_efetuada() {
+        return viagem_efetuada;
     }
 
     @Override

@@ -32,6 +32,7 @@ public class CustomListAdapter_efetuadas_condutor extends BaseAdapter {
 
     @Override
     public int getCount() {
+        if(Local_Chegada == null) return 0;
         return Local_Chegada.length;
     }
 

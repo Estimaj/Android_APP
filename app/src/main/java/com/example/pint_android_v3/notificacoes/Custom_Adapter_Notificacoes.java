@@ -27,6 +27,7 @@ public class Custom_Adapter_Notificacoes extends BaseAdapter {
 
     @Override
     public int getCount() {
+        if(data == null) return 0;
         return data.length;
     }
 

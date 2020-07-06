@@ -93,8 +93,8 @@ public class viagens_efetuadas extends barra_lateral_pro {
                     Log.i("Erro", "L99 viagens efetuadas");
                 }
                 if (response.code() == 200){
-                    if (response.body() != null) {
-                        Log.i("body", "" + response.body().getDataViagem().get(0).toString());
+                    if (response.body().getDataViagem() != null) {
+                        //Log.i("body", "" + response.body().getDataViagem().get(0).toString());
                         //Log.i("viagem", ""+ response.body().getDataViagem().get(0).getViagemRegistada().toString());
                         informacaoViagem = response.body().getDataViagem();
                         createAdapters();
@@ -125,14 +125,16 @@ public class viagens_efetuadas extends barra_lateral_pro {
         ArrayList<String> hora = new ArrayList<>();
 
         for (int i = 0; i < informacaoViagem.size(); i++) {
-            Local_Partida.add(informacaoViagem.get(i).getLocalidade_Origem().getNome_localidade());
-            Local_Chegada.add(informacaoViagem.get(i).getLocalidade_Destino().getNome_localidade());
+            if(informacaoViagem.get(i).getViagemRegistada().getViagem_efetuada() == 1) {
+                Local_Partida.add(informacaoViagem.get(i).getLocalidade_Origem().getNome_localidade());
+                Local_Chegada.add(informacaoViagem.get(i).getLocalidade_Destino().getNome_localidade());
 
-            distancia.add("1");
-            tempo.add("1");
+                distancia.add("1");
+                tempo.add("1");
 
-            data.add(informacaoViagem.get(i).getViagemRegistada().getDia_viagem());
-            hora.add(informacaoViagem.get(i).getViagemRegistada().getHora_viagem());
+                data.add(informacaoViagem.get(i).getViagemRegistada().getDia_viagem());
+                hora.add(informacaoViagem.get(i).getViagemRegistada().getHora_viagem());
+            }
         }
         viagens_efetuadas_array_test lItems = new viagens_efetuadas_array_test(Local_Partida, Local_Chegada, distancia, tempo, data, hora);
 
