@@ -20,6 +20,7 @@
         <activity android:name=".Cancelar_Viagem" android:noHistory="true"/>
         <activity android:name=".notificacoes.notificacoes_mais_info" android:noHistory="true"/>
         <activity android:name=".notificacoes.notificacoes" android:noHistory="true"/>
+        <activity android:name=".notificacoes.notificacoes_condutor" android:noHistory="true"/>
         <activity android:name=".quem_vai_consigo.quem_vai_consigo" android:noHistory="true"/>
         <activity android:name=".viagens_marcadas.viagens_marcadas" android:noHistory="true" />
         <activity android:name=".viagens_efetuadas.viagens_efetuadas" android:noHistory="true" />

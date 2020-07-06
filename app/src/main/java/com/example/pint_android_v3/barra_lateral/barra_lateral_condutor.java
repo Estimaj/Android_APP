@@ -17,6 +17,8 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import com.example.pint_android_v3.MainActivity_Login;
 import com.example.pint_android_v3.R;
 import com.example.pint_android_v3.menus.menu_motorista;
+import com.example.pint_android_v3.notificacoes.notificacoes;
+import com.example.pint_android_v3.notificacoes.notificacoes_condutor;
 import com.example.pint_android_v3.perfis.perfil_motorista;
 import com.google.android.material.navigation.NavigationView;
 
@@ -55,6 +57,10 @@ public class barra_lateral_condutor extends AppCompatActivity implements Navigat
                 homePage.putExtra("user_id", user_id);
                 startActivity(homePage);
                 break;
+            case R.id.Notif_btn_menu:
+                Intent notPage = new Intent(this, notificacoes_condutor.class);
+                notPage.putExtra("user_id", user_id);
+                startActivity(notPage);
             //Criar activity Notificações
             //Default?
             //Trocar perfil_motorista por municipe

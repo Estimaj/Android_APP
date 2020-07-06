@@ -68,6 +68,7 @@
         android:layout_height="25dp"
         android:layout_marginStart="80dp"
         android:layout_marginBottom="204dp"
+        android:alpha="0"
         android:background="@drawable/edit_button_bg"
         android:drawableLeft="@drawable/edit_solid_black_perfil_motorista_edit"
         android:drawablePadding="-1sp"
