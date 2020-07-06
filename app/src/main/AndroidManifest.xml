@@ -19,6 +19,7 @@
         <activity android:name=".servico_decorrer.servico_a_decorrer" android:noHistory="true"/>
         <activity android:name=".Cancelar_Viagem" android:noHistory="true"/>
         <activity android:name=".notificacoes.notificacoes_mais_info" android:noHistory="true"/>
+        <activity android:name=".notificacoes.notificacoes_mais_info_condutor" android:noHistory="true"/>
         <activity android:name=".notificacoes.notificacoes" android:noHistory="true"/>
         <activity android:name=".notificacoes.notificacoes_condutor" android:noHistory="true"/>
         <activity android:name=".quem_vai_consigo.quem_vai_consigo" android:noHistory="true"/>

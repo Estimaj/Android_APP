@@ -4,81 +4,79 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Cancelar_Viagem"
-    android:background="@color/Black">
+    android:background="@color/Black"
+    tools:context=".Cancelar_Viagem">
 
     <ImageView
         android:id="@+id/bg_white_cancelar_viagem"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
         android:layout_marginBottom="50dp"
-        android:src="@drawable/spinner_background_white"/>
+        android:src="@drawable/spinner_background_white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/cancelar_X_botton_cancelar_viagem"
         android:layout_width="45dp"
         android:layout_height="45dp"
-        app:layout_constraintStart_toStartOf="@id/bg_white_cancelar_viagem"
-        app:layout_constraintEnd_toEndOf="@id/bg_white_cancelar_viagem"
-        app:layout_constraintTop_toTopOf="@id/bg_white_cancelar_viagem"
         android:layout_marginLeft="295dp"
         android:layout_marginTop="9dp"
-        android:background="@drawable/no_bottom_option_cancelar_viagem"/>
+        android:background="@drawable/no_bottom_option_cancelar_viagem"
+        app:layout_constraintEnd_toEndOf="@id/bg_white_cancelar_viagem"
+        app:layout_constraintStart_toStartOf="@id/bg_white_cancelar_viagem"
+        app:layout_constraintTop_toTopOf="@id/bg_white_cancelar_viagem" />
 
     <TextView
         android:id="@+id/Deseja_cancelar_Viagem_cancelar_viagem"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
         android:text="Deseja Cancelar a Viagem?"
         android:textColor="@color/Black"
         android:textSize="25sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@id/bg_white_cancelar_viagem"
-        app:layout_constraintTop_toTopOf="@id/bg_white_cancelar_viagem"
         app:layout_constraintEnd_toEndOf="@id/bg_white_cancelar_viagem"
-        android:layout_marginTop="11dp"
-        />
+        app:layout_constraintStart_toStartOf="@id/bg_white_cancelar_viagem"
+        app:layout_constraintTop_toTopOf="@id/bg_white_cancelar_viagem" />
 
     <ImageView
         android:id="@+id/black_line_separadora_cancelar_viagem"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        app:layout_constraintStart_toStartOf="@id/bg_white_cancelar_viagem"
-        app:layout_constraintTop_toBottomOf="@id/Deseja_cancelar_Viagem_cancelar_viagem"
-        app:layout_constraintEnd_toEndOf="@id/bg_white_cancelar_viagem"
-        android:layout_marginTop="20dp"
         android:layout_marginLeft="35dp"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="35dp"
-        android:src="@color/Black"/>
+        android:src="@color/Black"
+        app:layout_constraintEnd_toEndOf="@id/bg_white_cancelar_viagem"
+        app:layout_constraintStart_toStartOf="@id/bg_white_cancelar_viagem"
+        app:layout_constraintTop_toBottomOf="@id/Deseja_cancelar_Viagem_cancelar_viagem" />
 
     <TextView
         android:id="@+id/Detalhes_viagem_a_cancelar_cancelar_viagem"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:text="Detalhes da viagem a cancelar:"
         android:textColor="@color/DarkGray"
         android:textSize="14sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="@id/black_line_separadora_cancelar_viagem"
-        app:layout_constraintStart_toStartOf="@id/bg_white_cancelar_viagem"
         app:layout_constraintEnd_toEndOf="@id/bg_white_cancelar_viagem"
-        android:layout_marginTop="8dp"
-        />
+        app:layout_constraintStart_toStartOf="@id/bg_white_cancelar_viagem"
+        app:layout_constraintTop_toTopOf="@id/black_line_separadora_cancelar_viagem" />
 
     <!--Marker secção-->
     <ImageView
         android:id="@+id/imageView_origem_bg_cancelar_viagem"
         android:layout_width="350dp"
         android:layout_height="40dp"
-        android:layout_marginTop="15dp"
         android:layout_marginLeft="35dp"
+        android:layout_marginTop="15dp"
         android:layout_marginRight="35dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -127,15 +125,14 @@
         android:id="@+id/destino_viagem_cancelar_viagem"
         android:layout_width="350dp"
         android:layout_height="40dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="35dp"
-        android:layout_marginRight="35dp"
-        app:layout_constraintTop_toBottomOf="@id/imageView_origem_bg_cancelar_viagem"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="10dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="35dp"
         android:background="@drawable/white_square_shadow"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageView_origem_bg_cancelar_viagem" />
 
     <ImageView
         android:id="@+id/icon_marker_destino_viagem_cancelar_viagem"
@@ -143,49 +140,45 @@
         android:layout_height="35dp"
         android:layout_marginStart="15dp"
         android:layout_marginLeft="5dp"
-        app:layout_constraintTop_toTopOf="@id/destino_viagem_cancelar_viagem"
         app:layout_constraintBottom_toBottomOf="@id/destino_viagem_cancelar_viagem"
         app:layout_constraintStart_toStartOf="@id/destino_viagem_cancelar_viagem"
-        app:srcCompat="@drawable/marker_icon_solid"
-        />
+        app:layout_constraintTop_toTopOf="@id/destino_viagem_cancelar_viagem"
+        app:srcCompat="@drawable/marker_icon_solid" />
 
     <TextView
         android:id="@+id/textView_destino_viagem_cancelar_viagem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="@id/destino_viagem_cancelar_viagem"
-        app:layout_constraintStart_toEndOf="@id/icon_marker_destino_viagem_cancelar_viagem"
-        android:text="Destino"
-        android:textSize="12sp"
-        android:textColor="@color/Black"
-        android:layout_marginTop="5dp"
         android:layout_marginLeft="10dp"
-        />
+        android:layout_marginTop="5dp"
+        android:text="Destino"
+        android:textColor="@color/Black"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@id/icon_marker_destino_viagem_cancelar_viagem"
+        app:layout_constraintTop_toTopOf="@id/destino_viagem_cancelar_viagem" />
 
     <TextView
         android:id="@+id/local_user_textView_destino_viagem_cancelar_viagem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/textView_destino_viagem_cancelar_viagem"
-        app:layout_constraintStart_toStartOf="@id/textView_destino_viagem_cancelar_viagem"
-        android:textSize="12sp"
         android:text="..."
-        />
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@id/textView_destino_viagem_cancelar_viagem"
+        app:layout_constraintTop_toBottomOf="@id/textView_destino_viagem_cancelar_viagem" />
 
     <!--Hora-->
     <ImageView
         android:id="@+id/hora_viagem_cancelar_viagem"
         android:layout_width="350dp"
         android:layout_height="40dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="35dp"
-        android:layout_marginRight="35dp"
-        app:layout_constraintTop_toBottomOf="@id/destino_viagem_cancelar_viagem"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="10dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="35dp"
         android:background="@drawable/white_square_shadow"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/destino_viagem_cancelar_viagem" />
 
     <ImageView
         android:id="@+id/clock_icon_hora_viagem_cancelar_viagem"
@@ -193,49 +186,45 @@
         android:layout_height="35dp"
         android:layout_marginStart="15dp"
         android:layout_marginLeft="5dp"
-        app:layout_constraintTop_toTopOf="@id/hora_viagem_cancelar_viagem"
         app:layout_constraintBottom_toBottomOf="@id/hora_viagem_cancelar_viagem"
         app:layout_constraintStart_toStartOf="@id/hora_viagem_cancelar_viagem"
-        app:srcCompat="@drawable/clock_marcar_viagem"
-        />
+        app:layout_constraintTop_toTopOf="@id/hora_viagem_cancelar_viagem"
+        app:srcCompat="@drawable/clock_marcar_viagem" />
 
     <TextView
         android:id="@+id/textView_hora_viagem_cancelar_viagem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="@id/hora_viagem_cancelar_viagem"
-        app:layout_constraintStart_toEndOf="@id/clock_icon_hora_viagem_cancelar_viagem"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
         android:text="Hora"
         android:textColor="@color/Black"
 
         android:textSize="12sp"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="10dp"
-        />
+        app:layout_constraintStart_toEndOf="@id/clock_icon_hora_viagem_cancelar_viagem"
+        app:layout_constraintTop_toTopOf="@id/hora_viagem_cancelar_viagem" />
 
     <TextView
         android:id="@+id/local_user_textView_hora_viagem_cancelar_viagem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/textView_hora_viagem_cancelar_viagem"
-        app:layout_constraintStart_toStartOf="@id/textView_hora_viagem_cancelar_viagem"
         android:text="00:00h"
         android:textSize="12sp"
-        />
+        app:layout_constraintStart_toStartOf="@id/textView_hora_viagem_cancelar_viagem"
+        app:layout_constraintTop_toBottomOf="@id/textView_hora_viagem_cancelar_viagem" />
 
     <!--Dia-->
     <ImageView
         android:id="@+id/dia_viagem_cancelar_viagem"
         android:layout_width="350dp"
         android:layout_height="40dp"
-        android:layout_marginTop="15dp"
         android:layout_marginLeft="35dp"
+        android:layout_marginTop="15dp"
         android:layout_marginRight="35dp"
-        app:layout_constraintTop_toBottomOf="@id/hora_viagem_cancelar_viagem"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:background="@drawable/white_square_shadow"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/hora_viagem_cancelar_viagem" />
 
     <ImageView
         android:id="@+id/agenda_icon_dia_viagem_cancelar_viagem"
@@ -243,48 +232,44 @@
         android:layout_height="35dp"
         android:layout_marginStart="15dp"
         android:layout_marginLeft="5dp"
-        app:layout_constraintTop_toTopOf="@id/dia_viagem_cancelar_viagem"
         app:layout_constraintBottom_toBottomOf="@id/dia_viagem_cancelar_viagem"
         app:layout_constraintStart_toStartOf="@id/dia_viagem_cancelar_viagem"
-        app:srcCompat="@drawable/agenda_marcar_viagem"
-        />
+        app:layout_constraintTop_toTopOf="@id/dia_viagem_cancelar_viagem"
+        app:srcCompat="@drawable/agenda_marcar_viagem" />
 
     <TextView
         android:id="@+id/textView_dia_viagem_cancelar_viagem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="@id/dia_viagem_cancelar_viagem"
-        app:layout_constraintStart_toEndOf="@id/agenda_icon_dia_viagem_cancelar_viagem"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
         android:text="Dia"
         android:textColor="@color/Black"
         android:textSize="12sp"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="10dp"
-        />
+        app:layout_constraintStart_toEndOf="@id/agenda_icon_dia_viagem_cancelar_viagem"
+        app:layout_constraintTop_toTopOf="@id/dia_viagem_cancelar_viagem" />
 
     <TextView
         android:id="@+id/local_user_textView_dia_viagem_cancelar_viagem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/textView_dia_viagem_cancelar_viagem"
-        app:layout_constraintStart_toStartOf="@id/textView_dia_viagem_cancelar_viagem"
         android:text="00/00/0000"
         android:textSize="12sp"
-        />
+        app:layout_constraintStart_toStartOf="@id/textView_dia_viagem_cancelar_viagem"
+        app:layout_constraintTop_toBottomOf="@id/textView_dia_viagem_cancelar_viagem" />
 
     <!--Taxa Desconto-->
     <ImageView
         android:id="@+id/taxa_desconto_viagem_cancelar_viagem"
         android:layout_width="350dp"
         android:layout_height="40dp"
-        android:layout_marginTop="15dp"
         android:layout_marginLeft="35dp"
+        android:layout_marginTop="15dp"
         android:layout_marginRight="35dp"
-        app:layout_constraintTop_toBottomOf="@id/dia_viagem_cancelar_viagem"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:background="@drawable/white_square_shadow"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dia_viagem_cancelar_viagem" />
 
     <ImageView
         android:id="@+id/euro_simbolo_icon_taxa_desconto_viagem_cancelar_viagem"
@@ -292,47 +277,43 @@
         android:layout_height="35dp"
         android:layout_marginStart="15dp"
         android:layout_marginLeft="5dp"
-        app:layout_constraintTop_toTopOf="@id/taxa_desconto_viagem_cancelar_viagem"
         app:layout_constraintBottom_toBottomOf="@id/taxa_desconto_viagem_cancelar_viagem"
         app:layout_constraintStart_toStartOf="@id/taxa_desconto_viagem_cancelar_viagem"
-        app:srcCompat="@drawable/euro_simbolo_icon"
-        />
+        app:layout_constraintTop_toTopOf="@id/taxa_desconto_viagem_cancelar_viagem"
+        app:srcCompat="@drawable/euro_simbolo_icon" />
 
     <TextView
         android:id="@+id/textView_taxa_desconto_viagem_cancelar_viagem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="@id/taxa_desconto_viagem_cancelar_viagem"
-        app:layout_constraintStart_toEndOf="@id/euro_simbolo_icon_taxa_desconto_viagem_cancelar_viagem"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
         android:text="Taxa de Desconto"
         android:textColor="@color/Black"
         android:textSize="12sp"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="10dp"
-        />
+        app:layout_constraintStart_toEndOf="@id/euro_simbolo_icon_taxa_desconto_viagem_cancelar_viagem"
+        app:layout_constraintTop_toTopOf="@id/taxa_desconto_viagem_cancelar_viagem" />
 
     <TextView
         android:id="@+id/local_user_textView_taxa_desconto_viagem_cancelar_viagem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/textView_taxa_desconto_viagem_cancelar_viagem"
-        app:layout_constraintStart_toStartOf="@id/textView_taxa_desconto_viagem_cancelar_viagem"
         android:text="0 €"
         android:textSize="12sp"
-        />
+        app:layout_constraintStart_toStartOf="@id/textView_taxa_desconto_viagem_cancelar_viagem"
+        app:layout_constraintTop_toBottomOf="@id/textView_taxa_desconto_viagem_cancelar_viagem" />
     <!--Distancia-->
     <ImageView
         android:id="@+id/distancia_viagem_cancelar_viagem"
         android:layout_width="350dp"
         android:layout_height="40dp"
-        android:layout_marginTop="15dp"
         android:layout_marginLeft="35dp"
+        android:layout_marginTop="15dp"
         android:layout_marginRight="35dp"
-        app:layout_constraintTop_toBottomOf="@id/taxa_desconto_viagem_cancelar_viagem"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:background="@drawable/white_square_shadow"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/taxa_desconto_viagem_cancelar_viagem" />
 
     <ImageView
         android:id="@+id/euro_simbolo_icon_distancia_viagem_cancelar_viagem"
@@ -340,47 +321,43 @@
         android:layout_height="35dp"
         android:layout_marginStart="15dp"
         android:layout_marginLeft="5dp"
-        app:layout_constraintTop_toTopOf="@id/distancia_viagem_cancelar_viagem"
         app:layout_constraintBottom_toBottomOf="@id/distancia_viagem_cancelar_viagem"
         app:layout_constraintStart_toStartOf="@id/distancia_viagem_cancelar_viagem"
-        app:srcCompat="@drawable/icon_viagem_marcar"
-        />
+        app:layout_constraintTop_toTopOf="@id/distancia_viagem_cancelar_viagem"
+        app:srcCompat="@drawable/icon_viagem_marcar" />
 
     <TextView
         android:id="@+id/textView_distancia_viagem_cancelar_viagem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="@id/distancia_viagem_cancelar_viagem"
-        app:layout_constraintStart_toEndOf="@id/euro_simbolo_icon_distancia_viagem_cancelar_viagem"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
         android:text="Distância"
         android:textColor="@color/Black"
         android:textSize="12sp"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="10dp"
-        />
+        app:layout_constraintStart_toEndOf="@id/euro_simbolo_icon_distancia_viagem_cancelar_viagem"
+        app:layout_constraintTop_toTopOf="@id/distancia_viagem_cancelar_viagem" />
 
     <TextView
         android:id="@+id/local_user_textView_distancia_viagem_cancelar_viagem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/textView_distancia_viagem_cancelar_viagem"
-        app:layout_constraintStart_toStartOf="@id/textView_distancia_viagem_cancelar_viagem"
         android:text="0,0 km"
         android:textSize="12sp"
-        />
+        app:layout_constraintStart_toStartOf="@id/textView_distancia_viagem_cancelar_viagem"
+        app:layout_constraintTop_toBottomOf="@id/textView_distancia_viagem_cancelar_viagem" />
     <!--Total a Receber-->
     <ImageView
         android:id="@+id/total_a_receber_viagem_cancelar_viagem"
         android:layout_width="350dp"
         android:layout_height="40dp"
-        android:layout_marginTop="15dp"
         android:layout_marginLeft="35dp"
+        android:layout_marginTop="15dp"
         android:layout_marginRight="35dp"
-        app:layout_constraintTop_toBottomOf="@id/distancia_viagem_cancelar_viagem"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:background="@drawable/white_square_shadow"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/distancia_viagem_cancelar_viagem" />
 
     <ImageView
         android:id="@+id/euro_simbolo_icon_total_a_receber_viagem_cancelar_viagem"
@@ -388,46 +365,44 @@
         android:layout_height="35dp"
         android:layout_marginStart="15dp"
         android:layout_marginLeft="5dp"
-        app:layout_constraintTop_toTopOf="@id/total_a_receber_viagem_cancelar_viagem"
         app:layout_constraintBottom_toBottomOf="@id/total_a_receber_viagem_cancelar_viagem"
         app:layout_constraintStart_toStartOf="@id/total_a_receber_viagem_cancelar_viagem"
-        app:srcCompat="@drawable/euro_money_icon"
-        />
+        app:layout_constraintTop_toTopOf="@id/total_a_receber_viagem_cancelar_viagem"
+        app:srcCompat="@drawable/euro_money_icon" />
 
     <TextView
         android:id="@+id/textView_total_a_receber_viagem_cancelar_viagem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="@id/total_a_receber_viagem_cancelar_viagem"
-        app:layout_constraintStart_toEndOf="@id/euro_simbolo_icon_total_a_receber_viagem_cancelar_viagem"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
         android:text="Total a Receber"
         android:textColor="@color/Black"
         android:textSize="12sp"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="10dp"
-        />
+        app:layout_constraintStart_toEndOf="@id/euro_simbolo_icon_total_a_receber_viagem_cancelar_viagem"
+        app:layout_constraintTop_toTopOf="@id/total_a_receber_viagem_cancelar_viagem" />
 
     <TextView
         android:id="@+id/local_user_textView_total_a_receber_viagem_cancelar_viagem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/textView_total_a_receber_viagem_cancelar_viagem"
-        app:layout_constraintStart_toStartOf="@id/textView_total_a_receber_viagem_cancelar_viagem"
         android:text="0 €"
         android:textSize="12sp"
-        />
+        app:layout_constraintStart_toStartOf="@id/textView_total_a_receber_viagem_cancelar_viagem"
+        app:layout_constraintTop_toBottomOf="@id/textView_total_a_receber_viagem_cancelar_viagem" />
 
     <!--Cancelar bottom-->
     <Button
         android:id="@+id/cancelar_cancelar_viagem_botton_cancelar_viagem"
-        android:layout_width="180dp"
-        android:layout_height="35dp"
-        app:layout_constraintTop_toBottomOf="@id/total_a_receber_viagem_cancelar_viagem"
-        app:layout_constraintStart_toStartOf="@id/bg_white_cancelar_viagem"
-        app:layout_constraintEnd_toEndOf="@id/bg_white_cancelar_viagem"
-        app:layout_constraintBottom_toBottomOf="@id/bg_white_cancelar_viagem"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/botao_class"
         android:text="Cancelar Viagem"
         android:textSize="12sp"
-        android:background="@drawable/botao_class"/>
+        app:layout_constraintEnd_toStartOf="@+id/bg_white_cancelar_viagem"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/bg_white_cancelar_viagem"
+        app:layout_constraintTop_toBottomOf="@+id/total_a_receber_viagem_cancelar_viagem" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

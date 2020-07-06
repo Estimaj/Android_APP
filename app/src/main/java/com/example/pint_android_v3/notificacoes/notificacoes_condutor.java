@@ -49,7 +49,7 @@ public class notificacoes_condutor extends barra_lateral_condutor {
     }
 
     public void MaisInfo(View view){
-        Intent MaisInfo = new Intent(notificacoes_condutor.this, notificacoes_mais_info.class);
+        Intent MaisInfo = new Intent(notificacoes_condutor.this, notificacoes_mais_info_condutor.class);
         MaisInfo.putExtra("user_id", user_id);
         startActivity(MaisInfo);
     }
