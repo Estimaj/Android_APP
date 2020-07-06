@@ -203,27 +203,6 @@
                 app:layout_constraintTop_toBottomOf="@id/tripulante_localidade_1_quem_vai_consigo_condutor"
                 app:srcCompat="@drawable/dog_icon_marcar" />
 
-            <ImageView
-                android:id="@+id/Mais_info_1_button_quem_vai_consigo_condutor"
-                android:layout_width="95dp"
-                android:layout_height="25dp"
-                android:layout_marginStart="320dp"
-                android:layout_marginTop="69dp"
-                app:layout_constraintStart_toStartOf="@id/contentor1_quem_vai_consigo_condutor"
-                app:layout_constraintTop_toTopOf="@id/contentor1_quem_vai_consigo_condutor"
-                app:srcCompat="@drawable/btn_mais_info" />
-
-            <TextView
-                android:id="@+id/Mais_Info_1_Text_quem_vai_consigo_condutor"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="4dp"
-                android:text="Mais Info"
-                android:textSize="13sp"
-                app:layout_constraintStart_toStartOf="@id/Mais_info_1_button_quem_vai_consigo_condutor"
-                app:layout_constraintTop_toTopOf="@id/Mais_info_1_button_quem_vai_consigo_condutor" />
-
             <TextView
                 android:id="@+id/canideo_quantidade1_text_quem_vai_consigo_condutor"
                 android:layout_width="wrap_content"
@@ -250,11 +229,12 @@
 
             <ImageView
                 android:id="@+id/btn_pagamento_1_quem_vai_consigo_condutor"
-                android:layout_width="100dp"
-                android:layout_height="25dp"
-                android:layout_marginTop="69dp"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginEnd="10dp"
                 android:onClick="Click_Pagamento"
-                app:layout_constraintEnd_toStartOf="@+id/Mais_info_1_button_quem_vai_consigo_condutor"
+                app:layout_constraintEnd_toEndOf="@+id/contentor1_quem_vai_consigo_condutor"
                 app:layout_constraintTop_toTopOf="@+id/contentor1_quem_vai_consigo_condutor"
                 app:srcCompat="@drawable/btn_pagamento" />
 
@@ -262,8 +242,8 @@
                 android:id="@+id/text_pagamento_1_quem_vai_consigo_condutor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="4dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="12dp"
                 android:text="Pagamento"
                 android:textColor="@color/White"
                 android:textSize="13sp"
@@ -345,33 +325,13 @@
                 app:layout_constraintTop_toTopOf="@id/contentor2_quem_vai_consigo2_condutor" />
 
             <ImageView
-                android:id="@+id/Mais_info_2_button_quem_vai_consigo_condutor"
-                android:layout_width="95dp"
-                android:layout_height="25dp"
-                android:layout_marginStart="320dp"
-                android:layout_marginTop="69dp"
-                app:layout_constraintStart_toStartOf="@id/contentor2_quem_vai_consigo2_condutor"
-                app:layout_constraintTop_toTopOf="@id/contentor2_quem_vai_consigo2_condutor"
-                app:srcCompat="@drawable/btn_mais_info" />
-
-            <TextView
-                android:id="@+id/Mais_Info_2_Text_quem_vai_consigo_condutor"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="4dp"
-                android:text="Mais Info"
-                android:textSize="13sp"
-                app:layout_constraintStart_toStartOf="@id/Mais_info_2_button_quem_vai_consigo_condutor"
-                app:layout_constraintTop_toTopOf="@id/Mais_info_2_button_quem_vai_consigo_condutor" />
-
-            <ImageView
                 android:id="@+id/btn_pagamento_2_quem_vai_consigo_condutor"
-                android:layout_width="100dp"
-                android:layout_height="25dp"
-                android:layout_marginTop="69dp"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginEnd="10dp"
                 android:onClick="Click_Pagamento"
-                app:layout_constraintEnd_toStartOf="@+id/Mais_info_2_button_quem_vai_consigo_condutor"
+                app:layout_constraintEnd_toEndOf="@+id/contentor2_quem_vai_consigo2_condutor"
                 app:layout_constraintTop_toTopOf="@+id/contentor2_quem_vai_consigo2_condutor"
                 app:srcCompat="@drawable/btn_pagamento" />
 
@@ -379,8 +339,8 @@
                 android:id="@+id/text_pagamento_2_quem_vai_consigo_condutor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="4dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="12dp"
                 android:text="Pagamento"
                 android:textColor="@color/White"
                 android:textSize="13sp"
@@ -461,33 +421,13 @@
                 app:layout_constraintTop_toTopOf="@id/contentor3_quem_vai_consigo_condutor" />
 
             <ImageView
-                android:id="@+id/Mais_info_3_button_quem_vai_consigo_condutor"
-                android:layout_width="95dp"
-                android:layout_height="25dp"
-                android:layout_marginStart="320dp"
-                android:layout_marginTop="69dp"
-                app:layout_constraintStart_toStartOf="@id/contentor3_quem_vai_consigo_condutor"
-                app:layout_constraintTop_toTopOf="@id/contentor3_quem_vai_consigo_condutor"
-                app:srcCompat="@drawable/btn_mais_info" />
-
-            <TextView
-                android:id="@+id/Mais_Info_3_Text_quem_vai_consigo_condutor"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="4dp"
-                android:text="Mais Info"
-                android:textSize="13sp"
-                app:layout_constraintStart_toStartOf="@id/Mais_info_3_button_quem_vai_consigo_condutor"
-                app:layout_constraintTop_toTopOf="@id/Mais_info_3_button_quem_vai_consigo_condutor" />
-
-            <ImageView
                 android:id="@+id/btn_pagamento_3_quem_vai_consigo_condutor"
-                android:layout_width="100dp"
-                android:layout_height="25dp"
-                android:layout_marginTop="69dp"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginEnd="10dp"
                 android:onClick="Click_Pagamento"
-                app:layout_constraintEnd_toStartOf="@+id/Mais_info_3_button_quem_vai_consigo_condutor"
+                app:layout_constraintEnd_toEndOf="@+id/contentor3_quem_vai_consigo_condutor"
                 app:layout_constraintTop_toTopOf="@+id/contentor3_quem_vai_consigo_condutor"
                 app:srcCompat="@drawable/btn_pagamento" />
 
@@ -495,8 +435,8 @@
                 android:id="@+id/text_pagamento_3_quem_vai_consigo_condutor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="4dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="12dp"
                 android:text="Pagamento"
                 android:textColor="@color/White"
                 android:textSize="13sp"
@@ -589,33 +529,13 @@
                 app:srcCompat="@drawable/default_user_icon" />
 
             <ImageView
-                android:id="@+id/Mais_info_4_button_quem_vai_consigo_condutor"
-                android:layout_width="95dp"
-                android:layout_height="25dp"
-                android:layout_marginStart="320dp"
-                android:layout_marginTop="69dp"
-                app:layout_constraintStart_toStartOf="@id/contentor4_quem_vai_consigo2_condutor"
-                app:layout_constraintTop_toTopOf="@id/contentor4_quem_vai_consigo2_condutor"
-                app:srcCompat="@drawable/btn_mais_info" />
-
-            <TextView
-                android:id="@+id/Mais_Info_4_Text_quem_vai_consigo_condutor"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="4dp"
-                android:text="Mais Info"
-                android:textSize="13sp"
-                app:layout_constraintStart_toStartOf="@id/Mais_info_4_button_quem_vai_consigo_condutor"
-                app:layout_constraintTop_toTopOf="@id/Mais_info_4_button_quem_vai_consigo_condutor" />
-
-            <ImageView
                 android:id="@+id/btn_pagamento_4_quem_vai_consigo_condutor"
-                android:layout_width="100dp"
-                android:layout_height="25dp"
-                android:layout_marginTop="69dp"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginEnd="10dp"
                 android:onClick="Click_Pagamento"
-                app:layout_constraintEnd_toStartOf="@+id/Mais_info_4_button_quem_vai_consigo_condutor"
+                app:layout_constraintEnd_toEndOf="@+id/contentor4_quem_vai_consigo2_condutor"
                 app:layout_constraintTop_toTopOf="@+id/contentor4_quem_vai_consigo2_condutor"
                 app:srcCompat="@drawable/btn_pagamento" />
 
@@ -623,8 +543,8 @@
                 android:id="@+id/text_pagamento_4_quem_vai_consigo_condutor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="4dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="12dp"
                 android:text="Pagamento"
                 android:textColor="@color/White"
                 android:textSize="13sp"
@@ -717,33 +637,13 @@
                 app:srcCompat="@drawable/spinner_background_white" />
 
             <ImageView
-                android:id="@+id/Mais_info_5_button_quem_vai_consigo_condutor"
-                android:layout_width="95dp"
-                android:layout_height="25dp"
-                android:layout_marginStart="320dp"
-                android:layout_marginTop="69dp"
-                app:layout_constraintStart_toStartOf="@id/contentor5_quem_vai_consigo3_condutor"
-                app:layout_constraintTop_toTopOf="@id/contentor5_quem_vai_consigo3_condutor"
-                app:srcCompat="@drawable/btn_mais_info" />
-
-            <TextView
-                android:id="@+id/Mais_Info_5_Text_quem_vai_consigo_condutor"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="4dp"
-                android:text="Mais Info"
-                android:textSize="13sp"
-                app:layout_constraintStart_toStartOf="@id/Mais_info_5_button_quem_vai_consigo_condutor"
-                app:layout_constraintTop_toTopOf="@id/Mais_info_5_button_quem_vai_consigo_condutor" />
-
-            <ImageView
                 android:id="@+id/btn_pagamento_5_quem_vai_consigo_condutor"
-                android:layout_width="100dp"
-                android:layout_height="25dp"
-                android:layout_marginTop="69dp"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginEnd="10dp"
                 android:onClick="Click_Pagamento"
-                app:layout_constraintEnd_toStartOf="@+id/Mais_info_5_button_quem_vai_consigo_condutor"
+                app:layout_constraintEnd_toEndOf="@+id/contentor5_quem_vai_consigo3_condutor"
                 app:layout_constraintTop_toTopOf="@+id/contentor5_quem_vai_consigo3_condutor"
                 app:srcCompat="@drawable/btn_pagamento" />
 
@@ -751,34 +651,13 @@
                 android:id="@+id/text_pagamento_5_quem_vai_consigo_condutor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="4dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="12dp"
                 android:text="Pagamento"
                 android:textColor="@color/White"
                 android:textSize="13sp"
                 app:layout_constraintStart_toStartOf="@+id/btn_pagamento_5_quem_vai_consigo_condutor"
                 app:layout_constraintTop_toTopOf="@+id/btn_pagamento_5_quem_vai_consigo_condutor" />
-
-            <ImageView
-                android:id="@+id/imageView3_condutor"
-                android:layout_width="95dp"
-                android:layout_height="25dp"
-                android:layout_marginStart="320dp"
-                android:layout_marginTop="69dp"
-                app:layout_constraintStart_toStartOf="@+id/bg_white_O_seu_condutor_quem_vai_consigo_condutor"
-                app:layout_constraintTop_toTopOf="@+id/bg_white_O_seu_condutor_quem_vai_consigo_condutor"
-                app:srcCompat="@drawable/btn_mais_info" />
-
-            <TextView
-                android:id="@+id/textView6_condutor"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="4dp"
-                android:text="Mais Info"
-                android:textSize="13sp"
-                app:layout_constraintStart_toStartOf="@+id/imageView3_condutor"
-                app:layout_constraintTop_toTopOf="@+id/imageView3_condutor" />
 
 
             <!--Outros Tripulantes-->
