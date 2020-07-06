@@ -4,9 +4,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.pint_android_v3.DataBase.BaseDadosInterface;
 import com.example.pint_android_v3.DataBase.DadosUtilizador.Model_User_Information;
@@ -36,6 +38,7 @@ public class viagens_efetuadas extends barra_lateral_pro {
     private ArrayList<dataViagem>  informacaoViagem;
 
 
+    TextView btnMaisInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,8 +54,6 @@ public class viagens_efetuadas extends barra_lateral_pro {
         }
         user_id = 4;
         getInformationFromdb(user_id);
-
-
 
         /*
         lView.setOnItemClickListener(new ListView.OnItemClickListener() {
@@ -163,10 +164,23 @@ public class viagens_efetuadas extends barra_lateral_pro {
 
 
     public void maisInfo(View view){ //falta saber como enviar a viagem certa
-        //String user_local_destino = view.findViewById(R.id.viagens_efetuadas_adapter_Local_Partida).toString();
+        Log.i("hm", ""+ view.findViewById(R.id.viagens_efetuadas_adapter_Local_Partida));
+        TextView localPartidatxt = this.findViewById(R.id.viagens_efetuadas_adapter_Local_Partida);
+        TextView localChegadatxt = this.findViewById(R.id.viagens_efetuadas_adapter_Local_Chegada);
 
+        TextView dataViagemtxt = this.findViewById(R.id.viagens_efetuadas_adapter_data_trip);
+        TextView horaViagemtxt = this.findViewById(R.id.viagens_efetuadas_adapter_hora_trip);
+
+        TextView distanciaViagemtxt = this.findViewById(R.id.viagens_efetuadas_adapter_Distancia);
+
+        //Log.i("text",  localPartidatxt.getText().toString() + "|"+ localChegadatxt.getText().toString());
         Intent goMaisInfo = new Intent(viagens_efetuadas.this, mais_info_mapa_cliente.class);
         goMaisInfo.putExtra("user_id", user_id);
+        goMaisInfo.putExtra("localPartida", localPartidatxt.getText());
+        goMaisInfo.putExtra("localChegada", localChegadatxt.getText());
+        goMaisInfo.putExtra("dataViagem", dataViagemtxt.getText());
+        goMaisInfo.putExtra("horaViagem", horaViagemtxt.getText());
+        goMaisInfo.putExtra("distanciaViagem", distanciaViagemtxt.getText());
         startActivity(goMaisInfo);
     }
 

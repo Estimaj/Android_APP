@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -70,12 +71,31 @@ public class mais_info_mapa_cliente extends barra_lateral_pro {
         Bundle b = X.getExtras();
         if(b!=null){
             user_id = (int) b.get("user_id");
-            //Log.i("id_user", ""+ id_user);
+            colocarValoresMaisInfo(b);
 
         }
 
         Bar_Settings(user_id);
 
+
+    }
+
+    private void colocarValoresMaisInfo(Bundle b) {
+        /*goMaisInfo.putExtra("user_id", user_id);
+        goMaisInfo.putExtra("localPartida", localPartidatxt.getText());
+        goMaisInfo.putExtra("localChegada", localChegadatxt.getText());
+        goMaisInfo.putExtra("dataViagem", dataViagemtxt.getText());
+        goMaisInfo.putExtra("horaViagem", horaViagemtxt.getText());
+        goMaisInfo.putExtra("distanciaViagem", distanciaViagemtxt.getText());
+        startActivity(goMaisInfo);*/
+        String localPartida = (String) b.get("localPartida");
+        String localChegada = (String) b.get("localChegada");
+        String distanciaViagem = (String) b.get("distanciaViagem");
+
+        TextView localPartidatxtview = findViewById(R.id.Local_Partida_mais_info_cliente);
+        localPartidatxtview.setText(localPartida);
+        TextView localChegadatxtview = findViewById(R.id.Local_Chegada_mais_info_cliente);
+        localChegadatxtview.setText(localChegada);
 
     }
 

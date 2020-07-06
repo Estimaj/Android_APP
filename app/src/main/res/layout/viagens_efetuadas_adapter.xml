@@ -153,12 +153,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="34dp"
         android:layout_marginTop="14dp"
-        android:onClick="maisInfo"
         android:text="Mais Info"
         android:textSize="13sp"
+        android:onClick="maisInfo"
         app:layout_constraintStart_toStartOf="@id/viagens_efetuadas_adapter_mais_info"
         app:layout_constraintTop_toTopOf="@id/viagens_efetuadas_adapter_mais_info" />
-
+    <!---->
     <TextView
         android:id="@+id/viagens_efetuadas_adapter_Distancia"
         android:layout_width="wrap_content"
