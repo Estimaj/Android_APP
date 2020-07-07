@@ -34,7 +34,7 @@ public class viagens_marcadas extends barra_lateral_pro {
         lItems = new viagens_marcadas_array_test();
         lView = (ListView)findViewById(R.id.viagens_marcadas_listview);
         lAdapter = new CustomListAdapter_marcadas_teste(viagens_marcadas.this,
-                lItems.data, lItems.tempo, lItems.distancia,
+                lItems.data,
                 lItems.Local_Chegada, lItems.Local_Partida,lItems.hora);
 
         lView.setAdapter(lAdapter);
@@ -63,7 +63,7 @@ public class viagens_marcadas extends barra_lateral_pro {
         TextView dataViagemtxt = this.findViewById(R.id.viagens_marcadas_adapter_data_trip);
         TextView horaViagemtxt = this.findViewById(R.id.viagens_marcadas_adapter_hora_trip);
 
-        TextView distanciaViagemtxt = this.findViewById(R.id.viagens_marcadas_adapter_Distancia);
+        //TextView distanciaViagemtxt = this.findViewById(R.id.viagens_marcadas_adapter_Distancia);
 
         //Log.i("text",  localPartidatxt.getText().toString() + "|"+ localChegadatxt.getText().toString());
         Intent goMaisInfo = new Intent(viagens_marcadas.this, mais_info_mapa_cliente.class);
@@ -72,7 +72,7 @@ public class viagens_marcadas extends barra_lateral_pro {
         goMaisInfo.putExtra("localChegada", localChegadatxt.getText());
         goMaisInfo.putExtra("dataViagem", dataViagemtxt.getText());
         goMaisInfo.putExtra("horaViagem", horaViagemtxt.getText());
-        goMaisInfo.putExtra("distanciaViagem", distanciaViagemtxt.getText());
+       // goMaisInfo.putExtra("distanciaViagem", distanciaViagemtxt.getText());
         startActivity(goMaisInfo);
     }
 

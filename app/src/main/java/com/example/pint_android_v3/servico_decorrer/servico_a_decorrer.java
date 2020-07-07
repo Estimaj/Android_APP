@@ -31,7 +31,7 @@ public class servico_a_decorrer extends barra_lateral_condutor {
         lItems = new ServicoDecorrerArray();
         lView = (ListView)findViewById(R.id.serviços_decorrer_listview);
         lAdapter = new CustomAdapterServicoDecorrer(servico_a_decorrer.this,
-                lItems.data, lItems.tempo, lItems.distancia,
+                lItems.data,
                 lItems.Local_Chegada, lItems.Local_Partida,lItems.hora);
 
         lView.setAdapter(lAdapter);

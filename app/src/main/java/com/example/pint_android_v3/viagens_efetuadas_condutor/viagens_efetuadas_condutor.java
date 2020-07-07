@@ -32,7 +32,7 @@ public class viagens_efetuadas_condutor extends barra_lateral_condutor {
         lItems = new viagens_efetuadas_condutor_array();
         lView = (ListView)findViewById(R.id.viagens_efetuadas_listview_condutor);
         lAdapter = new CustomListAdapter_efetuadas_condutor(viagens_efetuadas_condutor.this,
-                lItems.data, lItems.tempo, lItems.distancia,
+                lItems.data,
                 lItems.Local_Chegada, lItems.Local_Partida,lItems.hora);
 
         lView.setAdapter(lAdapter);

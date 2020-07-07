@@ -90,7 +90,7 @@ public class mais_info_mapa_cliente extends barra_lateral_pro {
         startActivity(goMaisInfo);*/
         String localPartida = (String) b.get("localPartida");
         String localChegada = (String) b.get("localChegada");
-        String distanciaViagem = (String) b.get("distanciaViagem");
+        //String distanciaViagem = (String) b.get("distanciaViagem");
 
         TextView localPartidatxtview = findViewById(R.id.Local_Partida_mais_info_cliente);
         localPartidatxtview.setText(localPartida);

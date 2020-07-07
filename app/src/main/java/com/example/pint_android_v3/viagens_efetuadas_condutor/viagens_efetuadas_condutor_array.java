@@ -16,19 +16,7 @@ public class viagens_efetuadas_condutor_array {
             "Matosinhos"
     };
 
-    String[] distancia = {
-            "2km",
-            "3km",
-            "4km",
-            "6km"
-    };
 
-    String[] tempo = {
-            "2m",
-            "3m",
-            "4m",
-            "6m"
-    };
 
     String[] data = {
             "1/01/2001",

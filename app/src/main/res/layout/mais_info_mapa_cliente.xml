@@ -65,46 +65,6 @@
         app:layout_constraintStart_toStartOf="@id/contentor_mais_info_cliente"
         app:layout_constraintTop_toTopOf="@id/contentor_mais_info_cliente" />
 
-    <TextView
-        android:id="@+id/tempo_mais_info_cliente"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="230dp"
-        android:layout_marginTop="21dp"
-        android:text="Tempo"
-        app:layout_constraintStart_toStartOf="@id/contentor_mais_info_cliente"
-        app:layout_constraintTop_toTopOf="@id/contentor_mais_info_cliente" />
-
-    <TextView
-        android:id="@+id/Distancia_mais_info_cliente"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="136dp"
-        android:layout_marginTop="60dp"
-        android:text="distancia"
-        app:layout_constraintStart_toStartOf="@id/contentor_mais_info_cliente"
-        app:layout_constraintTop_toTopOf="@id/contentor_mais_info_cliente" />
-
-    <TextView
-        android:id="@+id/Tempo_mais_info_cliente"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="230dp"
-        android:layout_marginTop="60dp"
-        android:text="tempo"
-        app:layout_constraintStart_toStartOf="@id/contentor_mais_info_cliente"
-        app:layout_constraintTop_toTopOf="@id/contentor_mais_info_cliente" />
-
-    <TextView
-        android:id="@+id/Distancia_txt_mais_info_cliente"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="135dp"
-        android:layout_marginTop="21dp"
-        android:text="Distância"
-        app:layout_constraintStart_toStartOf="@id/contentor_mais_info_cliente"
-        app:layout_constraintTop_toTopOf="@id/contentor_mais_info_cliente" />
-
     <ImageView
         android:id="@+id/barra_distancia_mais_info_cliente"
         android:layout_width="181dp"
@@ -213,7 +173,6 @@
         app:layout_constraintStart_toEndOf="@id/Dinheiro_pagar_mais_info_cliente"
         app:layout_constraintTop_toTopOf="@id/total_image_view_mais_info_cliente" />
 
-    <include
-        layout="@layout/barra_lateral_pro" />
+    <include layout="@layout/barra_lateral_pro" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

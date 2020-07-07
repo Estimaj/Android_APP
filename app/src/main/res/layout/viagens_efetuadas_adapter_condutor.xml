@@ -50,26 +50,6 @@
         app:srcCompat="@drawable/distancia_viagens_efetuadas" />
 
     <TextView
-        android:id="@+id/viagens_efetuadas_adapter_Distancia_txt_condutor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="21dp"
-        android:layout_marginTop="54dp"
-        android:text="Distância"
-        app:layout_constraintStart_toEndOf="@id/viagens_efetuadas_adapter_Local_Partida_condutor"
-        app:layout_constraintTop_toTopOf="@id/viagens_efetuadas_adapter_contentor_condutor" />
-
-    <TextView
-        android:id="@+id/viagens_efetuadas_adapter_tempo_condutor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="185dp"
-        android:layout_marginTop="54dp"
-        android:text="Tempo"
-        app:layout_constraintStart_toStartOf="@id/viagens_efetuadas_adapter_Local_Partida_condutor"
-        app:layout_constraintTop_toTopOf="@id/viagens_efetuadas_adapter_contentor_condutor" />
-
-    <TextView
         android:id="@+id/viagens_efetuadas_adapter_Local_Partida_condutor"
         android:layout_width="80dp"
         android:layout_height="wrap_content"
@@ -112,25 +92,5 @@
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="@id/viagens_efetuadas_adapter_mais_info_condutor"
         app:layout_constraintTop_toTopOf="@id/viagens_efetuadas_adapter_mais_info_condutor" />
-
-    <TextView
-        android:id="@+id/viagens_efetuadas_adapter_Distancia_condutor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="88dp"
-        android:text="distancia"
-        app:layout_constraintStart_toEndOf="@id/viagens_efetuadas_adapter_Local_Partida_condutor"
-        app:layout_constraintTop_toTopOf="@id/viagens_efetuadas_adapter_contentor_condutor" />
-
-    <TextView
-        android:id="@+id/viagens_efetuadas_adapter_Tempo_condutor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="108dp"
-        android:layout_marginTop="88dp"
-        android:text="tempo"
-        app:layout_constraintStart_toEndOf="@id/viagens_efetuadas_adapter_Local_Partida_condutor"
-        app:layout_constraintTop_toTopOf="@id/viagens_efetuadas_adapter_contentor_condutor" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -48,28 +48,6 @@
         app:srcCompat="@drawable/distancia_viagens_efetuadas" />
 
     <TextView
-        android:id="@+id/servico_a_decorrer_adapter_Distancia_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="54dp"
-        android:text="Distância"
-        app:layout_constraintEnd_toStartOf="@id/imageView_bg_servico_a_decorrer_adapter"
-        app:layout_constraintHorizontal_bias="0.596"
-        app:layout_constraintStart_toEndOf="@id/imageView_bg_servico_a_decorrer_adapter"
-        app:layout_constraintTop_toTopOf="@id/imageView_bg_servico_a_decorrer_adapter" />
-
-    <TextView
-        android:id="@+id/textview_tempo_servico_a_decorrer_adapter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="54dp"
-        android:text="Tempo"
-        app:layout_constraintEnd_toStartOf="@id/servico_a_decorrer_adapter_barra_distância"
-        app:layout_constraintHorizontal_bias="0.345"
-        app:layout_constraintStart_toEndOf="@id/servico_a_decorrer_adapter_barra_distância"
-        app:layout_constraintTop_toTopOf="@id/imageView_bg_servico_a_decorrer_adapter" />
-
-    <TextView
         android:id="@+id/servico_a_decorrer_adapter_Local_Partida"
         android:layout_width="80dp"
         android:layout_height="wrap_content"
@@ -115,27 +93,5 @@
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="@+id/servico_a_decorrer_adapter_mais_info"
         app:layout_constraintTop_toTopOf="@+id/servico_a_decorrer_adapter_mais_info" />
-
-    <TextView
-        android:id="@+id/servico_a_decorrer_adapter_Distancia"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="88dp"
-        android:text="0,0 km"
-        app:layout_constraintEnd_toStartOf="@id/imageView_bg_servico_a_decorrer_adapter"
-        app:layout_constraintHorizontal_bias="0.594"
-        app:layout_constraintStart_toEndOf="@id/imageView_bg_servico_a_decorrer_adapter"
-        app:layout_constraintTop_toTopOf="@id/imageView_bg_servico_a_decorrer_adapter" />
-
-    <TextView
-        android:id="@+id/servico_a_decorrer_adapter_Tempo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="88dp"
-        android:text="0 min"
-        app:layout_constraintEnd_toStartOf="@id/imageView_bg_servico_a_decorrer_adapter"
-        app:layout_constraintHorizontal_bias="0.422"
-        app:layout_constraintStart_toEndOf="@id/imageView_bg_servico_a_decorrer_adapter"
-        app:layout_constraintTop_toTopOf="@id/imageView_bg_servico_a_decorrer_adapter" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -66,46 +66,6 @@
         app:layout_constraintStart_toStartOf="@id/contentor_mais_info_condutor"
         app:layout_constraintTop_toTopOf="@id/contentor_mais_info_condutor" />
 
-    <TextView
-        android:id="@+id/tempo_mais_info_condutor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="230dp"
-        android:layout_marginTop="21dp"
-        android:text="Tempo"
-        app:layout_constraintStart_toStartOf="@id/contentor_mais_info_condutor"
-        app:layout_constraintTop_toTopOf="@id/contentor_mais_info_condutor" />
-
-    <TextView
-        android:id="@+id/Distancia_mais_info_condutor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="136dp"
-        android:layout_marginTop="60dp"
-        android:text="distancia"
-        app:layout_constraintStart_toStartOf="@id/contentor_mais_info_condutor"
-        app:layout_constraintTop_toTopOf="@id/contentor_mais_info_condutor" />
-
-    <TextView
-        android:id="@+id/Tempo_mais_info_condutor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="230dp"
-        android:layout_marginTop="60dp"
-        android:text="tempo"
-        app:layout_constraintStart_toStartOf="@id/contentor_mais_info_condutor"
-        app:layout_constraintTop_toTopOf="@id/contentor_mais_info_condutor" />
-
-    <TextView
-        android:id="@+id/Distancia_txt_mais_info_condutor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="135dp"
-        android:layout_marginTop="21dp"
-        android:text="Distância"
-        app:layout_constraintStart_toStartOf="@id/contentor_mais_info_condutor"
-        app:layout_constraintTop_toTopOf="@id/contentor_mais_info_condutor" />
-
     <ImageView
         android:id="@+id/barra_distancia_mais_info_condutor"
         android:layout_width="181dp"

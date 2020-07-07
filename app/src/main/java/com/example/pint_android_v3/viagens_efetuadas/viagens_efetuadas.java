@@ -114,8 +114,8 @@ public class viagens_efetuadas extends barra_lateral_pro {
     public void createAdapters(){
         ArrayList<String> Local_Partida = new ArrayList<>();
         ArrayList<String> Local_Chegada = new ArrayList<>();
-        ArrayList<String> distancia = new ArrayList<>();
-        ArrayList<String> tempo = new ArrayList<>();
+        //ArrayList<String> distancia = new ArrayList<>();
+        //ArrayList<String> tempo = new ArrayList<>();
         ArrayList<String> data = new ArrayList<>();
         ArrayList<String> hora = new ArrayList<>();
 
@@ -124,19 +124,19 @@ public class viagens_efetuadas extends barra_lateral_pro {
                 Local_Partida.add(informacaoViagem.get(i).getOrigemNome());
                 Local_Chegada.add(informacaoViagem.get(i).getDestinoNome());
 
-                distancia.add("1");
-                tempo.add("1");
+                //distancia.add("1");
+                //tempo.add("1");
 
                 data.add(informacaoViagem.get(i).getDia_viagem());
                 hora.add(informacaoViagem.get(i).getHora_viagem());
             }
         }
-        viagens_efetuadas_array_test lItems = new viagens_efetuadas_array_test(Local_Partida, Local_Chegada, distancia, tempo, data, hora);
+        viagens_efetuadas_array_test lItems = new viagens_efetuadas_array_test(Local_Partida, Local_Chegada, data, hora);
 
 
         lView = findViewById(R.id.viagens_efetuadas_listview);
         lAdapter = new CustomListAdapter_efetuadas_teste(viagens_efetuadas.this,
-                lItems.data, lItems.tempo, lItems.distancia,
+                lItems.data,
                 lItems.Local_Chegada, lItems.Local_Partida,lItems.hora);
 
         lView.setAdapter(lAdapter);
@@ -168,7 +168,7 @@ public class viagens_efetuadas extends barra_lateral_pro {
         TextView dataViagemtxt = this.findViewById(R.id.viagens_efetuadas_adapter_data_trip);
         TextView horaViagemtxt = this.findViewById(R.id.viagens_efetuadas_adapter_hora_trip);
 
-        TextView distanciaViagemtxt = this.findViewById(R.id.viagens_efetuadas_adapter_Distancia);
+        //TextView distanciaViagemtxt = this.findViewById(R.id.viagens_efetuadas_adapter_Distancia);
 
         //Log.i("text",  localPartidatxt.getText().toString() + "|"+ localChegadatxt.getText().toString());
         Intent goMaisInfo = new Intent(viagens_efetuadas.this, mais_info_mapa_cliente.class);
@@ -177,7 +177,7 @@ public class viagens_efetuadas extends barra_lateral_pro {
         goMaisInfo.putExtra("localChegada", localChegadatxt.getText());
         goMaisInfo.putExtra("dataViagem", dataViagemtxt.getText());
         goMaisInfo.putExtra("horaViagem", horaViagemtxt.getText());
-        goMaisInfo.putExtra("distanciaViagem", distanciaViagemtxt.getText());
+        //goMaisInfo.putExtra("distanciaViagem", distanciaViagemtxt.getText());
         startActivity(goMaisInfo);
     }
 
