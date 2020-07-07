@@ -37,6 +37,8 @@ public class viagens_efetuadas extends barra_lateral_pro {
     private int user_id;
     private ArrayList<dataViagem>  informacaoViagem;
 
+    private String origemCoordenadas;
+    private String destinoCoordenadas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +52,7 @@ public class viagens_efetuadas extends barra_lateral_pro {
             //Log.i("id_user", ""+ id_user);
 
         }
-        user_id = 4;
+        user_id = 7;
         getInformationFromdb(user_id);
 
         /*
@@ -114,8 +116,8 @@ public class viagens_efetuadas extends barra_lateral_pro {
     public void createAdapters(){
         ArrayList<String> Local_Partida = new ArrayList<>();
         ArrayList<String> Local_Chegada = new ArrayList<>();
-        //ArrayList<String> distancia = new ArrayList<>();
-        //ArrayList<String> tempo = new ArrayList<>();
+        ArrayList<String> Local_PartidaCoordenadas = new ArrayList<>();
+        ArrayList<String> Local_ChegadaCoordenadas = new ArrayList<>();
         ArrayList<String> data = new ArrayList<>();
         ArrayList<String> hora = new ArrayList<>();
 
@@ -123,21 +125,24 @@ public class viagens_efetuadas extends barra_lateral_pro {
             if(informacaoViagem.get(i).getViagem_efetuada() == 1) {
                 Local_Partida.add(informacaoViagem.get(i).getOrigemNome());
                 Local_Chegada.add(informacaoViagem.get(i).getDestinoNome());
-
-                //distancia.add("1");
-                //tempo.add("1");
+                Local_PartidaCoordenadas.add(informacaoViagem.get(i).getDestino_Coordenadas());
+                Local_ChegadaCoordenadas.add(informacaoViagem.get(i).getOrigem_Coordenadas());
 
                 data.add(informacaoViagem.get(i).getDia_viagem());
                 hora.add(informacaoViagem.get(i).getHora_viagem());
             }
         }
-        viagens_efetuadas_array_test lItems = new viagens_efetuadas_array_test(Local_Partida, Local_Chegada, data, hora);
+        viagens_efetuadas_array_test lItems = new viagens_efetuadas_array_test(Local_Partida, Local_Chegada, Local_PartidaCoordenadas, Local_ChegadaCoordenadas, data, hora);
 
 
         lView = findViewById(R.id.viagens_efetuadas_listview);
         lAdapter = new CustomListAdapter_efetuadas_teste(viagens_efetuadas.this,
                 lItems.data,
-                lItems.Local_Chegada, lItems.Local_Partida,lItems.hora);
+                lItems.Local_Chegada,
+                lItems.Local_ChegadaCoordenadas,
+                lItems.Local_Partida,
+                lItems.Local_PartidaCoordenadas,
+                lItems.hora);
 
         lView.setAdapter(lAdapter);
     }
@@ -161,14 +166,14 @@ public class viagens_efetuadas extends barra_lateral_pro {
 
 
     public void maisInfo(View view){ //falta saber como enviar a viagem certa
-        Log.i("hm", ""+ view.findViewById(R.id.viagens_efetuadas_adapter_Local_Partida));
+        //Log.i("hm", ""+ view.findViewById(R.id.viagens_efetuadas_adapter_Local_Partida));
         TextView localPartidatxt = this.findViewById(R.id.viagens_efetuadas_adapter_Local_Partida);
         TextView localChegadatxt = this.findViewById(R.id.viagens_efetuadas_adapter_Local_Chegada);
 
         TextView dataViagemtxt = this.findViewById(R.id.viagens_efetuadas_adapter_data_trip);
         TextView horaViagemtxt = this.findViewById(R.id.viagens_efetuadas_adapter_hora_trip);
 
-        //TextView distanciaViagemtxt = this.findViewById(R.id.viagens_efetuadas_adapter_Distancia);
+
 
         //Log.i("text",  localPartidatxt.getText().toString() + "|"+ localChegadatxt.getText().toString());
         Intent goMaisInfo = new Intent(viagens_efetuadas.this, mais_info_mapa_cliente.class);
@@ -177,7 +182,6 @@ public class viagens_efetuadas extends barra_lateral_pro {
         goMaisInfo.putExtra("localChegada", localChegadatxt.getText());
         goMaisInfo.putExtra("dataViagem", dataViagemtxt.getText());
         goMaisInfo.putExtra("horaViagem", horaViagemtxt.getText());
-        //goMaisInfo.putExtra("distanciaViagem", distanciaViagemtxt.getText());
         startActivity(goMaisInfo);
     }
 

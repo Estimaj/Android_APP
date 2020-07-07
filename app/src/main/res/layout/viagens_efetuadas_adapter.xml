@@ -61,6 +61,15 @@
         app:layout_constraintTop_toTopOf="@id/viagens_efetuadas_adapter_contentor" />
 
     <TextView
+        android:id="@+id/viagens_efetuadas_adapter_Local_Partida_coordenadas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/viagens_efetuadas_adapter_Local_Partida"
+        app:layout_constraintStart_toStartOf="@id/viagens_efetuadas_adapter_Local_Partida"
+        />
+
+    <TextView
         android:id="@+id/viagens_efetuadas_adapter_Local_Chegada"
         android:layout_width="80dp"
         android:layout_height="wrap_content"
@@ -70,6 +79,15 @@
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@id/viagens_efetuadas_adapter_barra_distância"
         app:layout_constraintTop_toTopOf="@id/viagens_efetuadas_adapter_contentor" />
+
+    <TextView
+        android:id="@+id/viagens_efetuadas_adapter_Local_Chegada_coordenadas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/viagens_efetuadas_adapter_Local_Chegada"
+        app:layout_constraintStart_toStartOf="@id/viagens_efetuadas_adapter_Local_Chegada"
+        />
 
     <ImageView
         android:id="@+id/viagens_efetuadas_adapter_class_viagem"

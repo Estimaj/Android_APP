@@ -15,21 +15,22 @@ public class CustomListAdapter_efetuadas_teste extends BaseAdapter {
 
     Context context;
     private final ArrayList<String> data;
-    //private final ArrayList<String> tempo;
-    //private final ArrayList<String> distancia;
+
     private final ArrayList<String> Local_Chegada;
     private final ArrayList<String> Local_Partida;
+    private final ArrayList<String> Local_PartidaCoordenadas;
+    private final ArrayList<String> Local_ChegadaCoordenadas;
     private final ArrayList<String> hora;
 
-    public CustomListAdapter_efetuadas_teste(Context cont, ArrayList<String> data,  ArrayList<String> local_Chegada, ArrayList<String> local_Partida, ArrayList<String> hora) {
+    public CustomListAdapter_efetuadas_teste(Context cont, ArrayList<String> data,  ArrayList<String> local_Chegada,ArrayList<String> Local_ChegadaCoordenadas, ArrayList<String> local_Partida, ArrayList<String> Local_PartidaCoordenadas, ArrayList<String> hora) {
 
         context = cont;
-        this.data = data;
-        //this.tempo = tempo;
-        //this.distancia = distancia;
-        Local_Chegada = local_Chegada;
-        Local_Partida = local_Partida;
+        this.Local_Chegada = local_Chegada;
+        this.Local_Partida = local_Partida;
+        this.Local_ChegadaCoordenadas = Local_ChegadaCoordenadas;
+        this.Local_PartidaCoordenadas = Local_PartidaCoordenadas;
         this.hora = hora;
+        this.data = data;
     }
 
     @Override
@@ -60,11 +61,11 @@ public class CustomListAdapter_efetuadas_teste extends BaseAdapter {
             LayoutInflater inflater = LayoutInflater.from(context);
             convertView = inflater.inflate(R.layout.viagens_efetuadas_adapter, parent, false);
             viewHolder.txt_data = (TextView)convertView.findViewById(R.id.viagens_efetuadas_adapter_data_trip);
-            //viewHolder.txt_tempo = (TextView)convertView.findViewById(R.id.viagens_efetuadas_adapter_Tempo);
-            //viewHolder.txt_distancia = (TextView)convertView.findViewById(R.id.viagens_efetuadas_adapter_Distancia);
             viewHolder.txt_Local_Chegada = (TextView)convertView.findViewById(R.id.viagens_efetuadas_adapter_Local_Chegada);
             viewHolder.txt_Local_Partida = (TextView)convertView.findViewById(R.id.viagens_efetuadas_adapter_Local_Partida);
             viewHolder.txt_hora = (TextView)convertView.findViewById(R.id.viagens_efetuadas_adapter_hora_trip);
+            viewHolder.txt_Local_ChegadaCoordenadas = convertView.findViewById(R.id.viagens_efetuadas_adapter_Local_Chegada_coordenadas);
+            viewHolder.txt_Local_PartidaCoordenadas = convertView.findViewById(R.id.viagens_efetuadas_adapter_Local_Partida_coordenadas);
 
             result = convertView;
             convertView.setTag(viewHolder);
@@ -76,25 +77,23 @@ public class CustomListAdapter_efetuadas_teste extends BaseAdapter {
         }
 
         viewHolder.txt_data.setText(data.get(position));
-        //viewHolder.txt_distancia.setText(distancia.get(position));
-        //viewHolder.txt_tempo.setText(tempo.get(position));
         viewHolder.txt_Local_Chegada.setText(Local_Chegada.get(position));
         viewHolder.txt_Local_Partida.setText(Local_Partida.get(position));
         viewHolder.txt_hora.setText(hora.get(position));
-
+        viewHolder.txt_Local_PartidaCoordenadas.setText(Local_PartidaCoordenadas.get(position));
+        viewHolder.txt_Local_ChegadaCoordenadas.setText(Local_ChegadaCoordenadas.get(position));
 
 
         return convertView;
     }
 
     private static class ViewHolder {
-        TextView txt_data;
-        //TextView txt_distancia;
-        //TextView txt_tempo;
         TextView txt_Local_Chegada;
         TextView txt_Local_Partida;
+        TextView txt_data;
         TextView txt_hora;
-
+        TextView txt_Local_ChegadaCoordenadas;
+        TextView txt_Local_PartidaCoordenadas;
     }
 }
 
