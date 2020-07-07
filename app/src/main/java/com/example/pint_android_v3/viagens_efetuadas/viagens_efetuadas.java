@@ -38,8 +38,6 @@ public class viagens_efetuadas extends barra_lateral_pro {
     private ArrayList<dataViagem>  informacaoViagem;
 
 
-    TextView btnMaisInfo;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -93,18 +91,15 @@ public class viagens_efetuadas extends barra_lateral_pro {
                     Log.i("Erro", "L99 viagens efetuadas");
                 }
                 if (response.code() == 200){
-                    if (response.body().getDataViagem() != null) {
+                    if (response.body().getDataViagem().size() != 0) {
                         //Log.i("body", "" + response.body().getDataViagem().get(0).toString());
-                        //Log.i("viagem", ""+ response.body().getDataViagem().get(0).getViagemRegistada().toString());
                         informacaoViagem = response.body().getDataViagem();
                         createAdapters();
                     }else
                         Log.i("Erro", "L105 viagens efetuadas");
-                        //makeToastFordesambiguacao("Erro Server Info");
                 }
                 else{
-                    Log.i("Erro", "L109 viagens efetuadas");
-                    //makeToastFordesambiguacao("Erro: 'Sem data'"+ response.message());
+                    Log.i("Erro", "L109 viagens efetuadas_sem data");
                 }
             }
 
@@ -125,15 +120,15 @@ public class viagens_efetuadas extends barra_lateral_pro {
         ArrayList<String> hora = new ArrayList<>();
 
         for (int i = 0; i < informacaoViagem.size(); i++) {
-            if(informacaoViagem.get(i).getViagemRegistada().getViagem_efetuada() == 1) {
-                Local_Partida.add(informacaoViagem.get(i).getLocalidade_Origem().getNome_localidade());
-                Local_Chegada.add(informacaoViagem.get(i).getLocalidade_Destino().getNome_localidade());
+            if(informacaoViagem.get(i).getViagem_efetuada() == 1) {
+                Local_Partida.add(informacaoViagem.get(i).getOrigemNome());
+                Local_Chegada.add(informacaoViagem.get(i).getDestinoNome());
 
                 distancia.add("1");
                 tempo.add("1");
 
-                data.add(informacaoViagem.get(i).getViagemRegistada().getDia_viagem());
-                hora.add(informacaoViagem.get(i).getViagemRegistada().getHora_viagem());
+                data.add(informacaoViagem.get(i).getDia_viagem());
+                hora.add(informacaoViagem.get(i).getHora_viagem());
             }
         }
         viagens_efetuadas_array_test lItems = new viagens_efetuadas_array_test(Local_Partida, Local_Chegada, distancia, tempo, data, hora);

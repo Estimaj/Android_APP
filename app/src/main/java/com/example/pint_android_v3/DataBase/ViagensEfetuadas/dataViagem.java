@@ -7,45 +7,83 @@ import java.util.List;
 
 public class dataViagem {
 
+    @SerializedName("cidadao_id_utilizador")
+    @Expose
+    private int cidadao_id_utilizador;
+
+    @SerializedName("origem")
+    @Expose
+    private String origemNome;
+
+    @SerializedName("Origem_Coordenadas")
+    @Expose
+    private String Origem_Coordenadas;
+
+    @SerializedName("destino")
+    @Expose
+    private String destinoNome;
+
+    @SerializedName("Destino_Coordenadas")
+    @Expose
+    private String Destino_Coordenadas;
+
     @SerializedName("id_viagem")
     @Expose
     private int id_viagem;
 
-    @SerializedName("viagem")
+    @SerializedName("dia_viagem")
     @Expose
-    private viagem viagem;
+    private String dia_viagem;
 
-    @SerializedName("Localidade_Origem")
+    @SerializedName("hora_viagem")
     @Expose
-    private Localidade_Origem Localidade_Origem;
+    private String hora_viagem;
 
-    @SerializedName("Localidade_Destino")
+    @SerializedName("valor_viagem")
     @Expose
-    private Localidade_Destino Localidade_Destino;
+    private String valor_viagem;
+
+    @SerializedName("viagem_efetuada")
+    @Expose
+    private int viagem_efetuada;
+
+    public int getCidadao_id_utilizador() {
+        return cidadao_id_utilizador;
+    }
+
+    public String getOrigemNome() {
+        return origemNome;
+    }
+
+    public String getOrigem_Coordenadas() {
+        return Origem_Coordenadas;
+    }
+
+    public String getDestinoNome() {
+        return destinoNome;
+    }
+
+    public String getDestino_Coordenadas() {
+        return Destino_Coordenadas;
+    }
 
     public int getId_viagem() {
         return id_viagem;
     }
 
-    public viagem getViagemRegistada() {
-        return viagem;
+    public String getDia_viagem() {
+        return dia_viagem;
     }
 
-    public Localidade_Origem getLocalidade_Origem() {
-        return Localidade_Origem;
+    public String getHora_viagem() {
+        return hora_viagem;
     }
 
-    public Localidade_Destino getLocalidade_Destino() {
-        return Localidade_Destino;
+    public String getValor_viagem() {
+        return valor_viagem;
     }
 
-    @Override
-    public String toString() {
-        return "dataViagem{" +
-                "id_viagem=" + id_viagem +
-                ", viagem=" + viagem +
-                ", Localidade_Origem=" + Localidade_Origem +
-                ", Localidade_Destino=" + Localidade_Destino +
-                '}';
+    public int getViagem_efetuada() {
+        return viagem_efetuada;
     }
 }
