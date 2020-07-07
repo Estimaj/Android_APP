@@ -37,9 +37,6 @@ public class viagens_efetuadas extends barra_lateral_pro {
     private int user_id;
     private ArrayList<dataViagem>  informacaoViagem;
 
-    private String origemCoordenadas;
-    private String destinoCoordenadas;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -170,6 +167,9 @@ public class viagens_efetuadas extends barra_lateral_pro {
         TextView localPartidatxt = this.findViewById(R.id.viagens_efetuadas_adapter_Local_Partida);
         TextView localChegadatxt = this.findViewById(R.id.viagens_efetuadas_adapter_Local_Chegada);
 
+        TextView localPartidaCoord = this.findViewById(R.id.viagens_efetuadas_adapter_Local_Partida_coordenadas);
+        TextView localChegadaCoord = this.findViewById(R.id.viagens_efetuadas_adapter_Local_Chegada_coordenadas);
+
         TextView dataViagemtxt = this.findViewById(R.id.viagens_efetuadas_adapter_data_trip);
         TextView horaViagemtxt = this.findViewById(R.id.viagens_efetuadas_adapter_hora_trip);
 
@@ -180,6 +180,8 @@ public class viagens_efetuadas extends barra_lateral_pro {
         goMaisInfo.putExtra("user_id", user_id);
         goMaisInfo.putExtra("localPartida", localPartidatxt.getText());
         goMaisInfo.putExtra("localChegada", localChegadatxt.getText());
+        goMaisInfo.putExtra("localPartidaCoord", localPartidaCoord.getText());
+        goMaisInfo.putExtra("localChegadaCoord", localChegadaCoord.getText());
         goMaisInfo.putExtra("dataViagem", dataViagemtxt.getText());
         goMaisInfo.putExtra("horaViagem", horaViagemtxt.getText());
         startActivity(goMaisInfo);

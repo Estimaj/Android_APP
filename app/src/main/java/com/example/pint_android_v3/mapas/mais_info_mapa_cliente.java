@@ -90,13 +90,18 @@ public class mais_info_mapa_cliente extends barra_lateral_pro {
         startActivity(goMaisInfo);*/
         String localPartida = (String) b.get("localPartida");
         String localChegada = (String) b.get("localChegada");
-        //String distanciaViagem = (String) b.get("distanciaViagem");
+
+
 
         TextView localPartidatxtview = findViewById(R.id.Local_Partida_mais_info_cliente);
         localPartidatxtview.setText(localPartida);
         TextView localChegadatxtview = findViewById(R.id.Local_Chegada_mais_info_cliente);
         localChegadatxtview.setText(localChegada);
 
+        TextView localPartidaCoord = findViewById(R.id.viagens_efetuadas_adapter_Local_Partida_coordenadas);
+        //localPartidaCoord.setText((String) b.get("localPartidaCoord"));
+        TextView localChegadaCoord = findViewById(R.id.viagens_efetuadas_adapter_Local_Chegada_coordenadas);
+        //localChegadaCoord.setText((String) b.get("localChegadaCoord"));
     }
 
     public void Click_Quem_Vai(View view){
@@ -133,7 +138,7 @@ public class mais_info_mapa_cliente extends barra_lateral_pro {
     private void setEndMarker(Point location) {
         setMapMarker(location, SimpleMarkerSymbol.Style.SQUARE, Color.rgb(40, 119, 226), Color.RED);
         mEnd = location;
-        // findRoute();
+        findRoute();
     }
 
     private void mapClicked(Point location) {
@@ -178,6 +183,7 @@ public class mais_info_mapa_cliente extends barra_lateral_pro {
             ArcGISMap map = new ArcGISMap(Basemap.Type.STREETS, latitude, longitude, levelOfDetail);
             mMapView.setMap(map);
 
+            //marcar pontos com o dedo
             mMapView.setOnTouchListener(new DefaultMapViewOnTouchListener(this, mMapView) {
                 @Override public boolean onSingleTapConfirmed(MotionEvent e) {
                     android.graphics.Point screenPoint = new android.graphics.Point(
