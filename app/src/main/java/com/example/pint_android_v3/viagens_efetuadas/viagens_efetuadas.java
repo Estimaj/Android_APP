@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
@@ -51,6 +52,7 @@ public class viagens_efetuadas extends barra_lateral_pro {
         }
         user_id = 7;
         getInformationFromdb(user_id);
+
 
         /*
         lView.setOnItemClickListener(new ListView.OnItemClickListener() {
@@ -119,7 +121,7 @@ public class viagens_efetuadas extends barra_lateral_pro {
         ArrayList<String> hora = new ArrayList<>();
 
         for (int i = 0; i < informacaoViagem.size(); i++) {
-            if(informacaoViagem.get(i).getViagem_efetuada() == 1) {
+            if(informacaoViagem.get(i).getViagem_efetuada() == 1) { //confirma se a viagem é efetuada ou não
                 Local_Partida.add(informacaoViagem.get(i).getOrigemNome());
                 Local_Chegada.add(informacaoViagem.get(i).getDestinoNome());
                 Local_PartidaCoordenadas.add(informacaoViagem.get(i).getDestino_Coordenadas());
@@ -134,6 +136,7 @@ public class viagens_efetuadas extends barra_lateral_pro {
 
         lView = findViewById(R.id.viagens_efetuadas_listview);
         lAdapter = new CustomListAdapter_efetuadas_teste(viagens_efetuadas.this,
+                user_id,
                 lItems.data,
                 lItems.Local_Chegada,
                 lItems.Local_ChegadaCoordenadas,
@@ -141,29 +144,14 @@ public class viagens_efetuadas extends barra_lateral_pro {
                 lItems.Local_PartidaCoordenadas,
                 lItems.hora);
 
+
+
         lView.setAdapter(lAdapter);
-    }
-
-
-    public void Classificar_Condutor(View view) //o textview tem um onclick
-    {
-        //falta saber como enviar a viagem certa
-        Intent GO = new Intent(viagens_efetuadas.this, classificar_condutor.class);
-        GO.putExtra("user_id", user_id);
-        startActivity(GO);
-    }
-
-
-    public void Classificar_Viagem(View view){//falta saber como enviar a viagem certa
-        Intent Classificar_Viagem = new Intent(viagens_efetuadas.this, classificar_viagem.class);
-        Classificar_Viagem.putExtra("user_id", user_id);
-        startActivity(Classificar_Viagem);
     }
 
 
 
     public void maisInfo(View view){ //falta saber como enviar a viagem certa
-        //Log.i("hm", ""+ view.findViewById(R.id.viagens_efetuadas_adapter_Local_Partida));
         TextView localPartidatxt = this.findViewById(R.id.viagens_efetuadas_adapter_Local_Partida);
         TextView localChegadatxt = this.findViewById(R.id.viagens_efetuadas_adapter_Local_Chegada);
 

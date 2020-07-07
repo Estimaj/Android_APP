@@ -109,12 +109,12 @@
         app:layout_constraintTop_toTopOf="@id/viagens_efetuadas_adapter_contentor"
         app:srcCompat="@drawable/botao_class" />
 
+    <!--as funcoes para estes butoes esta no CustomListAdapter!!-->
     <TextView
         android:id="@+id/viagens_efetuadas_adapter_class_viagem_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="14dp"
-        android:onClick="Classificar_Viagem"
         android:text="Classificar Viagem"
         android:textSize="13sp"
         app:layout_constraintEnd_toStartOf="@id/viagens_efetuadas_adapter_class_viagem"
@@ -122,18 +122,19 @@
         app:layout_constraintStart_toEndOf="@id/viagens_efetuadas_adapter_class_viagem"
         app:layout_constraintTop_toTopOf="@id/viagens_efetuadas_adapter_class_viagem" />
 
+    <!--as funcoes para estes butoes esta no CustomListAdapter!!-->
     <TextView
         android:id="@+id/classificar_condutor_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="37dp"
         android:layout_marginTop="16dp"
-        android:onClick="Classificar_Condutor"
         android:text="Classificar Condutor"
         android:textSize="13sp"
         app:layout_constraintStart_toStartOf="@id/viagens_efetuadas_adapter_class_condutor"
         app:layout_constraintTop_toTopOf="@id/viagens_efetuadas_adapter_class_condutor" />
 
+    <!--as funcoes para estes butoes esta no CustomListAdapter!!-->
     <ImageView
         android:id="@+id/viagens_efetuadas_adapter_mais_info"
         android:layout_width="100dp"
@@ -153,9 +154,8 @@
         android:layout_marginTop="14dp"
         android:text="Mais Info"
         android:textSize="13sp"
-        android:onClick="maisInfo"
         app:layout_constraintStart_toStartOf="@id/viagens_efetuadas_adapter_mais_info"
         app:layout_constraintTop_toTopOf="@id/viagens_efetuadas_adapter_mais_info" />
-    <!---->
+    <!--android:onClick="maisInfo"-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
