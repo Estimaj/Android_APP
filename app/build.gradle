@@ -31,6 +31,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    useLibrary 'org.apache.http.legacy'
 
 }
 
@@ -42,12 +43,21 @@ dependencies {
     //Retrofit vai trabalhar com o backend aka base de dados de um servidor
     implementation 'com.squareup.retrofit2:retrofit:2.4.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
-    implementation 'com.esri.arcgisruntime:arcgis-android:100.8.0'
     //end//
+    implementation "com.esri.arcgisruntime:arcgis-android:$rootProject.runtimeVersion"
+
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation 'com.google.android.gms:play-services-maps:17.0.0'
+
+    implementation "com.jakewharton:butterknife:$rootProject.butterknifeVersion"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.butterknifeVersion"
+
+    // Robotium dependencies
+    androidTestImplementation "com.jayway.android.robotium:robotium-solo:$rootProject.robotiumVersion"
+
+    implementation group: 'org.apache.httpcomponents' , name: 'httpclient-android' , version: "$rootProject.httpcomponentsVersion"
 
 }
