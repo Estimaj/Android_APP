@@ -1,39 +1,38 @@
 package com.example.pint_android_v3.viagens_marcadas;
 
 
+import java.util.ArrayList;
 
 public class viagens_marcadas_array_test {
 
-    String[] Local_Partida = {
-            "Póvoa de Calde",
-            "Matosinhos",
-            "Remonde",
-            "Carragoso"
-    };
+    ArrayList<String> Local_Partida;
 
-    String[] Local_Chegada = {
-            "Remonde",
-            "Carragoso",
-            "Póvoa de Calde",
-            "Matosinhos"
-    };
+    ArrayList<String> Local_Chegada;
 
+    ArrayList<String> Local_PartidaCoordenadas;
 
-    String[] data = {
-            "1/01/2001",
-            "16/05/2020",
-            "12/06/2015",
-            "4/08/2017"
-    };
+    ArrayList<String> Local_ChegadaCoordenadas;
 
-    String[] hora = {
-            "16:00",
-            "15:30",
-            "14:00",
-            "17:20"
-    };
+    ArrayList<String> data;
 
-    public viagens_marcadas_array_test() {}
+    ArrayList<String> hora;
+
+    ArrayList<Integer> idViagem;
+
+    ArrayList<String> valorViagem;
+
+    public viagens_marcadas_array_test(ArrayList<String> local_Partida, ArrayList<String> local_Chegada,  ArrayList<String> Local_PartidaCoordenadas,
+                                        ArrayList<String> Local_ChegadaCoordenadas  , ArrayList<String> data, ArrayList<String> hora
+            , ArrayList<Integer> idViagem,  ArrayList<String> valorViagem) {
+        this.Local_Partida = local_Partida;
+        this.Local_Chegada = local_Chegada;
+        this.Local_ChegadaCoordenadas = Local_ChegadaCoordenadas;
+        this.Local_PartidaCoordenadas = Local_PartidaCoordenadas;
+        this.data = data;
+        this.hora = hora;
+        this.idViagem = idViagem;
+        this.valorViagem = valorViagem;
+    }
 
 
 }

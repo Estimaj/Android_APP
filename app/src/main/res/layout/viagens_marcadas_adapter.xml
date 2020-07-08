@@ -78,7 +78,6 @@
         android:layout_width="105dp"
         android:layout_height="52dp"
         android:layout_marginTop="136dp"
-        android:onClick="maisInfo"
         app:layout_constraintEnd_toStartOf="@id/viagens_marcadas_adapter_contentor"
         app:layout_constraintHorizontal_bias="0.25"
         app:layout_constraintStart_toEndOf="@id/viagens_marcadas_adapter_contentor"
@@ -114,7 +113,6 @@
         android:layout_height="38dp"
         android:layout_marginStart="22dp"
         android:layout_marginTop="144dp"
-        android:onClick="Cancelar_Viagem"
         app:layout_constraintStart_toStartOf="@id/viagens_marcadas_adapter_contentor"
         app:layout_constraintTop_toTopOf="@id/viagens_marcadas_adapter_contentor"
         app:srcCompat="@drawable/button_cancelar" />
@@ -129,5 +127,29 @@
         android:textColor="@color/Yellow"
         app:layout_constraintStart_toStartOf="@id/viagens_marcadas_adapter_cancelar_viagem_button"
         app:layout_constraintTop_toTopOf="@id/viagens_marcadas_adapter_cancelar_viagem_button" />
+
+    <TextView
+        android:id="@+id/local_chegada_coordenadas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:alpha="0"
+        android:text="chegada_coord"
+        app:layout_constraintEnd_toStartOf="@+id/viagens_marcadas_adapter_contentor"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/viagens_marcadas_adapter_contentor"
+        app:layout_constraintTop_toBottomOf="@+id/viagens_marcadas_adapter_barra_distância" />
+
+    <TextView
+        android:id="@+id/local_origem_coordenadas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:alpha="0"
+        android:text="origem_coor"
+        app:layout_constraintEnd_toStartOf="@+id/local_chegada_coordenadas"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/local_chegada_coordenadas"
+        app:layout_constraintTop_toBottomOf="@+id/viagens_marcadas_adapter_barra_distância" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
