@@ -49,6 +49,7 @@ public class mais_info_mapa_cliente extends barra_lateral_pro {
     private Point mStart;
     private Point mEnd;
     private int user_id;
+    private int idViagem;
 
 
 
@@ -78,7 +79,12 @@ public class mais_info_mapa_cliente extends barra_lateral_pro {
         Bundle b = X.getExtras();
         if(b!=null){
             user_id = (int) b.get("user_id");
-            colocarValoresMaisInfo(b);
+            try {
+                colocarValoresMaisInfo(b);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
 
         }
 
@@ -88,17 +94,15 @@ public class mais_info_mapa_cliente extends barra_lateral_pro {
     }
 
     private void colocarValoresMaisInfo(Bundle b) {
-        /*goMaisInfo.putExtra("user_id", user_id);
-        goMaisInfo.putExtra("localPartida", localPartidatxt.getText());
-        goMaisInfo.putExtra("localChegada", localChegadatxt.getText());
-        goMaisInfo.putExtra("dataViagem", dataViagemtxt.getText());
-        goMaisInfo.putExtra("horaViagem", horaViagemtxt.getText());
-        goMaisInfo.putExtra("distanciaViagem", distanciaViagemtxt.getText());
-        startActivity(goMaisInfo);*/
+
         String localPartida = (String) b.get("localPartida");
         String localChegada = (String) b.get("localChegada");
 
 
+        TextView valorViagemtxt = findViewById(R.id.Dinheiro_pagar_mais_info_cliente);
+        valorViagemtxt.setText("" + (String) b.get("valorViagem"));
+
+        idViagem = (int) b.get("idViagem");
 
         TextView localPartidatxtview = findViewById(R.id.Local_Partida_mais_info_cliente);
         localPartidatxtview.setText(localPartida);
@@ -106,15 +110,18 @@ public class mais_info_mapa_cliente extends barra_lateral_pro {
         localChegadatxtview.setText(localChegada);
 
         TextView localPartidaCoord = findViewById(R.id.viagens_efetuadas_adapter_Local_Partida_coordenadas);
-        //localPartidaCoord.setText((String) b.get("localPartidaCoord"));
+        localPartidaCoord.setText("" + (String) b.get("localPartidaCoord"));
         TextView localChegadaCoord = findViewById(R.id.viagens_efetuadas_adapter_Local_Chegada_coordenadas);
-        //localChegadaCoord.setText((String) b.get("localChegadaCoord"));
+        localChegadaCoord.setText(""+ (String) b.get("localChegadaCoord"));
+
+
     }
 
     public void Click_Quem_Vai(View view){
-
+        /*Tem o onClick no layout*/
         Intent Consigo = new Intent(mais_info_mapa_cliente.this, quem_vai_consigo.class);
         Consigo.putExtra("user_id", user_id);
+        Consigo.putExtra("idViagem", idViagem);
         startActivity(Consigo);
 
 

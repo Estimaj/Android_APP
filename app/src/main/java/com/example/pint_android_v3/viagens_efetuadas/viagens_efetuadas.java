@@ -119,6 +119,8 @@ public class viagens_efetuadas extends barra_lateral_pro {
         ArrayList<String> Local_ChegadaCoordenadas = new ArrayList<>();
         ArrayList<String> data = new ArrayList<>();
         ArrayList<String> hora = new ArrayList<>();
+        ArrayList<Integer> idViagem = new ArrayList<>();
+        ArrayList<String> valorViagem = new ArrayList<>();
 
         for (int i = 0; i < informacaoViagem.size(); i++) {
             if(informacaoViagem.get(i).getViagem_efetuada() == 1) { //confirma se a viagem é efetuada ou não
@@ -129,20 +131,26 @@ public class viagens_efetuadas extends barra_lateral_pro {
 
                 data.add(informacaoViagem.get(i).getDia_viagem());
                 hora.add(informacaoViagem.get(i).getHora_viagem());
+
+                idViagem.add(informacaoViagem.get(i).getId_viagem());
+                valorViagem.add(informacaoViagem.get(i).getValor_viagem());
             }
         }
-        viagens_efetuadas_array_test lItems = new viagens_efetuadas_array_test(Local_Partida, Local_Chegada, Local_PartidaCoordenadas, Local_ChegadaCoordenadas, data, hora);
+        viagens_efetuadas_array_test lItems = new viagens_efetuadas_array_test(Local_Partida, Local_Chegada, Local_PartidaCoordenadas, Local_ChegadaCoordenadas, data, hora, idViagem, valorViagem);
 
 
         lView = findViewById(R.id.viagens_efetuadas_listview);
-        lAdapter = new CustomListAdapter_efetuadas_teste(viagens_efetuadas.this,
+        lAdapter = new CustomListAdapter_efetuadas_teste(
+                viagens_efetuadas.this,
                 user_id,
                 lItems.data,
                 lItems.Local_Chegada,
                 lItems.Local_ChegadaCoordenadas,
                 lItems.Local_Partida,
                 lItems.Local_PartidaCoordenadas,
-                lItems.hora);
+                lItems.hora,
+                lItems.idViagem,
+                lItems.valorViagem);
 
 
 

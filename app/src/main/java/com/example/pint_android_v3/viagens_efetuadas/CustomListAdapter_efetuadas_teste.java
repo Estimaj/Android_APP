@@ -27,8 +27,13 @@ public class CustomListAdapter_efetuadas_teste extends BaseAdapter {
     private final ArrayList<String> Local_PartidaCoordenadas;
     private final ArrayList<String> Local_ChegadaCoordenadas;
     private final ArrayList<String> hora;
+    private final ArrayList<Integer> idViagem;
+    private final ArrayList<String> valorViagem;
 
-    public CustomListAdapter_efetuadas_teste(Context cont, int user_id, ArrayList<String> data,  ArrayList<String> local_Chegada,ArrayList<String> Local_ChegadaCoordenadas, ArrayList<String> local_Partida, ArrayList<String> Local_PartidaCoordenadas, ArrayList<String> hora) {
+    public CustomListAdapter_efetuadas_teste(Context cont, int user_id,
+            ArrayList<String> data,  ArrayList<String> local_Chegada,ArrayList<String> Local_ChegadaCoordenadas
+            , ArrayList<String> local_Partida, ArrayList<String> Local_PartidaCoordenadas, ArrayList<String> hora, ArrayList<Integer> idViagem,
+            ArrayList<String> valorViagem) {
 
         context = cont;
         this.user_id = user_id;
@@ -38,6 +43,8 @@ public class CustomListAdapter_efetuadas_teste extends BaseAdapter {
         this.Local_PartidaCoordenadas = Local_PartidaCoordenadas;
         this.hora = hora;
         this.data = data;
+        this.idViagem = idViagem;
+        this.valorViagem = valorViagem;
     }
 
     @Override
@@ -92,6 +99,8 @@ public class CustomListAdapter_efetuadas_teste extends BaseAdapter {
         viewHolder.txt_hora.setText(hora.get(position));
         viewHolder.txt_Local_PartidaCoordenadas.setText(Local_PartidaCoordenadas.get(position));
         viewHolder.txt_Local_ChegadaCoordenadas.setText(Local_ChegadaCoordenadas.get(position));
+        viewHolder.idViagem = idViagem.get(position);
+        viewHolder.valorViagem = valorViagem.get(position);
 
         viewHolder.imageViewViagens_efetuadas_adapter_mais_info.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -126,6 +135,9 @@ public class CustomListAdapter_efetuadas_teste extends BaseAdapter {
         ImageView imageViewViagens_efetuadas_adapter_mais_info;
         TextView textViewclassificar_condutor_textview;
         TextView viagens_efetuadas_adapter_class_viagem_txt;
+        //informação
+        int idViagem;
+        String valorViagem;
     }
 
     private void maisInfoBtnClick(ViewHolder viewHolder){
@@ -138,6 +150,9 @@ public class CustomListAdapter_efetuadas_teste extends BaseAdapter {
         TextView dataViagemtxt = viewHolder.txt_data;
         TextView horaViagemtxt = viewHolder.txt_hora;
 
+        int idViagemCurrent = viewHolder.idViagem;
+        String valorViagemCurrent = viewHolder.valorViagem;
+
 
 
         //Log.i("text",  localPartidatxt.getText().toString() + "|"+ localChegadatxt.getText().toString());
@@ -149,6 +164,8 @@ public class CustomListAdapter_efetuadas_teste extends BaseAdapter {
         goMaisInfo.putExtra("localChegadaCoord", localChegadaCoord.getText());
         goMaisInfo.putExtra("dataViagem", dataViagemtxt.getText());
         goMaisInfo.putExtra("horaViagem", horaViagemtxt.getText());
+        goMaisInfo.putExtra("idViagem", idViagemCurrent);
+        goMaisInfo.putExtra("valorViagem", valorViagemCurrent);
         context.startActivity(goMaisInfo);
     }
     private void classificarCondutorBtnClick(){
