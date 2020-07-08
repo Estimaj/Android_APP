@@ -2,8 +2,8 @@
 <resources>
 
     <!-- TODO: add your customized values here-->
-    <string name="client_id">PquTpQ9Pg5bXM1JU</string>
+    <string name="client_idt">PquTpQ9Pg5bXM1JU</string>
 
     <!-- This redirect URI is the default value for https://www.arcgis.com -->
-    <string name="redirect_uri">my-ags-app://auth</string>
+    <string name="redirect_ur">my-ags-app://auth</string>
 </resources>

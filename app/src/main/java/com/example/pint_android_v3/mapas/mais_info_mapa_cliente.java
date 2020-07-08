@@ -59,13 +59,20 @@ public class mais_info_mapa_cliente extends barra_lateral_pro {
         // Retrieve the map and initial extent from XML layout
         //1
         mMapView = findViewById(R.id.mapView_mais_info_cliente);
+        mStart = new Point(40.6573504,-7.9142947);
+        mEnd = new Point(40.6573504,-7.91429);
+
+
 
         setupMap();
 
 
         //2
         createGraphicsOverlay();
+
         setupOAuthManager();
+        setStartMarker(mStart);
+        setEndMarker(mEnd);
 
         Intent X = getIntent();
         Bundle b = X.getExtras();
@@ -129,10 +136,10 @@ public class mais_info_mapa_cliente extends barra_lateral_pro {
     }
 
     private void setStartMarker(Point location) {
-        mGraphicsOverlay.getGraphics().clear();
+        //mGraphicsOverlay.getGraphics().clear();
         setMapMarker(location, SimpleMarkerSymbol.Style.DIAMOND, Color.rgb(226, 119, 40), Color.BLUE);
         mStart = location;
-        mEnd = null;
+        //mEnd = null;
     }
 
     private void setEndMarker(Point location) {
@@ -141,7 +148,7 @@ public class mais_info_mapa_cliente extends barra_lateral_pro {
         findRoute();
     }
 
-    private void mapClicked(Point location) {
+    /*private void mapClicked(Point location) {
         if (mStart == null) {
             // Start is not set, set it to a tapped location
             setStartMarker(location);
@@ -153,7 +160,7 @@ public class mais_info_mapa_cliente extends barra_lateral_pro {
             setStartMarker(location);
         }
         findRoute();
-    }
+    }*/
 
     private void setupOAuthManager() {
         String clientId = getResources().getString(R.string.client_id);
@@ -183,7 +190,8 @@ public class mais_info_mapa_cliente extends barra_lateral_pro {
             ArcGISMap map = new ArcGISMap(Basemap.Type.STREETS, latitude, longitude, levelOfDetail);
             mMapView.setMap(map);
 
-            //marcar pontos com o dedo
+
+            /*//marcar pontos com o dedo
             mMapView.setOnTouchListener(new DefaultMapViewOnTouchListener(this, mMapView) {
                 @Override public boolean onSingleTapConfirmed(MotionEvent e) {
                     android.graphics.Point screenPoint = new android.graphics.Point(
@@ -193,7 +201,7 @@ public class mais_info_mapa_cliente extends barra_lateral_pro {
                     mapClicked(mapPoint);
                     return super.onSingleTapConfirmed(e);
                 }
-            });
+            });*/
 
             //ArcGISMapImageLayer traffic = new ArcGISMapImageLayer(getResources().getString(R.string.traffic_service));
             //map.getOperationalLayers().add(traffic);
@@ -239,7 +247,7 @@ public class mais_info_mapa_cliente extends barra_lateral_pro {
         });
     }
 
-    @Override
+    /*@Override
     protected void onPause() {
         if (mMapView != null) {
             mMapView.pause();
@@ -261,7 +269,7 @@ public class mais_info_mapa_cliente extends barra_lateral_pro {
             mMapView.dispose();
         }
         super.onDestroy();
-    }
+    }*/
 
 
 

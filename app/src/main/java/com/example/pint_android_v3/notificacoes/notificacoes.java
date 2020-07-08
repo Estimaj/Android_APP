@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.pint_android_v3.R;
 import com.example.pint_android_v3.barra_lateral.barra_lateral_pro;
@@ -21,6 +22,7 @@ public class notificacoes extends barra_lateral_pro {
     ListView lView;
     ListAdapter lAdapter;
     notificacoes_array_test lItems;
+    TextView test;
 
 
     @Override
