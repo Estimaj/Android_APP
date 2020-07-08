@@ -43,6 +43,18 @@ public class dataViagem {
     @Expose
     private String valor_viagem;
 
+    @SerializedName("bagagem_pedido")
+    @Expose
+    private int bagagem_pedido;
+
+    @SerializedName("animal")
+    @Expose
+    private int animal;
+
+    @SerializedName("necessidadesespeciais_pedido")
+    @Expose
+    private int necessidadesespeciais_pedido;
+
     @SerializedName("viagem_efetuada")
     @Expose
     private int viagem_efetuada;
@@ -81,6 +93,18 @@ public class dataViagem {
 
     public String getValor_viagem() {
         return valor_viagem;
+    }
+
+    public int getBagagem_pedido() {
+        return bagagem_pedido;
+    }
+
+    public int getAnimal() {
+        return animal;
+    }
+
+    public int getNecessidadesespeciais_pedido() {
+        return necessidadesespeciais_pedido;
     }
 
     public int getViagem_efetuada() {

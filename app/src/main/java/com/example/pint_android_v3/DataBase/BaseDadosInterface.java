@@ -19,7 +19,7 @@ public interface BaseDadosInterface {
     @GET("/muv/get/{id}")
     Call<Model_User_Information> executeGetUser(@Path("id") int id);
 
-    @POST("/muv/pedidos/criarmobile")
+    @POST("/muv/pedidos/createMobile")
     Call<Pedido_Viagem> executeCriarPedidoViagem(@Body Pedido_Viagem pedido_viagem);
 
     @GET("muv/viagem/listaCidadao/{id}")

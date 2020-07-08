@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -108,6 +109,21 @@ public class mais_info_mapa_cliente extends barra_lateral_pro {
         localPartidatxtview.setText(localPartida);
         TextView localChegadatxtview = findViewById(R.id.Local_Chegada_mais_info_cliente);
         localChegadatxtview.setText(localChegada);
+
+        ImageView certoGone;
+        if((int) b.get("bagagemPedido") == 0){
+            certoGone = findViewById(R.id.mala_icon_mais_info_cliente);
+            certoGone.setVisibility(View.GONE);
+        }
+        if((int) b.get("animalPedido") == 0){
+            certoGone = findViewById(R.id.canideo_icon_mais_info_cliente);
+            certoGone.setVisibility(View.GONE);
+        }
+        if((int) b.get("necessidadesEspeciaisPedido") == 0){
+            certoGone = findViewById(R.id.wheel_icon_mais_info_cliente);
+            certoGone.setVisibility(View.GONE);
+        }
+
 
         TextView localPartidaCoord = findViewById(R.id.viagens_efetuadas_adapter_Local_Partida_coordenadas);
         localPartidaCoord.setText("" + (String) b.get("localPartidaCoord"));

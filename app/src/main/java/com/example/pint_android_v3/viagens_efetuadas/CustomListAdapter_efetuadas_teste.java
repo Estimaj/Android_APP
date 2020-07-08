@@ -29,11 +29,14 @@ public class CustomListAdapter_efetuadas_teste extends BaseAdapter {
     private final ArrayList<String> hora;
     private final ArrayList<Integer> idViagem;
     private final ArrayList<String> valorViagem;
+    private final ArrayList<Integer> bagagemPedido;
+    private final ArrayList<Integer> animalPedido;
+    private final ArrayList<Integer> necessidadesEspeciaisPedido;
 
     public CustomListAdapter_efetuadas_teste(Context cont, int user_id,
             ArrayList<String> data,  ArrayList<String> local_Chegada,ArrayList<String> Local_ChegadaCoordenadas
             , ArrayList<String> local_Partida, ArrayList<String> Local_PartidaCoordenadas, ArrayList<String> hora, ArrayList<Integer> idViagem,
-            ArrayList<String> valorViagem) {
+            ArrayList<String> valorViagem, ArrayList<Integer> bagagemPedido,  ArrayList<Integer> animalPedido, ArrayList<Integer> necessidadesEspeciaisPedido) {
 
         context = cont;
         this.user_id = user_id;
@@ -45,6 +48,9 @@ public class CustomListAdapter_efetuadas_teste extends BaseAdapter {
         this.data = data;
         this.idViagem = idViagem;
         this.valorViagem = valorViagem;
+        this.bagagemPedido = bagagemPedido;
+        this.animalPedido = animalPedido;
+        this.necessidadesEspeciaisPedido = necessidadesEspeciaisPedido;
     }
 
     @Override
@@ -101,6 +107,9 @@ public class CustomListAdapter_efetuadas_teste extends BaseAdapter {
         viewHolder.txt_Local_ChegadaCoordenadas.setText(Local_ChegadaCoordenadas.get(position));
         viewHolder.idViagem = idViagem.get(position);
         viewHolder.valorViagem = valorViagem.get(position);
+        viewHolder.bagagemPedido = bagagemPedido.get(position);
+        viewHolder.animalPedido = animalPedido.get(position);
+        viewHolder.necessidadesEspeciaisPedido = necessidadesEspeciaisPedido.get(position);
 
         viewHolder.imageViewViagens_efetuadas_adapter_mais_info.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -138,6 +147,10 @@ public class CustomListAdapter_efetuadas_teste extends BaseAdapter {
         //informação
         int idViagem;
         String valorViagem;
+
+        int bagagemPedido;
+        int animalPedido;
+        int necessidadesEspeciaisPedido;
     }
 
     private void maisInfoBtnClick(ViewHolder viewHolder){
@@ -153,6 +166,10 @@ public class CustomListAdapter_efetuadas_teste extends BaseAdapter {
         int idViagemCurrent = viewHolder.idViagem;
         String valorViagemCurrent = viewHolder.valorViagem;
 
+        int bagagemPedidoCurrent = viewHolder.bagagemPedido;
+        int animalPedidoCurrent = viewHolder.animalPedido;
+        int necessidadesEspeciaisPedidoCurrent = viewHolder.necessidadesEspeciaisPedido;
+
 
 
         //Log.i("text",  localPartidatxt.getText().toString() + "|"+ localChegadatxt.getText().toString());
@@ -166,6 +183,9 @@ public class CustomListAdapter_efetuadas_teste extends BaseAdapter {
         goMaisInfo.putExtra("horaViagem", horaViagemtxt.getText());
         goMaisInfo.putExtra("idViagem", idViagemCurrent);
         goMaisInfo.putExtra("valorViagem", valorViagemCurrent);
+        goMaisInfo.putExtra("bagagemPedido", bagagemPedidoCurrent);
+        goMaisInfo.putExtra("animalPedido", animalPedidoCurrent);
+        goMaisInfo.putExtra("necessidadesEspeciaisPedido", necessidadesEspeciaisPedidoCurrent);
         context.startActivity(goMaisInfo);
     }
     private void classificarCondutorBtnClick(){

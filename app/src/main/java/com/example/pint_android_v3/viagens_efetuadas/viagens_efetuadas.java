@@ -121,6 +121,10 @@ public class viagens_efetuadas extends barra_lateral_pro {
         ArrayList<String> hora = new ArrayList<>();
         ArrayList<Integer> idViagem = new ArrayList<>();
         ArrayList<String> valorViagem = new ArrayList<>();
+        ArrayList<Integer> bagagemPedido = new ArrayList<>();
+        ArrayList<Integer> animalPedido = new ArrayList<>();
+        ArrayList<Integer> necessidadesEspeciaisPedido = new ArrayList<>();
+
 
         for (int i = 0; i < informacaoViagem.size(); i++) {
             if(informacaoViagem.get(i).getViagem_efetuada() == 1) { //confirma se a viagem é efetuada ou não
@@ -134,9 +138,14 @@ public class viagens_efetuadas extends barra_lateral_pro {
 
                 idViagem.add(informacaoViagem.get(i).getId_viagem());
                 valorViagem.add(informacaoViagem.get(i).getValor_viagem());
+
+                bagagemPedido.add(informacaoViagem.get(i).getBagagem_pedido());
+                animalPedido.add(informacaoViagem.get(i).getAnimal());
+                necessidadesEspeciaisPedido.add(informacaoViagem.get(i).getNecessidadesespeciais_pedido());
             }
         }
-        viagens_efetuadas_array_test lItems = new viagens_efetuadas_array_test(Local_Partida, Local_Chegada, Local_PartidaCoordenadas, Local_ChegadaCoordenadas, data, hora, idViagem, valorViagem);
+        viagens_efetuadas_array_test lItems = new viagens_efetuadas_array_test(Local_Partida, Local_Chegada,
+                Local_PartidaCoordenadas, Local_ChegadaCoordenadas, data, hora, idViagem, valorViagem, bagagemPedido, animalPedido, necessidadesEspeciaisPedido);
 
 
         lView = findViewById(R.id.viagens_efetuadas_listview);
@@ -150,37 +159,14 @@ public class viagens_efetuadas extends barra_lateral_pro {
                 lItems.Local_PartidaCoordenadas,
                 lItems.hora,
                 lItems.idViagem,
-                lItems.valorViagem);
+                lItems.valorViagem,
+                lItems.bagagemPedido,
+                lItems.animalPedido,
+                lItems.necessidadesEspeciaisPedido);
 
 
 
         lView.setAdapter(lAdapter);
-    }
-
-
-
-    public void maisInfo(View view){ //falta saber como enviar a viagem certa
-        TextView localPartidatxt = this.findViewById(R.id.viagens_efetuadas_adapter_Local_Partida);
-        TextView localChegadatxt = this.findViewById(R.id.viagens_efetuadas_adapter_Local_Chegada);
-
-        TextView localPartidaCoord = this.findViewById(R.id.viagens_efetuadas_adapter_Local_Partida_coordenadas);
-        TextView localChegadaCoord = this.findViewById(R.id.viagens_efetuadas_adapter_Local_Chegada_coordenadas);
-
-        TextView dataViagemtxt = this.findViewById(R.id.viagens_efetuadas_adapter_data_trip);
-        TextView horaViagemtxt = this.findViewById(R.id.viagens_efetuadas_adapter_hora_trip);
-
-
-
-        //Log.i("text",  localPartidatxt.getText().toString() + "|"+ localChegadatxt.getText().toString());
-        Intent goMaisInfo = new Intent(viagens_efetuadas.this, mais_info_mapa_cliente.class);
-        goMaisInfo.putExtra("user_id", user_id);
-        goMaisInfo.putExtra("localPartida", localPartidatxt.getText());
-        goMaisInfo.putExtra("localChegada", localChegadatxt.getText());
-        goMaisInfo.putExtra("localPartidaCoord", localPartidaCoord.getText());
-        goMaisInfo.putExtra("localChegadaCoord", localChegadaCoord.getText());
-        goMaisInfo.putExtra("dataViagem", dataViagemtxt.getText());
-        goMaisInfo.putExtra("horaViagem", horaViagemtxt.getText());
-        startActivity(goMaisInfo);
     }
 
 
