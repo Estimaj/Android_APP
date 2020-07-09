@@ -51,7 +51,6 @@ public class viagens_marcadas extends barra_lateral_pro {
             user_id = (int) b.get("user_id");
 
         }
-        user_id = 7;
         getInformationFromdb(user_id);
         Bar_Settings(user_id);
     }

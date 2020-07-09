@@ -48,24 +48,8 @@ public class viagens_efetuadas extends barra_lateral_pro {
         if(b!=null){
             user_id = (int) b.get("user_id");
             //Log.i("id_user", ""+ id_user);
-
         }
-        user_id = 7;
         getInformationFromdb(user_id);
-
-
-        /*
-        lView.setOnItemClickListener(new ListView.OnItemClickListener() {
-
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                TextView sacarInfoDaViagem = view.findViewById(R.id.viagens_efetuadas_adapter_Local_Partida);
-                sacarInfoDaViagem.setText("ola");
-                //lAdapter.getItem(position);
-                //Classificar_Condutor();
-            }
-        });
-        */
 
         Bar_Settings(user_id);
     }
