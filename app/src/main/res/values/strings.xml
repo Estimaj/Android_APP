@@ -62,4 +62,7 @@
     <string name="routing_url">https://route.arcgis.com/arcgis/rest/services/World/Route/NAServer/Route_World</string>
     <string name="telefone">Telefone</string>
     <string name="idade">Idade</string>
+
+
+    <string name="urlBackEnd">http://10.0.2.2:3000</string>
 </resources>

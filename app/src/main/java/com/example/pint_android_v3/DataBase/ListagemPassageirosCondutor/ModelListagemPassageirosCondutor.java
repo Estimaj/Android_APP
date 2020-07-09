@@ -1,11 +1,11 @@
-package com.example.pint_android_v3.DataBase.ListagemPassageiros;
+package com.example.pint_android_v3.DataBase.ListagemPassageirosCondutor;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;
 
-public class ModelListagemPassageiros {
+public class ModelListagemPassageirosCondutor {
 
     @SerializedName("success")
     @Expose
@@ -13,21 +13,24 @@ public class ModelListagemPassageiros {
 
     @SerializedName("data")
     @Expose
-    private ArrayList<dataListagem> dataListagem;
+    private ArrayList<dataListagemCondutor> dataListagemCondutor;
 
     public String getSuccess() {
         return success;
     }
 
-    public ArrayList<dataListagem> getDataListagem() {
-        return dataListagem;
+    public ArrayList<dataListagemCondutor> getDataListagemCondutor() {
+        return dataListagemCondutor;
     }
+
+
+
 
     @Override
     public String toString() {
         return "ModelListagemPassageiros{" +
                 "success='" + success + '\'' +
-                ", dataViagem=" + dataListagem +
+                ", dataViagem=" + dataListagemCondutor +
                 '}';
     }
 

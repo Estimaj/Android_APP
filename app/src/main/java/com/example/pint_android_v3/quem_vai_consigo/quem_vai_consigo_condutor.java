@@ -10,7 +10,10 @@ import com.example.pint_android_v3.pagamentoCondutor;
 
 public class quem_vai_consigo_condutor extends barra_lateral_pro {
 
+
+    private String BASE_URL ="http://10.0.2.2:3000";
     private int user_id;
+    private int viagemId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +24,7 @@ public class quem_vai_consigo_condutor extends barra_lateral_pro {
         Bundle b = X.getExtras();
         if(b!=null){
             user_id = (int) b.get("user_id");
+            viagemId = (int) b.get("viagemID");
             //Log.i("id_user", ""+ id_user);
 
         }
@@ -35,8 +39,6 @@ public class quem_vai_consigo_condutor extends barra_lateral_pro {
         Intent pagamento = new Intent( quem_vai_consigo_condutor.this ,pagamentoCondutor.class);
         pagamento.putExtra("user_id", user_id);
         startActivity(pagamento);
-
-
 
     }
 
