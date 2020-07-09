@@ -186,6 +186,7 @@ public class CustomListAdapter_efetuadas_teste extends BaseAdapter {
         goMaisInfo.putExtra("bagagemPedido", bagagemPedidoCurrent);
         goMaisInfo.putExtra("animalPedido", animalPedidoCurrent);
         goMaisInfo.putExtra("necessidadesEspeciaisPedido", necessidadesEspeciaisPedidoCurrent);
+        goMaisInfo.putExtra("cidadao", true);
         context.startActivity(goMaisInfo);
     }
     private void classificarCondutorBtnClick(){

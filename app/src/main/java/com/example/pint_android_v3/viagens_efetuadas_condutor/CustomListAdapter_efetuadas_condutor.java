@@ -169,7 +169,7 @@ public class CustomListAdapter_efetuadas_condutor extends BaseAdapter {
         goMaisInfo.putExtra("bagagemPedido", bagagemPedidoCurrent);
         goMaisInfo.putExtra("animalPedido", animalPedidoCurrent);
         goMaisInfo.putExtra("necessidadesEspeciaisPedido", necessidadesEspeciaisPedidoCurrent);
-        goMaisInfo.putExtra("user_id", user_id);
+        goMaisInfo.putExtra("cidadao", false);
         context.startActivity(goMaisInfo);
 
     }

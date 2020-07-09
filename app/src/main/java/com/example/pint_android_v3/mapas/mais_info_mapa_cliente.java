@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -37,6 +38,7 @@ import com.esri.arcgisruntime.tasks.networkanalysis.Stop;
 import com.example.pint_android_v3.barra_lateral.barra_lateral_pro;
 import com.example.pint_android_v3.R;
 import com.example.pint_android_v3.quem_vai_consigo.quem_vai_consigo;
+import com.example.pint_android_v3.quem_vai_consigo.quem_vai_consigo_condutor;
 
 import java.net.MalformedURLException;
 import java.util.ArrayList;
@@ -81,6 +83,16 @@ public class mais_info_mapa_cliente extends barra_lateral_pro {
         if(b!=null){
             user_id = (int) b.get("user_id");
             try {
+                boolean Cidadao = (boolean) b.get("cidadao");
+
+                Button btnPassageiros = findViewById(R.id.ver_passageiros_mais_info_cliente);
+                btnPassageiros.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Click_Quem_Vai(Cidadao);
+                    }
+                });
+
                 colocarValoresMaisInfo(b);
             } catch (Exception e) {
                 e.printStackTrace();
@@ -129,18 +141,21 @@ public class mais_info_mapa_cliente extends barra_lateral_pro {
         localPartidaCoord.setText("" + (String) b.get("localPartidaCoord"));
         TextView localChegadaCoord = findViewById(R.id.viagens_efetuadas_adapter_Local_Chegada_coordenadas);
         localChegadaCoord.setText(""+ (String) b.get("localChegadaCoord"));
-
-
     }
 
-    public void Click_Quem_Vai(View view){
-        /*Tem o onClick no layout*/
-        Intent Consigo = new Intent(mais_info_mapa_cliente.this, quem_vai_consigo.class);
-        Consigo.putExtra("user_id", user_id);
-        Consigo.putExtra("idViagem", idViagem);
-        startActivity(Consigo);
-
-
+    public void Click_Quem_Vai(boolean Cidadao){
+        if(Cidadao) {
+            Intent Consigo = new Intent(mais_info_mapa_cliente.this, quem_vai_consigo.class);
+            Consigo.putExtra("user_id", user_id);
+            Consigo.putExtra("idViagem", idViagem);
+            startActivity(Consigo);
+        }
+        else{
+            Intent Consigo = new Intent(mais_info_mapa_cliente.this, quem_vai_consigo_condutor.class);
+            Consigo.putExtra("user_id", user_id);
+            Consigo.putExtra("idViagem", idViagem);
+            startActivity(Consigo);
+        }
     }
 
 
