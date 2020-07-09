@@ -28,6 +28,9 @@ public class CustomListAdapter_marcadas_teste extends BaseAdapter {
     private final ArrayList<String> hora;
     private final ArrayList<Integer> idViagem;
     private final ArrayList<String> valorViagem;
+    private final ArrayList<Integer> bagagemPedido;
+    private final ArrayList<Integer> animalPedido;
+    private final ArrayList<Integer> necessidadesEspeciaisPedido;
 
     public CustomListAdapter_marcadas_teste(Context cont, int user_id,
                                             ArrayList<String> data,
@@ -36,7 +39,10 @@ public class CustomListAdapter_marcadas_teste extends BaseAdapter {
                                             ArrayList<String> local_Partida,
                                             ArrayList<String> Local_PartidaCoordenadas,
                                             ArrayList<String> hora, ArrayList<Integer> idViagem,
-                                            ArrayList<String> valorViagem) {
+                                            ArrayList<String> valorViagem,
+                                            ArrayList<Integer> bagagemPedido,
+                                            ArrayList<Integer> animalPedido,
+                                            ArrayList<Integer> necessidadesEspeciaisPedido) {
 
         context = cont;
         this.user_id = user_id;
@@ -48,6 +54,9 @@ public class CustomListAdapter_marcadas_teste extends BaseAdapter {
         this.data = data;
         this.idViagem = idViagem;
         this.valorViagem = valorViagem;
+        this.bagagemPedido = bagagemPedido;
+        this.animalPedido = animalPedido;
+        this.necessidadesEspeciaisPedido = necessidadesEspeciaisPedido;
 
     }
 
@@ -83,6 +92,7 @@ public class CustomListAdapter_marcadas_teste extends BaseAdapter {
             viewHolder.txt_Local_ChegadaCoordenadas = convertView.findViewById(R.id.local_chegada_coordenadas);
             viewHolder.txt_Local_PartidaCoordenadas = convertView.findViewById(R.id.local_origem_coordenadas);
             viewHolder.txt_Local_Partida = convertView.findViewById(R.id.viagens_marcadas_adapter_Local_Partida);
+            viewHolder.txt_Local_Chegada = convertView.findViewById(R.id.viagens_marcadas_adapter_Local_Chegada);
             viewHolder.txt_hora = convertView.findViewById(R.id.viagens_marcadas_adapter_hora_trip);
             viewHolder.imageViewCancelarViagemBtn = convertView.findViewById(R.id.viagens_marcadas_adapter_cancelar_viagem_button);
             viewHolder.imageViewViagensMarcadasAdapterMaisInfo = convertView.findViewById(R.id.viagens_marcadas_adapter_mais_info);
@@ -97,14 +107,6 @@ public class CustomListAdapter_marcadas_teste extends BaseAdapter {
             viewHolder = (CustomListAdapter_marcadas_teste.ViewHolder) convertView.getTag();
 
         }
-
-        /*viewHolder.txt_data.getText(data[position]);
-        //viewHolder.txt_distancia.setText(distancia[position]);
-        //viewHolder.txt_tempo.setText(tempo[position]);
-        viewHolder.txt_Local_Chegada.setText(Local_Chegada[position]);
-        viewHolder.txt_Local_Partida.setText(Local_Partida[position]);
-        viewHolder.txt_hora.setText(hora[position]);*/
-
         viewHolder.txt_data.setText(data.get(position));
         viewHolder.txt_Local_Chegada.setText(Local_Chegada.get(position));
         viewHolder.txt_Local_Partida.setText(Local_Partida.get(position));
@@ -113,6 +115,9 @@ public class CustomListAdapter_marcadas_teste extends BaseAdapter {
         viewHolder.txt_Local_ChegadaCoordenadas.setText(Local_ChegadaCoordenadas.get(position));
         viewHolder.idViagem = idViagem.get(position);
         viewHolder.valorViagem = valorViagem.get(position);
+        viewHolder.bagagemPedido = bagagemPedido.get(position);
+        viewHolder.animalPedido = animalPedido.get(position);
+        viewHolder.necessidadesEspeciaisPedido = necessidadesEspeciaisPedido.get(position);
 
         viewHolder.imageViewViagensMarcadasAdapterMaisInfo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -130,7 +135,7 @@ public class CustomListAdapter_marcadas_teste extends BaseAdapter {
 
 
 
-        return convertView;
+        return result;
     }
 
     private static class ViewHolder {
@@ -147,6 +152,9 @@ public class CustomListAdapter_marcadas_teste extends BaseAdapter {
         ImageView imageViewViagensMarcadasAdapterMaisInfo;
         ImageView imageViewCancelarViagemBtn;
 
+        int bagagemPedido;
+        int animalPedido;
+        int necessidadesEspeciaisPedido;
 
     }
 
@@ -163,7 +171,9 @@ public class CustomListAdapter_marcadas_teste extends BaseAdapter {
         int idViagemCurrent = viewHolder.idViagem;
         String valorViagemCurrent = viewHolder.valorViagem;
 
-
+        int bagagemPedidoCurrent = viewHolder.bagagemPedido;
+        int animalPedidoCurrent = viewHolder.animalPedido;
+        int necessidadesEspeciaisPedidoCurrent = viewHolder.necessidadesEspeciaisPedido;
 
         //Log.i("text",  localPartidatxt.getText().toString() + "|"+ localChegadatxt.getText().toString());
         Intent goMaisInfo = new Intent(context, mais_info_mapa_cliente.class);
@@ -176,6 +186,9 @@ public class CustomListAdapter_marcadas_teste extends BaseAdapter {
         goMaisInfo.putExtra("horaViagem", horaViagemtxt.getText());
         goMaisInfo.putExtra("idViagem", idViagemCurrent);
         goMaisInfo.putExtra("valorViagem", valorViagemCurrent);
+        goMaisInfo.putExtra("bagagemPedido", bagagemPedidoCurrent);
+        goMaisInfo.putExtra("animalPedido", animalPedidoCurrent);
+        goMaisInfo.putExtra("necessidadesEspeciaisPedido", necessidadesEspeciaisPedidoCurrent);
         context.startActivity(goMaisInfo);
     }
 

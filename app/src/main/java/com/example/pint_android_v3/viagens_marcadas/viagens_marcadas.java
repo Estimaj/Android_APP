@@ -109,6 +109,9 @@ public class viagens_marcadas extends barra_lateral_pro {
         ArrayList<String> hora = new ArrayList<>();
         ArrayList<Integer> idViagem = new ArrayList<>();
         ArrayList<String> valorViagem = new ArrayList<>();
+        ArrayList<Integer> bagagemPedido = new ArrayList<>();
+        ArrayList<Integer> animalPedido = new ArrayList<>();
+        ArrayList<Integer> necessidadesEspeciaisPedido = new ArrayList<>();
 
         for (int i = 0; i < informacaoViagem.size(); i++) {
             if(informacaoViagem.get(i).getViagem_efetuada() == 0) { //confirma se a viagem é efetuada ou não
@@ -122,9 +125,13 @@ public class viagens_marcadas extends barra_lateral_pro {
 
                 idViagem.add(informacaoViagem.get(i).getId_viagem());
                 valorViagem.add(informacaoViagem.get(i).getValor_viagem());
+
+                bagagemPedido.add(informacaoViagem.get(i).getBagagem_pedido());
+                animalPedido.add(informacaoViagem.get(i).getAnimal());
+                necessidadesEspeciaisPedido.add(informacaoViagem.get(i).getNecessidadesespeciais_pedido());
             }
         }
-        viagens_marcadas_array_test lItems = new viagens_marcadas_array_test(Local_Partida, Local_Chegada, Local_PartidaCoordenadas, Local_ChegadaCoordenadas, data, hora, idViagem, valorViagem);
+        viagens_marcadas_array_test lItems = new viagens_marcadas_array_test(Local_Partida, Local_Chegada, Local_PartidaCoordenadas, Local_ChegadaCoordenadas, data, hora, idViagem, valorViagem,bagagemPedido, animalPedido, necessidadesEspeciaisPedido);
 
 
 
@@ -139,38 +146,16 @@ public class viagens_marcadas extends barra_lateral_pro {
                 lItems.Local_PartidaCoordenadas,
                 lItems.hora,
                 lItems.idViagem,
-                lItems.valorViagem);
+                lItems.valorViagem,
+                lItems.bagagemPedido,
+                lItems.animalPedido,
+                lItems.necessidadesEspeciaisPedido);
 
         lView.setAdapter(lAdapter);
 
 
     }
 
-    public void Cancelar_Viagem(View view){//falta saber como enviar a viagem certa
-        Intent Cancelar_Viagem = new Intent(viagens_marcadas.this, Cancelar_Viagem.class);
-        Cancelar_Viagem.putExtra("user_id", user_id);
-        startActivity(Cancelar_Viagem);
-    }
 
-    public void maisInfo(View view){ //falta saber como enviar a viagem certa
-        Log.i("hm", ""+ view.findViewById(R.id.viagens_marcadas_adapter_Local_Partida));
-        TextView localPartidatxt = this.findViewById(R.id.viagens_marcadas_adapter_Local_Partida);
-        TextView localChegadatxt = this.findViewById(R.id.viagens_marcadas_adapter_Local_Chegada);
-
-        TextView dataViagemtxt = this.findViewById(R.id.viagens_marcadas_adapter_data_trip);
-        TextView horaViagemtxt = this.findViewById(R.id.viagens_marcadas_adapter_hora_trip);
-
-        //TextView distanciaViagemtxt = this.findViewById(R.id.viagens_marcadas_adapter_Distancia);
-
-        //Log.i("text",  localPartidatxt.getText().toString() + "|"+ localChegadatxt.getText().toString());
-        Intent goMaisInfo = new Intent(viagens_marcadas.this, mais_info_mapa_cliente.class);
-        goMaisInfo.putExtra("user_id", user_id);
-        goMaisInfo.putExtra("localPartida", localPartidatxt.getText());
-        goMaisInfo.putExtra("localChegada", localChegadatxt.getText());
-        goMaisInfo.putExtra("dataViagem", dataViagemtxt.getText());
-        goMaisInfo.putExtra("horaViagem", horaViagemtxt.getText());
-       // goMaisInfo.putExtra("distanciaViagem", distanciaViagemtxt.getText());
-        startActivity(goMaisInfo);
-    }
 
 }
