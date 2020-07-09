@@ -213,6 +213,7 @@ public class menu_municipe extends barra_lateral_pro {
     }
 
     private void verificarDividasUtilizador(int id) {
+        emDivida = false; //permite o utilizador marcar viagem antes de confirmar se pode ou nao
         Retrofit retrofit;
         BaseDadosInterface baseDadosInterface;
 
@@ -230,7 +231,6 @@ public class menu_municipe extends barra_lateral_pro {
                 if (!response.isSuccessful()){
                     makeToastFordesambiguacao("Erro a ir ao link");
                 }
-                emDivida = false;
                 for(int i = 0; i < response.body().getDataDividaUtilizadors().size(); i++){
                     if(response.body().getDataDividaUtilizadors().get(i).getEstado_Coima() == 0){
                         emDivida = true;
