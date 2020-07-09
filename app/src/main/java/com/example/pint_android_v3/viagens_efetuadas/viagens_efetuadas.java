@@ -92,7 +92,7 @@ public class viagens_efetuadas extends barra_lateral_pro {
                     Log.i("Erro", "L99 viagens efetuadas");
                 }
                 if (response.code() == 200){
-                    if (response.body().getDataViagem().size() != 0) {
+                    if (response.body().getDataViagem() != null) {
                         //Log.i("body", "" + response.body().getDataViagem().get(0).toString());
                         informacaoViagem = response.body().getDataViagem();
                         createAdapters();
