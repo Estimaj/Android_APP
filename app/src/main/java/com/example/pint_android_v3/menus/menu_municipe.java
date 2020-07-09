@@ -13,6 +13,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.example.pint_android_v3.DataBase.BaseDadosInterface;
 import com.example.pint_android_v3.DataBase.DadosUtilizador.Model_User_Information;
+import com.example.pint_android_v3.DataBase.DividaUtilizador.ModelDividaUtilizador;
 import com.example.pint_android_v3.R;
 import com.example.pint_android_v3.barra_lateral.barra_lateral_pro;
 import com.example.pint_android_v3.Marcar_viagem;
@@ -47,7 +48,7 @@ public class menu_municipe extends barra_lateral_pro {
     private NavigationView navigationView;
     private Get_user user;
 
-
+    private boolean emDivida;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -127,10 +128,7 @@ public class menu_municipe extends barra_lateral_pro {
         startActivity(Perfil);
     }
     public void Clicar_Viagens_Marcadas()
-    {   //ha uma possibilidade de haver divida e n puder marcar viagem
-
-
-
+    {
         Intent Viagens = new Intent(menu_municipe.this, viagens_marcadas.class);
         Viagens.putExtra("user_id", user_id);
         startActivity(Viagens);
@@ -150,9 +148,17 @@ public class menu_municipe extends barra_lateral_pro {
     }
     public void Clicar_Marcar_Viagem()
     {
-        Intent Marcar = new Intent(menu_municipe.this, Marcar_viagem.class);
-        Marcar.putExtra("user_id", user_id);
-        startActivity(Marcar);
+        //ha uma possibilidade de haver divida e n puder marcar viagem
+
+        if(!verificarDividasUtilizador(user_id)){
+            Intent Marcar = new Intent(menu_municipe.this, Marcar_viagem.class);
+            Marcar.putExtra("user_id", user_id);
+            startActivity(Marcar);
+        }
+        else {
+            makeToastFordesambiguacao("Tem Dividas Pendentes");
+        }
+
     }
 
     public void Get_user_id_information(int id){
@@ -198,6 +204,42 @@ public class menu_municipe extends barra_lateral_pro {
         });
 
 
+    }
+
+    private boolean verificarDividasUtilizador(int id) {
+        Retrofit retrofit;
+        BaseDadosInterface baseDadosInterface;
+
+        retrofit = new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        baseDadosInterface =  retrofit.create(BaseDadosInterface.class);
+
+        Call<ModelDividaUtilizador> call = baseDadosInterface.executeGetUserDivida(id);
+
+        call.enqueue(new Callback<ModelDividaUtilizador>() {
+            @Override
+            public void onResponse(Call<ModelDividaUtilizador> call, Response<ModelDividaUtilizador> response) {
+                if (!response.isSuccessful()){
+                    makeToastFordesambiguacao("Erro a ir ao link");
+                }
+                emDivida = false;
+                for(int i = 0; i < response.body().getDataDividaUtilizadors().size(); i++){
+                    if(response.body().getDataDividaUtilizadors().get(i).getEstado_Coima() == 0){
+                        emDivida = true;
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ModelDividaUtilizador> call, Throwable t) {
+                Log.i("Failure:", t.toString());
+                makeToastFordesambiguacao("Failure: "+ t.toString());
+            }
+        });
+
+        return emDivida;
     }
 
     public void makeToastFordesambiguacao(String msg){
