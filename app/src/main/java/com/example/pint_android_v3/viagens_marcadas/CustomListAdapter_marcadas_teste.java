@@ -128,7 +128,7 @@ public class CustomListAdapter_marcadas_teste extends BaseAdapter {
         viewHolder.imageViewCancelarViagemBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                cancelarViagemBtnClick();
+                cancelarViagemBtnClick(viewHolder);
             }
         });
 
@@ -192,10 +192,36 @@ public class CustomListAdapter_marcadas_teste extends BaseAdapter {
         context.startActivity(goMaisInfo);
     }
 
-    private void cancelarViagemBtnClick(){
-        Intent GO = new Intent(context, Cancelar_Viagem.class);
-        GO.putExtra("user_id", user_id);
-        context.startActivity(GO);
+    private void cancelarViagemBtnClick(CustomListAdapter_marcadas_teste.ViewHolder viewHolder){
+        TextView localPartidatxt = viewHolder.txt_Local_Partida;
+        TextView localChegadatxt = viewHolder.txt_Local_Chegada;
+
+
+        TextView dataViagemtxt = viewHolder.txt_data;
+        TextView horaViagemtxt = viewHolder.txt_hora;
+
+        int idViagemCurrent = viewHolder.idViagem;
+        String valorViagemCurrent = viewHolder.valorViagem;
+
+        int bagagemPedidoCurrent = viewHolder.bagagemPedido;
+        int animalPedidoCurrent = viewHolder.animalPedido;
+        int necessidadesEspeciaisPedidoCurrent = viewHolder.necessidadesEspeciaisPedido;
+
+
+
+        //Log.i("text",  localPartidatxt.getText().toString() + "|"+ localChegadatxt.getText().toString());
+        Intent goMaisInfo = new Intent(context, mais_info_mapa_cliente.class);
+        goMaisInfo.putExtra("user_id", user_id);
+        goMaisInfo.putExtra("localPartida", localPartidatxt.getText());
+        goMaisInfo.putExtra("localChegada", localChegadatxt.getText());
+        goMaisInfo.putExtra("dataViagem", dataViagemtxt.getText());
+        goMaisInfo.putExtra("horaViagem", horaViagemtxt.getText());
+        goMaisInfo.putExtra("idViagem", idViagemCurrent);
+        goMaisInfo.putExtra("valorViagem", valorViagemCurrent);
+        goMaisInfo.putExtra("bagagemPedido", bagagemPedidoCurrent);
+        goMaisInfo.putExtra("animalPedido", animalPedidoCurrent);
+        goMaisInfo.putExtra("necessidadesEspeciaisPedido", necessidadesEspeciaisPedidoCurrent);
+        context.startActivity(goMaisInfo);
     }
 
 }
