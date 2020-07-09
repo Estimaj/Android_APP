@@ -1,38 +1,45 @@
 package com.example.pint_android_v3.viagens_efetuadas_condutor;
 
+import java.util.ArrayList;
+
 public class viagens_efetuadas_condutor_array {
 
-    String[] Local_Partida = {
-            "Póvoa de Calde",
-            "Matosinhos",
-            "Remonde",
-            "Carragoso"
-    };
+    ArrayList<String> Local_Partida;
 
-    String[] Local_Chegada = {
-            "Remonde",
-            "Carragoso",
-            "Póvoa de Calde",
-            "Matosinhos"
-    };
+    ArrayList<String> Local_Chegada;
 
+    ArrayList<String> Local_PartidaCoordenadas;
 
+    ArrayList<String> Local_ChegadaCoordenadas;
 
-    String[] data = {
-            "1/01/2001",
-            "16/05/2020",
-            "12/06/2015",
-            "4/08/2017"
-    };
+    ArrayList<String> data;
 
-    String[] hora = {
-            "16:00",
-            "15:30",
-            "14:00",
-            "17:20"
-    };
+    ArrayList<String> hora;
 
-    public viagens_efetuadas_condutor_array() {}
+    ArrayList<Integer> idViagem;
 
+    ArrayList<String> valorViagem;
 
+    ArrayList<Integer> bagagemPedido;
+
+    ArrayList<Integer> animalPedido;
+
+    ArrayList<Integer> necessidadesEspeciaisPedido;
+
+    public viagens_efetuadas_condutor_array(ArrayList<String> local_Partida, ArrayList<String> local_Chegada, ArrayList<String> Local_PartidaCoordenadas,
+            ArrayList<String> Local_ChegadaCoordenadas  , ArrayList<String> data, ArrayList<String> hora
+            , ArrayList<Integer> idViagem, ArrayList<String> valorViagem, ArrayList<Integer> bagagemPedido,
+            ArrayList<Integer> animalPedido, ArrayList<Integer> necessidadesEspeciaisPedido) {
+        this.Local_Partida = local_Partida;
+        this.Local_Chegada = local_Chegada;
+        this.Local_ChegadaCoordenadas = Local_ChegadaCoordenadas;
+        this.Local_PartidaCoordenadas = Local_PartidaCoordenadas;
+        this.data = data;
+        this.hora = hora;
+        this.idViagem = idViagem;
+        this.valorViagem = valorViagem;
+        this.bagagemPedido = bagagemPedido;
+        this.animalPedido = animalPedido;
+        this.necessidadesEspeciaisPedido = necessidadesEspeciaisPedido;
+    }
 }

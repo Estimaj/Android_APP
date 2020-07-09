@@ -27,6 +27,9 @@ public interface BaseDadosInterface {
     @GET("muv/viagem/listaCidadao/{id}")
     Call<Model_Viagens_Efetuadas> executeViagemEfetuada(@Path("id") int id);
 
+    @GET("muv/viagem/listaMotorista/{id}")
+    Call<Model_Viagens_Efetuadas> executeViagemEfetuadaMotorista(@Path("id") int id);
+
     @GET("/muv/dividas/getcidadaodivida/{id}")
     Call<ModelDividaUtilizador> executeGetUserDivida(@Path("id") int id);
 
