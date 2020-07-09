@@ -26,10 +26,15 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class quem_vai_consigo extends barra_lateral_pro {
 
+    //Testar se isto funciona
     private int user_id;
     private int viagem_id;
     private String BASE_URL ="http://10.0.2.2:3000";
     private ArrayList<dataListagemCondutor> informacaoViagem;
+    ArrayList<String> ListNome;
+    ArrayList<String> ListLocalidade;
+    ArrayList<Integer> ListIdPass;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,9 +100,9 @@ public class quem_vai_consigo extends barra_lateral_pro {
 
     private void PopulateLista()
     {
-        ArrayList<String> ListNome = new ArrayList<>();
-        ArrayList<String> ListLocalidade = new ArrayList<>();
-        ArrayList<Integer> ListIdPass = new ArrayList<>();
+       ListNome = new ArrayList<>();
+       ListLocalidade = new ArrayList<>();
+       ListIdPass = new ArrayList<>();
 
         for (int i = 0; i < informacaoViagem.size(); i++) {
             ListNome.add(informacaoViagem.get(i).getNomeUtilizador());
@@ -105,12 +110,8 @@ public class quem_vai_consigo extends barra_lateral_pro {
             ListIdPass.add(informacaoViagem.get(i).getIdPass());
         }
         HideButtons(ListNome.size());//Esconde os botões
+        SetTexts();
 
-        for (int i = 0; i < informacaoViagem.size(); i++) {
-            ListNome.add(informacaoViagem.get(i).getNomeUtilizador());
-            ListLocalidade.add(informacaoViagem.get(i).getMoradaUtilizador());
-            ListIdPass.add(informacaoViagem.get(i).getIdPass());
-        }
 
 
 
@@ -173,7 +174,56 @@ public class quem_vai_consigo extends barra_lateral_pro {
 
     }
 
-    //private void Populate()
+    private void SetTexts()
+    {
+        int num = ListNome.size();
+
+
+        TextView Nome;
+        TextView Localidade;
+
+
+        if(num <= 4)
+        {
+            Localidade = findViewById(R.id.tripulante_localidade_4_quem_vai_consigo2);
+            Nome = findViewById(R.id.tripulante_nome_4_quem_vai_consigo2);
+            Localidade.setText(ListNome.get(3));
+            Nome.setText(ListLocalidade.get(3));
+
+
+        }
+        if(num <= 3)
+        {
+            Localidade = findViewById(R.id.tripulante_localidade_3_quem_vai_consigo);
+            Nome = findViewById(R.id.tripulante_nome_3_quem_vai_consigo);
+            Localidade.setText(ListNome.get(2));
+            Nome.setText(ListLocalidade.get(2));
+
+
+        }
+        if(num <=2)
+        {
+            Localidade = findViewById(R.id.tripulante_localidade_2_quem_vai_consigo2);
+            Nome = findViewById(R.id.tripulante_nome_2_quem_vai_consigo2);
+            Localidade.setText(ListNome.get(1));
+            Nome.setText(ListLocalidade.get(1));
+
+
+        }
+        if(num <=1)
+        {
+            Localidade = findViewById(R.id.tripulante_localidade_1_quem_vai_consigo);
+            Nome = findViewById(R.id.tripulante_nome_1_quem_vai_consigo);
+            Localidade.setText(ListNome.get(0));
+            Nome.setText(ListLocalidade.get(0));
+
+
+        }
+
+
+
+
+    }
 
 
 }
