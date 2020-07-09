@@ -210,7 +210,7 @@ public class CustomListAdapter_marcadas_teste extends BaseAdapter {
 
 
         //Log.i("text",  localPartidatxt.getText().toString() + "|"+ localChegadatxt.getText().toString());
-        Intent goMaisInfo = new Intent(context, mais_info_mapa_cliente.class);
+        Intent goMaisInfo = new Intent(context, Cancelar_Viagem.class);
         goMaisInfo.putExtra("user_id", user_id);
         goMaisInfo.putExtra("localPartida", localPartidatxt.getText());
         goMaisInfo.putExtra("localChegada", localChegadatxt.getText());
