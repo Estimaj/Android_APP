@@ -2,6 +2,8 @@ package com.example.pint_android_v3.DataBase;
 
 import com.example.pint_android_v3.DataBase.DadosUtilizador.Model_User_Information;
 import com.example.pint_android_v3.DataBase.DividaUtilizador.ModelDividaUtilizador;
+import com.example.pint_android_v3.DataBase.ListagemPassageiros.ModelListagemPassageiros;
+import com.example.pint_android_v3.DataBase.Notificacoes.ModelNotificacoes;
 import com.example.pint_android_v3.DataBase.ViagensEfetuadas.Model_Viagens_Efetuadas;
 
 import java.util.HashMap;
@@ -31,4 +33,11 @@ public interface BaseDadosInterface {
 
     @GET("/muv/dividas/getcidadaodivida/{id}")
     Call<ModelDividaUtilizador> executeGetUserDivida(@Path("id") int id);
+
+    /*@GET("/muv/notificacoes/getnotificacao/{id}")
+    Call<ModelNotificacoes> executeGetNotificacoes(@Path("id") int id);*/
+
+    @GET("/muv/notificacoes/getnotificacao/{id}")
+    Call<ModelListagemPassageiros> executeGetListagem(@Path("id") int id_viagem);
+
 }

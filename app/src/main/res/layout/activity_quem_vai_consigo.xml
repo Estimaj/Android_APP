@@ -66,7 +66,7 @@
             <ImageView
                 android:id="@+id/contentor_outros_tripulantes"
                 android:layout_width="match_parent"
-                android:layout_height="500dp"
+                android:layout_height="450dp"
                 android:layout_marginTop="38dp"
                 android:background="#E8E8E8"
                 app:layout_constraintTop_toTopOf="@id/Outros_Tripulantes_activity_quem_"
@@ -89,7 +89,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="4dp"
-                android:text="Outros Tripulantes"
+                android:text="Passageiros"
                 android:textColor="@color/White"
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="@id/Outros_Tripulantes_activity_quem_"
@@ -115,20 +115,6 @@
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="@id/bg_white_O_seu_condutor_quem_vai_consigo"
                 app:layout_constraintTop_toTopOf="@id/bg_white_O_seu_condutor_quem_vai_consigo" />
-
-            <RatingBar
-                android:id="@+id/ratingBar_condutor_quem_vai_consigo"
-                android:layout_width="239dp"
-                android:layout_height="44dp"
-                android:layout_marginStart="120dp"
-                android:isIndicator="true"
-                android:max="5"
-                android:scaleX=".8"
-                android:scaleY=".8"
-                android:transformPivotX="0dp"
-                android:transformPivotY="0dp"
-                app:layout_constraintStart_toStartOf="@id/bg_white_O_seu_condutor_quem_vai_consigo"
-                app:layout_constraintTop_toBottomOf="@id/condutor_nome_quem_vai_consigo" />
 
             <ImageView
                 android:id="@+id/contentor1_quem_vai_consigo"
@@ -179,22 +165,7 @@
                 android:layout_marginBottom="19dp"
                 app:layout_constraintBottom_toBottomOf="@id/canideo_1_quem_vai_consigo"
                 app:layout_constraintEnd_toEndOf="@id/canideo_1_quem_vai_consigo"
-                app:srcCompat="@drawable/canideo_check" />
-
-            <TextView
-                android:id="@+id/canideo_quantidade1_text_quem_vai_consigo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="7dp"
-                android:text="0"
-                android:textColor="@color/White"
-                app:layout_constraintBottom_toBottomOf="@id/canideo_quantidade_icon1_quem_vai_consigo"
-                app:layout_constraintEnd_toEndOf="@id/canideo_quantidade_icon1_quem_vai_consigo"
-                app:layout_constraintEnd_toStartOf="@id/canideo_1_quem_vai_consigo"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@id/canideo_quantidade_icon1_quem_vai_consigo"
-                app:layout_constraintStart_toStartOf="@id/canideo_quantidade_icon1_quem_vai_consigo"
-                app:layout_constraintTop_toTopOf="@id/canideo_quantidade_icon1_quem_vai_consigo" />
+                app:srcCompat="@drawable/check_icon_yes" />
 
             <TextView
                 android:id="@+id/tripulante_localidade_1_quem_vai_consigo"
@@ -233,20 +204,7 @@
                 android:layout_marginBottom="19dp"
                 app:layout_constraintBottom_toBottomOf="@id/canideo_2_quem_vai_consigo2"
                 app:layout_constraintEnd_toEndOf="@id/canideo_2_quem_vai_consigo2"
-                app:srcCompat="@drawable/canideo_check" />
-
-            <TextView
-                android:id="@+id/canideo_quantidade2_text_quem_vai_consigo2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="3dp"
-                android:layout_marginEnd="4dp"
-                android:text="0"
-                android:textColor="@color/White"
-                app:layout_constraintBottom_toBottomOf="@id/canideo_quantidade_icon2_quem_vai_consigo2"
-                app:layout_constraintEnd_toEndOf="@id/canideo_quantidade_icon2_quem_vai_consigo2"
-                app:layout_constraintStart_toStartOf="@id/canideo_quantidade_icon2_quem_vai_consigo2"
-                app:layout_constraintTop_toTopOf="@id/canideo_quantidade_icon2_quem_vai_consigo2" />
+                app:srcCompat="@drawable/check_icon_yes" />
 
             <TextView
                 android:id="@+id/tripulante_localidade_2_quem_vai_consigo2"
@@ -305,20 +263,7 @@
                 android:layout_marginBottom="19dp"
                 app:layout_constraintBottom_toBottomOf="@id/canideo_3_quem_vai_consigo"
                 app:layout_constraintEnd_toEndOf="@id/canideo_3_quem_vai_consigo"
-                app:srcCompat="@drawable/canideo_check" />
-
-            <TextView
-                android:id="@+id/canideo_quantidade3_text_quem_vai_consigo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="3dp"
-                android:layout_marginEnd="4dp"
-                android:text="0"
-                android:textColor="@color/White"
-                app:layout_constraintBottom_toBottomOf="@id/canideo_quantidade_icon3_quem_vai_consigo"
-                app:layout_constraintEnd_toEndOf="@id/canideo_quantidade_icon3_quem_vai_consigo"
-                app:layout_constraintStart_toStartOf="@id/canideo_quantidade_icon3_quem_vai_consigo"
-                app:layout_constraintTop_toTopOf="@id/canideo_quantidade_icon3_quem_vai_consigo" />
+                app:srcCompat="@drawable/check_icon_yes" />
 
             <ImageView
                 android:id="@+id/tripulante_image_3_quem_vai_consigo"
@@ -409,20 +354,7 @@
                 android:layout_marginBottom="19dp"
                 app:layout_constraintBottom_toBottomOf="@id/canideo_4_quem_vai_consigo"
                 app:layout_constraintEnd_toEndOf="@id/canideo_4_quem_vai_consigo"
-                app:srcCompat="@drawable/canideo_check" />
-
-            <TextView
-                android:id="@+id/canideo_quantidade4_text_quem_vai_consigo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="3dp"
-                android:layout_marginEnd="4dp"
-                android:text="0"
-                android:textColor="@color/White"
-                app:layout_constraintBottom_toBottomOf="@id/canideo_quantidade_icon4_quem_vai_consigo"
-                app:layout_constraintEnd_toEndOf="@id/canideo_quantidade_icon4_quem_vai_consigo"
-                app:layout_constraintStart_toStartOf="@id/canideo_quantidade_icon4_quem_vai_consigo"
-                app:layout_constraintTop_toTopOf="@id/canideo_quantidade_icon4_quem_vai_consigo" />
+                app:srcCompat="@drawable/check_icon_yes" />
 
             <ImageView
                 android:id="@+id/tripulante_image_4_quem_vai_consigo"
@@ -433,79 +365,6 @@
                 app:layout_constraintStart_toStartOf="@id/contentor4_quem_vai_consigo2"
                 app:layout_constraintTop_toTopOf="@id/contentor4_quem_vai_consigo2"
                 app:srcCompat="@drawable/default_user_icon" />
-
-            <ImageView
-                android:id="@+id/contentor5_quem_vai_consigo3"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_marginTop="6dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/contentor4_quem_vai_consigo2"
-                app:srcCompat="@drawable/white_square_shadow" />
-
-            <TextView
-                android:id="@+id/tripulante_localidade_5_quem_vai_consigo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="120dp"
-                android:text="Vazio"
-                app:layout_constraintStart_toStartOf="@id/contentor5_quem_vai_consigo3"
-                app:layout_constraintTop_toBottomOf="@id/tripulante_nome_5_quem_vai_consigo" />
-
-            <TextView
-                android:id="@+id/tripulante_nome_5_quem_vai_consigo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="120dp"
-                android:layout_marginTop="12dp"
-                android:text="Vazio"
-                android:textSize="18sp"
-                app:layout_constraintStart_toStartOf="@id/contentor5_quem_vai_consigo3"
-                app:layout_constraintTop_toTopOf="@id/contentor5_quem_vai_consigo3" />
-
-            <ImageView
-                android:id="@+id/tripulante_image_5_quem_vai_consigo"
-                android:layout_width="90dp"
-                android:layout_height="90dp"
-                android:layout_marginStart="16dp"
-                app:layout_constraintStart_toStartOf="@id/contentor5_quem_vai_consigo3"
-                app:layout_constraintTop_toTopOf="@id/contentor5_quem_vai_consigo3"
-                app:srcCompat="@drawable/default_user_icon" />
-
-            <ImageView
-                android:id="@+id/canideo_5_quem_vai_consigo"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginStart="120dp"
-                android:layout_marginTop="9dp"
-                app:layout_constraintStart_toStartOf="@id/contentor5_quem_vai_consigo3"
-                app:layout_constraintTop_toBottomOf="@id/tripulante_localidade_5_quem_vai_consigo"
-                app:srcCompat="@drawable/dog_icon_marcar" />
-
-            <ImageView
-                android:id="@+id/canideo_quantidade_icon5_quem_vai_consigo"
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:layout_marginEnd="22dp"
-                android:layout_marginBottom="19dp"
-                app:layout_constraintBottom_toBottomOf="@id/canideo_5_quem_vai_consigo"
-                app:layout_constraintEnd_toEndOf="@id/canideo_5_quem_vai_consigo"
-                app:srcCompat="@drawable/canideo_check" />
-
-            <TextView
-                android:id="@+id/canideo_quantidade5_text_quem_vai_consigo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="3dp"
-                android:layout_marginEnd="4dp"
-                android:text="0"
-                android:textColor="@color/White"
-                app:layout_constraintBottom_toBottomOf="@id/canideo_quantidade_icon5_quem_vai_consigo"
-                app:layout_constraintEnd_toEndOf="@id/canideo_quantidade_icon5_quem_vai_consigo"
-                app:layout_constraintStart_toStartOf="@id/canideo_quantidade_icon5_quem_vai_consigo"
-                app:layout_constraintTop_toTopOf="@id/canideo_quantidade_icon5_quem_vai_consigo" />
 
             <ImageView
                 android:id="@+id/anchor_quem_vai_consigo"
