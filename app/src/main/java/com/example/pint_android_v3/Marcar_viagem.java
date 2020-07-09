@@ -337,9 +337,13 @@ public class Marcar_viagem extends barra_lateral_pro implements DatePickerDialog
             Log.i("user_id_error", "user id = 0, func criarPedido_viagem, marcar_viagem.java");
             return;
         }
+
+
+        String currentTime = GetTime();
+
         Pedido_Viagem pedido_viagem = new Pedido_Viagem(1, user_id,
                 local_origem_pedido, local_destino_pedido, bagagem, modalidade, partilha, animal,
-                necessidades_especiais, 0, GetTime(), GetDate(), DateLayout_text.getText().toString(),
+                necessidades_especiais, 0, currentTime, GetDate(), DateLayout_text.getText().toString(),
                 TimeLayout_text.getText().toString());
         Log.i("Pedido", pedido_viagem.toString());
 

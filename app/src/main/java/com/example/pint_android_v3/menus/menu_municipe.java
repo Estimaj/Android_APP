@@ -127,7 +127,10 @@ public class menu_municipe extends barra_lateral_pro {
         startActivity(Perfil);
     }
     public void Clicar_Viagens_Marcadas()
-    {
+    {   //ha uma possibilidade de haver divida e n puder marcar viagem
+
+
+
         Intent Viagens = new Intent(menu_municipe.this, viagens_marcadas.class);
         Viagens.putExtra("user_id", user_id);
         startActivity(Viagens);
