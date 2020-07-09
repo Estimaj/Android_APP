@@ -158,7 +158,7 @@ public class CustomListAdapter_marcadas_teste extends BaseAdapter {
 
     }
 
-    private void maisInfoBtnClick(CustomListAdapter_marcadas_teste.ViewHolder viewHolder){
+    private void maisInfoBtnClick(ViewHolder viewHolder){
         TextView localPartidatxt = viewHolder.txt_Local_Partida;
         TextView localChegadatxt = viewHolder.txt_Local_Chegada;
 
@@ -192,7 +192,7 @@ public class CustomListAdapter_marcadas_teste extends BaseAdapter {
         context.startActivity(goMaisInfo);
     }
 
-    private void cancelarViagemBtnClick(CustomListAdapter_marcadas_teste.ViewHolder viewHolder){
+    private void cancelarViagemBtnClick(ViewHolder viewHolder){
         TextView localPartidatxt = viewHolder.txt_Local_Partida;
         TextView localChegadatxt = viewHolder.txt_Local_Chegada;
 

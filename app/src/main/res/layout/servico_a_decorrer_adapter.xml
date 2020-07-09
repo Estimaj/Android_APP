@@ -88,7 +88,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
         android:layout_marginTop="10dp"
-        android:onClick="Mais_Info_Condutor_Servico"
         android:text="Mais Info"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="@+id/servico_a_decorrer_adapter_mais_info"
