@@ -25,12 +25,7 @@ public class Cancelar_Viagem extends barra_lateral_pro {
         setContentView(R.layout.activity_cancelar_viagem_pro);
 
         cancelar_viagem_btn = findViewById(R.id.btn_cancelar_viagem_pro);
-        TextView Origem_txt = findViewById(R.id.local_user_textView_origem_cancelar_viagem_new);
-        TextView Destino_txt = findViewById(R.id.local_user_textView_cancelar_viagem_new);
-        TextView Horas_txt = findViewById(R.id.local_user_textView_hora_cancelar_viagem_new);
-        TextView Dia_txt = findViewById(R.id.local_user_textView_dia_cancelar_viagem_new);
-        //TextView Taxa_desconto_txt = findViewById(R.id.local_user_textView_taxa_desconto_cancelar_viagem_new);
-        TextView Total_a_pagar = findViewById(R.id.total_textview_cancelar_viagem_new);
+
 
         cancelar_viagem_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,32 +52,35 @@ public class Cancelar_Viagem extends barra_lateral_pro {
 
 
     private void colocarValoresMaisInfo(Bundle b) {
+        TextView Origem_txt = findViewById(R.id.local_user_textView_origem_cancelar_viagem_new);
+        TextView Destino_txt = findViewById(R.id.local_user_textView_cancelar_viagem_new);
+        TextView Horas_txt = findViewById(R.id.local_user_textView_hora_cancelar_viagem_new);
+        TextView Dia_txt = findViewById(R.id.local_user_textView_dia_cancelar_viagem_new);
+        //TextView Taxa_desconto_txt = findViewById(R.id.local_user_textView_taxa_desconto_cancelar_viagem_new);
+        TextView Total_a_pagar = findViewById(R.id.total_textview_cancelar_viagem_new);
 
         String localPartida = (String) b.get("localPartida");
         String localChegada = (String) b.get("localChegada");
 
-
-        TextView valorViagemtxt = findViewById(R.id.Dinheiro_pagar_mais_info_cliente);
-        valorViagemtxt.setText("" + (String) b.get("valorViagem"));
-
+        Origem_txt.setText(localPartida);
+        Destino_txt.setText(localChegada);
+        Total_a_pagar.setText("" + (String) b.get("valorViagem"));
         idViagem = (int) b.get("idViagem");
 
-        TextView localPartidatxtview = findViewById(R.id.Local_Partida_mais_info_cliente);
-        localPartidatxtview.setText(localPartida);
-        TextView localChegadatxtview = findViewById(R.id.Local_Chegada_mais_info_cliente);
-        localChegadatxtview.setText(localChegada);
+        Horas_txt.setText((String) b.get("horaViagem"));
+        Dia_txt.setText((String) b.get("dataViagem"));
 
         ImageView certoGone;
         if((int) b.get("bagagemPedido") == 0){
-            certoGone = findViewById(R.id.mala_icon_mais_info_cliente);
+            certoGone = findViewById(R.id.mala_check_cancelar_viagem_new);
             certoGone.setVisibility(View.GONE);
         }
         if((int) b.get("animalPedido") == 0){
-            certoGone = findViewById(R.id.canideo_icon_mais_info_cliente);
+            certoGone = findViewById(R.id.canideo_check_cancelar_viagem_new);
             certoGone.setVisibility(View.GONE);
         }
         if((int) b.get("necessidadesEspeciaisPedido") == 0){
-            certoGone = findViewById(R.id.wheel_icon_mais_info_cliente);
+            certoGone = findViewById(R.id.wheel_check_cancelar_viagem_new);
             certoGone.setVisibility(View.GONE);
         }
 
