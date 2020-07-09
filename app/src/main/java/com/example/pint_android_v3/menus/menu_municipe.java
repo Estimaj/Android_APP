@@ -58,6 +58,8 @@ public class menu_municipe extends barra_lateral_pro {
 
 
 
+
+
         Nome = findViewById(R.id.user_Name_menu_cliente);
         Localidade =  findViewById(R.id.user_localidade_menu_cliente);
         btn_Perfil =  findViewById(R.id.user_Inner_menu_cliente);
@@ -70,8 +72,14 @@ public class menu_municipe extends barra_lateral_pro {
         Bundle b = X.getExtras();
         if(b!=null){
             user_id = (int) b.get("user_id");
+            //Bd
             Get_user_id_information(user_id);
+            //ha uma possibilidade de haver divida e n puder marcar viagem
+            verificarDividasUtilizador(user_id);
         }
+
+
+
         Bar_Settings(user_id);//vai usar a func da class barra_lateral_pro para criar a o hamburger e as setting
 
         if (user != null){
@@ -148,9 +156,7 @@ public class menu_municipe extends barra_lateral_pro {
     }
     public void Clicar_Marcar_Viagem()
     {
-        //ha uma possibilidade de haver divida e n puder marcar viagem
-
-        if(!verificarDividasUtilizador(user_id)){
+        if(!emDivida){
             Intent Marcar = new Intent(menu_municipe.this, Marcar_viagem.class);
             Marcar.putExtra("user_id", user_id);
             startActivity(Marcar);
@@ -206,7 +212,7 @@ public class menu_municipe extends barra_lateral_pro {
 
     }
 
-    private boolean verificarDividasUtilizador(int id) {
+    private void verificarDividasUtilizador(int id) {
         Retrofit retrofit;
         BaseDadosInterface baseDadosInterface;
 
@@ -238,8 +244,6 @@ public class menu_municipe extends barra_lateral_pro {
                 makeToastFordesambiguacao("Failure: "+ t.toString());
             }
         });
-
-        return emDivida;
     }
 
     public void makeToastFordesambiguacao(String msg){
