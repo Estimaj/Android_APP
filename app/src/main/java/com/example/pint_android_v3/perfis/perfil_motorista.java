@@ -5,19 +5,33 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
+import com.example.pint_android_v3.DataBase.BaseDadosInterface;
+import com.example.pint_android_v3.DataBase.DadosUtilizador.Model_User_Information;
 import com.example.pint_android_v3.R;
 import com.example.pint_android_v3.barra_lateral.barra_lateral_condutor;
 import com.example.pint_android_v3.menus.menu_municipe;
 import com.google.android.material.navigation.NavigationView;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
 public class perfil_motorista extends barra_lateral_condutor {
+
+    private String BASE_URL ="http://10.0.2.2:3000";
 
     private Toolbar toolbar;
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
-    TextView Nome;
+    private TextView Nome, Origem, Idade, Telefone, Email;
     private int user_id;
 
     @Override
@@ -27,19 +41,88 @@ public class perfil_motorista extends barra_lateral_condutor {
 
         Intent I = getIntent();
         Bundle b = I.getExtras();
-        Nome = (TextView) findViewById(R.id.User_Name);
+        Nome =  findViewById(R.id.User_Name);
+        Origem = findViewById(R.id.textView_user_location_information_perfil_motorista);
+        Idade = findViewById(R.id.textView_user_idade_information_perfil_motorista);
+        Telefone = findViewById(R.id.textView_user_telefone_information_perfil_motorista);
+        Email= findViewById(R.id.textView_user_email_information_perfil_motorista);
         if(b!=null)
         {
             user_id = (int) b.get("user_id");
+            Get_user_id_information(user_id);
         }
         Bar_Settings(user_id);
     }
 
-    public void Go_Back()
-    {
-        Intent GO = new Intent(perfil_motorista.this, menu_municipe.class);
-        startActivity(GO);
+    private void Get_user_id_information(int id) {
+        Retrofit retrofit;
+        BaseDadosInterface baseDadosInterface;
 
+        retrofit = new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        baseDadosInterface =  retrofit.create(BaseDadosInterface.class);
+
+        //Log.i("O id do user:", ""+ id);
+        Call<Model_User_Information> call = baseDadosInterface.executeGetUser(id);
+
+        call.enqueue(new Callback<Model_User_Information>() {
+            @Override
+            public void onResponse(Call<Model_User_Information> call, Response<Model_User_Information> response) {
+                if (!response.isSuccessful()){
+                    //makeToastFordesambiguacao("Erro a ir ao link");
+                    Log.i("Erro", "Erro a ir ao link class perfil_cliente");
+                }
+                if (response.code() == 200){
+                    if (response.body() != null) {
+                        Log.i("user_perfil_cliente", response.body().getGet_user().get(0).toString());
+                        Nome.setText(response.body().getGet_user().get(0).getNome_utilizador());
+                        Origem.setText(response.body().getGet_user().get(0).getMorada_utilizador());
+                        Idade.setText(""+ getIdadeUser(response.body().getGet_user().get(0).getData_nascimento_utilizador()));
+                        Telefone.setText(response.body().getGet_user().get(0).getTelefone_utilizador());
+                        Email.setText(response.body().getGet_user().get(0).getEmail_utilizador());
+                    }
+                    //makeToastFordesambiguacao("Erro Server Info");
+                }
+                else{
+                    //makeToastFordesambiguacao("Erro: 'Sem data'"+ response.message());
+                    Log.i("Erro", "" + response.message());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Model_User_Information> call, Throwable t) {
+                Log.i("Failure:", t.toString());
+                //makeToastFordesambiguacao("Failure: "+ t.toString());
+            }
+        });
     }
+
+    private int getIdadeUser(String dataNascimento) {
+        if(dataNascimento == null) return 0;
+        int idade;
+        Log.i("idade", dataNascimento);
+        //get data nascimento separado dia[0] mes[1] ano[2]
+        String dividindoDataNascimento[]= dataNascimento.split("\\W");//dividir a data nascimento em numeros separados... o \\W é a dizer que o separador é '/'
+
+        //get data current separado dia[0] mes[1] ano[2]
+        SimpleDateFormat formatter= new SimpleDateFormat("yyyy/MM/dd");
+        Date date = new Date(System.currentTimeMillis());
+        String dividindoDataCurrent [] = formatter.format(date).split("\\W");
+
+        idade = Integer.parseInt(dividindoDataCurrent[0]) - Integer.parseInt(dividindoDataNascimento[0]);
+        if(Integer.parseInt(dividindoDataNascimento[1]) > Integer.parseInt(dividindoDataCurrent[1])){ //comparar mes
+            idade --;
+        }
+        else if(Integer.parseInt(dividindoDataNascimento[1]) == Integer.parseInt(dividindoDataCurrent[1])){
+            if(Integer.parseInt(dividindoDataNascimento[2]) > Integer.parseInt(dividindoDataCurrent[2])){ //compara o dia
+                idade--;
+            }
+        }
+        return idade;
+    }
+
+
 
 }

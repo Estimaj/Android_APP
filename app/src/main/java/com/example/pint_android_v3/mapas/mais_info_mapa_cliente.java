@@ -55,7 +55,6 @@ public class mais_info_mapa_cliente extends barra_lateral_pro {
     private int idViagem;
 
 
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mais_info_mapa_cliente);
@@ -65,9 +64,6 @@ public class mais_info_mapa_cliente extends barra_lateral_pro {
         mMapView = findViewById(R.id.mapView_mais_info_cliente);
         mStart = new Point(40.6573504,-7.9142947);
         mEnd = new Point(40.6573504,-7.91429);
-
-
-
         setupMap();
 
 
@@ -83,13 +79,11 @@ public class mais_info_mapa_cliente extends barra_lateral_pro {
         if(b!=null){
             user_id = (int) b.get("user_id");
             try {
-                boolean Cidadao = (boolean) b.get("cidadao");
-
                 Button btnPassageiros = findViewById(R.id.ver_passageiros_mais_info_cliente);
                 btnPassageiros.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Click_Quem_Vai(Cidadao);
+                        Click_Quem_Vai();
                     }
                 });
 
@@ -102,8 +96,6 @@ public class mais_info_mapa_cliente extends barra_lateral_pro {
         }
 
         Bar_Settings(user_id);
-
-
     }
 
     private void colocarValoresMaisInfo(Bundle b) {
@@ -143,19 +135,11 @@ public class mais_info_mapa_cliente extends barra_lateral_pro {
         localChegadaCoord.setText(""+ (String) b.get("localChegadaCoord"));
     }
 
-    public void Click_Quem_Vai(boolean Cidadao){
-        if(Cidadao) {
-            Intent Consigo = new Intent(mais_info_mapa_cliente.this, quem_vai_consigo.class);
-            Consigo.putExtra("user_id", user_id);
-            Consigo.putExtra("idViagem", idViagem);
-            startActivity(Consigo);
-        }
-        else{
-            Intent Consigo = new Intent(mais_info_mapa_cliente.this, quem_vai_consigo_condutor.class);
-            Consigo.putExtra("user_id", user_id);
-            Consigo.putExtra("idViagem", idViagem);
-            startActivity(Consigo);
-        }
+    public void Click_Quem_Vai(){
+        Intent Consigo = new Intent(mais_info_mapa_cliente.this, quem_vai_consigo.class);
+        Consigo.putExtra("user_id", user_id);
+        Consigo.putExtra("idViagem", idViagem);
+        startActivity(Consigo);
     }
 
 

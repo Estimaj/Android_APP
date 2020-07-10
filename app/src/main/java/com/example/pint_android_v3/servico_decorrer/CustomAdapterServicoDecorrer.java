@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.example.pint_android_v3.R;
 import com.example.pint_android_v3.mapas.mais_info_mapa_cliente;
+import com.example.pint_android_v3.mapas.mais_info_mapa_condutor;
 import com.example.pint_android_v3.viagens_efetuadas.CustomListAdapter_efetuadas_teste;
 import com.example.pint_android_v3.viagens_efetuadas_condutor.CustomListAdapter_efetuadas_condutor;
 
@@ -153,7 +154,7 @@ public class CustomAdapterServicoDecorrer extends BaseAdapter {
         int necessidadesEspeciaisPedidoCurrent = viewHolder.necessidadesEspeciaisPedido;
 
 
-        Intent goMaisInfo = new Intent(context, mais_info_mapa_cliente.class);
+        Intent goMaisInfo = new Intent(context, mais_info_mapa_condutor.class);
         goMaisInfo.putExtra("user_id", user_id);
         goMaisInfo.putExtra("localPartida", localPartidatxt.getText());
         goMaisInfo.putExtra("localChegada", localChegadatxt.getText());
@@ -166,7 +167,6 @@ public class CustomAdapterServicoDecorrer extends BaseAdapter {
         goMaisInfo.putExtra("bagagemPedido", bagagemPedidoCurrent);
         goMaisInfo.putExtra("animalPedido", animalPedidoCurrent);
         goMaisInfo.putExtra("necessidadesEspeciaisPedido", necessidadesEspeciaisPedidoCurrent);
-        goMaisInfo.putExtra("cidadao", true);
         context.startActivity(goMaisInfo);
     }
 }

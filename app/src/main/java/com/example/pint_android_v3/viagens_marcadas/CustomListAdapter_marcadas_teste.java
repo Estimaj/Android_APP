@@ -12,7 +12,6 @@ import android.widget.TextView;
 import com.example.pint_android_v3.Cancelar_Viagem;
 import com.example.pint_android_v3.R;
 import com.example.pint_android_v3.mapas.mais_info_mapa_cliente;
-import com.example.pint_android_v3.viagens_efetuadas.CustomListAdapter_efetuadas_teste;
 
 import java.util.ArrayList;
 
@@ -80,12 +79,12 @@ public class CustomListAdapter_marcadas_teste extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        CustomListAdapter_marcadas_teste.ViewHolder viewHolder;
+        ViewHolder viewHolder;
         final View result;
 
         if(convertView == null)
         {
-            viewHolder = new CustomListAdapter_marcadas_teste.ViewHolder();
+            viewHolder = new ViewHolder();
             LayoutInflater inflater = LayoutInflater.from(context);
             convertView = inflater.inflate(R.layout.viagens_marcadas_adapter, parent, false);
             viewHolder.txt_data = convertView.findViewById(R.id.viagens_marcadas_adapter_data_trip);

@@ -104,7 +104,7 @@
                 app:srcCompat="@drawable/default_user_icon" />
 
             <TextView
-                android:id="@+id/tripulante_nome_1_quem_vai_consigo_condutor"
+                android:id="@+id/tripulante_nome_quem_vai_consigo_condutor_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="120dp"
@@ -125,7 +125,7 @@
                 app:srcCompat="@drawable/dog_icon_marcar" />
 
             <ImageView
-                android:id="@+id/canideo_quantidade_icon1_quem_vai_consigo_condutor"
+                android:id="@+id/canideo_quantidade_icon_quem_vai_consigo_condutor1"
                 android:layout_width="15dp"
                 android:layout_height="15dp"
                 android:layout_marginEnd="22dp"
@@ -141,7 +141,7 @@
                 android:layout_marginStart="120dp"
                 android:text="Vazio"
                 app:layout_constraintStart_toStartOf="@id/contentor1_quem_vai_consigo_condutor"
-                app:layout_constraintTop_toBottomOf="@id/tripulante_nome_1_quem_vai_consigo_condutor" />
+                app:layout_constraintTop_toBottomOf="@id/tripulante_nome_quem_vai_consigo_condutor_1" />
 
             <ImageView
                 android:id="@+id/btn_pagamento_1_quem_vai_consigo_condutor"
@@ -155,7 +155,7 @@
                 app:srcCompat="@drawable/btn_pagamento" />
 
             <TextView
-                android:id="@+id/text_pagamento_1_quem_vai_consigo_condutor"
+                android:id="@+id/text_pagamento_quem_vai_consigo_condutor_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
@@ -163,8 +163,8 @@
                 android:text="Pagamento"
                 android:textColor="@color/White"
                 android:textSize="13sp"
-                app:layout_constraintStart_toStartOf="@+id/btn_pagamento_1_quem_vai_consigo_condutor"
-                app:layout_constraintTop_toTopOf="@+id/btn_pagamento_1_quem_vai_consigo_condutor" />
+                app:layout_constraintStart_toStartOf="@id/btn_pagamento_1_quem_vai_consigo_condutor"
+                app:layout_constraintTop_toTopOf="@id/btn_pagamento_1_quem_vai_consigo_condutor" />
 
 
             <ImageView

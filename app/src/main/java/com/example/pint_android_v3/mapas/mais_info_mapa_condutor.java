@@ -8,6 +8,8 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -51,47 +53,87 @@ public class mais_info_mapa_condutor extends barra_lateral_condutor {
     private Point mStart;
     private Point mEnd;
     private int user_id;
-
+    private boolean Cidadao;
+    private int idViagem;
 
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mais_info_mapa_condutor);
 
-        Button Ver_Passageiros = findViewById(R.id.ver_passageiros_mais_info_condutor);
-
-
         // Retrieve the map and initial extent from XML layout
         //1
         mMapView = findViewById(R.id.mapView_mais_info_condutor);
-
+        //mStart = new Point(40.6573504,-7.9142947);
+        //mEnd = new Point(40.6573504,-7.91429);
         setupMap();
 
 
         //2
-        createGraphicsOverlay();
-        setupOAuthManager();
+        //createGraphicsOverlay();
+
+        //setupOAuthManager();
+        //setStartMarker(mStart);
+        //setEndMarker(mEnd);
 
         Intent X = getIntent();
         Bundle b = X.getExtras();
         if(b!=null){
             user_id = (int) b.get("user_id");
-            //Log.i("id_user", ""+ id_user);
+            try {
+                Button btnPassageiros = findViewById(R.id.ver_passageiros_mais_info_condutor);
+                btnPassageiros.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Click_Quem_Vai();
+                    }
+                });
+
+                colocarValoresMaisInfo(b);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
 
         }
 
         Bar_Settings(user_id);
-
-
     }
 
-    public void Click_Quem_Vai(View view){
+    private void colocarValoresMaisInfo(Bundle b) {
+        String localPartida = (String) b.get("localPartida");
+        String localChegada = (String) b.get("localChegada");
 
+
+        TextView valorViagemtxt = findViewById(R.id.Dinheiro_pagar_mais_info_condutor);
+        valorViagemtxt.setText("" + (String) b.get("valorViagem"));
+
+        idViagem = (int) b.get("idViagem");
+
+        TextView localPartidatxtview = findViewById(R.id.Local_Partida_mais_info_condutor);
+        localPartidatxtview.setText(localPartida);
+        TextView localChegadatxtview = findViewById(R.id.Local_Chegada_mais_info_condutor);
+        localChegadatxtview.setText(localChegada);
+
+        ImageView certoGone;
+        if((int) b.get("bagagemPedido") == 0){
+            certoGone = findViewById(R.id.mala_icon_mais_info_condutor);
+            certoGone.setVisibility(View.GONE);
+        }
+        if((int) b.get("animalPedido") == 0){
+            certoGone = findViewById(R.id.canideo_icon_mais_info_condutor);
+            certoGone.setVisibility(View.GONE);
+        }
+        if((int) b.get("necessidadesEspeciaisPedido") == 0){
+            certoGone = findViewById(R.id.wheel_icon_mais_info_condutor);
+            certoGone.setVisibility(View.GONE);
+        }
+    }
+
+    public void Click_Quem_Vai(){
         Intent Consigo = new Intent(mais_info_mapa_condutor.this, quem_vai_consigo_condutor.class);
         Consigo.putExtra("user_id", user_id);
+        Consigo.putExtra("idViagem", idViagem);
         startActivity(Consigo);
-
-
     }
 
 

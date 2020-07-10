@@ -19,6 +19,7 @@ import android.widget.ImageView;
 public class pagamentoCondutor extends barra_lateral_condutor {
 
     private int user_id;
+    private int idViagem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +46,7 @@ public class pagamentoCondutor extends barra_lateral_condutor {
         Bundle b = X.getExtras();
         if(b!=null){
             user_id = (int) b.get("user_id");
-            //Log.i("id_user", ""+ id_user);
+            idViagem = (int) b.get("idViagem");
 
         }
 

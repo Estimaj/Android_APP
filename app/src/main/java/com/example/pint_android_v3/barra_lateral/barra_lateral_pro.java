@@ -1,5 +1,6 @@
 package com.example.pint_android_v3.barra_lateral;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -33,6 +34,7 @@ public class barra_lateral_pro extends AppCompatActivity implements NavigationVi
     private NavigationView navigationView;
     private int user_id;
 
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.barra_lateral_pro);
@@ -64,7 +66,7 @@ public class barra_lateral_pro extends AppCompatActivity implements NavigationVi
                 Intent notPage = new Intent(this, notificacoes.class);
                 notPage.putExtra("user_id", user_id);
                 startActivity(notPage);
-
+                break;
             //Criar activity Notificações
             //Default?
             //Trocar perfil_motorista por municipe
@@ -125,19 +127,11 @@ public class barra_lateral_pro extends AppCompatActivity implements NavigationVi
                 super.onDrawerClosed(view);
                 drawerLayout.getLayoutParams().height = toolbar.getLayoutParams().height;
                 drawerLayout.requestLayout();
-
-
-
-
             }
 
             /** Called when a drawer has settled in a completely open state. */
             public void onDrawerOpened(View drawerView) {
                 super.onDrawerOpened(drawerView);
-
-
-
-
             }
             public void onDrawerStateChanged(int newState)
             {
@@ -161,10 +155,5 @@ public class barra_lateral_pro extends AppCompatActivity implements NavigationVi
 
 
     }
-
-
-
-
-
 
 }

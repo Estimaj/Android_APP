@@ -156,7 +156,7 @@ public class CustomListAdapter_efetuadas_condutor extends BaseAdapter {
 
 
         //Log.i("text",  localPartidatxt.getText().toString() + "|"+ localChegadatxt.getText().toString());
-        Intent goMaisInfo = new Intent(context, mais_info_mapa_cliente.class);
+        Intent goMaisInfo = new Intent(context, mais_info_mapa_condutor.class);
         goMaisInfo.putExtra("user_id", user_id);
         goMaisInfo.putExtra("localPartida", localPartidatxt.getText());
         goMaisInfo.putExtra("localChegada", localChegadatxt.getText());
@@ -169,7 +169,6 @@ public class CustomListAdapter_efetuadas_condutor extends BaseAdapter {
         goMaisInfo.putExtra("bagagemPedido", bagagemPedidoCurrent);
         goMaisInfo.putExtra("animalPedido", animalPedidoCurrent);
         goMaisInfo.putExtra("necessidadesEspeciaisPedido", necessidadesEspeciaisPedidoCurrent);
-        goMaisInfo.putExtra("cidadao", false);
         context.startActivity(goMaisInfo);
 
     }

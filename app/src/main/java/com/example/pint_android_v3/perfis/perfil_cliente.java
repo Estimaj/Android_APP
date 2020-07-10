@@ -56,13 +56,6 @@ public class perfil_cliente extends barra_lateral_pro {
         Bar_Settings(user_id);
     }
 
-    public void Go_Back()
-    {
-        Intent GO = new Intent(perfil_cliente.this, menu_municipe.class);
-        GO.putExtra("user_id", user_id);
-        startActivity(GO);
-    }
-
     public void Get_user_id_information(int id){
         Retrofit retrofit;
         BaseDadosInterface baseDadosInterface;

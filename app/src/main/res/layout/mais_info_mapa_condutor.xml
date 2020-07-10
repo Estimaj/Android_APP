@@ -56,7 +56,7 @@
         app:layout_constraintTop_toTopOf="@id/contentor_mais_info_condutor" />
 
     <TextView
-        android:id="@+id/Local_Chegada_mais_info_cliente"
+        android:id="@+id/Local_Chegada_mais_info_condutor"
         android:layout_width="80dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="306dp"

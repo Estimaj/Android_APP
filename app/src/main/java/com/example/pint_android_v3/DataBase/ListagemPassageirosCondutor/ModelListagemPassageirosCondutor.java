@@ -28,9 +28,9 @@ public class ModelListagemPassageirosCondutor {
 
     @Override
     public String toString() {
-        return "ModelListagemPassageiros{" +
-                "success='" + success + '\'' +
-                ", dataViagem=" + dataListagemCondutor +
+        return "ModelListagemPassageiros{" + '\n' +
+                "success='" + success + '\n' +
+                ", dataViagem=" + dataListagemCondutor + '\n' +
                 '}';
     }
 
