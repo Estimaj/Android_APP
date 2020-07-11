@@ -1,6 +1,7 @@
 package com.example.pint_android_v3;
 
 import com.example.pint_android_v3.DataBase.BaseDadosInterface;
+import com.example.pint_android_v3.DataBase.UpdatePassageiro.Passageiro;
 import com.example.pint_android_v3.DataBase.ViagensInformacao.Model_Viagens_Efetuadas;
 import com.example.pint_android_v3.DataBase.ViagensInformacao.dataViagem;
 import com.example.pint_android_v3.barra_lateral.barra_lateral_condutor;
@@ -152,13 +153,11 @@ public class pagamentoCondutor extends barra_lateral_condutor {
             public void onClick(View v) {
                 Click_Botao_Confirm_Pagar();
                 dialogBuilder.dismiss();
-
             }
         });
         no_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Click_Botao_Negar_Pagar();
                 dialogBuilder.dismiss();
             }
@@ -169,8 +168,8 @@ public class pagamentoCondutor extends barra_lateral_condutor {
 
     public void Click_Botao_Confirm_Pagar()
     {
+        updateBDPassageiroComparecenciaPagamento(1,1);
         final AlertDialog dialogBuilder = new AlertDialog.Builder(this).create();
-// ...Irrelevant code for customizing the buttons and title
         LayoutInflater inflater = this.getLayoutInflater();
         final View dialogView = inflater.inflate(R.layout.alertdialog_pagamento_sim_adapter, null);
         dialogBuilder.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
@@ -179,12 +178,10 @@ public class pagamentoCondutor extends barra_lateral_condutor {
         yes_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                /*Intent voltarMenu = new Intent(pagamentoCondutor.this, menu_motorista.class);
+                Intent voltarMenu = new Intent(pagamentoCondutor.this, menu_motorista.class);
                 voltarMenu.putExtra("user_id", user_id);
-                startActivity(voltarMenu);*/
+                startActivity(voltarMenu);
                 dialogBuilder.dismiss();
-
             }
         });
 
@@ -192,8 +189,12 @@ public class pagamentoCondutor extends barra_lateral_condutor {
         dialogBuilder.show();
     }
 
+
+
     public void Click_Botao_Negar_Pagar()
     {
+        updateBDPassageiroComparecenciaPagamento(1, 0);
+
         final AlertDialog dialogBuilder = new AlertDialog.Builder(this).create();
 // ...Irrelevant code for customizing the buttons and title
         LayoutInflater inflater = this.getLayoutInflater();
@@ -217,6 +218,45 @@ public class pagamentoCondutor extends barra_lateral_condutor {
 
 
 
+
+    }
+
+    private void updateBDPassageiroComparecenciaPagamento(int comparecimento, int pagamento) {
+        Passageiro passageiro = new Passageiro();
+        passageiro.setComparencia_viagem(comparecimento);
+        passageiro.setPagou_viagem(pagamento);
+        passageiro.setId_viagem(idViagem);
+        passageiro.setCidadao_id_utilizador(user_id);
+
+        Retrofit retrofit;
+        BaseDadosInterface baseDadosInterface;
+
+        retrofit = new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        baseDadosInterface =  retrofit.create(BaseDadosInterface.class);
+
+        //Log.i("O id do user:", ""+ id);
+        Call<Passageiro> call = baseDadosInterface.executeUpdatePassageiro(passageiro);
+
+        call.enqueue(new Callback<Passageiro>() {
+            @Override
+            public void onResponse(Call<Passageiro> call, Response<Passageiro> response) {
+                if (!response.isSuccessful()){
+                    Log.i("Erro", "verificar o link na interface");
+                }
+                if (response.body() != null) {
+                    Log.i("Sucesso", "valor a pagar: "+ response.body().getValor_a_pagar());
+                }else
+                    Log.i("Erro", "L105 viagens efetuadas");
+            }
+
+            @Override
+            public void onFailure(Call<Passageiro> call, Throwable t) {
+                Log.i("Failure:", t.toString());
+            }
+        });
 
     }
 
