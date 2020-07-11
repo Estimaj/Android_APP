@@ -68,7 +68,6 @@
         android:layout_height="40dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="6dp"
-        android:onClick="MaisInfo"
         app:layout_constraintBottom_toBottomOf="@+id/bg_white_notificacoes_adapter"
         app:layout_constraintEnd_toEndOf="@+id/bg_white_notificacoes_adapter"
         app:srcCompat="@drawable/btn_mais_info" />

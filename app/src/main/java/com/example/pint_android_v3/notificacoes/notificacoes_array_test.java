@@ -1,28 +1,28 @@
 package com.example.pint_android_v3.notificacoes;
 
+import java.util.ArrayList;
+
 public class notificacoes_array_test {
 
-    String[] titulo = {
-            "Tomás",
-            "António",
-            "Informação",
-            "Delicioso"
-    };
+    ArrayList<String> ListNome;
 
-    String[] mensagem = {
-            "Viagem cancelada",
-            "Viagem com novo utilizador",
-            "ALteração de horário de viagem",
-            "Biscoitos"
-    };
+    ArrayList<Integer> ListTipo;
 
-    String[] data = {
-            "1/01/2001",
-            "16/05/2020",
-            "12/06/2015",
-            "4/08/2017"
-    };
+    ArrayList<String> ListData;
 
-    public notificacoes_array_test() {}
+    ArrayList<Integer> ListIDViagem;
+
+    public notificacoes_array_test( ArrayList<String> ListNome,
+                                    ArrayList<String> ListData,
+                                    ArrayList<Integer> ListTipo,
+                                    ArrayList<Integer> ListIDViagem)
+    {
+
+        this.ListNome = ListNome;
+        this.ListData = ListData;
+        this.ListTipo = ListTipo;
+        this.ListIDViagem = ListIDViagem;
+
+    }
 
 }

@@ -29,12 +29,7 @@ public class notificacoes_condutor extends barra_lateral_condutor {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notificacoes);
 
-        lItems = new notificacoes_array_test();
-        lView = (ListView)findViewById(R.id.listView_para_layout_notificacoes);
-        lAdapter = new Custom_Adapter_Notificacoes(notificacoes_condutor.this,
-                lItems.data, lItems.titulo, lItems.mensagem);
 
-        lView.setAdapter(lAdapter);
 
         Intent X = getIntent();
         Bundle b = X.getExtras();

@@ -24,113 +24,16 @@
             android:layout_height="match_parent">
 
             <!--Detalhes da alteração do preço-->
-            <ImageView
-                android:id="@+id/bg_white_alteracao_preco__not_mais_info"
-                android:layout_width="match_parent"
-                android:layout_height="135dp"
-                android:layout_marginTop="10dp"
-                android:background="@color/white_gray"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/bg_white__not_mais_info" />
-
-            <TextView
-                android:id="@+id/textView_alteracao_preco_notificacoes_mais_info"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Alteração do Preço:"
-                android:textColor="@color/Black"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/bg_white_alteracao_preco__not_mais_info" />
 
             <!--Preco antigo-->
-            <ImageView
-                android:id="@+id/bg_preco_antigo_alteracao_preco_notificacoes_mais_info"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_margin="10dp"
-                android:background="@color/White"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textView_alteracao_preco_notificacoes_mais_info" />
 
-            <ImageView
-                android:id="@+id/euro_money_icon_alteracao_preco_notificacoes_mais_info"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:layout_margin="15dp"
-                app:layout_constraintBottom_toBottomOf="@id/bg_preco_antigo_alteracao_preco_notificacoes_mais_info"
-                app:layout_constraintStart_toStartOf="@id/bg_preco_antigo_alteracao_preco_notificacoes_mais_info"
-                app:layout_constraintTop_toTopOf="@id/bg_preco_antigo_alteracao_preco_notificacoes_mais_info"
-                app:srcCompat="@drawable/euro_money_icon" />
-
-            <TextView
-                android:id="@+id/textView_preco_antigo_alteracao_preco_notificacoes_mais_info"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="1dp"
-                android:text="Preço Antigo"
-                android:textColor="@color/Black"
-                android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@id/euro_money_icon_alteracao_preco_notificacoes_mais_info"
-                app:layout_constraintTop_toTopOf="@id/bg_preco_antigo_alteracao_preco_notificacoes_mais_info" />
-
-            <TextView
-                android:id="@+id/custo_user_preco_antigo_alteracao_preco_notificacoes_mais_info"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="5 €"
-                app:layout_constraintStart_toStartOf="@id/textView_preco_antigo_alteracao_preco_notificacoes_mais_info"
-                app:layout_constraintTop_toBottomOf="@id/textView_preco_antigo_alteracao_preco_notificacoes_mais_info" />
             <!--Preco atual-->
-            <ImageView
-                android:id="@+id/bg_preco_atual_alteracao_preco_notificacoes_mais_info"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_margin="10dp"
-                android:background="@color/White"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/bg_preco_antigo_alteracao_preco_notificacoes_mais_info" />
-
-            <ImageView
-                android:id="@+id/anchor__not_mais_info"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:layout_margin="15dp"
-                app:layout_constraintBottom_toBottomOf="@id/bg_preco_atual_alteracao_preco_notificacoes_mais_info"
-                app:layout_constraintStart_toStartOf="@id/bg_preco_atual_alteracao_preco_notificacoes_mais_info"
-                app:layout_constraintTop_toTopOf="@id/bg_preco_atual_alteracao_preco_notificacoes_mais_info"
-                app:srcCompat="@drawable/euro_money_icon" />
-
-            <TextView
-                android:id="@+id/textView_preco_atual_alteracao_preco_notificacoes_mais_info"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="1dp"
-                android:text="Preço Atual"
-                android:textColor="@color/Black"
-                android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@id/anchor__not_mais_info"
-                app:layout_constraintTop_toTopOf="@id/bg_preco_atual_alteracao_preco_notificacoes_mais_info" />
-
-            <TextView
-                android:id="@+id/custo_user_preco_atual_alteracao_preco_notificacoes_mais_info"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="3 €"
-                app:layout_constraintStart_toStartOf="@id/textView_preco_atual_alteracao_preco_notificacoes_mais_info"
-                app:layout_constraintTop_toBottomOf="@id/textView_preco_atual_alteracao_preco_notificacoes_mais_info" />
 
             <!--Mais informação da viagem afetada-->
             <ImageView
                 android:id="@+id/bg_white__not_mais_info"
                 android:layout_width="match_parent"
-                android:layout_height="350dp"
+                android:layout_height="300dp"
                 android:layout_marginTop="10dp"
                 android:background="@color/white_gray"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -313,45 +216,7 @@
                 app:layout_constraintTop_toBottomOf="@id/textView_dia_not_mais_info" />
 
             <!--Taxa Desconto-->
-            <ImageView
-                android:id="@+id/taxa_desconto_not_mais_info"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_margin="10dp"
-                android:background="@color/White"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/dia_not_mais_info" />
 
-            <ImageView
-                android:id="@+id/euro_simbolo_icon_taxa_desconto_not_mais_info"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:layout_margin="20dp"
-                app:layout_constraintBottom_toBottomOf="@id/taxa_desconto_not_mais_info"
-                app:layout_constraintStart_toStartOf="@id/taxa_desconto_not_mais_info"
-                app:layout_constraintTop_toTopOf="@id/taxa_desconto_not_mais_info"
-                app:srcCompat="@drawable/euro_simbolo_icon" />
-
-            <TextView
-                android:id="@+id/textView_taxa_desconto_not_mais_info"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="5dp"
-                android:text="Taxa de Desconto"
-                android:textColor="@color/Black"
-                android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@id/euro_simbolo_icon_taxa_desconto_not_mais_info"
-                app:layout_constraintTop_toTopOf="@id/taxa_desconto_not_mais_info" />
-
-            <TextView
-                android:id="@+id/local_user_textView_taxa_desconto_not_mais_info"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="3 €"
-                app:layout_constraintStart_toStartOf="@id/textView_taxa_desconto_not_mais_info"
-                app:layout_constraintTop_toBottomOf="@id/textView_taxa_desconto_not_mais_info" />
             <!--Notificação da atividade anterior-->
             <ImageView
                 android:id="@+id/bg_white_with_not_mais_info"

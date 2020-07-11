@@ -1,34 +1,43 @@
 package com.example.pint_android_v3.notificacoes;
 
 import android.content.Context;
+import android.content.Intent;
+import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.pint_android_v3.R;
-import com.example.pint_android_v3.viagens_efetuadas.CustomListAdapter_efetuadas_teste;
+
+import java.util.ArrayList;
 
 public class Custom_Adapter_Notificacoes extends BaseAdapter {
 
     Context context;
-    private final String[] data;
-    private final String[] titulo;
-    private final String[] mensagem;
+    private final ArrayList<String> data;
+    private final ArrayList<String> nome;
+    private final ArrayList<Integer> tipo_notif;
+    private final ArrayList<Integer> id_viagem;
+    private final int user_id;
 
-    public Custom_Adapter_Notificacoes(Context cont, String[] data, String[] titulo, String[] mensagem) {
+    public Custom_Adapter_Notificacoes(Context cont, int user_id, ArrayList<String> data, ArrayList<String> nome, ArrayList<Integer> tipo_notif, ArrayList<Integer> id_viagem) {
 
         context = cont;
+        this.user_id = user_id;
         this.data = data;
-        this.titulo = titulo;
-        this.mensagem = mensagem;
+        this.nome = nome;
+        this.tipo_notif = tipo_notif;
+        this.id_viagem = id_viagem;
     }
 
     @Override
     public int getCount() {
         if(data == null) return 0;
-        return data.length;
+        return data.size();
     }
 
     @Override
@@ -53,9 +62,9 @@ public class Custom_Adapter_Notificacoes extends BaseAdapter {
             LayoutInflater inflater = LayoutInflater.from(context);
             convertView = inflater.inflate(R.layout.notificacoes_adapter, parent, false);
             viewHolder.txt_data = (TextView)convertView.findViewById(R.id.data_notificacoes_adapter);
-            viewHolder.txt_titulo = (TextView)convertView.findViewById(R.id.nome_utilizador_notificacoes_adapter);
+            viewHolder.txt_nome = (TextView)convertView.findViewById(R.id.nome_utilizador_notificacoes_adapter);
             viewHolder.txt_mensagem = (TextView)convertView.findViewById(R.id.mensagem_notificacao_adapter);
-
+            viewHolder.btnMaisInfo = convertView.findViewById(R.id.btn_mais_info_not_adapter);
             result = convertView;
             convertView.setTag(viewHolder);
         }
@@ -65,19 +74,57 @@ public class Custom_Adapter_Notificacoes extends BaseAdapter {
             result = convertView;
         }
 
-        viewHolder.txt_data.setText(data[position]);
-        viewHolder.txt_titulo.setText(titulo[position]);
-        viewHolder.txt_mensagem.setText(mensagem[position]);
+        viewHolder.txt_data.setText(data.get(position));
+        viewHolder.txt_nome.setText(nome.get(position));
+        viewHolder.txt_mensagem.setText(defineNotificationType(tipo_notif.get(position)));
+        viewHolder.btnMaisInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MaisInfo(viewHolder);
+            }
+        });
 
 
 
         return convertView;
     }
 
+    public void MaisInfo(ViewHolder viewHolder){
+        Intent MaisInfo = new Intent(context, notificacoes_mais_info.class);
+        MaisInfo.putExtra("id_viagem", 1 /*viewHolder.id_viagem*/);
+        MaisInfo.putExtra("user_id", user_id);
+        context.startActivity(MaisInfo);
+    }
+
     private static class ViewHolder {
         TextView txt_data;
-        TextView txt_titulo;
+        TextView txt_nome;
         TextView txt_mensagem;
+        int id_viagem;
+        ImageView btnMaisInfo;
+
+    }
+
+    public String defineNotificationType(int num)
+    {
+
+        String message = "Error";
+        switch(num)
+        {
+            case 0:
+                message = "Um dos passageiros cancelou a sua ida na viagem marcada para o dia: ";
+                break; //cancelar viagem
+
+            case 1:
+                message = "A viagem que pediu foi marcada com sucesso para o dia: ";
+                break; //viagem marcada com sucesso
+
+
+        }
+
+        return message;
+
+
 
     }
 }

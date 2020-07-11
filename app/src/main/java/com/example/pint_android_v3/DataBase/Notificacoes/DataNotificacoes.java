@@ -6,20 +6,43 @@ import com.google.gson.annotations.SerializedName;
 
 public class DataNotificacoes {
 
-    @SerializedName("cidadao_id_utilizador")
+    @SerializedName("nome")
     @Expose
-    private int cidadao_id_utilizador;
+    private String nome;
 
-    @SerializedName("origem")
+    @SerializedName("id_utilizador")
     @Expose
-    private String origemNome;
+    private int id_utilizador;
 
-    @SerializedName("Origem_Coordenadas")
+    @SerializedName("id_viagem")
     @Expose
-    private String Origem_Coordenadas;
+    private int id_viagem;
 
+    @SerializedName("dia_viagem")
+    @Expose
+    private String dia_viagem;
 
+    @SerializedName("tipo_notif")
+    @Expose
+    private int tipo_notif;
 
+    public String getNome() {
+        return nome;
+    }
 
+    public int getId_utilizador() {
+        return id_utilizador;
+    }
 
+    public int getId_viagem() {
+        return id_viagem;
+    }
+
+    public String getDia_viagem() {
+        return dia_viagem;
+    }
+
+    public int getTipo_notif() {
+        return tipo_notif;
+    }
 }
