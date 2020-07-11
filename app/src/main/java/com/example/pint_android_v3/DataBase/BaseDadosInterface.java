@@ -2,6 +2,7 @@ package com.example.pint_android_v3.DataBase;
 
 import com.example.pint_android_v3.DataBase.DadosUtilizador.Model_User_Information;
 import com.example.pint_android_v3.DataBase.DividaUtilizador.ModelDividaUtilizador;
+import com.example.pint_android_v3.DataBase.ListagemCidadao.ModelListagemCidadao;
 import com.example.pint_android_v3.DataBase.ListagemPassageirosCondutor.ModelListagemPassageirosCondutor;
 import com.example.pint_android_v3.DataBase.ViagensInformacao.Model_Viagens_Efetuadas;
 
@@ -40,6 +41,6 @@ public interface BaseDadosInterface {
     Call<ModelListagemPassageirosCondutor> executeGetListagem(@Path("id") int id_viagem);
 
     @GET("/muv/passageiros/getpassquery/{id}")
-    Call<ModelListagemPassageirosCondutor> executeGetListagemQuery(@Path("id") int id_viagem);
+    Call<ModelListagemCidadao> executeGetListagemQuery(@Path("id") int id_viagem);
 
 }

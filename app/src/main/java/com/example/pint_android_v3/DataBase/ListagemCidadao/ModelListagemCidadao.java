@@ -14,21 +14,21 @@ public class ModelListagemCidadao {
 
     @SerializedName("data")
     @Expose
-    private ArrayList<DataListagemCondutor> dataListagemCondutor;
+    private ArrayList<dataListagemCidadao> dataListagemCidadao;
 
     public String getSuccess() {
         return success;
     }
 
-    public ArrayList<DataListagemCondutor> getDataListagemCondutor() {
-        return dataListagemCondutor;
+    public ArrayList<dataListagemCidadao> getDataListagemCidadao() {
+        return dataListagemCidadao;
     }
 
     @Override
     public String toString() {
         return "ModelListagemPassageiros{" + '\n' +
                 "success='" + success + '\n' +
-                ", dataViagem=" + dataListagemCondutor + '\n' +
+                ", dataViagem=" + dataListagemCidadao + '\n' +
                 '}';
     }
 
