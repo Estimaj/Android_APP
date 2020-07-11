@@ -114,25 +114,6 @@
                 app:layout_constraintStart_toStartOf="@id/contentor1_quem_vai_consigo_condutor"
                 app:layout_constraintTop_toTopOf="@id/contentor1_quem_vai_consigo_condutor" />
 
-            <ImageView
-                android:id="@+id/canideo_1_quem_vai_consigo_condutor"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginStart="120dp"
-                android:layout_marginTop="9dp"
-                app:layout_constraintStart_toStartOf="@id/contentor1_quem_vai_consigo_condutor"
-                app:layout_constraintTop_toBottomOf="@id/tripulante_localidade_1_quem_vai_consigo_condutor"
-                app:srcCompat="@drawable/dog_icon_marcar" />
-
-            <ImageView
-                android:id="@+id/canideo_quantidade_icon_quem_vai_consigo_condutor1"
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:layout_marginEnd="22dp"
-                android:layout_marginBottom="19dp"
-                app:layout_constraintBottom_toBottomOf="@id/canideo_1_quem_vai_consigo_condutor"
-                app:layout_constraintEnd_toEndOf="@id/canideo_1_quem_vai_consigo_condutor"
-                app:srcCompat="@drawable/check_icon_yes" />
 
             <TextView
                 android:id="@+id/tripulante_localidade_1_quem_vai_consigo_condutor"
@@ -177,26 +158,6 @@
                 app:layout_constraintTop_toBottomOf="@id/contentor1_quem_vai_consigo_condutor"
                 app:srcCompat="@drawable/white_square_shadow" />
 
-            <ImageView
-                android:id="@+id/canideo_2_quem_vai_consigo2_condutor"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginStart="120dp"
-                android:layout_marginTop="9dp"
-                app:layout_constraintStart_toStartOf="@id/contentor2_quem_vai_consigo2_condutor"
-                app:layout_constraintTop_toBottomOf="@id/tripulante_localidade_2_quem_vai_consigo2_condutor"
-                app:srcCompat="@drawable/dog_icon_marcar" />
-
-            <ImageView
-                android:id="@+id/canideo_quantidade_icon2_quem_vai_consigo2_condutor"
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:layout_marginEnd="22dp"
-                android:layout_marginBottom="19dp"
-                app:layout_constraintBottom_toBottomOf="@id/canideo_2_quem_vai_consigo2_condutor"
-                app:layout_constraintEnd_toEndOf="@id/canideo_2_quem_vai_consigo2_condutor"
-                app:srcCompat="@drawable/check_icon_yes" />
-
             <TextView
                 android:id="@+id/tripulante_localidade_2_quem_vai_consigo2_condutor"
                 android:layout_width="wrap_content"
@@ -234,8 +195,8 @@
                 android:layout_marginTop="60dp"
                 android:layout_marginEnd="10dp"
                 android:onClick="Click_Pagamento"
-                app:layout_constraintEnd_toEndOf="@+id/contentor2_quem_vai_consigo2_condutor"
-                app:layout_constraintTop_toTopOf="@+id/contentor2_quem_vai_consigo2_condutor"
+                app:layout_constraintEnd_toEndOf="@id/contentor2_quem_vai_consigo2_condutor"
+                app:layout_constraintTop_toTopOf="@id/contentor2_quem_vai_consigo2_condutor"
                 app:srcCompat="@drawable/btn_pagamento" />
 
             <TextView
@@ -247,8 +208,8 @@
                 android:text="Pagamento"
                 android:textColor="@color/White"
                 android:textSize="13sp"
-                app:layout_constraintStart_toStartOf="@+id/btn_pagamento_2_quem_vai_consigo_condutor"
-                app:layout_constraintTop_toTopOf="@+id/btn_pagamento_2_quem_vai_consigo_condutor" />
+                app:layout_constraintStart_toStartOf="@id/btn_pagamento_2_quem_vai_consigo_condutor"
+                app:layout_constraintTop_toTopOf="@id/btn_pagamento_2_quem_vai_consigo_condutor" />
 
 
             <ImageView
@@ -260,25 +221,6 @@
                 app:srcCompat="@drawable/white_square_shadow"
                 tools:layout_editor_absoluteX="0dp" />
 
-            <ImageView
-                android:id="@+id/canideo_3_quem_vai_consigo_condutor"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginStart="120dp"
-                android:layout_marginTop="9dp"
-                app:layout_constraintStart_toStartOf="@id/contentor3_quem_vai_consigo_condutor"
-                app:layout_constraintTop_toBottomOf="@id/tripulante_localidade_3_quem_vai_consigo_condutor"
-                app:srcCompat="@drawable/dog_icon_marcar" />
-
-            <ImageView
-                android:id="@+id/canideo_quantidade_icon3_quem_vai_consigo_condutor"
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:layout_marginEnd="22dp"
-                android:layout_marginBottom="19dp"
-                app:layout_constraintBottom_toBottomOf="@id/canideo_3_quem_vai_consigo_condutor"
-                app:layout_constraintEnd_toEndOf="@id/canideo_3_quem_vai_consigo_condutor"
-                app:srcCompat="@drawable/check_icon_yes" />
 
             <ImageView
                 android:id="@+id/tripulante_image_3_quem_vai_consigo_condutor"
@@ -317,8 +259,8 @@
                 android:layout_marginTop="60dp"
                 android:layout_marginEnd="10dp"
                 android:onClick="Click_Pagamento"
-                app:layout_constraintEnd_toEndOf="@+id/contentor3_quem_vai_consigo_condutor"
-                app:layout_constraintTop_toTopOf="@+id/contentor3_quem_vai_consigo_condutor"
+                app:layout_constraintEnd_toEndOf="@id/contentor3_quem_vai_consigo_condutor"
+                app:layout_constraintTop_toTopOf="@id/contentor3_quem_vai_consigo_condutor"
                 app:srcCompat="@drawable/btn_pagamento" />
 
             <TextView
@@ -330,8 +272,8 @@
                 android:text="Pagamento"
                 android:textColor="@color/White"
                 android:textSize="13sp"
-                app:layout_constraintStart_toStartOf="@+id/btn_pagamento_3_quem_vai_consigo_condutor"
-                app:layout_constraintTop_toTopOf="@+id/btn_pagamento_3_quem_vai_consigo_condutor" />
+                app:layout_constraintStart_toStartOf="@id/btn_pagamento_3_quem_vai_consigo_condutor"
+                app:layout_constraintTop_toTopOf="@id/btn_pagamento_3_quem_vai_consigo_condutor" />
 
 
             <ImageView
@@ -339,11 +281,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_marginTop="6dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@id/contentor3_quem_vai_consigo_condutor"
                 app:layout_constraintTop_toBottomOf="@id/contentor3_quem_vai_consigo_condutor"
-                app:srcCompat="@drawable/white_square_shadow" />
+                app:srcCompat="@drawable/white_square_shadow"
+                app:layout_editor_absoluteX="0dp"/>
 
             <TextView
                 android:id="@+id/tripulante_nome_4_quem_vai_consigo2_condutor"
@@ -376,44 +317,14 @@
                 app:srcCompat="@drawable/default_user_icon" />
 
             <ImageView
-                android:id="@+id/canideo_4_quem_vai_consigo_condutor"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginStart="120dp"
-                android:layout_marginTop="9dp"
-                app:layout_constraintStart_toStartOf="@id/contentor4_quem_vai_consigo2_condutor"
-                app:layout_constraintTop_toBottomOf="@id/tripulante_localidade_4_quem_vai_consigo2_condutor"
-                app:srcCompat="@drawable/dog_icon_marcar" />
-
-            <ImageView
-                android:id="@+id/canideo_quantidade_icon4_quem_vai_consigo_condutor"
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:layout_marginEnd="22dp"
-                android:layout_marginBottom="19dp"
-                app:layout_constraintBottom_toBottomOf="@id/canideo_4_quem_vai_consigo_condutor"
-                app:layout_constraintEnd_toEndOf="@id/canideo_4_quem_vai_consigo_condutor"
-                app:srcCompat="@drawable/check_icon_yes" />
-
-            <ImageView
-                android:id="@+id/tripulante_image_4_quem_vai_consigo_condutor"
-                android:layout_width="90dp"
-                android:layout_height="90dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="4dp"
-                app:layout_constraintStart_toStartOf="@id/contentor4_quem_vai_consigo2_condutor"
-                app:layout_constraintTop_toTopOf="@id/contentor4_quem_vai_consigo2_condutor"
-                app:srcCompat="@drawable/default_user_icon" />
-
-            <ImageView
                 android:id="@+id/btn_pagamento_4_quem_vai_consigo_condutor"
                 android:layout_width="120dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="60dp"
                 android:layout_marginEnd="10dp"
                 android:onClick="Click_Pagamento"
-                app:layout_constraintEnd_toEndOf="@+id/contentor4_quem_vai_consigo2_condutor"
-                app:layout_constraintTop_toTopOf="@+id/contentor4_quem_vai_consigo2_condutor"
+                app:layout_constraintEnd_toEndOf="@id/contentor4_quem_vai_consigo2_condutor"
+                app:layout_constraintTop_toTopOf="@id/contentor4_quem_vai_consigo2_condutor"
                 app:srcCompat="@drawable/btn_pagamento" />
 
             <TextView
@@ -425,8 +336,8 @@
                 android:text="Pagamento"
                 android:textColor="@color/White"
                 android:textSize="13sp"
-                app:layout_constraintStart_toStartOf="@+id/btn_pagamento_4_quem_vai_consigo_condutor"
-                app:layout_constraintTop_toTopOf="@+id/btn_pagamento_4_quem_vai_consigo_condutor" />
+                app:layout_constraintStart_toStartOf="@id/btn_pagamento_4_quem_vai_consigo_condutor"
+                app:layout_constraintTop_toTopOf="@id/btn_pagamento_4_quem_vai_consigo_condutor" />
 
             <ImageView
                 android:id="@+id/anchor_quem_vai_consigo_condutor"

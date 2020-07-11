@@ -1,9 +1,7 @@
-package com.example.pint_android_v3.DataBase.ViagensEfetuadas;
+package com.example.pint_android_v3.DataBase.ViagensInformacao;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
-import java.util.List;
 
 public class dataViagem {
 

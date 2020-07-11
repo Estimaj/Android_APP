@@ -3,7 +3,7 @@ package com.example.pint_android_v3.DataBase;
 import com.example.pint_android_v3.DataBase.DadosUtilizador.Model_User_Information;
 import com.example.pint_android_v3.DataBase.DividaUtilizador.ModelDividaUtilizador;
 import com.example.pint_android_v3.DataBase.ListagemPassageirosCondutor.ModelListagemPassageirosCondutor;
-import com.example.pint_android_v3.DataBase.ViagensEfetuadas.Model_Viagens_Efetuadas;
+import com.example.pint_android_v3.DataBase.ViagensInformacao.Model_Viagens_Efetuadas;
 
 import java.util.HashMap;
 

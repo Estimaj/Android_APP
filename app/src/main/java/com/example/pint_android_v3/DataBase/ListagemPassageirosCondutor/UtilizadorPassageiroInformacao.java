@@ -3,32 +3,29 @@ package com.example.pint_android_v3.DataBase.ListagemPassageirosCondutor;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class dataListagemCondutor {
+public class UtilizadorPassageiroInformacao {
 
-    @SerializedName("id_pass")
+    @SerializedName("id_utilizador")
     @Expose
-    private int idPass;
+    private int id_utilizador;
 
     @SerializedName("nome_utilizador")
     @Expose
-    private String nomeUtilizador;
+    private String nome_utilizador;
 
     @SerializedName("morada_utilizador")
     @Expose
     private String moradaUtilizador;
 
-
-
-    public int getIdPass() {
-        return idPass;
+    public int getId_utilizador() {
+        return id_utilizador;
     }
 
-    public String getNomeUtilizador() {
-        return nomeUtilizador;
+    public String getNome_utilizador() {
+        return nome_utilizador;
     }
 
     public String getMoradaUtilizador() {
         return moradaUtilizador;
     }
-
 }

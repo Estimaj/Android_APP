@@ -13,18 +13,15 @@ public class ModelListagemPassageirosCondutor {
 
     @SerializedName("data")
     @Expose
-    private ArrayList<dataListagemCondutor> dataListagemCondutor;
+    private ArrayList<DataListagemCondutor> dataListagemCondutor;
 
     public String getSuccess() {
         return success;
     }
 
-    public ArrayList<dataListagemCondutor> getDataListagemCondutor() {
+    public ArrayList<DataListagemCondutor> getDataListagemCondutor() {
         return dataListagemCondutor;
     }
-
-
-
 
     @Override
     public String toString() {

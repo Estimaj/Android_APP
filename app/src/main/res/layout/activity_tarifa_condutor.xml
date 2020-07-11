@@ -231,47 +231,6 @@
                 app:layout_constraintStart_toStartOf="@id/textView_dia_tarifa_condutor"
                 app:layout_constraintTop_toBottomOf="@id/textView_dia_tarifa_condutor" />
 
-            <!--Taxa Desconto-->
-            <ImageView
-                android:id="@+id/taxa_desconto_tarifa_condutor"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_margin="10dp"
-                android:background="@color/White"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/dia__tarifa_condutor" />
-
-            <ImageView
-                android:id="@+id/euro_simbolo_icon_taxa_desconto_tarifa_condutor"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:layout_margin="20dp"
-                android:layout_marginStart="20dp"
-                app:layout_constraintBottom_toBottomOf="@id/taxa_desconto_tarifa_condutor"
-                app:layout_constraintStart_toStartOf="@id/taxa_desconto_tarifa_condutor"
-                app:layout_constraintTop_toTopOf="@id/taxa_desconto_tarifa_condutor"
-                app:srcCompat="@drawable/euro_simbolo_icon" />
-
-            <TextView
-                android:id="@+id/textView_taxa_desconto_tarifa_condutor"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="5dp"
-                android:text="Taxa de Desconto"
-                android:textColor="@color/Black"
-                android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@id/euro_simbolo_icon_taxa_desconto_tarifa_condutor"
-                app:layout_constraintTop_toTopOf="@id/taxa_desconto_tarifa_condutor" />
-
-            <TextView
-                android:id="@+id/local_user_textView_taxa_desconto_tarifa_condutor"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Vazio"
-                app:layout_constraintStart_toStartOf="@id/textView_taxa_desconto_tarifa_condutor"
-                app:layout_constraintTop_toBottomOf="@id/textView_taxa_desconto_tarifa_condutor" />
             <!--Notificação da atividade anterior-->
             <ImageView
                 android:id="@+id/bg_white_with__tarifa_condutor"
@@ -370,16 +329,6 @@
                 app:layout_constraintBottom_toBottomOf="@+id/wheel_tarifa_condutor"
                 app:layout_constraintEnd_toEndOf="@+id/wheel_tarifa_condutor"
                 app:srcCompat="@drawable/check_icon_yes" />
-
-            <TextView
-                android:id="@+id/cifrao_tarifa_condutor"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="6dp"
-                android:text="€"
-                app:layout_constraintStart_toEndOf="@+id/local_user_textView_taxa_desconto_tarifa_condutor"
-                app:layout_constraintTop_toBottomOf="@+id/textView_taxa_desconto_tarifa_condutor" />
-
 
             <!--Barra Amarela-->
         </androidx.constraintlayout.widget.ConstraintLayout>

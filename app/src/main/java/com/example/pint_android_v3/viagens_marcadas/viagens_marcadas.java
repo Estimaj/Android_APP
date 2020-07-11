@@ -3,21 +3,15 @@ package com.example.pint_android_v3.viagens_marcadas;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.example.pint_android_v3.DataBase.BaseDadosInterface;
-import com.example.pint_android_v3.DataBase.ViagensEfetuadas.Model_Viagens_Efetuadas;
+import com.example.pint_android_v3.DataBase.ViagensInformacao.Model_Viagens_Efetuadas;
 
-import com.example.pint_android_v3.Cancelar_Viagem;
-import com.example.pint_android_v3.DataBase.ViagensEfetuadas.dataViagem;
+import com.example.pint_android_v3.DataBase.ViagensInformacao.dataViagem;
 import com.example.pint_android_v3.R;
 import com.example.pint_android_v3.barra_lateral.barra_lateral_pro;
-import com.example.pint_android_v3.mapas.mais_info_mapa_cliente;
-import com.example.pint_android_v3.viagens_efetuadas.viagens_efetuadas;
-import com.example.pint_android_v3.viagens_efetuadas.viagens_efetuadas_array_test;
 
 import java.util.ArrayList;
 

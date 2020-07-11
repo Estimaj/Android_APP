@@ -1,7 +1,5 @@
 package com.example.pint_android_v3.quem_vai_consigo;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,8 +9,7 @@ import android.widget.TextView;
 
 import com.example.pint_android_v3.DataBase.BaseDadosInterface;
 import com.example.pint_android_v3.DataBase.ListagemPassageirosCondutor.ModelListagemPassageirosCondutor;
-import com.example.pint_android_v3.DataBase.ListagemPassageirosCondutor.dataListagemCondutor;
-import com.example.pint_android_v3.DataBase.ViagensEfetuadas.Model_Viagens_Efetuadas;
+import com.example.pint_android_v3.DataBase.ListagemPassageirosCondutor.DataListagemCondutor;
 import com.example.pint_android_v3.R;
 import com.example.pint_android_v3.barra_lateral.barra_lateral_pro;
 
@@ -30,7 +27,7 @@ public class quem_vai_consigo extends barra_lateral_pro {
     private int user_id;
     private int viagem_id;
     private String BASE_URL ="http://10.0.2.2:3000";
-    private ArrayList<dataListagemCondutor> informacaoViagem;
+    private ArrayList<DataListagemCondutor> informacaoViagem;
     ArrayList<String> ListNome;
     ArrayList<String> ListLocalidade;
     ArrayList<Integer> ListIdPass;
@@ -105,8 +102,8 @@ public class quem_vai_consigo extends barra_lateral_pro {
        ListIdPass = new ArrayList<>();
 
         for (int i = 0; i < informacaoViagem.size(); i++) {
-            ListNome.add(informacaoViagem.get(i).getNomeUtilizador());
-            ListLocalidade.add(informacaoViagem.get(i).getMoradaUtilizador());
+            ListNome.add(informacaoViagem.get(i).getCidadao().getUtilizador().getNome_utilizador());
+            ListLocalidade.add(informacaoViagem.get(i).getCidadao().getUtilizador().getMoradaUtilizador());
             ListIdPass.add(informacaoViagem.get(i).getIdPass());
         }
         HideButtons(ListNome.size());//Esconde os botões

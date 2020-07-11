@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import com.example.pint_android_v3.DataBase.BaseDadosInterface;
 import com.example.pint_android_v3.DataBase.ListagemPassageirosCondutor.ModelListagemPassageirosCondutor;
-import com.example.pint_android_v3.DataBase.ViagensEfetuadas.Model_Viagens_Efetuadas;
+import com.example.pint_android_v3.DataBase.ListagemPassageirosCondutor.UtilizadorPassageiroInformacao;
 import com.example.pint_android_v3.R;
 import com.example.pint_android_v3.barra_lateral.barra_lateral_pro;
 import com.example.pint_android_v3.pagamentoCondutor;
@@ -67,9 +67,12 @@ public class quem_vai_consigo_condutor extends barra_lateral_pro {
                     if (!response.isSuccessful()) {
                         Log.i("Erro", "L69 quem_vai_consigo_condutor");
                     }
+                    UtilizadorPassageiroInformacao utilizador;
                     for (int i = 0; i < response.body().getDataListagemCondutor().size(); i++) {
-                        nomePassageiro.add(response.body().getDataListagemCondutor().get(i).getNomeUtilizador());
-                        localidadePassageiro.add(response.body().getDataListagemCondutor().get(i).getMoradaUtilizador());
+                        Log.i("idPassageiro", "" + response.body().getDataListagemCondutor().get(i).getIdPass());
+                        utilizador = response.body().getDataListagemCondutor().get(i).getCidadao().getUtilizador();
+                        nomePassageiro.add(utilizador.getNome_utilizador());
+                        localidadePassageiro.add(utilizador.getMoradaUtilizador());
                     }
                     adaptarFixer(nomePassageiro, localidadePassageiro);
                 }
@@ -90,53 +93,87 @@ public class quem_vai_consigo_condutor extends barra_lateral_pro {
         TextView nomePassageiroTextView;
         TextView localPassageiroTextView;
         int contador=0;
-/*
+
         switch (nomePassageiro.size()){ //preenche os contaners certos com informaçao
             case 4:
                 contador++;
                 nomePassageiroTextView = findViewById(R.id.tripulante_nome_4_quem_vai_consigo2_condutor);
                 localPassageiroTextView = findViewById(R.id.tripulante_localidade_4_quem_vai_consigo2_condutor);
-                nomePassageiroTextView.setText(nomePassageiro.get(4));
-                localPassageiroTextView.setText(localidadePassageiro.get(4));
+                nomePassageiroTextView.setText(nomePassageiro.get(3));
+                localPassageiroTextView.setText(localidadePassageiro.get(3));
             case 3:
                 contador++;
                 nomePassageiroTextView = findViewById(R.id.tripulante_nome_3_quem_vai_consigo_condutor);
                 localPassageiroTextView = findViewById(R.id.tripulante_localidade_3_quem_vai_consigo_condutor);
-                nomePassageiroTextView.setText(nomePassageiro.get(3));
-                localPassageiroTextView.setText(localidadePassageiro.get(3));
+                nomePassageiroTextView.setText(nomePassageiro.get(2));
+                localPassageiroTextView.setText(localidadePassageiro.get(2));
             case 2:
                 contador++;
                 nomePassageiroTextView = findViewById(R.id.tripulante_nome_2_quem_vai_consigo2_condutor);
                 localPassageiroTextView = findViewById(R.id.tripulante_localidade_2_quem_vai_consigo2_condutor);
-                nomePassageiroTextView.setText(nomePassageiro.get(2));
-                localPassageiroTextView.setText(localidadePassageiro.get(2));
+                nomePassageiroTextView.setText(nomePassageiro.get(1));
+                localPassageiroTextView.setText(localidadePassageiro.get(1));
             case 1:
                 contador++;
                 nomePassageiroTextView = findViewById(R.id.tripulante_nome_quem_vai_consigo_condutor_1);
                 localPassageiroTextView = findViewById(R.id.tripulante_localidade_1_quem_vai_consigo_condutor);
-                nomePassageiroTextView.setText(nomePassageiro.get(1));
-                localPassageiroTextView.setText(localidadePassageiro.get(1));
+                nomePassageiroTextView.setText(nomePassageiro.get(0));
+                localPassageiroTextView.setText(localidadePassageiro.get(0));
                 break;
         }
         ImageView contaner;
+        ImageView img;
+        TextView txt;
         switch (contador){ //para apagar os que n tem informaçao
             case 0:
                 contaner = findViewById(R.id.contentor1_quem_vai_consigo_condutor);
                 contaner.setVisibility(View.GONE);
+                img = findViewById(R.id.tripulante_image_1_quem_vai_consigo_condutor);
+                img.setVisibility(View.GONE);
+                img = findViewById(R.id.btn_pagamento_1_quem_vai_consigo_condutor);
+                img.setVisibility(View.GONE);
+                txt = findViewById(R.id.tripulante_nome_quem_vai_consigo_condutor_1);
+                txt.setVisibility(View.GONE);
+                txt = findViewById(R.id.tripulante_localidade_1_quem_vai_consigo_condutor);
+                txt.setVisibility(View.GONE);
             case 1:
                 contaner = findViewById(R.id.contentor4_quem_vai_consigo2_condutor);
                 contaner.setVisibility(View.GONE);
+                img = findViewById(R.id.tripulante_image_4_quem_vai_consigo2_condutor);
+                img.setVisibility(View.GONE);
+                img = findViewById(R.id.btn_pagamento_4_quem_vai_consigo_condutor);
+                img.setVisibility(View.GONE);
+                txt = findViewById(R.id.tripulante_nome_4_quem_vai_consigo2_condutor);
+                txt.setVisibility(View.GONE);
+                txt = findViewById(R.id.tripulante_localidade_4_quem_vai_consigo2_condutor);
+                txt.setVisibility(View.GONE);
             case 2:
                 contaner = findViewById(R.id.contentor3_quem_vai_consigo_condutor);
                 contaner.setVisibility(View.GONE);
+                img = findViewById(R.id.tripulante_image_3_quem_vai_consigo_condutor);
+                img.setVisibility(View.GONE);
+                img = findViewById(R.id.btn_pagamento_3_quem_vai_consigo_condutor);
+                img.setVisibility(View.GONE);
+                txt = findViewById(R.id.tripulante_nome_3_quem_vai_consigo_condutor);
+                txt.setVisibility(View.GONE);
+                txt = findViewById(R.id.tripulante_localidade_3_quem_vai_consigo_condutor);
+                txt.setVisibility(View.GONE);
             case 3:
                 contaner = findViewById(R.id.contentor2_quem_vai_consigo2_condutor);
                 contaner.setVisibility(View.GONE);
+                img = findViewById(R.id.tripulante_image_2_quem_vai_consigo2_condutor);
+                img.setVisibility(View.GONE);
+                img = findViewById(R.id.btn_pagamento_2_quem_vai_consigo_condutor);
+                img.setVisibility(View.GONE);
+                txt = findViewById(R.id.tripulante_nome_2_quem_vai_consigo2_condutor);
+                txt.setVisibility(View.GONE);
+                txt = findViewById(R.id.tripulante_localidade_2_quem_vai_consigo2_condutor);
+                txt.setVisibility(View.GONE);
             default:
                 break;
         }
 
- */
+
     }
 
     public void Click_Pagamento(View view)
