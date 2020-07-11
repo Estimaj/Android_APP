@@ -39,4 +39,7 @@ public interface BaseDadosInterface {
     @GET("/muv/passageiros/get/{id}")
     Call<ModelListagemPassageirosCondutor> executeGetListagem(@Path("id") int id_viagem);
 
+    @GET("/muv/passageiros/getpassquery/{id}")
+    Call<ModelListagemPassageirosCondutor> executeGetListagemQuery(@Path("id") int id_viagem);
+
 }

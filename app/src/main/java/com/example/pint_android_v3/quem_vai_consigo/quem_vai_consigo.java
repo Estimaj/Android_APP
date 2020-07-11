@@ -65,7 +65,7 @@ public class quem_vai_consigo extends barra_lateral_pro {
         baseDadosInterface =  retrofit.create(BaseDadosInterface.class);
 
         //Log.i("O id do user:", ""+ id);
-        Call<ModelListagemPassageirosCondutor> call = baseDadosInterface.executeGetListagem(id);
+        Call<ModelListagemPassageirosCondutor> call = baseDadosInterface.executeGetListagemQuery(id);
 
         call.enqueue(new Callback<ModelListagemPassageirosCondutor>() {
             @Override
@@ -106,8 +106,9 @@ public class quem_vai_consigo extends barra_lateral_pro {
             ListLocalidade.add(informacaoViagem.get(i).getCidadao().getUtilizador().getMoradaUtilizador());
             ListIdPass.add(informacaoViagem.get(i).getIdPass());
         }
-        HideButtons(ListNome.size());//Esconde os botões
+
         SetTexts();
+        HideButtons(ListNome.size());//Esconde os botões
 
 
 
@@ -180,7 +181,7 @@ public class quem_vai_consigo extends barra_lateral_pro {
         TextView Localidade;
 
 
-        if(num <= 4)
+        if(num >= 4)
         {
             Localidade = findViewById(R.id.tripulante_localidade_4_quem_vai_consigo2);
             Nome = findViewById(R.id.tripulante_nome_4_quem_vai_consigo2);
@@ -189,7 +190,7 @@ public class quem_vai_consigo extends barra_lateral_pro {
 
 
         }
-        if(num <= 3)
+        if(num >= 3)
         {
             Localidade = findViewById(R.id.tripulante_localidade_3_quem_vai_consigo);
             Nome = findViewById(R.id.tripulante_nome_3_quem_vai_consigo);
@@ -198,7 +199,7 @@ public class quem_vai_consigo extends barra_lateral_pro {
 
 
         }
-        if(num <=2)
+        if(num >=2)
         {
             Localidade = findViewById(R.id.tripulante_localidade_2_quem_vai_consigo2);
             Nome = findViewById(R.id.tripulante_nome_2_quem_vai_consigo2);
@@ -207,7 +208,7 @@ public class quem_vai_consigo extends barra_lateral_pro {
 
 
         }
-        if(num <=1)
+        if(num >=1)
         {
             Localidade = findViewById(R.id.tripulante_localidade_1_quem_vai_consigo);
             Nome = findViewById(R.id.tripulante_nome_1_quem_vai_consigo);
