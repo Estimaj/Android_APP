@@ -268,26 +268,35 @@ public class Marcar_viagem extends barra_lateral_pro implements DatePickerDialog
 
     @Override
     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-        String monthString = ""+month, dayString = ""+dayOfMonth;
         month += 1;
-        if(month > 10){
+        String monthString = ""+month, dayString = ""+dayOfMonth;
+        if(month < 10){
             monthString = "0"+monthString;
         }
-        if (dayOfMonth > 10){
+        if (dayOfMonth < 10){
             dayString = "0"+ dayString;
         }
-        String date = year + '-' +  monthString + "-" + dayString;
+        String date = year + "-" +  monthString + "-" + dayString;
         DateLayout_text.setText(date);
     }
 
     public String GetDate()
     {
         int month = Calendar.getInstance().get(Calendar.MONTH) + 1;
-        String x = Calendar.getInstance().get(Calendar.DAY_OF_MONTH) +
-                "/" +
-                 month +
-                "/" +
-                Calendar.getInstance().get(Calendar.YEAR);
+        String monthString = ""+ month, dayString = ""+Calendar.getInstance().get(Calendar.DAY_OF_MONTH);
+        if(month < 10){
+            monthString = "0" + monthString;
+        }
+        if (Calendar.getInstance().get(Calendar.DAY_OF_MONTH) < 10){
+            dayString = "0"+ dayString;
+        }
+
+        String x =
+                Calendar.getInstance().get(Calendar.YEAR) +
+                "-" +
+                 monthString +
+                "-" +
+                dayString;
 
         return x;
 
