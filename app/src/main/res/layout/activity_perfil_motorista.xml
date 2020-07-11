@@ -60,7 +60,7 @@
         app:layout_constraintEnd_toEndOf="@id/gray_circle_foto_perfil_motorista"
         app:layout_constraintStart_toStartOf="@id/gray_circle_foto_perfil_motorista"
         app:layout_constraintTop_toTopOf="@id/gray_circle_foto_perfil_motorista"
-        app:srcCompat="@drawable/default_user_icon_round" />
+        app:srcCompat="@drawable/default_user_icon_round2" />
 
     <Button
         android:id="@+id/button_edit_perfil_motorista"
