@@ -22,9 +22,10 @@ public class Custom_Adapter_Notificacoes extends BaseAdapter {
     private final ArrayList<String> nome;
     private final ArrayList<Integer> tipo_notif;
     private final ArrayList<Integer> id_viagem;
+    private final int utilizadorSwitch;
     private final int user_id;
 
-    public Custom_Adapter_Notificacoes(Context cont, int user_id, ArrayList<String> data, ArrayList<String> nome, ArrayList<Integer> tipo_notif, ArrayList<Integer> id_viagem) {
+    public Custom_Adapter_Notificacoes(Context cont, int user_id, ArrayList<String> data, ArrayList<String> nome, ArrayList<Integer> tipo_notif, ArrayList<Integer> id_viagem, int utilizador) {
 
         context = cont;
         this.user_id = user_id;
@@ -32,6 +33,7 @@ public class Custom_Adapter_Notificacoes extends BaseAdapter {
         this.nome = nome;
         this.tipo_notif = tipo_notif;
         this.id_viagem = id_viagem;
+        this.utilizadorSwitch = utilizador;
     }
 
     @Override
@@ -77,21 +79,41 @@ public class Custom_Adapter_Notificacoes extends BaseAdapter {
         viewHolder.txt_data.setText(data.get(position));
         viewHolder.txt_nome.setText(nome.get(position));
         viewHolder.txt_mensagem.setText(defineNotificationType(tipo_notif.get(position)));
-        viewHolder.btnMaisInfo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                MaisInfo(viewHolder);
-            }
-        });
+        if(utilizadorSwitch == 0)//se vier do cliente
+        {
+            viewHolder.btnMaisInfo.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    MaisInfoCliente(viewHolder);
+                }
+            });
+        }
+        else
+        {
+            viewHolder.btnMaisInfo.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    MaisInfoCondutor(viewHolder);
+                }
+            });
+
+        }
 
 
 
         return convertView;
     }
 
-    public void MaisInfo(ViewHolder viewHolder){
+    public void MaisInfoCliente(ViewHolder viewHolder){
         Intent MaisInfo = new Intent(context, notificacoes_mais_info.class);
-        MaisInfo.putExtra("id_viagem", 1 /*viewHolder.id_viagem*/);
+        MaisInfo.putExtra("id_viagem", viewHolder.id_viagem);
+        MaisInfo.putExtra("user_id", user_id);
+        context.startActivity(MaisInfo);
+    }
+
+    public void MaisInfoCondutor(ViewHolder viewHolder){
+        Intent MaisInfo = new Intent(context, notificacoes_mais_info_condutor.class);
+        MaisInfo.putExtra("id_viagem", viewHolder.id_viagem);
         MaisInfo.putExtra("user_id", user_id);
         context.startActivity(MaisInfo);
     }

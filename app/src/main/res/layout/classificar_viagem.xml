@@ -23,23 +23,12 @@
             <ImageView
                 android:id="@+id/bg_White_Big_perfil_motorista2"
                 android:layout_width="match_parent"
-                android:layout_height="480dp"
+                android:layout_height="430dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/Classificar_viagem_textview_top_classificar_viagem"
                 app:srcCompat="@drawable/white_square" />
-
-            <ImageView
-                android:id="@+id/caixa5_desconto_classificar_viagem"
-                android:layout_width="370dp"
-                android:layout_height="40dp"
-                android:layout_marginTop="10dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/caixa4_dia_classificar_viagem"
-                app:srcCompat="@drawable/white_square_shadow" />
 
             <ImageView
                 android:id="@+id/caixa4_dia_classificar_viagem"
@@ -94,16 +83,6 @@
                 app:layout_constraintStart_toStartOf="@id/caixa4_dia_classificar_viagem"
                 app:layout_constraintTop_toTopOf="@id/caixa4_dia_classificar_viagem"
                 app:srcCompat="@drawable/agenda_marcar_viagem" />
-
-            <ImageView
-                android:id="@+id/desconto_icon_classificar_viagem"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:layout_marginStart="5dp"
-                app:layout_constraintBottom_toBottomOf="@id/caixa5_desconto_classificar_viagem"
-                app:layout_constraintStart_toStartOf="@id/caixa5_desconto_classificar_viagem"
-                app:layout_constraintTop_toTopOf="@id/caixa5_desconto_classificar_viagem"
-                app:srcCompat="@drawable/euro_simbolo_icon" />
 
             <ImageView
                 android:id="@+id/destino_icon_classificar_viagem"
@@ -294,18 +273,6 @@
                 app:layout_constraintTop_toTopOf="@id/caixa4_dia_classificar_viagem" />
 
             <TextView
-                android:id="@+id/desconto_title_classificar_viagem"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginBottom="15dp"
-                android:text="Taxa de Desconto"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@id/caixa5_desconto_classificar_viagem"
-                app:layout_constraintStart_toEndOf="@id/desconto_icon_classificar_viagem"
-                app:layout_constraintTop_toTopOf="@id/caixa5_desconto_classificar_viagem" />
-
-            <TextView
                 android:id="@+id/origem_value_classificar_viagem"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -328,7 +295,7 @@
                 app:layout_constraintTop_toBottomOf="@id/destino_title_classificar_viagem" />
 
             <TextView
-                android:id="@+id/textView16"
+                android:id="@+id/hora_classificar_viagem"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -348,17 +315,6 @@
                 app:layout_constraintBottom_toBottomOf="@id/caixa4_dia_classificar_viagem"
                 app:layout_constraintStart_toEndOf="@id/dia_icon_classificar_viagem"
                 app:layout_constraintTop_toBottomOf="@id/dia_title_classificar_viagem" />
-
-            <TextView
-                android:id="@+id/desconto_value_classificar_viagem"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginBottom="2dp"
-                android:text="@string/novalue"
-                app:layout_constraintBottom_toBottomOf="@id/caixa5_desconto_classificar_viagem"
-                app:layout_constraintStart_toEndOf="@id/desconto_icon_classificar_viagem"
-                app:layout_constraintTop_toBottomOf="@id/desconto_title_classificar_viagem" />
 
             <ImageView
                 android:id="@+id/imageView16"
