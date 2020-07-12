@@ -17,6 +17,10 @@ public class DataListagemCondutor {
     @Expose
     private String ValorAPagarIndividual;
 
+    @SerializedName("comparencia_viagem")
+    @Expose
+    private int Compareceu;
+
     public String getValorAPagarIndividual(){
         return ValorAPagarIndividual;
     }
@@ -27,5 +31,9 @@ public class DataListagemCondutor {
 
     public CidadaoPassageiroInformaçao getCidadao() {
         return cidadao;
+    }
+
+    public int getCompareceu() {
+        return Compareceu;
     }
 }
