@@ -52,4 +52,6 @@ public interface BaseDadosInterface {
     @POST("/muv/passageiros/update")
     Call<Passageiro> executeUpdatePassageiro(@Body Passageiro passageiros);
 
+    @POST("/muv/passageiros/create")
+    Call<DividaCreate> executeCriarDividaPassageiro(@Body DividaCreate divida);
 }

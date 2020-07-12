@@ -1,6 +1,7 @@
 package com.example.pint_android_v3;
 
 import com.example.pint_android_v3.DataBase.BaseDadosInterface;
+import com.example.pint_android_v3.DataBase.DividaCreate;
 import com.example.pint_android_v3.DataBase.ListagemPassageirosCondutor.CidadaoPassageiroInformaçao;
 import com.example.pint_android_v3.DataBase.ListagemPassageirosCondutor.DataListagemCondutor;
 import com.example.pint_android_v3.DataBase.ListagemPassageirosCondutor.ModelListagemPassageirosCondutor;
@@ -144,6 +145,8 @@ public class pagamentoCondutor extends barra_lateral_condutor {
 
     public void Click_Botao_Pagar()
     {
+
+
         final AlertDialog dialogBuilder = new AlertDialog.Builder(this).create();
 // ...Irrelevant code for customizing the buttons and title
         LayoutInflater inflater = this.getLayoutInflater();
@@ -152,6 +155,7 @@ public class pagamentoCondutor extends barra_lateral_condutor {
         dialogBuilder.setView(dialogView);
         ImageView yes_btn = dialogView.findViewById(R.id.yes_btn_alert_dialog_adapter_pagamento_primeiro);
         ImageView no_btn = dialogView.findViewById(R.id.no_btn_alert_dialog_adapter_pagamento_primeiro);
+        valorAPagarPassageiro(dialogView);
         yes_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -170,6 +174,40 @@ public class pagamentoCondutor extends barra_lateral_condutor {
         dialogBuilder.show();
     }
 
+    private void valorAPagarPassageiro(View dialogView) {
+        Retrofit retrofit;
+        BaseDadosInterface baseDadosInterface;
+
+        retrofit = new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        baseDadosInterface =  retrofit.create(BaseDadosInterface.class);
+
+        Call<ModelListagemPassageirosCondutor> call2 = baseDadosInterface.executeGetListagem(idViagem);
+
+        call2.enqueue(new Callback<ModelListagemPassageirosCondutor>() {
+            @Override
+            public void onResponse(Call<ModelListagemPassageirosCondutor> call, Response<ModelListagemPassageirosCondutor> response) {
+                if (!response.isSuccessful()){
+                    Log.i("Erro", "verificar o link na interface");
+                }
+                for (int i = 0; i < response.body().getDataListagemCondutor().size(); i++){
+                    if(user_id == response.body().getDataListagemCondutor().get(i).getCidadao().getId_Utilizador()){
+                        passageiroValoresIndividuais = response.body().getDataListagemCondutor().get(i);
+                    }
+                    TextView popUpTexto = dialogView.findViewById(R.id.textView2_pagamento_primeiro);
+                    popUpTexto.setText("Preço da viagem: "+passageiroValoresIndividuais.getValorAPagarIndividual()+" euros");
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ModelListagemPassageirosCondutor> call, Throwable t) {
+                Log.i("Failure:", t.toString());
+            }
+        });
+    }
+
     public void Click_Botao_Confirm_Pagar()
     {
         updateBDPassageiroComparecenciaPagamento(1,1);
@@ -180,6 +218,8 @@ public class pagamentoCondutor extends barra_lateral_condutor {
         dialogBuilder.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialogBuilder.setView(dialogView);
         ImageView yes_btn = dialogView.findViewById(R.id.yes_btn_alert_dialog_adapter_pagamento_sim);
+        TextView popUpTexto = dialogView.findViewById(R.id.textView_ValorAPagar_pagamento_sim);
+        popUpTexto.setText("Preço da viagem: "+passageiroValoresIndividuais.getValorAPagarIndividual()+" euros");
         yes_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -199,7 +239,7 @@ public class pagamentoCondutor extends barra_lateral_condutor {
     public void Click_Botao_Negar_Pagar()
     {
         updateBDPassageiroComparecenciaPagamento(1, 0);
-
+        criarADividaDoPassageiroQueNaoPagou();
         final AlertDialog dialogBuilder = new AlertDialog.Builder(this).create();
 // ...Irrelevant code for customizing the buttons and title
         LayoutInflater inflater = this.getLayoutInflater();
@@ -207,23 +247,51 @@ public class pagamentoCondutor extends barra_lateral_condutor {
         dialogBuilder.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialogBuilder.setView(dialogView);
         ImageView yes_btn = dialogView.findViewById(R.id.yes_btn_alert_dialog_adapter_pagamento_nao);
+        TextView popUpTexto = dialogView.findViewById(R.id.textView2_pagamento_nao);
+        popUpTexto.setText("Preço da viagem: "+passageiroValoresIndividuais.getValorAPagarIndividual()+" euros");
         yes_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Intent voltarMenu = new Intent(pagamentoCondutor.this, menu_motorista.class);
                 voltarMenu.putExtra("user_id", user_id);
                 startActivity(voltarMenu);
-
             }
         });
 
 
+
         dialogBuilder.show();
+    }
 
+    private void criarADividaDoPassageiroQueNaoPagou() {
+        DividaCreate divida = new DividaCreate(user_id, passageiroValoresIndividuais.getValorAPagarIndividual());
 
+        Retrofit retrofit;
+        BaseDadosInterface baseDadosInterface;
 
+        retrofit = new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        baseDadosInterface =  retrofit.create(BaseDadosInterface.class);
 
+        Call<DividaCreate> call = baseDadosInterface.executeCriarDividaPassageiro(divida);
+
+        call.enqueue(new Callback<DividaCreate>() {
+            @Override
+            public void onResponse(Call<DividaCreate> call, Response<DividaCreate> response) {
+                if (!response.isSuccessful()){
+                    Log.i("Erro", "verificar o link na interface");
+                }
+                else
+                    Log.i("Sucesso", "Divida Criada com Sucesso");
+            }
+
+            @Override
+            public void onFailure(Call<DividaCreate> call, Throwable t) {
+                Log.i("Failure:", t.toString());
+            }
+        });
     }
 
     private void updateBDPassageiroComparecenciaPagamento(int comparecimento, int pagamento) {
@@ -262,31 +330,6 @@ public class pagamentoCondutor extends barra_lateral_condutor {
                 Log.i("Failure:", t.toString());
             }
         });
-
-        Call<ModelListagemPassageirosCondutor> call2 = baseDadosInterface.executeGetListagem(idViagem);
-
-        call2.enqueue(new Callback<ModelListagemPassageirosCondutor>() {
-            @Override
-            public void onResponse(Call<ModelListagemPassageirosCondutor> call, Response<ModelListagemPassageirosCondutor> response) {
-                if (!response.isSuccessful()){
-                    Log.i("Erro", "verificar o link na interface");
-                }
-                for (int i = 0; i < response.body().getDataListagemCondutor().size(); i++){
-                    if(user_id == response.body().getDataListagemCondutor().get(i).getCidadao().getId_Utilizador()){
-                        passageiroValoresIndividuais = response.body().getDataListagemCondutor().get(i);
-                    }
-                    //TextView popUpTexto = findViewById(R.id.textView_ValorAPagar_pagamento_sim);
-                    //popUpTexto.setText("Preço da viagem: "+passageiroValoresIndividuais.getValorAPagarIndividual()+" euros");
-                }
-            }
-
-            @Override
-            public void onFailure(Call<ModelListagemPassageirosCondutor> call, Throwable t) {
-
-            }
-        });
-
-
     }
 
     public void Click_Talao()
