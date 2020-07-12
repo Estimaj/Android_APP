@@ -196,6 +196,7 @@ public class CustomListAdapter_efetuadas_teste extends BaseAdapter {
     private void classificarViagemBtnClick(){
         Intent Classificar_Viagem = new Intent(context, classificar_viagem.class);
         Classificar_Viagem.putExtra("user_id", user_id);
+        Classificar_Viagem.putExtra("id_viagem", idViagem);
         context.startActivity(Classificar_Viagem);
     }
 }

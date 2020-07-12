@@ -1,5 +1,6 @@
 package com.example.pint_android_v3.DataBase;
 
+import com.example.pint_android_v3.DataBase.Classificacao.ModelClassif;
 import com.example.pint_android_v3.DataBase.DadosUtilizador.Model_User_Information;
 import com.example.pint_android_v3.DataBase.DividaUtilizador.ModelDividaUtilizador;
 import com.example.pint_android_v3.DataBase.ListagemCidadao.ModelListagemCidadao;
@@ -27,6 +28,9 @@ public interface BaseDadosInterface {
 
     @POST("/muv/pedidos/criarmobile")
     Call<Pedido_Viagem> executeCriarPedidoViagem(@Body Pedido_Viagem pedido_viagem);
+
+    @POST("/muv/passageiros//updateClassif")
+    Call<ModelClassif> executeMudarClassificacao(@Body int classif);
 
     @GET("muv/viagem/listaCidadao/{id}")
     Call<Model_Viagens_Efetuadas> executeViagemEfetuada(@Path("id") int id);
