@@ -126,7 +126,7 @@ public class CustomListAdapter_efetuadas_teste extends BaseAdapter {
         viewHolder.viagens_efetuadas_adapter_class_viagem_txt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                classificarViagemBtnClick();
+                classificarViagemBtnClick(viewHolder);
             }
         });
 
@@ -193,10 +193,10 @@ public class CustomListAdapter_efetuadas_teste extends BaseAdapter {
         GO.putExtra("user_id", user_id);
         context.startActivity(GO);
     }
-    private void classificarViagemBtnClick(){
+    private void classificarViagemBtnClick(ViewHolder viewHolder){
         Intent Classificar_Viagem = new Intent(context, classificar_viagem.class);
         Classificar_Viagem.putExtra("user_id", user_id);
-        Classificar_Viagem.putExtra("id_viagem", idViagem);
+        Classificar_Viagem.putExtra("id_viagem", viewHolder.idViagem);
         context.startActivity(Classificar_Viagem);
     }
 }

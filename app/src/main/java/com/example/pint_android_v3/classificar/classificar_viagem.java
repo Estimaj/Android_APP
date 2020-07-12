@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -32,7 +33,7 @@ public class classificar_viagem extends barra_lateral_pro {
     private int id_viagem;
     private String BASE_URL ="http://10.0.2.2:3000";
     RatingBar ratingBar1;
-    private ArrayList<dataViagem> informacaoViagem;
+
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,7 +60,13 @@ public class classificar_viagem extends barra_lateral_pro {
 
         ratingBar1 = findViewById(R.id.rating_classificar_viagem);
 
-
+        Button classificarBtnFinal = findViewById(R.id.Button_classficar_viagem);
+        classificarBtnFinal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MudarClassif();
+            }
+        });
     }
 
     private void getInformationFromdb(int id) {
@@ -77,6 +84,7 @@ public class classificar_viagem extends barra_lateral_pro {
         //Log.i("O id do user:", ""+ id);
         Call<ModelViagemUnica> call = baseDadosInterface.executeViagemUnica(id);
 
+
         call.enqueue(new Callback<ModelViagemUnica>() {
             @Override
             public void onResponse(Call<ModelViagemUnica> call, Response<ModelViagemUnica> response) {
@@ -84,17 +92,8 @@ public class classificar_viagem extends barra_lateral_pro {
                     Log.i("Erro", "L99 viagens efetuadas");
                 }
                 if (response.code() == 200){
-                    if (response.body().getDataViagem() != null) {
-                        //Log.i("body", "" + response.body().getDataViagem().get(0).toString());
-                        informacaoViagem = response.body().getDataViagem();
-                        populateContainer();
-
-
-                    }else
-                        Log.i("Erro", "L105 listagem condutor");
-                }
-                else{
-                    Log.i("Erro", "L109 listagem condutor sem sata");
+                    ArrayList<dataViagem> informacaoViagem = response.body().getDataViagem();
+                    populateContainer(informacaoViagem);
                 }
             }
 
@@ -107,7 +106,7 @@ public class classificar_viagem extends barra_lateral_pro {
 
     }
 
-    private void populateContainer()
+    private void populateContainer(ArrayList<dataViagem> informacaoViagem)
     {
         ImageView CheckDog = findViewById(R.id.checkbox_cao_classificar_viagem);
         ImageView CheckMala = findViewById(R.id.checkbox_mala_classificar_viagem);
@@ -149,8 +148,10 @@ public class classificar_viagem extends barra_lateral_pro {
             Log.i("user_id_error", "user id = 0, func criarPedido_viagem, marcar_viagem.java");
             return;
         }
-        int classif = (int) ratingBar1.getRating();
+        double classif0_5 = (double) ratingBar1.getRating();
+        int classif0_10 =(int) (classif0_5 * 2);
 
+        ModelClassif classificacao = new ModelClassif(user_id, id_viagem, classif0_10);
 
         Retrofit retrofit;
         BaseDadosInterface baseDadosInterface;
@@ -161,32 +162,23 @@ public class classificar_viagem extends barra_lateral_pro {
                 .build();
         baseDadosInterface =  retrofit.create(BaseDadosInterface.class);
 
-        Call<ModelClassif> call = baseDadosInterface.executeMudarClassificacao(classif);
+        Call<ModelClassif> call = baseDadosInterface.executeMudarClassificacao(classificacao);
 
         call.enqueue(new Callback<ModelClassif>() {
             @Override
             public void onResponse(Call<ModelClassif> call, Response<ModelClassif> response) {
                 if (!response.isSuccessful()){
-
+                    Log.i("Erro", "L171 viagens efetuadas");
                 }
                 else{
-                    if(response.body() != null) {
-                        //makeToastForMarcar("Penso eu que devia haver um novo pedido");
-                        Log.i("Pedido", response.body().toString());
-                    }else{
-
-                    }
+                    Log.i("Sucesso", "Classificacao updated");
                 }
             }
 
             @Override
             public void onFailure(Call<ModelClassif> call, Throwable t) {
                 Log.i("onFailure:", t.toString());
-
             }
         });
-
     }
-
-
 }

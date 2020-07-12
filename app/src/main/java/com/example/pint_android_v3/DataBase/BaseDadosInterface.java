@@ -29,9 +29,6 @@ public interface BaseDadosInterface {
     @POST("/muv/pedidos/criarmobile")
     Call<Pedido_Viagem> executeCriarPedidoViagem(@Body Pedido_Viagem pedido_viagem);
 
-    @POST("/muv/passageiros//updateClassif")
-    Call<ModelClassif> executeMudarClassificacao(@Body int classif);
-
     @GET("muv/viagem/listaCidadao/{id}")
     Call<Model_Viagens_Efetuadas> executeViagemEfetuada(@Path("id") int id);
 
@@ -58,4 +55,7 @@ public interface BaseDadosInterface {
 
     @POST("/muv/passageiros/create")
     Call<DividaCreate> executeCriarDividaPassageiro(@Body DividaCreate divida);
+
+    @POST("/muv/passageiros/updateClassificacao")
+    Call<ModelClassif> executeMudarClassificacao(@Body ModelClassif classificacao);
 }

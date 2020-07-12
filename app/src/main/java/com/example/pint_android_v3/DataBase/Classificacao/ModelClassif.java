@@ -4,21 +4,21 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class ModelClassif {
-    @SerializedName("cidadao_id_utilizador")
+    @SerializedName("id")
     @Expose
     private int Cidadao_id_utilizador;
 
-    @SerializedName("id_viagem")
+    @SerializedName("id_viag")
     @Expose
-    private String Id_Viagem;
+    private int Id_Viagem;
 
-    @SerializedName("valor")
+    @SerializedName("classificacao")
     @Expose
-    private int valor;
+    private int valorClassificacao;
 
-    public ModelClassif(int cidadao_id_utilizador, String id_Viagem, int valor) {
-        Cidadao_id_utilizador = cidadao_id_utilizador;
-        Id_Viagem = id_Viagem;
-        this.valor = valor;
+    public ModelClassif(int cidadao_id_utilizador, int id_Viagem, int valor) {
+        this.Cidadao_id_utilizador = cidadao_id_utilizador;
+        this.Id_Viagem = id_Viagem;
+        this.valorClassificacao = valor;
     }
 }
