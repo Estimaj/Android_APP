@@ -85,7 +85,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@id/activity_menu_motorista_user_outer"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/default_user_icon" />
+        app:srcCompat="@drawable/default_user_icon_round2" />
 
     <TextView
         android:id="@+id/activity_menu_motorista_user_Name"
