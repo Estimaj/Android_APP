@@ -87,7 +87,6 @@ public class CustomListAdapter_efetuadas_teste extends BaseAdapter {
             viewHolder.txt_Local_ChegadaCoordenadas = convertView.findViewById(R.id.viagens_efetuadas_adapter_Local_Chegada_coordenadas);
             viewHolder.txt_Local_PartidaCoordenadas = convertView.findViewById(R.id.viagens_efetuadas_adapter_Local_Partida_coordenadas);
             viewHolder.imageViewViagens_efetuadas_adapter_mais_info = convertView.findViewById(R.id.viagens_efetuadas_adapter_mais_info);
-            viewHolder.textViewclassificar_condutor_textview = convertView.findViewById(R.id.classificar_condutor_textview);
             viewHolder.viagens_efetuadas_adapter_class_viagem_txt = convertView.findViewById(R.id.viagens_efetuadas_adapter_class_viagem_txt);
 
             convertView.setTag(viewHolder);
@@ -117,12 +116,7 @@ public class CustomListAdapter_efetuadas_teste extends BaseAdapter {
                 maisInfoBtnClick(viewHolder);
             }
         });
-        viewHolder.textViewclassificar_condutor_textview.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                classificarCondutorBtnClick();
-            }
-        });
+
         viewHolder.viagens_efetuadas_adapter_class_viagem_txt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -142,7 +136,7 @@ public class CustomListAdapter_efetuadas_teste extends BaseAdapter {
         TextView txt_Local_PartidaCoordenadas;
         //btns
         ImageView imageViewViagens_efetuadas_adapter_mais_info;
-        TextView textViewclassificar_condutor_textview;
+        //TextView textViewclassificar_condutor_textview;
         TextView viagens_efetuadas_adapter_class_viagem_txt;
         //informação
         int idViagem;
@@ -188,11 +182,7 @@ public class CustomListAdapter_efetuadas_teste extends BaseAdapter {
         goMaisInfo.putExtra("necessidadesEspeciaisPedido", necessidadesEspeciaisPedidoCurrent);
         context.startActivity(goMaisInfo);
     }
-    private void classificarCondutorBtnClick(){
-        Intent GO = new Intent(context, classificar_condutor.class);
-        GO.putExtra("user_id", user_id);
-        context.startActivity(GO);
-    }
+
     private void classificarViagemBtnClick(ViewHolder viewHolder){
         Intent Classificar_Viagem = new Intent(context, classificar_viagem.class);
         Classificar_Viagem.putExtra("user_id", user_id);
