@@ -145,8 +145,6 @@ public class pagamentoCondutor extends barra_lateral_condutor {
 
     public void Click_Botao_Pagar()
     {
-
-
         final AlertDialog dialogBuilder = new AlertDialog.Builder(this).create();
 // ...Irrelevant code for customizing the buttons and title
         LayoutInflater inflater = this.getLayoutInflater();
@@ -155,7 +153,10 @@ public class pagamentoCondutor extends barra_lateral_condutor {
         dialogBuilder.setView(dialogView);
         ImageView yes_btn = dialogView.findViewById(R.id.yes_btn_alert_dialog_adapter_pagamento_primeiro);
         ImageView no_btn = dialogView.findViewById(R.id.no_btn_alert_dialog_adapter_pagamento_primeiro);
+        ImageView x_btn = dialogView.findViewById(R.id.white_x_solid_leave_alert_dialog_adapter_pagamento_primeiro);
+
         valorAPagarPassageiro(dialogView);
+
         yes_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -167,6 +168,12 @@ public class pagamentoCondutor extends barra_lateral_condutor {
             @Override
             public void onClick(View v) {
                 Click_Botao_Negar_Pagar();
+                dialogBuilder.dismiss();
+            }
+        });
+        x_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 dialogBuilder.dismiss();
             }
         });
@@ -218,8 +225,10 @@ public class pagamentoCondutor extends barra_lateral_condutor {
         dialogBuilder.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialogBuilder.setView(dialogView);
         ImageView yes_btn = dialogView.findViewById(R.id.yes_btn_alert_dialog_adapter_pagamento_sim);
+
         TextView popUpTexto = dialogView.findViewById(R.id.textView_ValorAPagar_pagamento_sim);
         popUpTexto.setText("Preço da viagem: "+passageiroValoresIndividuais.getValorAPagarIndividual()+" euros");
+
         yes_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -229,7 +238,6 @@ public class pagamentoCondutor extends barra_lateral_condutor {
                 dialogBuilder.dismiss();
             }
         });
-
 
         dialogBuilder.show();
     }
@@ -247,8 +255,10 @@ public class pagamentoCondutor extends barra_lateral_condutor {
         dialogBuilder.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialogBuilder.setView(dialogView);
         ImageView yes_btn = dialogView.findViewById(R.id.yes_btn_alert_dialog_adapter_pagamento_nao);
+
         TextView popUpTexto = dialogView.findViewById(R.id.textView2_pagamento_nao);
         popUpTexto.setText("Preço da viagem: "+passageiroValoresIndividuais.getValorAPagarIndividual()+" euros");
+
         yes_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

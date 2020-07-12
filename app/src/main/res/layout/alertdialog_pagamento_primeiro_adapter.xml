@@ -35,6 +35,16 @@
         app:srcCompat="@drawable/yes_btn" />
 
     <ImageView
+        android:id="@+id/white_x_solid_leave_alert_dialog_adapter_pagamento_primeiro"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_margin="9dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/x_btn_leave_white_solid"
+        />
+
+    <ImageView
         android:id="@+id/imageView7_pagamento_primeiro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
