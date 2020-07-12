@@ -17,6 +17,7 @@ public class CidadaoPassageiroInformaçao {
         return Id_Utilizador;
     }
 
+
     public UtilizadorPassageiroInformacao getUtilizador() {
         return utilizador;
     }

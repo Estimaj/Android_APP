@@ -1,6 +1,9 @@
 package com.example.pint_android_v3;
 
 import com.example.pint_android_v3.DataBase.BaseDadosInterface;
+import com.example.pint_android_v3.DataBase.ListagemPassageirosCondutor.CidadaoPassageiroInformaçao;
+import com.example.pint_android_v3.DataBase.ListagemPassageirosCondutor.DataListagemCondutor;
+import com.example.pint_android_v3.DataBase.ListagemPassageirosCondutor.ModelListagemPassageirosCondutor;
 import com.example.pint_android_v3.DataBase.UpdatePassageiro.Passageiro;
 import com.example.pint_android_v3.DataBase.ViagensInformacao.Model_Viagens_Efetuadas;
 import com.example.pint_android_v3.DataBase.ViagensInformacao.dataViagem;
@@ -39,6 +42,7 @@ public class pagamentoCondutor extends barra_lateral_condutor {
     private int idViagem;
 
     private dataViagem viagem;
+    private DataListagemCondutor passageiroValoresIndividuais;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -169,6 +173,7 @@ public class pagamentoCondutor extends barra_lateral_condutor {
     public void Click_Botao_Confirm_Pagar()
     {
         updateBDPassageiroComparecenciaPagamento(1,1);
+
         final AlertDialog dialogBuilder = new AlertDialog.Builder(this).create();
         LayoutInflater inflater = this.getLayoutInflater();
         final View dialogView = inflater.inflate(R.layout.alertdialog_pagamento_sim_adapter, null);
@@ -247,7 +252,7 @@ public class pagamentoCondutor extends barra_lateral_condutor {
                     Log.i("Erro", "verificar o link na interface");
                 }
                 if (response.body() != null) {
-                    Log.i("Sucesso", "valor a pagar: "+ response.body().getValor_a_pagar());
+                    Log.i("Sucesso", "Update Feito, "+ comparecimento + ", " + pagamento);
                 }else
                     Log.i("Erro", "L105 viagens efetuadas");
             }
@@ -257,6 +262,30 @@ public class pagamentoCondutor extends barra_lateral_condutor {
                 Log.i("Failure:", t.toString());
             }
         });
+
+        Call<ModelListagemPassageirosCondutor> call2 = baseDadosInterface.executeGetListagem(idViagem);
+
+        call2.enqueue(new Callback<ModelListagemPassageirosCondutor>() {
+            @Override
+            public void onResponse(Call<ModelListagemPassageirosCondutor> call, Response<ModelListagemPassageirosCondutor> response) {
+                if (!response.isSuccessful()){
+                    Log.i("Erro", "verificar o link na interface");
+                }
+                for (int i = 0; i < response.body().getDataListagemCondutor().size(); i++){
+                    if(user_id == response.body().getDataListagemCondutor().get(i).getCidadao().getId_Utilizador()){
+                        passageiroValoresIndividuais = response.body().getDataListagemCondutor().get(i);
+                    }
+                    //TextView popUpTexto = findViewById(R.id.textView_ValorAPagar_pagamento_sim);
+                    //popUpTexto.setText("Preço da viagem: "+passageiroValoresIndividuais.getValorAPagarIndividual()+" euros");
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ModelListagemPassageirosCondutor> call, Throwable t) {
+
+            }
+        });
+
 
     }
 

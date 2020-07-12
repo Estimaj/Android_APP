@@ -13,6 +13,14 @@ public class DataListagemCondutor {
     @Expose
     private CidadaoPassageiroInformaçao cidadao;
 
+    @SerializedName("valor_a_pagar")
+    @Expose
+    private String ValorAPagarIndividual;
+
+    public String getValorAPagarIndividual(){
+        return ValorAPagarIndividual;
+    }
+
     public int getIdPass() {
         return idPass;
     }

@@ -5,6 +5,7 @@ import com.example.pint_android_v3.DataBase.DividaUtilizador.ModelDividaUtilizad
 import com.example.pint_android_v3.DataBase.ListagemCidadao.ModelListagemCidadao;
 import com.example.pint_android_v3.DataBase.ListagemPassageirosCondutor.ModelListagemPassageirosCondutor;
 import com.example.pint_android_v3.DataBase.Notificacoes.ModelNotificacoes;
+import com.example.pint_android_v3.DataBase.UpdatePassageiro.Passageiro;
 import com.example.pint_android_v3.DataBase.ViagemUnica.ModelViagemUnica;
 import com.example.pint_android_v3.DataBase.ViagensInformacao.Model_Viagens_Efetuadas;
 
@@ -48,6 +49,7 @@ public interface BaseDadosInterface {
     @GET("muv/viagem/getOne/{id}")
     Call<ModelViagemUnica> executeViagemUnica(@Path("id") int id);
 
-
+    @POST("/muv/passageiros/update")
+    Call<Passageiro> executeUpdatePassageiro(@Body Passageiro passageiros);
 
 }

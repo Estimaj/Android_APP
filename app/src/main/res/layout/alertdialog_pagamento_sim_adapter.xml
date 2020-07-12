@@ -17,7 +17,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView2_pagamento_sim"
+        app:layout_constraintTop_toBottomOf="@id/textView_ValorAPagar_pagamento_sim"
         app:srcCompat="@drawable/yes_btn" />
 
     <ImageView
@@ -46,7 +46,7 @@
         app:layout_constraintTop_toBottomOf="@id/imageView7_pagamento_sim" />
 
     <TextView
-        android:id="@+id/textView2_pagamento_sim"
+        android:id="@+id/textView_ValorAPagar_pagamento_sim"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
@@ -56,7 +56,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/obrigado_alertdialog_pagamento_sim" />
+        app:layout_constraintTop_toBottomOf="@id/obrigado_alertdialog_pagamento_sim" />
 
     <TextView
         android:id="@+id/obrigado_alertdialog_pagamento_sim"
@@ -69,6 +69,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_pagamento_sim" />
+        app:layout_constraintTop_toBottomOf="@id/textView_pagamento_sim" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
