@@ -37,7 +37,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class pagamentoCondutor extends barra_lateral_condutor {
 
     private String BASE_URL ="http://10.0.2.2:3000";
-    private ArrayList<dataViagem> informacaoViagem;
 
     private int user_id;
     private int idViagem;
@@ -75,7 +74,6 @@ public class pagamentoCondutor extends barra_lateral_condutor {
             povoarInformacaoActivity(user_id);
         }
 
-
         Bar_Settings(user_id);
     }
 
@@ -91,7 +89,6 @@ public class pagamentoCondutor extends barra_lateral_condutor {
                 .build();
         baseDadosInterface =  retrofit.create(BaseDadosInterface.class);
 
-        //Log.i("O id do user:", ""+ id);
         Call<Model_Viagens_Efetuadas> call = baseDadosInterface.executeViagemEfetuadaMotorista(id);
 
         call.enqueue(new Callback<Model_Viagens_Efetuadas>() {
@@ -100,12 +97,15 @@ public class pagamentoCondutor extends barra_lateral_condutor {
                 if (!response.isSuccessful()){
                     Log.i("Erro", "verificar o link na interface");
                 }
+                if (response.code() == 200){
                 for (int i = 0; i< response.body().getDataViagem().size(); i++){
-                    if (response.body().getDataViagem().get(i).getId_viagem() == idViagem){
-                        viagem = response.body().getDataViagem().get(i);
+
+                        if (response.body().getDataViagem().get(i).getId_viagem() == idViagem){
+                            viagem = response.body().getDataViagem().get(i);
+                        }
                     }
+                    createadapter();
                 }
-                createadapter();
             }
 
             @Override
@@ -268,8 +268,6 @@ public class pagamentoCondutor extends barra_lateral_condutor {
             }
         });
 
-
-
         dialogBuilder.show();
     }
 
@@ -320,7 +318,6 @@ public class pagamentoCondutor extends barra_lateral_condutor {
                 .build();
         baseDadosInterface =  retrofit.create(BaseDadosInterface.class);
 
-        //Log.i("O id do user:", ""+ id);
         Call<Passageiro> call = baseDadosInterface.executeUpdatePassageiro(passageiro);
 
         call.enqueue(new Callback<Passageiro>() {
@@ -355,13 +352,10 @@ public class pagamentoCondutor extends barra_lateral_condutor {
         yes_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                /*Intent voltarMenu = new Intent(pagamentoCondutor.this, menu_motorista.class);
+                Intent voltarMenu = new Intent(pagamentoCondutor.this, menu_motorista.class);
                 voltarMenu.putExtra("user_id", user_id);
-                startActivity(voltarMenu);*/
+                startActivity(voltarMenu);
                 dialogBuilder.dismiss();
-
-
             }
         });
 

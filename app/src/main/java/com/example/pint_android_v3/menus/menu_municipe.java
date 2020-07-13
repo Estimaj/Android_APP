@@ -43,22 +43,14 @@ public class menu_municipe extends barra_lateral_pro {
     ImageView btn_Pesquisar;
     ImageView btn_Marcar_Viagem;
 
-    private Toolbar toolbar;
-    private DrawerLayout drawerLayout;
-    private NavigationView navigationView;
     private Get_user user;
 
     private boolean emDivida;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        //Log.i("oncreate:", "on create Menu");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu_cliente);
-
-
-
-
 
         Nome = findViewById(R.id.user_Name_menu_cliente);
         Localidade =  findViewById(R.id.user_localidade_menu_cliente);
@@ -78,9 +70,8 @@ public class menu_municipe extends barra_lateral_pro {
             verificarDividasUtilizador(user_id);
         }
 
-
-
-        Bar_Settings(user_id);//vai usar a func da class barra_lateral_pro para criar a o hamburger e as setting
+        //vai usar a func da class barra_lateral_pro para criar a o hamburger e as setting
+        Bar_Settings(user_id);
 
         if (user != null){
             Log.i("User info", user.toString());
@@ -116,7 +107,6 @@ public class menu_municipe extends barra_lateral_pro {
                 Clicar_Marcar_Viagem();
             }
         });
-
     }
 
 
@@ -135,6 +125,7 @@ public class menu_municipe extends barra_lateral_pro {
         }
         startActivity(Perfil);
     }
+
     public void Clicar_Viagens_Marcadas()
     {
         Intent Viagens = new Intent(menu_municipe.this, viagens_marcadas.class);
@@ -148,12 +139,14 @@ public class menu_municipe extends barra_lateral_pro {
         Viagens.putExtra("user_id", user_id);
         startActivity(Viagens);
     }
+
     public void Clicar_Pesquisar()
     {
         Intent Pesquisar = new Intent(menu_municipe.this, pesquisar_utilizador.class);
         Pesquisar.putExtra("user_id", user_id);
         startActivity(Pesquisar);
     }
+
     public void Clicar_Marcar_Viagem()
     {
         if(!emDivida){
@@ -164,41 +157,32 @@ public class menu_municipe extends barra_lateral_pro {
         else {
             makeToastFordesambiguacao("Tem Dividas Pendentes");
         }
-
     }
 
     public void Get_user_id_information(int id){
-                    Retrofit retrofit;
-                    BaseDadosInterface baseDadosInterface;
+        Retrofit retrofit;
+        BaseDadosInterface baseDadosInterface;
 
-                    retrofit = new Retrofit.Builder()
-                            .baseUrl(BASE_URL)
-                            .addConverterFactory(GsonConverterFactory.create())
-                            .build();
-                    baseDadosInterface =  retrofit.create(BaseDadosInterface.class);
+        retrofit = new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        baseDadosInterface =  retrofit.create(BaseDadosInterface.class);
 
-                    //Log.i("O id do user:", ""+ id);
-                    Call<Model_User_Information> call = baseDadosInterface.executeGetUser(id);
+        //Log.i("O id do user:", ""+ id);
+        Call<Model_User_Information> call = baseDadosInterface.executeGetUser(id);
 
-                    call.enqueue(new Callback<Model_User_Information>() {
-                        @Override
-                        public void onResponse(Call<Model_User_Information> call, Response<Model_User_Information> response) {
-                            if (!response.isSuccessful()){
-                                makeToastFordesambiguacao("Erro a ir ao link");
-                            }
-                            if (response.code() == 200){
-                                if (response.body() != null) {
-                                    //Log.i("Server Info:", ""+ response.body().getSuccess());
-                                    //Log.i("Server Info:", ""+ response.body().getGet_user().get(0).toString());
-                                    Nome.setText(response.body().getGet_user().get(0).getNome_utilizador());
-                                    Localidade.setText(response.body().getGet_user().get(0).getMorada_utilizador());
-                                    user = response.body().getGet_user().get(0);
-                                    //Log.i("user:",user.toString());
-                                }else
-                                    makeToastFordesambiguacao("Erro Server Info");
-                            }
-                            else{
-                    makeToastFordesambiguacao("Erro: 'Sem data'"+ response.message());
+        call.enqueue(new Callback<Model_User_Information>() {
+            @Override
+            public void onResponse(Call<Model_User_Information> call, Response<Model_User_Information> response) {
+                if (!response.isSuccessful()){
+                    makeToastFordesambiguacao("Erro a ir ao link");
+                }
+                if (response.code() == 200){
+                    //coloca a informacao do user na activity
+                    Nome.setText(response.body().getGet_user().get(0).getNome_utilizador());
+                    Localidade.setText(response.body().getGet_user().get(0).getMorada_utilizador());
+                    user = response.body().getGet_user().get(0);
                 }
             }
 
@@ -231,6 +215,7 @@ public class menu_municipe extends barra_lateral_pro {
                 if (!response.isSuccessful()){
                     makeToastFordesambiguacao("Erro a ir ao link");
                 }
+                //se um utilizador tiver uma divida nao paga, ja n pode marcar viagem
                 for(int i = 0; i < response.body().getDataDividaUtilizadors().size(); i++){
                     if(response.body().getDataDividaUtilizadors().get(i).getEstado_Coima() == 0){
                         emDivida = true;

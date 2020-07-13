@@ -66,29 +66,23 @@ public class perfil_motorista extends barra_lateral_condutor {
                 .build();
         baseDadosInterface =  retrofit.create(BaseDadosInterface.class);
 
-        //Log.i("O id do user:", ""+ id);
         Call<Model_User_Information> call = baseDadosInterface.executeGetUser(id);
 
         call.enqueue(new Callback<Model_User_Information>() {
             @Override
             public void onResponse(Call<Model_User_Information> call, Response<Model_User_Information> response) {
                 if (!response.isSuccessful()){
-                    //makeToastFordesambiguacao("Erro a ir ao link");
                     Log.i("Erro", "Erro a ir ao link class perfil_motorista");
                 }
                 if (response.code() == 200){
-                    if (response.body() != null) {
-                        Log.i("user_perfil_motorista", response.body().getGet_user().get(0).toString());
-                        Nome.setText(response.body().getGet_user().get(0).getNome_utilizador());
-                        Origem.setText(response.body().getGet_user().get(0).getMorada_utilizador());
-                        Idade.setText(""+ getIdadeUser(response.body().getGet_user().get(0).getData_nascimento_utilizador()));
-                        Telefone.setText(response.body().getGet_user().get(0).getTelefone_utilizador());
-                        Email.setText(response.body().getGet_user().get(0).getEmail_utilizador());
-                    }
-                    //makeToastFordesambiguacao("Erro Server Info");
+                    //Log.i("user_perfil_motorista", response.body().getGet_user().get(0).toString());
+                    Nome.setText(response.body().getGet_user().get(0).getNome_utilizador());
+                    Origem.setText(response.body().getGet_user().get(0).getMorada_utilizador());
+                    Idade.setText(""+ getIdadeUser(response.body().getGet_user().get(0).getData_nascimento_utilizador()));
+                    Telefone.setText(response.body().getGet_user().get(0).getTelefone_utilizador());
+                    Email.setText(response.body().getGet_user().get(0).getEmail_utilizador());
                 }
                 else{
-                    //makeToastFordesambiguacao("Erro: 'Sem data'"+ response.message());
                     Log.i("Erro", "" + response.message());
                 }
             }
@@ -96,7 +90,6 @@ public class perfil_motorista extends barra_lateral_condutor {
             @Override
             public void onFailure(Call<Model_User_Information> call, Throwable t) {
                 Log.i("Failure:", t.toString());
-                //makeToastFordesambiguacao("Failure: "+ t.toString());
             }
         });
     }
@@ -135,30 +128,29 @@ public class perfil_motorista extends barra_lateral_condutor {
                 .build();
         baseDadosInterface =  retrofit.create(BaseDadosInterface.class);
 
-        //Log.i("O id do user:", ""+ id);
         Call<ModelDividaUtilizador> call = baseDadosInterface.executeGetUserDivida(id);
 
         call.enqueue(new Callback<ModelDividaUtilizador>() {
             @Override
             public void onResponse(Call<ModelDividaUtilizador> call, Response<ModelDividaUtilizador> response) {
                 if (!response.isSuccessful()){
-                    //makeToastFordesambiguacao("Erro a ir ao link");
                     Log.i("Erro", "Erro a ir ao link class perfil_motorista");
                 }
-                double valorDivida =0;
-                for (int i = 0; i < response.body().getDataDividaUtilizadors().size(); i++){
-                    if (response.body().getDataDividaUtilizadors().get(i).getEstado_Coima() == 0){
-                        valorDivida += Double.parseDouble(response.body().getDataDividaUtilizadors().get(i).getValor_Coima());
+                if (response.code() == 200) {
+                    double valorDivida =0;
+                    for (int i = 0; i < response.body().getDataDividaUtilizadors().size(); i++){
+                        if (response.body().getDataDividaUtilizadors().get(i).getEstado_Coima() == 0){
+                            valorDivida += Double.parseDouble(response.body().getDataDividaUtilizadors().get(i).getValor_Coima());
+                        }
                     }
+                    TextView txtDividaPerfilMotorista = findViewById(R.id.textView_user_money_information_perfil_motorista);
+                    txtDividaPerfilMotorista.setText(""+ valorDivida);
                 }
-                TextView txtDividaPerfilMotorista = findViewById(R.id.textView_user_money_information_perfil_motorista);
-                txtDividaPerfilMotorista.setText(""+ valorDivida);
             }
 
             @Override
             public void onFailure(Call<ModelDividaUtilizador> call, Throwable t) {
                 Log.i("Failure:", t.toString());
-                //makeToastFordesambiguacao("Failure: "+ t.toString());
             }
         });
     }

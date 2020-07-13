@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import com.example.pint_android_v3.R;
 
-public class perfil_motorista_edit extends AppCompatActivity {
+public class perfil_motorista_edit extends AppCompatActivity { //implementado
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

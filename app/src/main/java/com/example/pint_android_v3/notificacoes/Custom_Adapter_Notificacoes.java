@@ -99,9 +99,7 @@ public class Custom_Adapter_Notificacoes extends BaseAdapter {
 
         }
 
-
-
-        return convertView;
+        return result;
     }
 
     public void MaisInfoCliente(ViewHolder viewHolder){
@@ -129,7 +127,7 @@ public class Custom_Adapter_Notificacoes extends BaseAdapter {
 
     public String defineNotificationType(int num)
     {
-
+        //desta forma podemos adicionar um novo tipo de notificaçao em caso
         String message = "Error";
         switch(num)
         {
@@ -140,13 +138,8 @@ public class Custom_Adapter_Notificacoes extends BaseAdapter {
             case 1:
                 message = "A viagem que pediu foi marcada com sucesso para o dia: ";
                 break; //viagem marcada com sucesso
-
-
         }
 
         return message;
-
-
-
     }
 }

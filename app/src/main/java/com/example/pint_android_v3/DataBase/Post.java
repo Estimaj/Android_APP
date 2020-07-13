@@ -6,9 +6,11 @@ import com.google.gson.annotations.SerializedName;
 public class Post {
 
     private int tipo;
+
     @SerializedName("id_user")
     @Expose
     private int id; //id_user
+
     private String message;
 
     public int getTipo() {

@@ -52,8 +52,6 @@ public class classificar_viagem extends barra_lateral_pro {
         if(b!=null) {
             user_id = (int) b.get("user_id");
             id_viagem = (int) b.get("id_viagem");
-            //Log.i("id_user", ""+ id_user);
-
         }
         getInformationFromdb(id_viagem);
         Bar_Settings(user_id);
@@ -81,9 +79,7 @@ public class classificar_viagem extends barra_lateral_pro {
                 .build();
         baseDadosInterface =  retrofit.create(BaseDadosInterface.class);
 
-        //Log.i("O id do user:", ""+ id);
         Call<ModelViagemUnica> call = baseDadosInterface.executeViagemUnica(id);
-
 
         call.enqueue(new Callback<ModelViagemUnica>() {
             @Override
@@ -100,7 +96,6 @@ public class classificar_viagem extends barra_lateral_pro {
             @Override
             public void onFailure(Call<ModelViagemUnica> call, Throwable t) {
                 Log.i("Failure:", t.toString());
-                //makeToastFordesambiguacao("Failure: "+ t.toString());
             }
         });
 
@@ -134,11 +129,6 @@ public class classificar_viagem extends barra_lateral_pro {
         Destino.setText(informacaoViagem.get(0).getDestinoNome());
         Hora.setText(informacaoViagem.get(0).getHora_viagem() + "h");
         Dia.setText(informacaoViagem.get(0).getDia_viagem());
-
-
-
-
-
     }
 
 

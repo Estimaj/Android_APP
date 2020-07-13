@@ -13,7 +13,7 @@ public class classificar_condutor extends barra_lateral_pro {
 
     private int user_id;
 
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) { //nao implementado!!
         super.onCreate(savedInstanceState);
         setContentView(R.layout.classificar_condutor);
         final RatingBar ratingBar = findViewById(R.id.rating_classificar_condutor);
@@ -29,9 +29,6 @@ public class classificar_condutor extends barra_lateral_pro {
         Bundle b = X.getExtras();
         if(b!=null){
             user_id = (int) b.get("user_id");
-            //Log.i("id_user", ""+ id_user);
-
         }
         Bar_Settings(user_id);
-
 }}

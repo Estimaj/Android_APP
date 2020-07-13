@@ -66,7 +66,7 @@ public class quem_vai_consigo_condutor extends barra_lateral_condutor {
                 @Override
                 public void onResponse(Call<ModelListagemPassageirosCondutor> call, Response<ModelListagemPassageirosCondutor> response) {
                     if (!response.isSuccessful()) {
-                        Log.i("Erro", "L69 quem_vai_consigo_condutor");
+                        Log.i("Erro", "Erro a ir ao link");
                     }
                     UtilizadorPassageiroInformacao utilizador;
                     for (int i = 0; i < response.body().getDataListagemCondutor().size(); i++) {
@@ -82,7 +82,6 @@ public class quem_vai_consigo_condutor extends barra_lateral_condutor {
                 @Override
                 public void onFailure(Call<ModelListagemPassageirosCondutor> call, Throwable t) {
                     Log.i("Failure:", t.toString());
-                    //makeToastFordesambiguacao("Failure: "+ t.toString());
                 }
             });
         } catch (Exception e) {
@@ -205,6 +204,4 @@ public class quem_vai_consigo_condutor extends barra_lateral_condutor {
         pagamento.putExtra("idViagem", idViagem);
         startActivity(pagamento);
     }
-
-
 }

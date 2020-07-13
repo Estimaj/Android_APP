@@ -63,9 +63,6 @@ public class Marcar_viagem extends barra_lateral_pro implements DatePickerDialog
     private int partilha = 1;
     private int modalidade = 0; // 0-ida, 1-ida e volta
 
-
-    //...
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -102,20 +99,13 @@ public class Marcar_viagem extends barra_lateral_pro implements DatePickerDialog
             }
         });
 
-
         //meti aqui os switchs todos
         switchsResumidos();
-
-
-
-
 
         Intent X = getIntent();
         Bundle b = X.getExtras();
         if(b!=null){
             user_id = (int) b.get("user_id");
-            //Log.i("id_user", ""+ id_user);
-
         }
         Bar_Settings(user_id);
     }
@@ -189,7 +179,7 @@ public class Marcar_viagem extends barra_lateral_pro implements DatePickerDialog
                 R.layout.color_spinner_layout
         );
         adapterViagens.setDropDownViewResource(R.layout.spinner_dropdown_layout);
-        //Log.i("adapter", adapter.getPosition().toString());
+
         spiner_partida = findViewById(R.id.spinner_partida_marcar_viagem);
         spiner_partida.setAdapter(adapterViagens);
 
@@ -213,7 +203,7 @@ public class Marcar_viagem extends barra_lateral_pro implements DatePickerDialog
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
                 local_destino_pedido = position + 1;
-                Log.i("teste", ""+ local_destino_pedido);
+                //Log.i("teste", ""+ local_destino_pedido);
             }
 
             @Override
@@ -381,12 +371,7 @@ public class Marcar_viagem extends barra_lateral_pro implements DatePickerDialog
                     makeToastForMarcar("Erro a ir ao link");
                 }
                 else{
-                    if(response.body() != null) {
-                        //makeToastForMarcar("Penso eu que devia haver um novo pedido");
-                        Log.i("Pedido", response.body().toString());
-                    }else{
-                        makeToastForMarcar("ocurreu um erro na criaçao da sua viagem!");
-                    }
+                    Log.i("Pedido", response.body().toString());
                 }
             }
 
@@ -396,9 +381,7 @@ public class Marcar_viagem extends barra_lateral_pro implements DatePickerDialog
                 makeToastForMarcar("Failure: "+ t.toString());
             }
         });
-
     }
-
 
     public void makeToastForMarcar(String msg){
         Toast.makeText(Marcar_viagem.this, msg,

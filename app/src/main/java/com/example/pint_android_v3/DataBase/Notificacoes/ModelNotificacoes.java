@@ -25,9 +25,9 @@ public class ModelNotificacoes {
 
     @Override
     public String toString() {
-        return "Model_Viagens_Efetuadas{" +
-                "success='" + success + '\'' +
-                ", dataViagem=" + dataNotificacoes +
+        return "Model_Viagens_Efetuadas{" + '\n' +
+                "success='" + success + '\n' +
+                ", dataViagem=" + dataNotificacoes + '\n' +
                 '}';
     }
 

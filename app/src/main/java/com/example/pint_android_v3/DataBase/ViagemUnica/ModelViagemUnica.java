@@ -26,9 +26,9 @@ public class ModelViagemUnica {
 
     @Override
     public String toString() {
-        return "Model_Viagens_Efetuadas{" +
-                "success='" + success + '\'' +
-                ", dataViagem=" + dataViagem +
+        return "Model_Viagens_Efetuadas{" + '\n' +
+                "success='" + success + '\n' +
+                ", dataViagem=" + dataViagem + '\n' +
                 '}';
     }
 

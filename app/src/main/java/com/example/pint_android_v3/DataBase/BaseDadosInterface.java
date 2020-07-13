@@ -59,10 +59,6 @@ public interface BaseDadosInterface {
     @POST("/muv/passageiros/updateClassificacao")
     Call<ModelClassif> executeMudarClassificacao(@Body ModelClassif classificacao);
 
-    /*
-    @POST("/muv/passageiros/deletePassageiro")
-    Call<Passageiro> executeDeletePassageiro(@Body Passageiro passageiro);
-    */
     @POST("/muv/pedidos/updateCanceleViagem")
     Call<Passageiro> executeUpdatePedidoDeletePassageiro(@Body HashMap<String, Integer> map);
 }

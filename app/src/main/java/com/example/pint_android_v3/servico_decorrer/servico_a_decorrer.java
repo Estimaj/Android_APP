@@ -21,10 +21,8 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class servico_a_decorrer extends barra_lateral_condutor {
-
     ListView lView;
     ListAdapter lAdapter;
-
 
     private String BASE_URL ="http://10.0.2.2:3000";
     private int user_id;
@@ -42,7 +40,6 @@ public class servico_a_decorrer extends barra_lateral_condutor {
 
             getInformationFromdb(user_id);
         }
-
         Bar_Settings(user_id);
     }
 
@@ -58,32 +55,23 @@ public class servico_a_decorrer extends barra_lateral_condutor {
                 .build();
         baseDadosInterface =  retrofit.create(BaseDadosInterface.class);
 
-        //Log.i("O id do user:", ""+ id);
         Call<Model_Viagens_Efetuadas> call = baseDadosInterface.executeViagemEfetuadaMotorista(id);
 
         call.enqueue(new Callback<Model_Viagens_Efetuadas>() {
             @Override
             public void onResponse(Call<Model_Viagens_Efetuadas> call, Response<Model_Viagens_Efetuadas> response) {
                 if (!response.isSuccessful()){
-                    Log.i("Erro", "L99 viagens efetuadas");
+                    Log.i("Erro", "Erro a ir ao link");
                 }
                 if (response.code() == 200){
-                    if (response.body().getDataViagem() != null) {
-                        //Log.i("body", "" + response.body().getDataViagem().get(0).toString());
                         informacaoViagem = response.body().getDataViagem();
                         createAdapters();
-                    }else
-                        Log.i("Erro", "L105 viagens efetuadas");
-                }
-                else{
-                    Log.i("Erro", "L109 viagens efetuadas_sem data");
                 }
             }
 
             @Override
             public void onFailure(Call<Model_Viagens_Efetuadas> call, Throwable t) {
                 Log.i("Failure:", t.toString());
-                //makeToastFordesambiguacao("Failure: "+ t.toString());
             }
         });
     }
@@ -139,8 +127,6 @@ public class servico_a_decorrer extends barra_lateral_condutor {
                 lItems.bagagemPedido,
                 lItems.animalPedido,
                 lItems.necessidadesEspeciaisPedido);
-
-
 
         lView.setAdapter(lAdapter);
     }

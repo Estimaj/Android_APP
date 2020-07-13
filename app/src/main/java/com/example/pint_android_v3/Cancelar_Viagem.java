@@ -83,7 +83,6 @@ public class Cancelar_Viagem extends barra_lateral_pro {
         TextView Destino_txt = findViewById(R.id.local_user_textView_cancelar_viagem_new);
         TextView Horas_txt = findViewById(R.id.local_user_textView_hora_cancelar_viagem_new);
         TextView Dia_txt = findViewById(R.id.local_user_textView_dia_cancelar_viagem_new);
-        //TextView Taxa_desconto_txt = findViewById(R.id.local_user_textView_taxa_desconto_cancelar_viagem_new);
         TextView Total_a_pagar = findViewById(R.id.total_textview_cancelar_viagem_new);
 
         String localPartida = (String) b.get("localPartida");
@@ -92,7 +91,6 @@ public class Cancelar_Viagem extends barra_lateral_pro {
         Origem_txt.setText(localPartida);
         Destino_txt.setText(localChegada);
         Total_a_pagar.setText("" + (String) b.get("valorViagem"));
-
 
         Horas_txt.setText((String) b.get("horaViagem"));
         Dia_txt.setText((String) b.get("dataViagem"));
@@ -110,10 +108,6 @@ public class Cancelar_Viagem extends barra_lateral_pro {
             certoGone = findViewById(R.id.wheel_check_cancelar_viagem_new);
             certoGone.setVisibility(View.GONE);
         }
-
-
-
-
     }
 
     public void Mostrar_Pop()
@@ -158,7 +152,6 @@ public class Cancelar_Viagem extends barra_lateral_pro {
                 .build();
         baseDadosInterface =  retrofit.create(BaseDadosInterface.class);
 
-        //Log.i("O id do user:", ""+ id);
         Call<Passageiro> call = baseDadosInterface.executeUpdatePedidoDeletePassageiro(map);
 
 
@@ -166,7 +159,7 @@ public class Cancelar_Viagem extends barra_lateral_pro {
             @Override
             public void onResponse(Call<Passageiro> call, Response<Passageiro> response) {
                 if (!response.isSuccessful()){
-                    Log.i("Erro", "L99 viagens efetuadas");
+                    Log.i("Erro", "Erro a ir ao link");
                 }
                 if (response.code() == 200){
                     Log.i("Sucesso", "passageiro retirado da viagem");
@@ -177,7 +170,6 @@ public class Cancelar_Viagem extends barra_lateral_pro {
             @Override
             public void onFailure(Call<Passageiro> call, Throwable t) {
                 Log.i("Failure:", t.toString());
-                //makeToastFordesambiguacao("Failure: "+ t.toString());
             }
         });
     }
@@ -209,7 +201,5 @@ public class Cancelar_Viagem extends barra_lateral_pro {
         }
         else //se a data ja passou, na teorica n devia precisar pq n devia haver viagens marcadas com datas depois da corrent
             return false;
-
-
     }
 }

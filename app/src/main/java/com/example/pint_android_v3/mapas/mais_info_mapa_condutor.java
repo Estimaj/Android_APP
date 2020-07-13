@@ -2,16 +2,13 @@ package com.example.pint_android_v3.mapas;
 
 import android.content.Intent;
 import android.graphics.Color;
-
 import android.os.Bundle;
 import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 
 import com.esri.arcgisruntime.concurrent.ListenableFuture;
 import com.esri.arcgisruntime.geometry.Point;
@@ -19,7 +16,6 @@ import com.esri.arcgisruntime.geometry.Polyline;
 import com.esri.arcgisruntime.loadable.LoadStatus;
 import com.esri.arcgisruntime.mapping.ArcGISMap;
 import com.esri.arcgisruntime.mapping.Basemap;
-import com.esri.arcgisruntime.mapping.view.DefaultMapViewOnTouchListener;
 import com.esri.arcgisruntime.mapping.view.Graphic;
 import com.esri.arcgisruntime.mapping.view.GraphicsOverlay;
 import com.esri.arcgisruntime.mapping.view.MapView;
@@ -28,17 +24,13 @@ import com.esri.arcgisruntime.security.DefaultAuthenticationChallengeHandler;
 import com.esri.arcgisruntime.security.OAuthConfiguration;
 import com.esri.arcgisruntime.symbology.SimpleLineSymbol;
 import com.esri.arcgisruntime.symbology.SimpleMarkerSymbol;
-
 import com.esri.arcgisruntime.tasks.networkanalysis.Route;
 import com.esri.arcgisruntime.tasks.networkanalysis.RouteParameters;
-
 import com.esri.arcgisruntime.tasks.networkanalysis.RouteResult;
 import com.esri.arcgisruntime.tasks.networkanalysis.RouteTask;
 import com.esri.arcgisruntime.tasks.networkanalysis.Stop;
-import com.example.pint_android_v3.barra_lateral.barra_lateral_condutor;
-import com.example.pint_android_v3.barra_lateral.barra_lateral_pro;
 import com.example.pint_android_v3.R;
-import com.example.pint_android_v3.quem_vai_consigo.quem_vai_consigo;
+import com.example.pint_android_v3.barra_lateral.barra_lateral_condutor;
 import com.example.pint_android_v3.quem_vai_consigo.quem_vai_consigo_condutor;
 
 import java.net.MalformedURLException;
@@ -53,7 +45,6 @@ public class mais_info_mapa_condutor extends barra_lateral_condutor {
     private Point mStart;
     private Point mEnd;
     private int user_id;
-    private boolean Cidadao;
     private int idViagem;
 
 
@@ -64,17 +55,17 @@ public class mais_info_mapa_condutor extends barra_lateral_condutor {
         // Retrieve the map and initial extent from XML layout
         //1
         mMapView = findViewById(R.id.mapView_mais_info_condutor);
-        //mStart = new Point(40.6573504,-7.9142947);
-        //mEnd = new Point(40.6573504,-7.91429);
+        mStart = new Point(40.6573504,-7.9142947);
+        mEnd = new Point(40.6573504,-7.91429);
         setupMap();
 
 
         //2
-        //createGraphicsOverlay();
+        createGraphicsOverlay();
 
-        //setupOAuthManager();
-        //setStartMarker(mStart);
-        //setEndMarker(mEnd);
+        setupOAuthManager();
+        setStartMarker(mStart);
+        setEndMarker(mEnd);
 
         Intent X = getIntent();
         Bundle b = X.getExtras();
@@ -88,21 +79,17 @@ public class mais_info_mapa_condutor extends barra_lateral_condutor {
                         Click_Quem_Vai();
                     }
                 });
-
                 colocarValoresMaisInfo(b);
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
         }
-
         Bar_Settings(user_id);
     }
 
     private void colocarValoresMaisInfo(Bundle b) {
         String localPartida = (String) b.get("localPartida");
         String localChegada = (String) b.get("localChegada");
-
 
         TextView valorViagemtxt = findViewById(R.id.Dinheiro_pagar_mais_info_condutor);
         valorViagemtxt.setText("" + (String) b.get("valorViagem"));
@@ -152,18 +139,18 @@ public class mais_info_mapa_condutor extends barra_lateral_condutor {
     }
 
     private void setStartMarker(Point location) {
-        mGraphicsOverlay.getGraphics().clear();
+        //mGraphicsOverlay.getGraphics().clear();
         setMapMarker(location, SimpleMarkerSymbol.Style.DIAMOND, Color.rgb(226, 119, 40), Color.BLUE);
         mStart = location;
-        mEnd = null;
+        //mEnd = null;
     }
 
     private void setEndMarker(Point location) {
         setMapMarker(location, SimpleMarkerSymbol.Style.SQUARE, Color.rgb(40, 119, 226), Color.RED);
         mEnd = location;
-        // findRoute();
+        findRoute();
     }
-
+/*
     private void mapClicked(Point location) {
         if (mStart == null) {
             // Start is not set, set it to a tapped location
@@ -177,6 +164,7 @@ public class mais_info_mapa_condutor extends barra_lateral_condutor {
         }
         findRoute();
     }
+ */
 
     private void setupOAuthManager() {
         String clientId = getResources().getString(R.string.client_id);
@@ -206,6 +194,7 @@ public class mais_info_mapa_condutor extends barra_lateral_condutor {
             ArcGISMap map = new ArcGISMap(Basemap.Type.STREETS, latitude, longitude, levelOfDetail);
             mMapView.setMap(map);
 
+            /*
             mMapView.setOnTouchListener(new DefaultMapViewOnTouchListener(this, mMapView) {
                 @Override public boolean onSingleTapConfirmed(MotionEvent e) {
                     android.graphics.Point screenPoint = new android.graphics.Point(
@@ -216,6 +205,7 @@ public class mais_info_mapa_condutor extends barra_lateral_condutor {
                     return super.onSingleTapConfirmed(e);
                 }
             });
+             */
 
             //ArcGISMapImageLayer traffic = new ArcGISMapImageLayer(getResources().getString(R.string.traffic_service));
             //map.getOperationalLayers().add(traffic);
@@ -260,7 +250,7 @@ public class mais_info_mapa_condutor extends barra_lateral_condutor {
             }
         });
     }
-
+    /*
     @Override
     protected void onPause() {
         if (mMapView != null) {
@@ -284,10 +274,5 @@ public class mais_info_mapa_condutor extends barra_lateral_condutor {
         }
         super.onDestroy();
     }
-
-
-
-
-
-
+    */
 }

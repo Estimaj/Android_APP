@@ -29,8 +29,6 @@ public class viagens_efetuadas_condutor extends barra_lateral_condutor {
     ListView lView;
     ListAdapter lAdapter;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,8 +42,6 @@ public class viagens_efetuadas_condutor extends barra_lateral_condutor {
             getInformationFromdb(user_id);
         }
         Bar_Settings(user_id);
-
-
     }
 
     private void getInformationFromdb(int id) {
@@ -60,7 +56,6 @@ public class viagens_efetuadas_condutor extends barra_lateral_condutor {
                 .build();
         baseDadosInterface =  retrofit.create(BaseDadosInterface.class);
 
-        //Log.i("O id do user:", ""+ id);
         Call<Model_Viagens_Efetuadas> call = baseDadosInterface.executeViagemEfetuadaMotorista(id);
 
         call.enqueue(new Callback<Model_Viagens_Efetuadas>() {
@@ -69,11 +64,10 @@ public class viagens_efetuadas_condutor extends barra_lateral_condutor {
                 if (!response.isSuccessful()){
                     Log.i("Erro", "verificar o link na interface");
                 }
-                if (response.body().getDataViagem() != null) {
+                if (response.code() == 200) {
                     informacaoViagem = response.body().getDataViagem();
                     createAdapters();
-                }else
-                    Log.i("Erro", "L105 viagens efetuadas");
+                }
             }
 
             @Override
@@ -139,12 +133,6 @@ public class viagens_efetuadas_condutor extends barra_lateral_condutor {
                 lItems.animalPedido,
                 lItems.necessidadesEspeciaisPedido);
 
-
-
         lView.setAdapter(lAdapter);
     }
-
-
-
-
 }

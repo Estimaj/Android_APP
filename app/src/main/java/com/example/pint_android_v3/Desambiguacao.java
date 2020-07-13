@@ -33,21 +33,20 @@ public class Desambiguacao extends AppCompatActivity {
         if(b!=null)
         {
             id = (int) b.get("user_id");
-            //Log.i("user_id:", ""+ id);
             String j =(String) b.get("User_Login");
             Mail.setText(j);
             j = (String) b.get("Password_Login");
             Password.setText(j);
         }
 
-        login_mun = (Button) findViewById(R.id.entrar_desambiguacao);
+        login_mun = findViewById(R.id.entrar_desambiguacao);
         login_mun.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Menu_Go_Cliente();
             }
         });
-        login_mot = (Button) findViewById(R.id.Entrar_Motorista_desambiguacao);
+        login_mot = findViewById(R.id.Entrar_Motorista_desambiguacao);
         login_mot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

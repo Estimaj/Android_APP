@@ -98,7 +98,6 @@ public class CustomListAdapter_marcadas_teste extends BaseAdapter {
             viewHolder.imageViewCancelarViagemBtn = convertView.findViewById(R.id.viagens_marcadas_adapter_cancelar_viagem_button);
             viewHolder.imageViewViagensMarcadasAdapterMaisInfo = convertView.findViewById(R.id.viagens_marcadas_adapter_mais_info);
 
-
             convertView.setTag(viewHolder);
             result = convertView;
         }
@@ -106,7 +105,6 @@ public class CustomListAdapter_marcadas_teste extends BaseAdapter {
         {
             result = convertView;
             viewHolder = (CustomListAdapter_marcadas_teste.ViewHolder) convertView.getTag();
-
         }
         viewHolder.txt_data.setText(data.get(position));
         viewHolder.txt_Local_Chegada.setText(Local_Chegada.get(position));
@@ -133,9 +131,6 @@ public class CustomListAdapter_marcadas_teste extends BaseAdapter {
                 cancelarViagemBtnClick(viewHolder);
             }
         });
-
-
-
 
         return result;
     }
@@ -177,7 +172,6 @@ public class CustomListAdapter_marcadas_teste extends BaseAdapter {
         int animalPedidoCurrent = viewHolder.animalPedido;
         int necessidadesEspeciaisPedidoCurrent = viewHolder.necessidadesEspeciaisPedido;
 
-        //Log.i("text",  localPartidatxt.getText().toString() + "|"+ localChegadatxt.getText().toString());
         Intent goMaisInfo = new Intent(context, mais_info_mapa_cliente.class);
         goMaisInfo.putExtra("user_id", user_id);
         goMaisInfo.putExtra("localPartida", localPartidatxt.getText());
@@ -198,7 +192,6 @@ public class CustomListAdapter_marcadas_teste extends BaseAdapter {
         TextView localPartidatxt = viewHolder.txt_Local_Partida;
         TextView localChegadatxt = viewHolder.txt_Local_Chegada;
 
-
         TextView dataViagemtxt = viewHolder.txt_data;
         TextView horaViagemtxt = viewHolder.txt_hora;
 
@@ -210,8 +203,6 @@ public class CustomListAdapter_marcadas_teste extends BaseAdapter {
         int necessidadesEspeciaisPedidoCurrent = viewHolder.necessidadesEspeciaisPedido;
         int idPedidoCurrent = viewHolder.idPedido;
 
-
-        //Log.i("text",  localPartidatxt.getText().toString() + "|"+ localChegadatxt.getText().toString());
         Intent goMaisInfo = new Intent(context, Cancelar_Viagem.class);
         goMaisInfo.putExtra("user_id", user_id);
         goMaisInfo.putExtra("localPartida", localPartidatxt.getText());

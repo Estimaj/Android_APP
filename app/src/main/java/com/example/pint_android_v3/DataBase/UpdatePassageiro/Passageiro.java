@@ -42,7 +42,6 @@ public class Passageiro {
         this.comparencia_viagem = comparencia_viagem;
     }
 
-
     public int getCidadao_id_utilizador() {
         return cidadao_id_utilizador;
     }

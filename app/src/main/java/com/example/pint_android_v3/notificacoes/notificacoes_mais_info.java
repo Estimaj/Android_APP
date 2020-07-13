@@ -1,7 +1,5 @@
 package com.example.pint_android_v3.notificacoes;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,7 +8,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.pint_android_v3.DataBase.BaseDadosInterface;
-import com.example.pint_android_v3.DataBase.ListagemCidadao.ModelListagemCidadao;
 import com.example.pint_android_v3.DataBase.ViagemUnica.ModelViagemUnica;
 import com.example.pint_android_v3.DataBase.ViagensInformacao.dataViagem;
 import com.example.pint_android_v3.R;
@@ -41,8 +38,6 @@ public class notificacoes_mais_info extends barra_lateral_pro {
         if(b!=null){
             user_id = (int) b.get("user_id");
             id_viagem = (int) b.get("id_viagem");
-            //Log.i("id_user", ""+ id_user);
-
         }
 
         getInformationFromdb(id_viagem);
@@ -63,34 +58,23 @@ public class notificacoes_mais_info extends barra_lateral_pro {
                 .build();
         baseDadosInterface =  retrofit.create(BaseDadosInterface.class);
 
-        //Log.i("O id do user:", ""+ id);
         Call<ModelViagemUnica> call = baseDadosInterface.executeViagemUnica(id);
 
         call.enqueue(new Callback<ModelViagemUnica>() {
             @Override
             public void onResponse(Call<ModelViagemUnica> call, Response<ModelViagemUnica> response) {
                 if (!response.isSuccessful()){
-                    Log.i("Erro", "L99 viagens efetuadas");
+                    Log.i("Erro", "Erro a ir ao link");
                 }
                 if (response.code() == 200){
-                    if (response.body().getDataViagem() != null) {
-                        //Log.i("body", "" + response.body().getDataViagem().get(0).toString());
-                        informacaoViagem = response.body().getDataViagem();
-                        populateContainer();
-
-
-                    }else
-                        Log.i("Erro", "L105 listagem condutor");
-                }
-                else{
-                    Log.i("Erro", "L109 listagem condutor sem sata");
+                    informacaoViagem = response.body().getDataViagem();
+                    populateContainer();
                 }
             }
 
             @Override
             public void onFailure(Call<ModelViagemUnica> call, Throwable t) {
                 Log.i("Failure:", t.toString());
-                //makeToastFordesambiguacao("Failure: "+ t.toString());
             }
         });
 
@@ -124,13 +108,5 @@ public class notificacoes_mais_info extends barra_lateral_pro {
         Destino.setText(informacaoViagem.get(0).getDestinoNome());
         Hora.setText(informacaoViagem.get(0).getHora_viagem() + "h");
         Dia.setText(informacaoViagem.get(0).getDia_viagem());
-
-
-
-
-
     }
-
-
-
 }

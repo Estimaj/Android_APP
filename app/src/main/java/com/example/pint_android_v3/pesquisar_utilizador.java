@@ -1,6 +1,5 @@
 package com.example.pint_android_v3;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -8,10 +7,9 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.example.pint_android_v3.barra_lateral.barra_lateral_pro;
-import com.example.pint_android_v3.menus.menu_municipe;
 import com.google.android.material.navigation.NavigationView;
 
-public class pesquisar_utilizador extends barra_lateral_pro {
+public class pesquisar_utilizador extends barra_lateral_pro {//nao implementado!!
 
     private Toolbar toolbar;
     private DrawerLayout drawerLayout;
@@ -23,21 +21,5 @@ public class pesquisar_utilizador extends barra_lateral_pro {
         setContentView(R.layout.activity_pesquisar_utilizador);
 
        //Bar_Settings();
-
-
-
-
     }
-
-    public void Go_Back()
-    {
-        Intent GO = new Intent(pesquisar_utilizador.this, menu_municipe.class);
-        startActivity(GO);
-
-    }
-
-
-
-
-
 }

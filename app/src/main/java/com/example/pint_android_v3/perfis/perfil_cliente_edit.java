@@ -11,7 +11,7 @@ import com.example.pint_android_v3.R;
 import com.example.pint_android_v3.barra_lateral.barra_lateral_pro;
 import com.google.android.material.navigation.NavigationView;
 
-public class perfil_cliente_edit extends barra_lateral_pro {
+public class perfil_cliente_edit extends barra_lateral_pro { //nao implementado!!
 
     private Toolbar toolbar;
     private DrawerLayout drawerLayout;

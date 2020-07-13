@@ -291,10 +291,4 @@ public class mais_info_mapa_cliente extends barra_lateral_pro {
         }
         super.onDestroy();
     }*/
-
-
-
-
-
-
 }

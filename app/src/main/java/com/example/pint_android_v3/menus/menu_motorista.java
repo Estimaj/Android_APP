@@ -52,7 +52,6 @@ public class menu_motorista extends barra_lateral_condutor {
         Bundle b = X.getExtras();
         if(b!=null){
             user_id = (int) b.get("user_id");
-            //Log.i("id_user", ""+ id_user);
             Get_user_id_information(user_id);
         }
 
@@ -120,7 +119,6 @@ public class menu_motorista extends barra_lateral_condutor {
                 .build();
         baseDadosInterface =  retrofit.create(BaseDadosInterface.class);
 
-        //Log.i("O id do user:", ""+ id);
         Call<Model_User_Information> call = baseDadosInterface.executeGetUser(id);
 
         call.enqueue(new Callback<Model_User_Information>() {
@@ -130,21 +128,11 @@ public class menu_motorista extends barra_lateral_condutor {
                     makeToastFordesambiguacao("Erro a ir ao link");
                 }
                 if (response.code() == 200){
-                    if (response.body() != null) {
-                        //Log.i("Server Info:", ""+ response.body().getSuccess());
-                        //Log.i("Server Info:", ""+ response.body().getGet_user().get(0).toString());
-                        Nome.setText(response.body().getGet_user().get(0).getNome_utilizador());
-                        Localidade.setText(response.body().getGet_user().get(0).getMorada_utilizador());
-                        user = response.body().getGet_user().get(0);
-                        //Log.i("user:",user.toString());
-                    }else
-                        makeToastFordesambiguacao("Erro Server Info");
-                }
-                else{
-                    makeToastFordesambiguacao("Erro: 'Sem data'"+ response.message());
+                    Nome.setText(response.body().getGet_user().get(0).getNome_utilizador());
+                    Localidade.setText(response.body().getGet_user().get(0).getMorada_utilizador());
+                    user = response.body().getGet_user().get(0);
                 }
             }
-
             @Override
             public void onFailure(Call<Model_User_Information> call, Throwable t) {
                 Log.i("Failure:", t.toString());

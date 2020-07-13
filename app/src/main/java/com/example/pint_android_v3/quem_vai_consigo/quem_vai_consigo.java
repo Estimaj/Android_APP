@@ -26,7 +26,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class quem_vai_consigo extends barra_lateral_pro {
 
-    //Testar se isto funciona
     private int user_id;
     private int viagem_id;
     private String BASE_URL ="http://10.0.2.2:3000";
@@ -46,8 +45,6 @@ public class quem_vai_consigo extends barra_lateral_pro {
         if(b!=null){
             user_id = (int) b.get("user_id");
             viagem_id = (int) b.get("idViagem");
-            //Log.i("id_user", ""+ id_user);
-
         }
         Nome = findViewById(R.id.condutor_nome_quem_vai_consigo);
 
@@ -68,35 +65,28 @@ public class quem_vai_consigo extends barra_lateral_pro {
                 .build();
         baseDadosInterface =  retrofit.create(BaseDadosInterface.class);
 
-        //Log.i("O id do user:", ""+ id);
         Call<ModelListagemCidadao> call = baseDadosInterface.executeGetListagemQuery(id);
 
         call.enqueue(new Callback<ModelListagemCidadao>() {
             @Override
             public void onResponse(Call<ModelListagemCidadao> call, Response<ModelListagemCidadao> response) {
                 if (!response.isSuccessful()){
-                    Log.i("Erro", "L99 viagens efetuadas");
+                    Log.i("Erro", "Erro a ir ao link");
                 }
                 if (response.code() == 200){
                     if (response.body().getDataListagemCidadao().size() != 0) {
-                        //Log.i("body", "" + response.body().getDataViagem().get(0).toString());
                         informacaoViagem = response.body().getDataListagemCidadao();
                         int id_motorista = Integer.parseInt(informacaoViagem.get(0).getId_motorista());
                         Get_user_id_information(id_motorista);
                         PopulateLista();
-
                     }else
-                        Log.i("Erro", "L105 listagem condutor");
-                }
-                else{
-                    Log.i("Erro", "L109 listagem condutor sem sata");
+                        Log.i("Erro", response.message());
                 }
             }
 
             @Override
             public void onFailure(Call<ModelListagemCidadao> call, Throwable t) {
                 Log.i("Failure:", t.toString());
-                //makeToastFordesambiguacao("Failure: "+ t.toString());
             }
         });
 

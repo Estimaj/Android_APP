@@ -25,7 +25,6 @@ public class viagens_marcadas extends barra_lateral_pro {
 
     ListView lView;
     ListAdapter lAdapter;
-    viagens_marcadas_array_test lItems;
     private int user_id;
 
     private String BASE_URL ="http://10.0.2.2:3000";
@@ -61,7 +60,6 @@ public class viagens_marcadas extends barra_lateral_pro {
                 .build();
         baseDadosInterface =  retrofit.create(BaseDadosInterface.class);
 
-        //Log.i("O id do user:", ""+ id);
         Call<Model_Viagens_Efetuadas> call = baseDadosInterface.executeViagemEfetuada(id);
 
         call.enqueue(new Callback<Model_Viagens_Efetuadas>() {
@@ -71,28 +69,19 @@ public class viagens_marcadas extends barra_lateral_pro {
                     Log.i("Erro", "L99 viagens efetuadas");
                 }
                 if (response.code() == 200){
-                    if (response.body().getDataViagem() != null) {
-                        //Log.i("body", "" + response.body().getDataViagem().get(0).toString());
-                        informacaoViagem = response.body().getDataViagem();
-                        createAdapters();
-                    }else
-                        Log.i("Erro", "L105 viagens efetuadas");
-                }
-                else{
-                    Log.i("Erro", "L109 viagens efetuadas_sem data");
+                    informacaoViagem = response.body().getDataViagem();
+                    createAdapters();
                 }
             }
 
             @Override
             public void onFailure(Call<Model_Viagens_Efetuadas> call, Throwable t) {
                 Log.i("Failure:", t.toString());
-                //makeToastFordesambiguacao("Failure: "+ t.toString());
             }
         });
     }
 
     public void createAdapters(){
-
 
         ArrayList<String> Local_Partida = new ArrayList<>();
         ArrayList<String> Local_Chegada = new ArrayList<>();
@@ -129,10 +118,7 @@ public class viagens_marcadas extends barra_lateral_pro {
         }
         viagens_marcadas_array_test lItems = new viagens_marcadas_array_test(Local_Partida, Local_Chegada, Local_PartidaCoordenadas, Local_ChegadaCoordenadas, data, hora, idViagem, valorViagem,bagagemPedido, animalPedido, necessidadesEspeciaisPedido, idPedido);
 
-
-
-
-        lView = (ListView)findViewById(R.id.viagens_marcadas_listview);
+        lView = findViewById(R.id.viagens_marcadas_listview);
         lAdapter = new CustomListAdapter_marcadas_teste(viagens_marcadas.this,
                 user_id,
                 lItems.data,
@@ -149,10 +135,5 @@ public class viagens_marcadas extends barra_lateral_pro {
                 lItems.idPedido);
 
         lView.setAdapter(lAdapter);
-
-
     }
-
-
-
 }

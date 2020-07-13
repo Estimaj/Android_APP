@@ -17,7 +17,6 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import com.example.pint_android_v3.MainActivity_Login;
 import com.example.pint_android_v3.R;
 import com.example.pint_android_v3.menus.menu_motorista;
-import com.example.pint_android_v3.notificacoes.notificacoes;
 import com.example.pint_android_v3.notificacoes.notificacoes_condutor;
 import com.example.pint_android_v3.perfis.perfil_motorista;
 import com.google.android.material.navigation.NavigationView;
@@ -34,7 +33,6 @@ public class barra_lateral_condutor extends AppCompatActivity implements Navigat
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.barra_lateral_pro);
-
     }
 
     @Override
@@ -61,12 +59,6 @@ public class barra_lateral_condutor extends AppCompatActivity implements Navigat
                 Intent notPage = new Intent(this, notificacoes_condutor.class);
                 notPage.putExtra("user_id", user_id);
                 startActivity(notPage);
-            //Criar activity Notificações
-            //Default?
-            //Trocar perfil_motorista por municipe
-
-
-
         }
         return false;
 
@@ -112,19 +104,11 @@ public class barra_lateral_condutor extends AppCompatActivity implements Navigat
                 super.onDrawerClosed(view);
                 drawerLayout.getLayoutParams().height = toolbar.getLayoutParams().height;
                 drawerLayout.requestLayout();
-
-
-
-
             }
 
             /** Called when a drawer has settled in a completely open state. */
             public void onDrawerOpened(View drawerView) {
                 super.onDrawerOpened(drawerView);
-
-
-
-
             }
             public void onDrawerStateChanged(int newState)
             {
@@ -133,21 +117,13 @@ public class barra_lateral_condutor extends AppCompatActivity implements Navigat
                     drawerLayout.getLayoutParams().height = heightX;
                     drawerLayout.bringToFront();
                     drawerLayout.requestLayout();
-
-
                 }
             }
-
-
         };
 
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.onDrawerClosed(drawerLayout);
         actionBarDrawerToggle.syncState(); //animação do hamburguer muda com isto
         navigationView.setNavigationItemSelectedListener(this);
-
-
     }
-
-
 }

@@ -1,16 +1,12 @@
 package com.example.pint_android_v3.barra_lateral;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.text.SpannableString;
 import android.text.style.TextAppearanceSpan;
-import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -34,11 +30,9 @@ public class barra_lateral_pro extends AppCompatActivity implements NavigationVi
     private NavigationView navigationView;
     private int user_id;
 
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.barra_lateral_pro);
-
     }
 
     @Override
@@ -67,15 +61,8 @@ public class barra_lateral_pro extends AppCompatActivity implements NavigationVi
                 notPage.putExtra("user_id", user_id);
                 startActivity(notPage);
                 break;
-            //Criar activity Notificações
-            //Default?
-            //Trocar perfil_motorista por municipe
-
-
-
         }
         return false;
-
     }
 
     @Override
@@ -96,8 +83,6 @@ public class barra_lateral_pro extends AppCompatActivity implements NavigationVi
 
         Objects.requireNonNull(getSupportActionBar()).setDisplayShowTitleEnabled(false);
 
-
-
         drawerLayout = findViewById(R.id.barra_lateral_drawer_layout);
         final int heightX = drawerLayout.getLayoutParams().height;
         navigationView = findViewById(R.id.nav_view_barra);
@@ -110,7 +95,6 @@ public class barra_lateral_pro extends AppCompatActivity implements NavigationVi
         SpannableString s = new SpannableString(tools.getTitle());
         s.setSpan(new TextAppearanceSpan(this, R.style.TextAppearance44), 0, s.length(), 0);
         tools.setTitle(s);
-
 
         //Altera a cor do separador sair do navigation drawer
         tools= menu.findItem(R.id.sair_menu_cliente_barra);
@@ -138,9 +122,7 @@ public class barra_lateral_pro extends AppCompatActivity implements NavigationVi
                 if (newState == DrawerLayout.STATE_SETTLING) {
                     drawerLayout.setTranslationZ(20);
                     drawerLayout.getLayoutParams().height = heightX;
-                    //drawerLayout.bringToFront();
                     drawerLayout.requestLayout();
-
 
                 }
             }
@@ -152,7 +134,6 @@ public class barra_lateral_pro extends AppCompatActivity implements NavigationVi
         actionBarDrawerToggle.onDrawerClosed(drawerLayout);
         actionBarDrawerToggle.syncState(); //animação do hamburguer muda com isto
         navigationView.setNavigationItemSelectedListener(this);
-
 
     }
 

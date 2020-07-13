@@ -1,26 +1,16 @@
 package com.example.pint_android_v3.notificacoes;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.example.pint_android_v3.DataBase.BaseDadosInterface;
-import com.example.pint_android_v3.DataBase.ListagemCidadao.dataListagemCidadao;
 import com.example.pint_android_v3.DataBase.Notificacoes.DataNotificacoes;
 import com.example.pint_android_v3.DataBase.Notificacoes.ModelNotificacoes;
-import com.example.pint_android_v3.DataBase.ViagensInformacao.Model_Viagens_Efetuadas;
 import com.example.pint_android_v3.R;
 import com.example.pint_android_v3.barra_lateral.barra_lateral_pro;
-import com.example.pint_android_v3.classificar.classificar_viagem;
-import com.example.pint_android_v3.viagens_efetuadas.CustomListAdapter_efetuadas_teste;
-import com.example.pint_android_v3.viagens_efetuadas.viagens_efetuadas;
-import com.example.pint_android_v3.viagens_efetuadas.viagens_efetuadas_array_test;
 
 import java.util.ArrayList;
 
@@ -37,7 +27,6 @@ public class notificacoes extends barra_lateral_pro {
     ListAdapter lAdapter;
     private String BASE_URL ="http://10.0.2.2:3000";
     private ArrayList<DataNotificacoes> informacaoViagem;
-    private TextView Nome;
 
 
     @Override
@@ -49,14 +38,10 @@ public class notificacoes extends barra_lateral_pro {
         Bundle b = X.getExtras();
         if(b!=null){
             user_id = (int) b.get("user_id");
-            //Log.i("id_user", ""+ id_user);
-
         }
 
         getInformationFromdb(user_id);
         Bar_Settings(user_id);
-
-
     }
 
 
@@ -73,32 +58,23 @@ public class notificacoes extends barra_lateral_pro {
                 .build();
         baseDadosInterface =  retrofit.create(BaseDadosInterface.class);
 
-        //Log.i("O id do user:", ""+ id);
         Call<ModelNotificacoes> call = baseDadosInterface.executeGetNotificacoes(id);
 
         call.enqueue(new Callback<ModelNotificacoes>() {
             @Override
             public void onResponse(Call<ModelNotificacoes> call, Response<ModelNotificacoes> response) {
                 if (!response.isSuccessful()){
-                    Log.i("Erro", "L99 viagens efetuadas");
+                    Log.i("Erro", "Erro a ir ao link");
                 }
                 if (response.code() == 200){
-                    if (response.body().getDataViagem() != null) {
-                        //Log.i("body", "" + response.body().getDataViagem().get(0).toString());
-                        informacaoViagem = response.body().getDataViagem();
-                        createAdapters();
-                    }else
-                        Log.i("Erro", "L105 viagens efetuadas");
-                }
-                else{
-                    Log.i("Erro", "L109 viagens efetuadas_sem data");
+                    informacaoViagem = response.body().getDataViagem();
+                    createAdapters();
                 }
             }
 
             @Override
             public void onFailure(Call<ModelNotificacoes> call, Throwable t) {
                 Log.i("Failure:", t.toString());
-                //makeToastFordesambiguacao("Failure: "+ t.toString());
             }
         });
     }
@@ -109,8 +85,6 @@ public class notificacoes extends barra_lateral_pro {
         ArrayList<Integer> ListTipo = new ArrayList<>();
         ArrayList<Integer> ListIDViagem = new ArrayList<>();
 
-
-
         for (int i = 0; i < informacaoViagem.size(); i++) {
                 ListNome.add(informacaoViagem.get(i).getNome());
                 ListData.add(informacaoViagem.get(i).getDia_viagem());
@@ -118,8 +92,7 @@ public class notificacoes extends barra_lateral_pro {
                 ListIDViagem.add(informacaoViagem.get(i).getId_viagem());
 
             }
-
-        notificacoes_array_test lItems = new notificacoes_array_test(ListNome, ListData, ListTipo, ListIDViagem);
+        //notificacoes_array_test lItems = new notificacoes_array_test(ListNome, ListData, ListTipo, ListIDViagem);
 
 
         lView = findViewById(R.id.listView_para_layout_notificacoes);
@@ -133,12 +106,6 @@ public class notificacoes extends barra_lateral_pro {
                 0
                 );
 
-
-
         lView.setAdapter(lAdapter);
     }
-
-
-
-
 }
