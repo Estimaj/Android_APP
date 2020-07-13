@@ -54,8 +54,6 @@ public class quem_vai_consigo extends barra_lateral_pro {
         getInformationFromdb(viagem_id);
 
         Bar_Settings(user_id);
-
-
     }
 
     private void getInformationFromdb(int id) {
@@ -80,7 +78,7 @@ public class quem_vai_consigo extends barra_lateral_pro {
                     Log.i("Erro", "L99 viagens efetuadas");
                 }
                 if (response.code() == 200){
-                    if (response.body().getDataListagemCidadao() != null) {
+                    if (response.body().getDataListagemCidadao().size() != 0) {
                         //Log.i("body", "" + response.body().getDataViagem().get(0).toString());
                         informacaoViagem = response.body().getDataListagemCidadao();
                         int id_motorista = Integer.parseInt(informacaoViagem.get(0).getId_motorista());
@@ -117,15 +115,8 @@ public class quem_vai_consigo extends barra_lateral_pro {
             ListLocalidade.add(informacaoViagem.get(i).getMorada_utilizador());
             ListIdPass.add(informacaoViagem.get(i).getIdPass());
         }
-
-
-
         SetTexts();
         HideButtons(ListNome.size());//Esconde os botões
-
-
-
-
     }
 
 
@@ -198,8 +189,8 @@ public class quem_vai_consigo extends barra_lateral_pro {
         {
             Localidade = findViewById(R.id.tripulante_localidade_4_quem_vai_consigo2);
             Nome = findViewById(R.id.tripulante_nome_4_quem_vai_consigo2);
-            Localidade.setText(ListNome.get(3));
-            Nome.setText(ListLocalidade.get(3));
+            Nome.setText(ListNome.get(3));
+            Localidade.setText(ListLocalidade.get(3));
 
 
         }
@@ -207,8 +198,8 @@ public class quem_vai_consigo extends barra_lateral_pro {
         {
             Localidade = findViewById(R.id.tripulante_localidade_3_quem_vai_consigo);
             Nome = findViewById(R.id.tripulante_nome_3_quem_vai_consigo);
-            Localidade.setText(ListNome.get(2));
-            Nome.setText(ListLocalidade.get(2));
+            Nome.setText(ListNome.get(2));
+            Localidade.setText(ListLocalidade.get(2));
 
 
         }
@@ -216,8 +207,8 @@ public class quem_vai_consigo extends barra_lateral_pro {
         {
             Localidade = findViewById(R.id.tripulante_localidade_2_quem_vai_consigo2);
             Nome = findViewById(R.id.tripulante_nome_2_quem_vai_consigo2);
-            Localidade.setText(ListNome.get(1));
-            Nome.setText(ListLocalidade.get(1));
+            Nome.setText(ListNome.get(1));
+            Localidade.setText(ListLocalidade.get(1));
 
 
         }
@@ -225,9 +216,8 @@ public class quem_vai_consigo extends barra_lateral_pro {
         {
             Localidade = findViewById(R.id.tripulante_localidade_1_quem_vai_consigo);
             Nome = findViewById(R.id.tripulante_nome_1_quem_vai_consigo);
-            Localidade.setText(ListNome.get(0));
-            Nome.setText(ListLocalidade.get(0));
-
+            Nome.setText(ListNome.get(0));
+            Localidade.setText(ListLocalidade.get(0));
 
         }
 
