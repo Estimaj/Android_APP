@@ -5,19 +5,41 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.pint_android_v3.DataBase.BaseDadosInterface;
+import com.example.pint_android_v3.DataBase.UpdatePassageiro.Passageiro;
+import com.example.pint_android_v3.DataBase.ViagemUnica.ModelViagemUnica;
+import com.example.pint_android_v3.DataBase.ViagensInformacao.dataViagem;
 import com.example.pint_android_v3.barra_lateral.barra_lateral_pro;
+import com.example.pint_android_v3.menus.menu_municipe;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.Date;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Cancelar_Viagem extends barra_lateral_pro {
 
     private Button cancelar_viagem_btn;
     private int user_id;
     private int idViagem;
+
+    private String BASE_URL ="http://10.0.2.2:3000";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,26 +48,28 @@ public class Cancelar_Viagem extends barra_lateral_pro {
 
         cancelar_viagem_btn = findViewById(R.id.btn_cancelar_viagem_pro);
 
-
-        cancelar_viagem_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Mostrar_Pop(); //adicionar o codigo relativo a bd, aparecer o SucessoDialog se ele tiver sido apagado corretamente
-            }
-        });
-
         Intent X = getIntent();
         Bundle b = X.getExtras();
         if(b!=null){
             user_id = (int) b.get("user_id");
+            idViagem = (int) b.get("idViagem");
             try {
                 colocarValoresMaisInfo(b);
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
-
         }
+
+        cancelar_viagem_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    RetirarPassageiroDaViagem(user_id, idViagem);
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
         Bar_Settings(user_id);
 
     }
@@ -65,7 +89,7 @@ public class Cancelar_Viagem extends barra_lateral_pro {
         Origem_txt.setText(localPartida);
         Destino_txt.setText(localChegada);
         Total_a_pagar.setText("" + (String) b.get("valorViagem"));
-        idViagem = (int) b.get("idViagem");
+
 
         Horas_txt.setText((String) b.get("horaViagem"));
         Dia_txt.setText((String) b.get("dataViagem"));
@@ -100,14 +124,87 @@ public class Cancelar_Viagem extends barra_lateral_pro {
         yes_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                /*Intent voltarMenu = new Intent(pagamentoCondutor.this, menu_motorista.class);
-                voltarMenu.putExtra("user_id", user_id);
-                startActivity(voltarMenu);*/
                 dialogBuilder.dismiss();
-
+                Intent voltarMenu = new Intent(Cancelar_Viagem.this, menu_municipe.class);
+                voltarMenu.putExtra("user_id", user_id);
+                startActivity(voltarMenu);
             }
         });
         dialogBuilder.show();
-}
+    }
+    private void RetirarPassageiroDaViagem(int id, int idViagem) throws ParseException {
+        if(!VerificarDiaHoraCurrent()){
+            Toast.makeText(Cancelar_Viagem.this,
+                    "Não é possivel cancelar devido as horas/data",
+                    Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        Passageiro passageiroRemover = new Passageiro();
+        passageiroRemover.setId_viagem(idViagem);
+        passageiroRemover.setCidadao_id_utilizador(id);
+
+        Retrofit retrofit;
+        BaseDadosInterface baseDadosInterface;
+
+        retrofit = new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        baseDadosInterface =  retrofit.create(BaseDadosInterface.class);
+
+        //Log.i("O id do user:", ""+ id);
+        Call<Passageiro> call = baseDadosInterface.executeDeletePassageiro(passageiroRemover);
+
+
+        call.enqueue(new Callback<Passageiro>() {
+            @Override
+            public void onResponse(Call<Passageiro> call, Response<Passageiro> response) {
+                if (!response.isSuccessful()){
+                    Log.i("Erro", "L99 viagens efetuadas");
+                }
+                if (response.code() == 200){
+                    Log.i("Sucesso", "passageiro retirado da viagem");
+                    Mostrar_Pop();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Passageiro> call, Throwable t) {
+                Log.i("Failure:", t.toString());
+                //makeToastFordesambiguacao("Failure: "+ t.toString());
+            }
+        });
+    }
+
+    private boolean VerificarDiaHoraCurrent() throws ParseException {
+        TextView Horas_txt = findViewById(R.id.local_user_textView_hora_cancelar_viagem_new);
+        TextView Day_txt = findViewById(R.id.local_user_textView_dia_cancelar_viagem_new);
+        SimpleDateFormat dayFormatter = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat hourFormatter = new SimpleDateFormat("HH:mm");
+        Date currentTimeDate = new Date(System.currentTimeMillis());
+        String currentTimeString = dayFormatter.format(currentTimeDate);
+        String viagemTimeString = Day_txt.getText().toString();
+
+        Date Current = dayFormatter.parse(currentTimeString);
+        Date Viagem = dayFormatter.parse(viagemTimeString);
+
+        if (Current.before(Viagem)) {
+            if((Current.getDay() + 1) == Viagem.getDay()){
+                Date horamax = hourFormatter.parse("17:00");
+                Date horaCurrent = hourFormatter.parse(currentTimeDate.toString());
+                if(horaCurrent.before(horamax)){
+                    return true;
+                }
+                else //se passou da hora
+                    return false;
+            }
+            else //se tem mais que um dia de diferenca
+                return true;
+        }
+        else //se a data ja passou, na teorica n devia precisar pq n devia haver viagens marcadas com datas depois da corrent
+            return false;
+
+
+    }
 }
