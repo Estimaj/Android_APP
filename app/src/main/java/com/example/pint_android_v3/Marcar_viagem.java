@@ -28,7 +28,10 @@ import com.example.pint_android_v3.DataBase.Pedido_Viagem;
 import com.example.pint_android_v3.barra_lateral.barra_lateral_pro;
 import com.example.pint_android_v3.menus.menu_municipe;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -193,8 +196,6 @@ public class Marcar_viagem extends barra_lateral_pro implements DatePickerDialog
             public void onNothingSelected(AdapterView<?> parent) {
 
             }
-
-
         });
 
         spinner_destino = findViewById(R.id.spinner_destino_marcar_viagem);
@@ -210,14 +211,11 @@ public class Marcar_viagem extends barra_lateral_pro implements DatePickerDialog
             public void onNothingSelected(AdapterView<?> parent) {
 
             }
-
-
         });
     }
 
     private void showDatePickerDialog() //temos que ter em atençao que nos n vamos sempre partir do mm ponto se o utilizador abrir e escolher uma data, quando abrir era porreiro ter essa data
     {
-        //Log.i("passei" , "passei aqui.....");
         DatePickerDialog DPD = new DatePickerDialog(
                 this,
                 this,
@@ -319,12 +317,13 @@ public class Marcar_viagem extends barra_lateral_pro implements DatePickerDialog
         yes_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                makeToastForMarcar("yes");
-                criarPedido_viagem();
-                //mudar de intent
-                Intent Viagens = new Intent(Marcar_viagem.this, menu_municipe.class);
-                Viagens.putExtra("user_id", user_id);
-                startActivity(Viagens);
+                //se o id e a hora estivirem bem o pedido segue
+                if(criarPedido_viagem()){
+                    //mudar de intent
+                    Intent Viagens = new Intent(Marcar_viagem.this, menu_municipe.class);
+                    Viagens.putExtra("user_id", user_id);
+                    startActivity(Viagens);
+                }
             }
         });
         no_btn.setOnClickListener(new View.OnClickListener() {
@@ -337,19 +336,27 @@ public class Marcar_viagem extends barra_lateral_pro implements DatePickerDialog
         dialogBuilder.show();
     }
 
-    private void criarPedido_viagem(){
+    private boolean criarPedido_viagem(){
         //o cancelar é suposto estar a 0, falta o locals e partilha
         if(user_id == 0){
             Log.i("user_id_error", "user id = 0, func criarPedido_viagem, marcar_viagem.java");
-            return;
+            return false;
         }
 
-
         String currentTime = GetTime();
+        String currentDate = GetDate();
+        try {
+            if (!VerificarHoraCurrent(currentTime, currentDate)){
+                makeToastForMarcar("Impossivel marcar para esse dia");
+                return false;
+            }
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
 
         Pedido_Viagem pedido_viagem = new Pedido_Viagem(1, user_id,
                 local_origem_pedido, local_destino_pedido, bagagem, modalidade, partilha, animal,
-                necessidades_especiais, 0, "" + currentTime, GetDate(), DateLayout_text.getText().toString(),
+                necessidades_especiais, 0, "" + currentTime, currentDate, DateLayout_text.getText().toString(),
                 TimeLayout_text.getText().toString());
         Log.i("Pedido", pedido_viagem.toString());
 
@@ -381,6 +388,31 @@ public class Marcar_viagem extends barra_lateral_pro implements DatePickerDialog
                 makeToastForMarcar("Failure: "+ t.toString());
             }
         });
+
+        return true;
+    }
+
+    private boolean VerificarHoraCurrent(String currentTime, String currentDate) throws ParseException {
+        SimpleDateFormat hourFormatter = new SimpleDateFormat("HH:mm");
+        SimpleDateFormat dayFormatter = new SimpleDateFormat("yyyy-MM-dd");
+        String diaViagem = DateLayout_text.getText().toString();
+
+        Date Current = dayFormatter.parse(currentDate);
+        Date Viagem = dayFormatter.parse(diaViagem);
+
+        if (Current.before(Viagem)) {
+            if((Current.getDay() + 1) == Viagem.getDay()){
+                Date horaCurrent = hourFormatter.parse(currentTime);
+                Date horamax = hourFormatter.parse("17:00");
+                if (horaCurrent.before(horamax)){
+                    return true;
+                }
+            }
+            else
+                return true;
+        }
+
+        return false;
     }
 
     public void makeToastForMarcar(String msg){
@@ -388,3 +420,4 @@ public class Marcar_viagem extends barra_lateral_pro implements DatePickerDialog
                 Toast.LENGTH_LONG).show();
     }
 }
+
