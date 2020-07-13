@@ -204,7 +204,6 @@ public class Marcar_viagem extends barra_lateral_pro implements DatePickerDialog
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
                 local_destino_pedido = position + 1;
-                //Log.i("teste", ""+ local_destino_pedido);
             }
 
             @Override
@@ -337,12 +336,15 @@ public class Marcar_viagem extends barra_lateral_pro implements DatePickerDialog
     }
 
     private boolean criarPedido_viagem(){
-        //o cancelar é suposto estar a 0, falta o locals e partilha
+        //Confirmação de dados para exetuar o pedido
         if(user_id == 0){
             Log.i("user_id_error", "user id = 0, func criarPedido_viagem, marcar_viagem.java");
             return false;
         }
-
+        if(local_destino_pedido == local_origem_pedido){
+            makeToastForMarcar("Não é possivel ter destinos semelhantes");
+            return false;
+        }
         String currentTime = GetTime();
         String currentDate = GetDate();
         try {
@@ -358,7 +360,7 @@ public class Marcar_viagem extends barra_lateral_pro implements DatePickerDialog
                 local_origem_pedido, local_destino_pedido, bagagem, modalidade, partilha, animal,
                 necessidades_especiais, 0, "" + currentTime, currentDate, DateLayout_text.getText().toString(),
                 TimeLayout_text.getText().toString());
-        Log.i("Pedido", pedido_viagem.toString());
+        //Log.i("Pedido", pedido_viagem.toString());
 
         Retrofit retrofit;
         BaseDadosInterface baseDadosInterface;

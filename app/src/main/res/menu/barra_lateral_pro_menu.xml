@@ -29,7 +29,7 @@
 
         <menu>
             <item
-                android:title="LogOut"
+                android:title="Terminar Sessão"
                 android:icon="@drawable/log_out_icon"
                 android:iconTint="@color/Yellow"
                 android:id="@+id/LogOut_btn_menu"

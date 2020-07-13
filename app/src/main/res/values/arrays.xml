@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="Spinner_items">
-        <item>Prime</item>
-        <item>Nelas</item>
-        <item>Travassos</item>
-        <item>Satao</item>
-        <item>Cacador</item>
-        <item>Cabril</item>
-        <item>Aval</item>
-        <item>Carragoso</item>
-        <item>Passos</item>
-        <item>Outeiro</item>
-        <item>Rossio</item>
-        <item>Palacio do Gelo</item>
-        <item>Estacao</item>
-        <item>Magarenha</item>
+        <item>Central de Camionagem</item>
+        <item>Hospital</item>
+        <item>Palácio do Gelo</item>
+        <item>Ribafeita</item>
+        <item>Calde</item>
+        <item>Cota</item>
+        <item>União de Freguesias de Barreiros</item>
+        <item>Cepões</item>
+        <item>Cavernães</item>
+        <item>S. Pedro de France</item>
     </string-array>
 </resources>
