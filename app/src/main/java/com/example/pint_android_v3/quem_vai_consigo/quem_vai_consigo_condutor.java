@@ -159,15 +159,15 @@ public class quem_vai_consigo_condutor extends barra_lateral_pro {
                 txt = findViewById(R.id.tripulante_localidade_1_quem_vai_consigo_condutor);
                 txt.setVisibility(View.GONE);
             case 1:
-                contaner = findViewById(R.id.contentor4_quem_vai_consigo2_condutor);
+                contaner = findViewById(R.id.contentor2_quem_vai_consigo2_condutor);
                 contaner.setVisibility(View.GONE);
-                img = findViewById(R.id.tripulante_image_4_quem_vai_consigo2_condutor);
+                img = findViewById(R.id.tripulante_image_2_quem_vai_consigo2_condutor);
                 img.setVisibility(View.GONE);
-                img = findViewById(R.id.btn_pagamento_4_quem_vai_consigo_condutor);
+                img = findViewById(R.id.btn_pagamento_2_quem_vai_consigo_condutor);
                 img.setVisibility(View.GONE);
-                txt = findViewById(R.id.tripulante_nome_4_quem_vai_consigo2_condutor);
+                txt = findViewById(R.id.tripulante_nome_2_quem_vai_consigo2_condutor);
                 txt.setVisibility(View.GONE);
-                txt = findViewById(R.id.tripulante_localidade_4_quem_vai_consigo2_condutor);
+                txt = findViewById(R.id.tripulante_localidade_2_quem_vai_consigo2_condutor);
                 txt.setVisibility(View.GONE);
             case 2:
                 contaner = findViewById(R.id.contentor3_quem_vai_consigo_condutor);
@@ -181,15 +181,15 @@ public class quem_vai_consigo_condutor extends barra_lateral_pro {
                 txt = findViewById(R.id.tripulante_localidade_3_quem_vai_consigo_condutor);
                 txt.setVisibility(View.GONE);
             case 3:
-                contaner = findViewById(R.id.contentor2_quem_vai_consigo2_condutor);
+                contaner = findViewById(R.id.contentor4_quem_vai_consigo2_condutor);
                 contaner.setVisibility(View.GONE);
-                img = findViewById(R.id.tripulante_image_2_quem_vai_consigo2_condutor);
+                img = findViewById(R.id.tripulante_image_4_quem_vai_consigo2_condutor);
                 img.setVisibility(View.GONE);
-                img = findViewById(R.id.btn_pagamento_2_quem_vai_consigo_condutor);
+                img = findViewById(R.id.btn_pagamento_4_quem_vai_consigo_condutor);
                 img.setVisibility(View.GONE);
-                txt = findViewById(R.id.tripulante_nome_2_quem_vai_consigo2_condutor);
+                txt = findViewById(R.id.tripulante_nome_4_quem_vai_consigo2_condutor);
                 txt.setVisibility(View.GONE);
-                txt = findViewById(R.id.tripulante_localidade_2_quem_vai_consigo2_condutor);
+                txt = findViewById(R.id.tripulante_localidade_4_quem_vai_consigo2_condutor);
                 txt.setVisibility(View.GONE);
             default:
                 break;
