@@ -30,6 +30,7 @@ public class CustomListAdapter_marcadas_teste extends BaseAdapter {
     private final ArrayList<Integer> bagagemPedido;
     private final ArrayList<Integer> animalPedido;
     private final ArrayList<Integer> necessidadesEspeciaisPedido;
+    private final ArrayList<Integer> idPedido;
 
     public CustomListAdapter_marcadas_teste(Context cont, int user_id,
                                             ArrayList<String> data,
@@ -41,7 +42,8 @@ public class CustomListAdapter_marcadas_teste extends BaseAdapter {
                                             ArrayList<String> valorViagem,
                                             ArrayList<Integer> bagagemPedido,
                                             ArrayList<Integer> animalPedido,
-                                            ArrayList<Integer> necessidadesEspeciaisPedido) {
+                                            ArrayList<Integer> necessidadesEspeciaisPedido,
+                                            ArrayList<Integer> idPedido ) {
 
         context = cont;
         this.user_id = user_id;
@@ -56,7 +58,7 @@ public class CustomListAdapter_marcadas_teste extends BaseAdapter {
         this.bagagemPedido = bagagemPedido;
         this.animalPedido = animalPedido;
         this.necessidadesEspeciaisPedido = necessidadesEspeciaisPedido;
-
+        this.idPedido = idPedido;
     }
 
     @Override
@@ -117,6 +119,7 @@ public class CustomListAdapter_marcadas_teste extends BaseAdapter {
         viewHolder.bagagemPedido = bagagemPedido.get(position);
         viewHolder.animalPedido = animalPedido.get(position);
         viewHolder.necessidadesEspeciaisPedido = necessidadesEspeciaisPedido.get(position);
+        viewHolder.idPedido = idPedido.get(position);
 
         viewHolder.imageViewViagensMarcadasAdapterMaisInfo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -154,7 +157,7 @@ public class CustomListAdapter_marcadas_teste extends BaseAdapter {
         int bagagemPedido;
         int animalPedido;
         int necessidadesEspeciaisPedido;
-
+        int idPedido;
     }
 
     private void maisInfoBtnClick(ViewHolder viewHolder){
@@ -205,7 +208,7 @@ public class CustomListAdapter_marcadas_teste extends BaseAdapter {
         int bagagemPedidoCurrent = viewHolder.bagagemPedido;
         int animalPedidoCurrent = viewHolder.animalPedido;
         int necessidadesEspeciaisPedidoCurrent = viewHolder.necessidadesEspeciaisPedido;
-
+        int idPedidoCurrent = viewHolder.idPedido;
 
 
         //Log.i("text",  localPartidatxt.getText().toString() + "|"+ localChegadatxt.getText().toString());
@@ -220,6 +223,7 @@ public class CustomListAdapter_marcadas_teste extends BaseAdapter {
         goMaisInfo.putExtra("bagagemPedido", bagagemPedidoCurrent);
         goMaisInfo.putExtra("animalPedido", animalPedidoCurrent);
         goMaisInfo.putExtra("necessidadesEspeciaisPedido", necessidadesEspeciaisPedidoCurrent);
+        goMaisInfo.putExtra("idPedido", idPedidoCurrent);
         context.startActivity(goMaisInfo);
     }
 

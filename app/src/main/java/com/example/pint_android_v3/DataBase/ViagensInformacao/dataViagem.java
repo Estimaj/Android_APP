@@ -57,6 +57,22 @@ public class dataViagem {
     @Expose
     private int viagem_efetuada;
 
+    @SerializedName("id_pedido")
+    @Expose
+    private int id_pedido;
+
+    @SerializedName("cancelar_pedido")
+    @Expose
+    private int cancelar_pedido;
+
+    public int getCancelar_pedido() {
+        return cancelar_pedido;
+    }
+
+    public int getId_pedido() {
+        return id_pedido;
+    }
+
     public int getCidadao_id_utilizador() {
         return cidadao_id_utilizador;
     }

@@ -105,9 +105,10 @@ public class viagens_marcadas extends barra_lateral_pro {
         ArrayList<Integer> bagagemPedido = new ArrayList<>();
         ArrayList<Integer> animalPedido = new ArrayList<>();
         ArrayList<Integer> necessidadesEspeciaisPedido = new ArrayList<>();
+        ArrayList<Integer> idPedido = new ArrayList<>();
 
         for (int i = 0; i < informacaoViagem.size(); i++) {
-            if(informacaoViagem.get(i).getViagem_efetuada() == 0) { //confirma se a viagem é efetuada ou não
+            if(informacaoViagem.get(i).getViagem_efetuada() == 0 && informacaoViagem.get(i).getCancelar_pedido() == 0) { //confirma se a viagem é efetuada ou não
                 Local_Partida.add(informacaoViagem.get(i).getOrigemNome());
                 Local_Chegada.add(informacaoViagem.get(i).getDestinoNome());
                 Local_PartidaCoordenadas.add(informacaoViagem.get(i).getDestino_Coordenadas());
@@ -122,9 +123,11 @@ public class viagens_marcadas extends barra_lateral_pro {
                 bagagemPedido.add(informacaoViagem.get(i).getBagagem_pedido());
                 animalPedido.add(informacaoViagem.get(i).getAnimal());
                 necessidadesEspeciaisPedido.add(informacaoViagem.get(i).getNecessidadesespeciais_pedido());
+
+                idPedido.add(informacaoViagem.get(i).getId_pedido());
             }
         }
-        viagens_marcadas_array_test lItems = new viagens_marcadas_array_test(Local_Partida, Local_Chegada, Local_PartidaCoordenadas, Local_ChegadaCoordenadas, data, hora, idViagem, valorViagem,bagagemPedido, animalPedido, necessidadesEspeciaisPedido);
+        viagens_marcadas_array_test lItems = new viagens_marcadas_array_test(Local_Partida, Local_Chegada, Local_PartidaCoordenadas, Local_ChegadaCoordenadas, data, hora, idViagem, valorViagem,bagagemPedido, animalPedido, necessidadesEspeciaisPedido, idPedido);
 
 
 
@@ -142,7 +145,8 @@ public class viagens_marcadas extends barra_lateral_pro {
                 lItems.valorViagem,
                 lItems.bagagemPedido,
                 lItems.animalPedido,
-                lItems.necessidadesEspeciaisPedido);
+                lItems.necessidadesEspeciaisPedido,
+                lItems.idPedido);
 
         lView.setAdapter(lAdapter);
 

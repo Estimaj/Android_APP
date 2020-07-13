@@ -25,11 +25,12 @@ public class Passageiro {
     @Expose
     private String valor_a_pagar;
 
+
     public void setCidadao_id_utilizador(int cidadao_id_utilizador) {
         this.cidadao_id_utilizador = cidadao_id_utilizador;
     }
 
-    public void setId_viagem(int id_viagem) {
+    public void setId_viagem(Integer id_viagem) {
         this.id_viagem = id_viagem;
     }
 

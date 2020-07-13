@@ -27,9 +27,12 @@ public class viagens_marcadas_array_test {
 
     ArrayList<Integer> necessidadesEspeciaisPedido;
 
+    ArrayList<Integer> idPedido;
+
     public viagens_marcadas_array_test(ArrayList<String> local_Partida, ArrayList<String> local_Chegada,  ArrayList<String> Local_PartidaCoordenadas,
                                         ArrayList<String> Local_ChegadaCoordenadas  , ArrayList<String> data, ArrayList<String> hora
-            , ArrayList<Integer> idViagem,  ArrayList<String> valorViagem,  ArrayList<Integer> bagagemPedido,  ArrayList<Integer> animalPedido,     ArrayList<Integer> necessidadesEspeciaisPedido) {
+            , ArrayList<Integer> idViagem,  ArrayList<String> valorViagem,  ArrayList<Integer> bagagemPedido,  ArrayList<Integer> animalPedido,
+             ArrayList<Integer> necessidadesEspeciaisPedido, ArrayList<Integer> idPedido) {
         this.Local_Partida = local_Partida;
         this.Local_Chegada = local_Chegada;
         this.Local_ChegadaCoordenadas = Local_ChegadaCoordenadas;
@@ -41,6 +44,7 @@ public class viagens_marcadas_array_test {
         this.bagagemPedido = bagagemPedido;
         this.animalPedido = animalPedido;
         this.necessidadesEspeciaisPedido = necessidadesEspeciaisPedido;
+        this.idPedido = idPedido;
     }
 
 

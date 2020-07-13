@@ -26,6 +26,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -38,6 +39,7 @@ public class Cancelar_Viagem extends barra_lateral_pro {
     private Button cancelar_viagem_btn;
     private int user_id;
     private int idViagem;
+    private int idPedido;
 
     private String BASE_URL ="http://10.0.2.2:3000";
 
@@ -52,7 +54,7 @@ public class Cancelar_Viagem extends barra_lateral_pro {
         Bundle b = X.getExtras();
         if(b!=null){
             user_id = (int) b.get("user_id");
-            idViagem = (int) b.get("idViagem");
+            idPedido = (int) b.get("idPedido");
             try {
                 colocarValoresMaisInfo(b);
             } catch (Exception e) {
@@ -64,7 +66,7 @@ public class Cancelar_Viagem extends barra_lateral_pro {
             @Override
             public void onClick(View v) {
                 try {
-                    RetirarPassageiroDaViagem(user_id, idViagem);
+                    RetirarPassageiroDaViagem(user_id, idPedido);
                 } catch (ParseException e) {
                     e.printStackTrace();
                 }
@@ -76,6 +78,7 @@ public class Cancelar_Viagem extends barra_lateral_pro {
 
 
     private void colocarValoresMaisInfo(Bundle b) {
+        idViagem = (int) b.get("idViagem");
         TextView Origem_txt = findViewById(R.id.local_user_textView_origem_cancelar_viagem_new);
         TextView Destino_txt = findViewById(R.id.local_user_textView_cancelar_viagem_new);
         TextView Horas_txt = findViewById(R.id.local_user_textView_hora_cancelar_viagem_new);
@@ -132,7 +135,7 @@ public class Cancelar_Viagem extends barra_lateral_pro {
         });
         dialogBuilder.show();
     }
-    private void RetirarPassageiroDaViagem(int id, int idViagem) throws ParseException {
+    private void RetirarPassageiroDaViagem(int id, int idPedido) throws ParseException {
         if(!VerificarDiaHoraCurrent()){
             Toast.makeText(Cancelar_Viagem.this,
                     "Não é possivel cancelar devido as horas/data",
@@ -140,9 +143,11 @@ public class Cancelar_Viagem extends barra_lateral_pro {
             return;
         }
 
-        Passageiro passageiroRemover = new Passageiro();
-        passageiroRemover.setId_viagem(idViagem);
-        passageiroRemover.setCidadao_id_utilizador(id);
+        HashMap<String, Integer> map = new HashMap<>();
+
+        map.put("id", idPedido);
+        map.put("cancele", 1);
+        map.put("idCidadao", id);
 
         Retrofit retrofit;
         BaseDadosInterface baseDadosInterface;
@@ -154,7 +159,7 @@ public class Cancelar_Viagem extends barra_lateral_pro {
         baseDadosInterface =  retrofit.create(BaseDadosInterface.class);
 
         //Log.i("O id do user:", ""+ id);
-        Call<Passageiro> call = baseDadosInterface.executeDeletePassageiro(passageiroRemover);
+        Call<Passageiro> call = baseDadosInterface.executeUpdatePedidoDeletePassageiro(map);
 
 
         call.enqueue(new Callback<Passageiro>() {
@@ -192,7 +197,7 @@ public class Cancelar_Viagem extends barra_lateral_pro {
         if (Current.before(Viagem)) {
             if((Current.getDay() + 1) == Viagem.getDay()){
                 Date horamax = hourFormatter.parse("17:00");
-                Date horaCurrent = hourFormatter.parse(currentTimeDate.toString());
+                Date horaCurrent = hourFormatter.parse(hourFormatter.format(currentTimeDate));
                 if(horaCurrent.before(horamax)){
                     return true;
                 }
