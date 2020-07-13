@@ -10,9 +10,9 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.example.pint_android_v3.DataBase.BaseDadosInterface;
 import com.example.pint_android_v3.DataBase.DadosUtilizador.Model_User_Information;
+import com.example.pint_android_v3.DataBase.DividaUtilizador.ModelDividaUtilizador;
 import com.example.pint_android_v3.R;
 import com.example.pint_android_v3.barra_lateral.barra_lateral_pro;
-import com.example.pint_android_v3.menus.menu_municipe;
 import com.google.android.material.navigation.NavigationView;
 
 import java.text.SimpleDateFormat;
@@ -51,6 +51,7 @@ public class perfil_cliente extends barra_lateral_pro {
         {
             user_id =(int) b.get("user_id");
             Get_user_id_information(user_id);
+            GetUserDividaSoma(user_id);
         }
 
         Bar_Settings(user_id);
@@ -66,7 +67,6 @@ public class perfil_cliente extends barra_lateral_pro {
                 .build();
         baseDadosInterface =  retrofit.create(BaseDadosInterface.class);
 
-        //Log.i("O id do user:", ""+ id);
         Call<Model_User_Information> call = baseDadosInterface.executeGetUser(id);
 
         call.enqueue(new Callback<Model_User_Information>() {
@@ -85,10 +85,8 @@ public class perfil_cliente extends barra_lateral_pro {
                         Telefone.setText(response.body().getGet_user().get(0).getTelefone_utilizador());
                         Email.setText(response.body().getGet_user().get(0).getEmail_utilizador());
                     }
-                        //makeToastFordesambiguacao("Erro Server Info");
                 }
                 else{
-                    //makeToastFordesambiguacao("Erro: 'Sem data'"+ response.message());
                     Log.i("Erro", "" + response.message());
                 }
             }
@@ -125,6 +123,44 @@ public class perfil_cliente extends barra_lateral_pro {
             }
         }
         return idade;
+    }
+
+    private void GetUserDividaSoma(int id) {
+        Retrofit retrofit;
+        BaseDadosInterface baseDadosInterface;
+
+        retrofit = new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        baseDadosInterface =  retrofit.create(BaseDadosInterface.class);
+
+        //Log.i("O id do user:", ""+ id);
+        Call<ModelDividaUtilizador> call = baseDadosInterface.executeGetUserDivida(id);
+
+        call.enqueue(new Callback<ModelDividaUtilizador>() {
+            @Override
+            public void onResponse(Call<ModelDividaUtilizador> call, Response<ModelDividaUtilizador> response) {
+                if (!response.isSuccessful()){
+                    //makeToastFordesambiguacao("Erro a ir ao link");
+                    Log.i("Erro", "Erro a ir ao link class perfil_motorista");
+                }
+                double valorDivida =0;
+                for (int i = 0; i < response.body().getDataDividaUtilizadors().size(); i++){
+                    if (response.body().getDataDividaUtilizadors().get(i).getEstado_Coima() == 0){
+                        valorDivida += Double.parseDouble(response.body().getDataDividaUtilizadors().get(i).getValor_Coima());
+                    }
+                }
+                TextView txtDividaPerfilMotorista = findViewById(R.id.textView_user_money_information_perfil_motorista);
+                txtDividaPerfilMotorista.setText(""+ valorDivida);
+            }
+
+            @Override
+            public void onFailure(Call<ModelDividaUtilizador> call, Throwable t) {
+                Log.i("Failure:", t.toString());
+                //makeToastFordesambiguacao("Failure: "+ t.toString());
+            }
+        });
     }
 
 }

@@ -11,7 +11,7 @@ import com.example.pint_android_v3.DataBase.BaseDadosInterface;
 import com.example.pint_android_v3.DataBase.ListagemPassageirosCondutor.ModelListagemPassageirosCondutor;
 import com.example.pint_android_v3.DataBase.ListagemPassageirosCondutor.UtilizadorPassageiroInformacao;
 import com.example.pint_android_v3.R;
-import com.example.pint_android_v3.barra_lateral.barra_lateral_pro;
+import com.example.pint_android_v3.barra_lateral.barra_lateral_condutor;
 import com.example.pint_android_v3.pagamentoCondutor;
 
 import java.util.ArrayList;
@@ -22,7 +22,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class quem_vai_consigo_condutor extends barra_lateral_pro {
+public class quem_vai_consigo_condutor extends barra_lateral_condutor {
 
     private String BASE_URL ="http://10.0.2.2:3000";
     private int user_id;
