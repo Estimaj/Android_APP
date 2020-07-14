@@ -29,10 +29,10 @@ public interface BaseDadosInterface {
     @POST("/muv/pedidos/criarmobile")
     Call<Pedido_Viagem> executeCriarPedidoViagem(@Body Pedido_Viagem pedido_viagem);
 
-    @GET("muv/viagem/listaCidadao/{id}")
+    @GET("/muv/viagem/listaCidadao/{id}")
     Call<Model_Viagens_Efetuadas> executeViagemEfetuada(@Path("id") int id);
 
-    @GET("muv/viagem/listaMotorista/{id}")
+    @GET("/muv/viagem/listaMotorista/{id}")
     Call<Model_Viagens_Efetuadas> executeViagemEfetuadaMotorista(@Path("id") int id);
 
     @GET("/muv/dividas/getcidadaodivida/{id}")
