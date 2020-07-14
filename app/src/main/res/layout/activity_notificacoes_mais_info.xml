@@ -90,7 +90,7 @@
                 android:id="@+id/local_user_textView_origem_not_mais_info"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Póvoa de Calde"
+                android:text="Vazio"
                 app:layout_constraintStart_toStartOf="@id/textView_origem__not_mais_info"
                 app:layout_constraintTop_toBottomOf="@id/textView_origem__not_mais_info" />
             <!--Destino-->
@@ -130,7 +130,7 @@
                 android:id="@+id/local_user_textView_not_mais_info"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Centro de Camionagem"
+                android:text="Vazio"
                 app:layout_constraintStart_toStartOf="@id/textView_destino_not_mais_info"
                 app:layout_constraintTop_toBottomOf="@id/textView_destino_not_mais_info" />
             <!--Hora-->
@@ -170,7 +170,7 @@
                 android:id="@+id/local_user_textView_hora_not_mais_info"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="16:00h"
+                android:text="Vazio"
                 app:layout_constraintStart_toStartOf="@id/textView_hora_not_mais_info"
                 app:layout_constraintTop_toBottomOf="@id/textView_hora_not_mais_info" />
 
@@ -211,7 +211,7 @@
                 android:id="@+id/local_user_textView_dia_not_mais_info"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="16/02/2020"
+                android:text="Vazio"
                 app:layout_constraintStart_toStartOf="@id/textView_dia_not_mais_info"
                 app:layout_constraintTop_toBottomOf="@id/textView_dia_not_mais_info" />
 

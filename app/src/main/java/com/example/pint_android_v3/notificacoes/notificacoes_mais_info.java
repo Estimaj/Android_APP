@@ -82,6 +82,7 @@ public class notificacoes_mais_info extends barra_lateral_pro {
 
     private void populateContainer()
     {
+        if(informacaoViagem == null) return;
         ImageView CheckDog = findViewById(R.id.canideo_check_not_mais_info);
         ImageView CheckMala = findViewById(R.id.mala_check_not_mais_info);
         ImageView CheckWheel = findViewById(R.id.wheel_check_not_mais_info);
