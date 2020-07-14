@@ -5,15 +5,15 @@ import com.google.gson.annotations.SerializedName;
 
 public class DividaCreate {
 
-    @SerializedName("Cidadao_id_utilizador")
+    @SerializedName("id_cidadao")
     @Expose
     private int Cidadao_id_utilizador;
 
-    @SerializedName("Valor_Coima")
+    @SerializedName("valor")
     @Expose
     private String Valor_Coima;
 
-    @SerializedName("Estado_Coima")
+    @SerializedName("estado_coima")
     @Expose
     private int Estado_Coima;
 

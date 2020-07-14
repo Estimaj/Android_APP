@@ -61,4 +61,7 @@ public interface BaseDadosInterface {
 
     @POST("/muv/pedidos/updateCanceleViagem")
     Call<Passageiro> executeUpdatePedidoDeletePassageiro(@Body HashMap<String, Integer> map);
+
+    @POST("muv/viagem/updateEfetuada/{id}")
+    Call<ModelViagemUnica> executeUpdateViagemParaEfetuada(@Path("id") int id);
 }

@@ -6,6 +6,7 @@ import com.example.pint_android_v3.DataBase.ListagemPassageirosCondutor.CidadaoP
 import com.example.pint_android_v3.DataBase.ListagemPassageirosCondutor.DataListagemCondutor;
 import com.example.pint_android_v3.DataBase.ListagemPassageirosCondutor.ModelListagemPassageirosCondutor;
 import com.example.pint_android_v3.DataBase.UpdatePassageiro.Passageiro;
+import com.example.pint_android_v3.DataBase.ViagemUnica.ModelViagemUnica;
 import com.example.pint_android_v3.DataBase.ViagensInformacao.Model_Viagens_Efetuadas;
 import com.example.pint_android_v3.DataBase.ViagensInformacao.dataViagem;
 import com.example.pint_android_v3.barra_lateral.barra_lateral_condutor;
@@ -52,6 +53,15 @@ public class pagamentoCondutor extends barra_lateral_condutor {
         ImageView btnPagar = findViewById(R.id.dinheiro_btn_tarifa_condutor);
         ImageView btnTalao = findViewById(R.id.talao_btn_tarifa_condutor);
 
+        Intent X = getIntent();
+        Bundle b = X.getExtras();
+        if(b!=null){
+            user_id = (int) b.get("user_id");
+            idViagem = (int) b.get("idViagem");
+            idCidadao = (int) b.get("idCidadao");
+            povoarInformacaoActivity(user_id);
+        }
+
         btnPagar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,15 +75,6 @@ public class pagamentoCondutor extends barra_lateral_condutor {
                 Click_Talao();
             }
         });
-
-        Intent X = getIntent();
-        Bundle b = X.getExtras();
-        if(b!=null){
-            user_id = (int) b.get("user_id");
-            idViagem = (int) b.get("idViagem");
-            idCidadao = (int) b.get("idCidadao");
-            povoarInformacaoActivity(user_id);
-        }
 
         Bar_Settings(user_id);
     }
@@ -157,6 +158,11 @@ public class pagamentoCondutor extends barra_lateral_condutor {
         ImageView x_btn = dialogView.findViewById(R.id.white_x_solid_leave_alert_dialog_adapter_pagamento_primeiro);
 
         valorAPagarPassageiro(dialogView);
+        if(viagem != null){
+            if(viagem.getViagem_efetuada() == 0){
+                passarViagemParaEfetuada();
+            }
+        }
 
         yes_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -180,6 +186,36 @@ public class pagamentoCondutor extends barra_lateral_condutor {
         });
 
         dialogBuilder.show();
+    }
+
+    private void passarViagemParaEfetuada() {
+        Retrofit retrofit;
+        BaseDadosInterface baseDadosInterface;
+
+        retrofit = new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        baseDadosInterface =  retrofit.create(BaseDadosInterface.class);
+
+        Call<ModelViagemUnica> call = baseDadosInterface.executeUpdateViagemParaEfetuada(idViagem);
+
+        call.enqueue(new Callback<ModelViagemUnica>() {
+            @Override
+            public void onResponse(Call<ModelViagemUnica> call, Response<ModelViagemUnica> response) {
+                if (!response.isSuccessful()){
+                    Log.i("Erro", "verificar o link na interface");
+                }
+                if (response.code() == 200){
+                    Log.i("Sucesso", "Viagem alterada para Efetuada");
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ModelViagemUnica> call, Throwable t) {
+                Log.i("Failure:", t.toString());
+            }
+        });
     }
 
     private void valorAPagarPassageiro(View dialogView) {
@@ -248,7 +284,6 @@ public class pagamentoCondutor extends barra_lateral_condutor {
     public void Click_Botao_Negar_Pagar()
     {
         updateBDPassageiroComparecenciaPagamento(1, 0);
-        criarADividaDoPassageiroQueNaoPagou();
         final AlertDialog dialogBuilder = new AlertDialog.Builder(this).create();
 // ...Irrelevant code for customizing the buttons and title
         LayoutInflater inflater = this.getLayoutInflater();
@@ -273,7 +308,7 @@ public class pagamentoCondutor extends barra_lateral_condutor {
     }
 
     private void criarADividaDoPassageiroQueNaoPagou() {
-        DividaCreate divida = new DividaCreate(user_id, passageiroValoresIndividuais.getValorAPagarIndividual());
+        DividaCreate divida = new DividaCreate(idCidadao, passageiroValoresIndividuais.getValorAPagarIndividual());
 
         Retrofit retrofit;
         BaseDadosInterface baseDadosInterface;
@@ -329,6 +364,9 @@ public class pagamentoCondutor extends barra_lateral_condutor {
                 }
                 if (response.body() != null) {
                     Log.i("Sucesso", "Update Feito, "+ comparecimento + ", " + pagamento);
+                    if (pagamento == 0){
+                        criarADividaDoPassageiroQueNaoPagou();
+                    }
                 }else
                     Log.i("Erro", "L105 viagens efetuadas");
             }

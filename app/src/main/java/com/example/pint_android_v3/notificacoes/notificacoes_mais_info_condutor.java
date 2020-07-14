@@ -38,6 +38,7 @@ public class notificacoes_mais_info_condutor extends barra_lateral_condutor {
         Bundle b = X.getExtras();
         if(b!=null){
             user_id = (int) b.get("user_id");
+            id_viagem = (int) b.get("id_viagem");
         }
         getInformationFromdb(id_viagem);
         Bar_Settings(user_id);
