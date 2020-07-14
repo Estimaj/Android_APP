@@ -22,7 +22,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class viagens_efetuadas_condutor extends barra_lateral_condutor {
 
-    private String BASE_URL ="http://10.0.2.2:3000";
+    private String BASE_URL ="https://pintbackend.herokuapp.com";
     private int user_id;
     private ArrayList<dataViagem> informacaoViagem;
 
@@ -39,8 +39,9 @@ public class viagens_efetuadas_condutor extends barra_lateral_condutor {
         if(b!=null){
             user_id = (int) b.get("user_id");
 
-            getInformationFromdb(user_id);
         }
+        getInformationFromdb(user_id);
+
         Bar_Settings(user_id);
     }
 

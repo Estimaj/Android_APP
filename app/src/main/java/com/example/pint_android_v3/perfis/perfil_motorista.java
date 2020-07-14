@@ -27,7 +27,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class perfil_motorista extends barra_lateral_condutor {
 
-    private String BASE_URL ="http://10.0.2.2:3000";
+    private String BASE_URL ="https://pintbackend.herokuapp.com";
 
     private Toolbar toolbar;
     private DrawerLayout drawerLayout;

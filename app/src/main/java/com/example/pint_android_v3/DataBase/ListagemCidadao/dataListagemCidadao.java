@@ -1,6 +1,5 @@
 package com.example.pint_android_v3.DataBase.ListagemCidadao;
 
-import com.example.pint_android_v3.DataBase.ListagemPassageirosCondutor.CidadaoPassageiroInformaçao;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 

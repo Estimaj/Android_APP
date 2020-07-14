@@ -26,7 +26,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class perfil_cliente extends barra_lateral_pro {
 
-    private String BASE_URL ="http://10.0.2.2:3000";
+    private String BASE_URL ="https://pintbackend.herokuapp.com";
 
     private TextView Nome, Origem, Idade, Telefone, Email;
     private int user_id;

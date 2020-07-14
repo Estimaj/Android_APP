@@ -26,7 +26,7 @@ public class notificacoes_condutor extends barra_lateral_condutor {
     ListView lView;
     ListAdapter lAdapter;
     notificacoes_array_test lItems;
-    private String BASE_URL ="http://10.0.2.2:3000";
+    private String BASE_URL ="https://pintbackend.herokuapp.com";
     private ArrayList<DataNotificacoes> informacaoViagem;
 
 

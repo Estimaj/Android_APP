@@ -53,7 +53,7 @@ public interface BaseDadosInterface {
     @POST("/muv/passageiros/update")
     Call<Passageiro> executeUpdatePassageiro(@Body Passageiro passageiros);
 
-    @POST("/muv/passageiros/create")
+    @POST("/muv/dividas/create")
     Call<DividaCreate> executeCriarDividaPassageiro(@Body DividaCreate divida);
 
     @POST("/muv/passageiros/updateClassificacao")

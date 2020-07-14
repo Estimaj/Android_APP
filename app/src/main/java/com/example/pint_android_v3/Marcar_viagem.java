@@ -41,7 +41,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Marcar_viagem extends barra_lateral_pro implements DatePickerDialog.OnDateSetListener{
 
-    private String BASE_URL ="http://10.0.2.2:3000";
+    private String BASE_URL ="https://pintbackend.herokuapp.com";
 
     private TextView DateLayout_text;
     private TextView TimeLayout_text;
@@ -360,7 +360,7 @@ public class Marcar_viagem extends barra_lateral_pro implements DatePickerDialog
                 local_origem_pedido, local_destino_pedido, bagagem, modalidade, partilha, animal,
                 necessidades_especiais, 0, "" + currentTime, currentDate, DateLayout_text.getText().toString(),
                 TimeLayout_text.getText().toString());
-        //Log.i("Pedido", pedido_viagem.toString());
+        Log.i("Pedido", pedido_viagem.toString());
 
         Retrofit retrofit;
         BaseDadosInterface baseDadosInterface;

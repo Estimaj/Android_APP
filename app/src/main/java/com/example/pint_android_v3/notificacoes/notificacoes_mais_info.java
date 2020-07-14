@@ -25,7 +25,7 @@ public class notificacoes_mais_info extends barra_lateral_pro {
 
     private int user_id;
     private int id_viagem;
-    private String BASE_URL ="http://10.0.2.2:3000";
+    private String BASE_URL ="https://pintbackend.herokuapp.com";
     private ArrayList<dataViagem> informacaoViagem;
 
     @Override

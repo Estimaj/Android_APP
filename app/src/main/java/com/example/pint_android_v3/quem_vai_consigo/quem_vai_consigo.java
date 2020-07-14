@@ -28,7 +28,7 @@ public class quem_vai_consigo extends barra_lateral_pro {
 
     private int user_id;
     private int viagem_id;
-    private String BASE_URL ="http://10.0.2.2:3000";
+    private String BASE_URL ="https://pintbackend.herokuapp.com";
     private ArrayList<dataListagemCidadao> informacaoViagem;
     ArrayList<String> ListNome;
     ArrayList<String> ListLocalidade;

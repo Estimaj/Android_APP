@@ -25,7 +25,7 @@ public class notificacoes extends barra_lateral_pro {
     private int user_id;
     ListView lView;
     ListAdapter lAdapter;
-    private String BASE_URL ="http://10.0.2.2:3000";
+    private String BASE_URL ="https://pintbackend.herokuapp.com";
     private ArrayList<DataNotificacoes> informacaoViagem;
 
 

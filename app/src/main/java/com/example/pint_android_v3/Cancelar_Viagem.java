@@ -41,7 +41,7 @@ public class Cancelar_Viagem extends barra_lateral_pro {
     private int idViagem;
     private int idPedido;
 
-    private String BASE_URL ="http://10.0.2.2:3000";
+    private String BASE_URL ="https://pintbackend.herokuapp.com";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

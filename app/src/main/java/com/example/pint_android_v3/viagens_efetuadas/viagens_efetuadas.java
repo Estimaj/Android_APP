@@ -24,7 +24,7 @@ public class viagens_efetuadas extends barra_lateral_pro {
     ListView lView;
     ListAdapter lAdapter;
 
-    private String BASE_URL ="http://10.0.2.2:3000";
+    private String BASE_URL ="https://pintbackend.herokuapp.com";
     private int user_id;
     private ArrayList<dataViagem>  informacaoViagem;
 
