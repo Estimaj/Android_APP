@@ -15,14 +15,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/caixa_viagens_efetuadas" />
+        app:srcCompat="@drawable/caixa_viagens_efetuadas_new" />
 
     <TextView
         android:id="@+id/viagens_efetuadas_adapter_data_trip_condutor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="26dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="22dp"
         android:text="data_trip"
         android:textColor="#FFFFFF"
         app:layout_constraintStart_toStartOf="@id/viagens_efetuadas_adapter_contentor_condutor"
@@ -32,11 +32,11 @@
         android:id="@+id/viagens_efetuadas_adapter_hora_trip_condutor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="302dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="20dp"
         android:text="hora_trip"
         android:textColor="#FFFFFF"
-        app:layout_constraintStart_toStartOf="@id/viagens_efetuadas_adapter_contentor_condutor"
+        app:layout_constraintEnd_toEndOf="@+id/viagens_efetuadas_adapter_contentor_condutor"
         app:layout_constraintTop_toTopOf="@id/viagens_efetuadas_adapter_contentor_condutor" />
 
     <ImageView
@@ -44,17 +44,17 @@
         android:layout_width="181dp"
         android:layout_height="19dp"
         android:layout_marginStart="5dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="75dp"
         app:layout_constraintStart_toEndOf="@id/viagens_efetuadas_adapter_Local_Partida_condutor"
         app:layout_constraintTop_toTopOf="@id/viagens_efetuadas_adapter_contentor_condutor"
         app:srcCompat="@drawable/distancia_viagens_efetuadas" />
 
     <TextView
         android:id="@+id/viagens_efetuadas_adapter_Local_Partida_condutor"
-        android:layout_width="80dp"
+        android:layout_width="90dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="60dp"
         android:text="Local_Partida"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@id/viagens_efetuadas_adapter_contentor_condutor"
@@ -62,10 +62,10 @@
 
     <TextView
         android:id="@+id/viagens_efetuadas_adapter_Local_Chegada_condutor"
-        android:layout_width="80dp"
+        android:layout_width="90dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="60dp"
         android:text="Local_Chegada"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@id/viagens_efetuadas_adapter_barra_distância_condutor"
@@ -76,8 +76,7 @@
         android:layout_width="120dp"
         android:layout_height="40dp"
         android:layout_marginTop="135dp"
-        android:layout_marginEnd="26dp"
-        android:onClick="Mais_Info_Condutor_efetuadas"
+        android:layout_marginEnd="20dp"
         app:layout_constraintEnd_toEndOf="@+id/viagens_efetuadas_adapter_contentor_condutor"
         app:layout_constraintTop_toTopOf="@+id/viagens_efetuadas_adapter_contentor_condutor"
         app:srcCompat="@drawable/btn_mais_info" />

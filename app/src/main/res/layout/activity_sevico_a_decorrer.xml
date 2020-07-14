@@ -29,16 +29,14 @@
         android:id="@+id/textView_sevico_a_decorrer_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="50dp"
         android:text="Serviço a Decorrer"
         android:textColor="@color/White"
         android:textSize="23sp"
         app:layout_constraintBottom_toBottomOf="@id/bg_big_black_sevico_a_decorrer"
-        app:layout_constraintTop_toTopOf="@id/bg_big_black_sevico_a_decorrer"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="150dp"
-        android:layout_marginTop="50dp"
-        />
+        app:layout_constraintTop_toTopOf="@id/bg_big_black_sevico_a_decorrer" />
 
     <include
         layout="@layout/barra_lateral_pro" />

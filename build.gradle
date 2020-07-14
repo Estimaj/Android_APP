@@ -21,9 +21,7 @@ allprojects {
         google()
         jcenter()
         // add the esri arcgis maven repo
-        maven {
-            url 'https://esri.bintray.com/arcgis'
-        }
+
         
     }
 }
@@ -32,11 +30,3 @@ task clean(type: Delete) {
     delete rootProject.buildDir
 }
 
-ext {
-runtimeVersion = '100.8.0'
-butterknifeVersion = '10.2.0'
-robotiumVersion = '5.6.3'
-httpcomponentsVersion = '4.3.5.1'
-runnerVersion = '1.1.0'
-
-}

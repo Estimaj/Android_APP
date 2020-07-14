@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.esri.arcgisruntime.mapping.view.MapView
+    <com.google.android.gms.maps.MapView
+        android:background="@drawable/mapa_imageview"
         android:id="@+id/mapView_mais_info_condutor"
         android:layout_width="match_parent"
         android:layout_height="440dp"
