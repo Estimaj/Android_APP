@@ -78,6 +78,7 @@ public class viagens_efetuadas_condutor extends barra_lateral_condutor {
     }
 
     private void createAdapters(){
+        if (informacaoViagem == null) return;
         ArrayList<String> Local_Partida = new ArrayList<>();
         ArrayList<String> Local_Chegada = new ArrayList<>();
         ArrayList<String> Local_PartidaCoordenadas = new ArrayList<>();
