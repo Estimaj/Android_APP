@@ -50,6 +50,7 @@ public class quem_vai_consigo_condutor extends barra_lateral_condutor {
         ArrayList<String> nomesPassageiros = new ArrayList<>();
         ArrayList<String> localidadesPassageiros = new ArrayList<>();
         ArrayList<Integer> comparenciaPassageiros = new ArrayList<>();
+        ArrayList<Integer> idCidadaoList = new ArrayList<>();
         try {
             Retrofit retrofit;
             BaseDadosInterface baseDadosInterface;
@@ -60,7 +61,7 @@ public class quem_vai_consigo_condutor extends barra_lateral_condutor {
                     .build();
             baseDadosInterface =  retrofit.create(BaseDadosInterface.class);
 
-            Call<ModelListagemPassageirosCondutor> call = baseDadosInterface.executeGetListagem(user_id);
+            Call<ModelListagemPassageirosCondutor> call = baseDadosInterface.executeGetListagem(idViagem);
 
             call.enqueue(new Callback<ModelListagemPassageirosCondutor>() {
                 @Override
@@ -75,8 +76,9 @@ public class quem_vai_consigo_condutor extends barra_lateral_condutor {
                         nomesPassageiros.add(utilizador.getNome_utilizador());
                         localidadesPassageiros.add(utilizador.getMoradaUtilizador());
                         comparenciaPassageiros.add(response.body().getDataListagemCondutor().get(i).getCompareceu());
+                        idCidadaoList.add(response.body().getDataListagemCondutor().get(i).getCidadao().getId_Utilizador());
                     }
-                    adaptarFixer(nomesPassageiros, localidadesPassageiros, comparenciaPassageiros);
+                    adaptarFixer(nomesPassageiros, localidadesPassageiros, comparenciaPassageiros, idCidadaoList);
                 }
 
                 @Override
@@ -90,9 +92,10 @@ public class quem_vai_consigo_condutor extends barra_lateral_condutor {
 
     }
 
-    private void adaptarFixer(ArrayList<String> nomesPassageiros, ArrayList<String> localidadesPassageiros, ArrayList<Integer> comparenciaPassageiros) {
+    private void adaptarFixer(ArrayList<String> nomesPassageiros, ArrayList<String> localidadesPassageiros, ArrayList<Integer> comparenciaPassageiros,  ArrayList<Integer> idCidadaoList) {
         TextView nomePassageiroTextView;
         TextView localPassageiroTextView;
+        ImageView btnPagamento;
         int contador=0;
 
         switch (nomesPassageiros.size()){ //preenche os contaners certos com informaçao
@@ -102,10 +105,17 @@ public class quem_vai_consigo_condutor extends barra_lateral_condutor {
                 localPassageiroTextView = findViewById(R.id.tripulante_localidade_4_quem_vai_consigo2_condutor);
                 nomePassageiroTextView.setText(nomesPassageiros.get(3));
                 localPassageiroTextView.setText(localidadesPassageiros.get(3));
+                btnPagamento = findViewById(R.id.btn_pagamento_4_quem_vai_consigo_condutor);
                 if(comparenciaPassageiros.get(3) == 1){
                     //se ja esta registado que compareceu é pq o motorista ja confirmou a existencia de um pagamento
-                    ImageView btnPagamento = findViewById(R.id.btn_pagamento_4_quem_vai_consigo_condutor);
                     btnPagamento.setVisibility(View.GONE);
+                }else{
+                    btnPagamento.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Click_Pagamento(idCidadaoList.get(3));
+                        }
+                    });
                 }
             case 3:
                 contador++;
@@ -113,10 +123,17 @@ public class quem_vai_consigo_condutor extends barra_lateral_condutor {
                 localPassageiroTextView = findViewById(R.id.tripulante_localidade_3_quem_vai_consigo_condutor);
                 nomePassageiroTextView.setText(nomesPassageiros.get(2));
                 localPassageiroTextView.setText(localidadesPassageiros.get(2));
+                btnPagamento = findViewById(R.id.btn_pagamento_3_quem_vai_consigo_condutor);
                 if(comparenciaPassageiros.get(2) == 1){
                     //se ja esta registado que compareceu é pq o motorista ja confirmou a existencia de um pagamento
-                    ImageView btnPagamento = findViewById(R.id.btn_pagamento_3_quem_vai_consigo_condutor);
                     btnPagamento.setVisibility(View.GONE);
+                }else{
+                    btnPagamento.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Click_Pagamento(idCidadaoList.get(2));
+                        }
+                    });
                 }
             case 2:
                 contador++;
@@ -124,10 +141,17 @@ public class quem_vai_consigo_condutor extends barra_lateral_condutor {
                 localPassageiroTextView = findViewById(R.id.tripulante_localidade_2_quem_vai_consigo2_condutor);
                 nomePassageiroTextView.setText(nomesPassageiros.get(1));
                 localPassageiroTextView.setText(localidadesPassageiros.get(1));
+                btnPagamento = findViewById(R.id.btn_pagamento_2_quem_vai_consigo_condutor);
                 if(comparenciaPassageiros.get(1) == 1){
                     //se ja esta registado que compareceu é pq o motorista ja confirmou a existencia de um pagamento
-                    ImageView btnPagamento = findViewById(R.id.btn_pagamento_2_quem_vai_consigo_condutor);
                     btnPagamento.setVisibility(View.GONE);
+                }else{
+                    btnPagamento.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Click_Pagamento(idCidadaoList.get(1));
+                        }
+                    });
                 }
             case 1:
                 contador++;
@@ -135,10 +159,17 @@ public class quem_vai_consigo_condutor extends barra_lateral_condutor {
                 localPassageiroTextView = findViewById(R.id.tripulante_localidade_1_quem_vai_consigo_condutor);
                 nomePassageiroTextView.setText(nomesPassageiros.get(0));
                 localPassageiroTextView.setText(localidadesPassageiros.get(0));
+                btnPagamento = findViewById(R.id.btn_pagamento_1_quem_vai_consigo_condutor);
                 if(comparenciaPassageiros.get(0) == 1){
                     //se ja esta registado que compareceu é pq o motorista ja confirmou a existencia de um pagamento
-                    ImageView btnPagamento = findViewById(R.id.btn_pagamento_1_quem_vai_consigo_condutor);
                     btnPagamento.setVisibility(View.GONE);
+                }else{
+                    btnPagamento.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Click_Pagamento(idCidadaoList.get(0));
+                        }
+                    });
                 }
                 break;
         }
@@ -197,11 +228,12 @@ public class quem_vai_consigo_condutor extends barra_lateral_condutor {
 
     }
 
-    public void Click_Pagamento(View view)
+    public void Click_Pagamento(int idCidadao)
     {
         Intent pagamento = new Intent( quem_vai_consigo_condutor.this ,pagamentoCondutor.class);
         pagamento.putExtra("user_id", user_id);
         pagamento.putExtra("idViagem", idViagem);
+        pagamento.putExtra("idCidadao", idCidadao);
         startActivity(pagamento);
     }
 }

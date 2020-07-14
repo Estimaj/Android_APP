@@ -38,7 +38,6 @@ public class viagens_efetuadas_condutor extends barra_lateral_condutor {
         Bundle b = X.getExtras();
         if(b!=null){
             user_id = (int) b.get("user_id");
-
         }
         getInformationFromdb(user_id);
 

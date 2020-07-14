@@ -71,6 +71,7 @@ public class mais_info_mapa_condutor extends barra_lateral_condutor {
         Bundle b = X.getExtras();
         if(b!=null){
             user_id = (int) b.get("user_id");
+            idViagem = (int) b.get("idViagem");
             try {
                 Button btnPassageiros = findViewById(R.id.ver_passageiros_mais_info_condutor);
                 btnPassageiros.setOnClickListener(new View.OnClickListener() {
@@ -93,8 +94,6 @@ public class mais_info_mapa_condutor extends barra_lateral_condutor {
 
         TextView valorViagemtxt = findViewById(R.id.Dinheiro_pagar_mais_info_condutor);
         valorViagemtxt.setText("" + (String) b.get("valorViagem"));
-
-        idViagem = (int) b.get("idViagem");
 
         TextView localPartidatxtview = findViewById(R.id.Local_Partida_mais_info_condutor);
         localPartidatxtview.setText(localPartida);

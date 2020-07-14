@@ -75,7 +75,7 @@ public class Custom_Adapter_Notificacoes extends BaseAdapter {
             viewHolder = (Custom_Adapter_Notificacoes.ViewHolder) convertView.getTag();
             result = convertView;
         }
-
+        viewHolder.id_viagem = id_viagem.get(position);
         viewHolder.txt_data.setText(data.get(position));
         viewHolder.txt_nome.setText(nome.get(position));
         viewHolder.txt_mensagem.setText(defineNotificationType(tipo_notif.get(position)));

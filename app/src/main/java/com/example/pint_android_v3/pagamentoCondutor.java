@@ -40,6 +40,7 @@ public class pagamentoCondutor extends barra_lateral_condutor {
 
     private int user_id;
     private int idViagem;
+    private int idCidadao;
 
     private dataViagem viagem;
     private DataListagemCondutor passageiroValoresIndividuais;
@@ -70,7 +71,7 @@ public class pagamentoCondutor extends barra_lateral_condutor {
         if(b!=null){
             user_id = (int) b.get("user_id");
             idViagem = (int) b.get("idViagem");
-
+            idCidadao = (int) b.get("idCidadao");
             povoarInformacaoActivity(user_id);
         }
 
@@ -200,7 +201,7 @@ public class pagamentoCondutor extends barra_lateral_condutor {
                     Log.i("Erro", "verificar o link na interface");
                 }
                 for (int i = 0; i < response.body().getDataListagemCondutor().size(); i++){
-                    if(user_id == response.body().getDataListagemCondutor().get(i).getCidadao().getId_Utilizador()){
+                    if(idCidadao == response.body().getDataListagemCondutor().get(i).getCidadao().getId_Utilizador()){
                         passageiroValoresIndividuais = response.body().getDataListagemCondutor().get(i);
                     }
                     TextView popUpTexto = dialogView.findViewById(R.id.textView2_pagamento_primeiro);
@@ -307,7 +308,7 @@ public class pagamentoCondutor extends barra_lateral_condutor {
         passageiro.setComparencia_viagem(comparecimento);
         passageiro.setPagou_viagem(pagamento);
         passageiro.setId_viagem(idViagem);
-        passageiro.setCidadao_id_utilizador(user_id);
+        passageiro.setCidadao_id_utilizador(idCidadao);
 
         Retrofit retrofit;
         BaseDadosInterface baseDadosInterface;

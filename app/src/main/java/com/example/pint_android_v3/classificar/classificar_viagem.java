@@ -17,6 +17,7 @@ import com.example.pint_android_v3.DataBase.ViagemUnica.ModelViagemUnica;
 import com.example.pint_android_v3.DataBase.ViagensInformacao.dataViagem;
 import com.example.pint_android_v3.R;
 import com.example.pint_android_v3.barra_lateral.barra_lateral_pro;
+import com.example.pint_android_v3.menus.menu_municipe;
 
 import java.util.ArrayList;
 
@@ -63,6 +64,9 @@ public class classificar_viagem extends barra_lateral_pro {
             @Override
             public void onClick(View v) {
                 MudarClassif();
+                Intent pagamento = new Intent( classificar_viagem.this , menu_municipe.class);
+                pagamento.putExtra("user_id", user_id);
+                startActivity(pagamento);
             }
         });
     }
