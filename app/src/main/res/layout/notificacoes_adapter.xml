@@ -8,15 +8,11 @@
 
     <ImageView
         android:id="@+id/bg_white_notificacoes_adapter"
-        android:layout_width="400dp"
+        android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="5dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/white_square" />
+        app:srcCompat="@drawable/white_square"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-1dp" />
 
     <ImageView
         android:id="@+id/imageView_foto_perfil_utilizador_notificacoes_adapter"
