@@ -240,8 +240,12 @@ public class pagamentoCondutor extends barra_lateral_condutor {
                     if(idCidadao == response.body().getDataListagemCondutor().get(i).getCidadao().getId_Utilizador()){
                         passageiroValoresIndividuais = response.body().getDataListagemCondutor().get(i);
                     }
-                    TextView popUpTexto = dialogView.findViewById(R.id.textView2_pagamento_primeiro);
-                    popUpTexto.setText("Preço da viagem: "+passageiroValoresIndividuais.getValorAPagarIndividual()+" euros");
+                    try {
+                        TextView popUpTexto = dialogView.findViewById(R.id.textView2_pagamento_primeiro);
+                        popUpTexto.setText("Preço da viagem: "+passageiroValoresIndividuais.getValorAPagarIndividual()+" euros");
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                 }
             }
 

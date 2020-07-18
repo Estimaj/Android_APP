@@ -130,8 +130,8 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="60dp"
                 android:layout_marginEnd="10dp"
-                app:layout_constraintEnd_toEndOf="@+id/contentor1_quem_vai_consigo_condutor"
-                app:layout_constraintTop_toTopOf="@+id/contentor1_quem_vai_consigo_condutor"
+                app:layout_constraintEnd_toEndOf="@id/contentor1_quem_vai_consigo_condutor"
+                app:layout_constraintTop_toTopOf="@id/contentor1_quem_vai_consigo_condutor"
                 app:srcCompat="@drawable/btn_pagamento" />
 
             <TextView
